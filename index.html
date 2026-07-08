@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atelier Kibo — Colliers créés à la main</title>
+<meta name="description" content="Atelier Kibo : des colliers audacieux, créés à la main, pour celles et ceux qui ne veulent pas passer inaperçus.">
+<style>
+  /* ============================================
+     ATELIER KIBO — Style moderne & audacieux
+     Palette : encre profonde + corail vif + crème
+     ============================================ */
+  :root {
+    --encre: #16121f;
+    --corail: #ff4d3d;
+    --creme: #faf5ec;
+    --or: #e8b64c;
+    --violet: #6c4bd8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--creme);
+    color: var(--encre);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+
+  /* ---------- Navigation ---------- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 6vw;
+    background: rgba(250,245,236,0.9); backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--encre);
+  }
+  .logo { font-size: 1.3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+  .logo span { color: var(--corail); }
+  nav ul { display: flex; gap: 2rem; list-style: none; }
+  nav a { color: var(--encre); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  nav a:hover { color: var(--corail); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 6vw 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 9vw, 7.5rem);
+    text-transform: uppercase;
+    max-width: 12ch;
+  }
+  .hero h1 em { font-style: normal; color: var(--corail); }
+  .hero p {
+    margin-top: 2rem; font-size: clamp(1.1rem, 2vw, 1.4rem);
+    max-width: 34ch; font-weight: 500;
+  }
+  .hero .cta {
+    display: inline-block; margin-top: 2.5rem; padding: 1rem 2.5rem;
+    background: var(--encre); color: var(--creme);
+    text-decoration: none; font-weight: 700; font-size: 1.05rem;
+    border: 2px solid var(--encre); border-radius: 999px;
+    transition: all 0.2s ease; width: fit-content;
+  }
+  .hero .cta:hover { background: var(--corail); border-color: var(--corail); transform: translateY(-3px); }
+  /* Cercle décoratif */
+  .hero::after {
+    content: ''; position: absolute; right: -12vw; top: 18%;
+    width: 46vw; height: 46vw; max-width: 620px; max-height: 620px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--or), var(--corail) 55%, var(--violet));
+    opacity: 0.92; z-index: -1;
+  }
+
+  /* ---------- Bandeau défilant ---------- */
+  .marquee {
+    background: var(--encre); color: var(--creme);
+    overflow: hidden; white-space: nowrap; padding: 0.9rem 0;
+    border-top: 2px solid var(--encre); border-bottom: 2px solid var(--encre);
+  }
+  .marquee div { display: inline-block; animation: defile 22s linear infinite; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+  .marquee span { margin: 0 2rem; }
+  .marquee em { font-style: normal; color: var(--corail); }
+  @keyframes defile { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---------- Sections ---------- */
+  section { padding: 6rem 6vw; }
+  .section-titre {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    text-transform: uppercase; margin-bottom: 3rem;
+  }
+  .section-titre span { color: var(--corail); }
+
+  /* ---------- La marque ---------- */
+  #marque { background: var(--creme); }
+  .marque-grille {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center;
+  }
+  .marque-texte p { margin-bottom: 1.4rem; font-size: 1.15rem; max-width: 55ch; }
+  .marque-texte strong { color: var(--corail); }
+  .marque-visuel {
+    aspect-ratio: 4/5; border-radius: 24px; border: 2px solid var(--encre);
+    background: linear-gradient(135deg, var(--violet), var(--corail) 60%, var(--or));
+    display: flex; align-items: center; justify-content: center;
+    color: var(--creme); font-weight: 700; text-align: center; padding: 2rem;
+    box-shadow: 10px 10px 0 var(--encre);
+  }
+  .valeurs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  .valeur {
+    border: 2px solid var(--encre); border-radius: 18px; padding: 1.8rem;
+    background: #fff; transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .valeur:hover { transform: translateY(-6px); box-shadow: 6px 6px 0 var(--corail); }
+  .valeur h3 { font-size: 1.2rem; margin-bottom: 0.6rem; text-transform: uppercase; }
+  .valeur p { font-size: 0.98rem; }
+
+  /* ---------- Galerie ---------- */
+  #galerie { background: var(--encre); color: var(--creme); }
+  #galerie .section-titre span { color: var(--or); }
+  .galerie-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .carte {
+    background: var(--creme); color: var(--encre);
+    border-radius: 20px; overflow: hidden;
+    transition: transform 0.25s ease;
+  }
+  .carte:hover { transform: translateY(-8px) rotate(-1deg); }
+  /* Remplacez chaque .carte-photo par une vraie photo :
+     <img src="photo-collier.jpg" alt="Collier Hana" style="width:100%;aspect-ratio:1;object-fit:cover;"> */
+  .carte-photo {
+    aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--creme); font-size: 0.95rem; text-align: center; padding: 1rem;
+  }
+  .carte:nth-child(1) .carte-photo { background: linear-gradient(160deg, var(--corail), var(--or)); }
+  .carte:nth-child(2) .carte-photo { background: linear-gradient(160deg, var(--violet), var(--corail)); }
+  .carte:nth-child(3) .carte-photo { background: linear-gradient(160deg, var(--or), var(--violet)); }
+  .carte:nth-child(4) .carte-photo { background: linear-gradient(20deg, var(--corail), var(--violet)); }
+  .carte:nth-child(5) .carte-photo { background: linear-gradient(20deg, var(--or), var(--corail)); }
+  .carte:nth-child(6) .carte-photo { background: linear-gradient(20deg, var(--violet), var(--or)); }
+  .carte-infos { padding: 1.4rem 1.6rem 1.8rem; }
+  .carte-infos h3 { font-size: 1.25rem; text-transform: uppercase; }
+  .carte-infos p { font-size: 0.95rem; margin-top: 0.4rem; }
+  .carte-infos .prix { display: inline-block; margin-top: 0.9rem; font-weight: 800; color: var(--corail); font-size: 1.1rem; }
+
+  /* ---------- Pied de page ---------- */
+  footer {
+    background: var(--creme); padding: 5rem 6vw 3rem; text-align: center;
+    border-top: 2px solid var(--encre);
+  }
+  footer h2 { font-size: clamp(1.8rem, 4vw, 3rem); text-transform: uppercase; }
+  footer h2 span { color: var(--corail); }
+  footer p { margin-top: 1rem; font-size: 1.05rem; }
+  footer a { color: var(--corail); font-weight: 700; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .copyright { margin-top: 3rem; font-size: 0.85rem; opacity: 0.6; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 820px) {
+    nav ul { gap: 1.1rem; }
+    .marque-grille { grid-template-columns: 1fr; }
+    .valeurs { grid-template-columns: 1fr; }
+    .galerie-grille { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 540px) {
+    .galerie-grille { grid-template-columns: 1fr; }
+    .hero::after { width: 80vw; height: 80vw; right: -30vw; top: 55%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Atelier <span>Kibo</span></div>
+  <ul>
+    <li><a href="#marque">La marque</a></li>
+    <li><a href="#galerie">Collections</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <h1>Des colliers qui ne <em>murmurent</em> pas.</h1>
+  <p>Atelier Kibo crée des pièces audacieuses, faites à la main, pour celles et ceux qui portent leurs bijoux comme une déclaration.</p>
+  <a class="cta" href="#galerie">Découvrir les collections</a>
+</header>
+
+<div class="marquee">
+  <div>
+    <span>Fait main</span><em>●</em><span>Pièces uniques</span><em>●</em><span>Éditions limitées</span><em>●</em><span>Atelier Kibo</span><em>●</em>
+    <span>Fait main</span><em>●</em><span>Pièces uniques</span><em>●</em><span>Éditions limitées</span><em>●</em><span>Atelier Kibo</span><em>●</em>
+  </div>
+</div>
+
+<section id="marque">
+  <h2 class="section-titre">La <span>marque</span></h2>
+  <div class="marque-grille">
+    <div class="marque-texte">
+      <p><strong>Kibo (希望)</strong> signifie « espoir » en japonais. C'est l'idée qui guide chaque création : un bijou n'est pas un simple accessoire, c'est une intention que l'on porte sur soi.</p>
+      <p>Chaque collier est imaginé et assemblé à la main dans notre atelier, en petites séries ou en pièce unique. Nous mélangeons les matières — métal, pierre, céramique — pour créer des contrastes qui attirent l'œil et racontent une histoire.</p>
+      <p>Pas de production de masse, pas de tendances jetables. Des pièces <strong>audacieuses, durables et assumées</strong>.</p>
+    </div>
+    <!-- Remplacez ce bloc par une photo de votre atelier ou de vous :
+         <img src="atelier.jpg" alt="L'atelier Kibo" style="width:100%;border-radius:24px;"> -->
+    <div class="marque-visuel">Votre photo d'atelier ici</div>
+  </div>
+  <div class="valeurs">
+    <div class="valeur">
+      <h3>Fait main</h3>
+      <p>Chaque pièce est façonnée et assemblée à la main, avec des finitions vérifiées une à une.</p>
+    </div>
+    <div class="valeur">
+      <h3>Éditions limitées</h3>
+      <p>Des séries courtes et numérotées : votre collier ne sera jamais celui de tout le monde.</p>
+    </div>
+    <div class="valeur">
+      <h3>Matières choisies</h3>
+      <p>Métaux durables, pierres sélectionnées, fournisseurs de confiance.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galerie">
+  <h2 class="section-titre">Les <span>collections</span></h2>
+  <div class="galerie-grille">
+    <article class="carte">
+      <div class="carte-photo">Photo du collier<br>« Hana »</div>
+      <div class="carte-infos">
+        <h3>Hana</h3>
+        <p>Chaîne dorée et pendentif fleur en céramique émaillée.</p>
+        <span class="prix">65 €</span>
+      </div>
+    </article>
+    <article class="carte">
+      <div class="carte-photo">Photo du collier<br>« Tsuki »</div>
+      <div class="carte-infos">
+        <h3>Tsuki</h3>
+        <p>Croissant de lune martelé sur cordon de soie noire.</p>
+        <span class="prix">58 €</span>
+      </div>
+    </article>
+    <article class="carte">
+      <div class="carte-photo">Photo du collier<br>« Umi »</div>
+      <div class="carte-infos">
+        <h3>Umi</h3>
+        <p>Perles d'eau douce irrégulières, fermoir sculpté à la main.</p>
+        <span class="prix">72 €</span>
+      </div>
+    </article>
+    <article class="carte">
+      <div class="carte-photo">Photo du collier<br>« Hikari »</div>
+      <div class="carte-infos">
+        <h3>Hikari</h3>
+        <p>Maillons contrastés or et argent, pièce réversible.</p>
+        <span class="prix">80 €</span>
+      </div>
+    </article>
+    <article class="carte">
+      <div class="carte-photo">Photo du collier<br>« Yama »</div>
+      <div class="carte-infos">
+        <h3>Yama</h3>
+        <p>Pierre brute sertie main sur chaîne épaisse.</p>
+        <span class="prix">69 €</span>
+      </div>
+    </article>
+    <article class="carte">
+      <div class="carte-photo">Photo du collier<br>« Sora »</div>
+      <div class="carte-infos">
+        <h3>Sora</h3>
+        <p>Pendentif goutte en verre soufflé, édition de 20 exemplaires.</p>
+        <span class="prix">75 €</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer id="contact">
+  <h2>Envie d'une pièce <span>Kibo</span> ?</h2>
+  <p>Écrivez-nous : <a href="mailto:contact@atelierkibo.fr">contact@atelierkibo.fr</a></p>
+  <p>Suivez l'atelier sur <a href="#">Instagram</a></p>
+  <p class="copyright">© 2026 Atelier Kibo — Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
