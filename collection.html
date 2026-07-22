@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collections — KIBO Paris</title>
+<meta name="description" content="Les collections KIBO Paris. Colliers, bagues et bracelets faits main, éditions limitées. Soleil Rouge — a summer state of mind.">
+<link rel="icon" type="image/png" href="FULL-BLACK.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================
+     KIBO PARIS — Page Collections
+     Même design system que la home v3 « summer memories ».
+     ========================================================== */
+  :root {
+    --creme: #F4EDE0;
+    --papier: #EFE6D4;
+    --terracotta: #A63E24;
+    --encre: #211B14;
+    --sable: #D9CDB4;
+    --nuit: #16110C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--creme);
+    color: var(--encre);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.6; }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: 0.04em; }
+
+  .annonce {
+    background: var(--terracotta); color: var(--creme);
+    text-align: center; padding: 8px 12px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--creme);
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
+    padding: 14px 32px;
+    border-bottom: 1px solid rgba(33,27,20,0.12);
+  }
+  .logo-nav { display: flex; align-items: center; }
+  .logo-nav img { height: 34px; display: block; }
+  .logo-nav .logo-texte { font-family: 'Caveat', cursive; font-size: 30px; font-weight: 600; letter-spacing: 0; }
+  .nav-centre { display: flex; gap: 28px; justify-content: center; text-transform: uppercase; font-size: 10px; letter-spacing: 0.16em; }
+  .nav-droite { display: flex; gap: 22px; text-transform: uppercase; font-size: 10px; letter-spacing: 0.16em; }
+
+  /* ---------- En-tête de collection ---------- */
+  .entete { padding: 88px 6vw 56px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; }
+  .entete .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .entete h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(38px, 4.6vw, 64px); text-transform: uppercase; letter-spacing: 0.08em;
+    margin-top: 10px; line-height: 1.1;
+  }
+  .entete .sous { margin-top: 14px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(33,27,20,0.7); }
+  .entete-note {
+    background: var(--papier); padding: 18px 24px; max-width: 200px;
+    transform: rotate(2deg); box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
+    font-family: 'Caveat', cursive; font-size: 20px; letter-spacing: 0; text-align: center;
+  }
+  .entete-note .ast { color: var(--terracotta); display: block; font-size: 15px; margin-top: 4px; font-family: 'Space Mono', monospace; }
+
+  /* ---------- Filtres ---------- */
+  .filtres {
+    display: flex; gap: 28px; padding: 0 6vw 28px;
+    border-bottom: 1px solid rgba(33,27,20,0.12);
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  .filtre { background: none; border: none; font: inherit; letter-spacing: inherit; text-transform: inherit; color: rgba(33,27,20,0.55); cursor: pointer; padding: 0 0 4px; }
+  .filtre:hover { color: var(--encre); }
+  .filtre.actif { color: var(--terracotta); border-bottom: 1px solid var(--terracotta); }
+
+  /* ---------- Grille ---------- */
+  .grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 48px 6vw 96px; }
+  .produit { display: block; transition: opacity 300ms ease; }
+  .produit.cache { display: none; }
+  .produit-photo {
+    aspect-ratio: 4 / 5; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(244,237,224,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    text-align: center; padding: 10px;
+    transition: transform 400ms ease;
+  }
+  .produit:hover .produit-photo { transform: scale(0.985); }
+  .produit-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
+  .produit-cartel .prix { display: block; margin-top: 3px; color: rgba(33,27,20,0.65); }
+  .badge {
+    position: absolute; top: 10px; left: 10px;
+    background: var(--creme); color: var(--terracotta);
+    font-size: 8px; text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 4px 8px;
+  }
+  /* Fonds d'attente — remplacer chaque .produit-photo par :
+     <img src="produit-N.jpg" alt="…" style="width:100%;height:100%;object-fit:cover;"> */
+  .p1 { background: radial-gradient(circle at 50% 40%, #c25532 0%, #93361c 70%); }
+  .p2 { background: radial-gradient(circle at 50% 45%, #cf9a63 0%, #9c6635 75%); }
+  .p3 { background: radial-gradient(circle at 45% 40%, #d9c49a 0%, #a98d58 75%); }
+  .p4 { background: radial-gradient(circle at 55% 45%, #b97f4f 0%, #7e4c26 75%); }
+  .p5 { background: radial-gradient(circle at 45% 50%, #a8683f 0%, #6d3a1d 75%); }
+  .p6 { background: radial-gradient(circle at 55% 40%, #d3a878 0%, #8f6134 75%); }
+  .p7 { background: radial-gradient(circle at 50% 45%, #b5502e 0%, #7c2f15 75%); }
+  .p8 { background: radial-gradient(circle at 50% 50%, #c9975f 0%, #855428 75%); }
+
+  /* ---------- Interlude éditorial ---------- */
+  .interlude {
+    grid-column: 1 / -1; display: flex; align-items: center; justify-content: center;
+    min-height: 200px; background: var(--nuit); color: var(--creme);
+    position: relative; overflow: hidden; margin: 24px 0;
+  }
+  .interlude::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 25% 45%, rgba(194,85,50,0.45) 0%, transparent 45%),
+      radial-gradient(circle at 78% 55%, rgba(201,148,88,0.3) 0%, transparent 40%);
+  }
+  .interlude p { position: relative; font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.2vw, 30px); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; padding: 24px; }
+
+  footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(33,27,20,0.12); }
+  .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .footer-droite { justify-content: flex-end; }
+  .footer-logo { text-align: center; }
+  .footer-logo img { height: 40px; }
+  .footer-logo .logo-texte { font-family: 'Caveat', cursive; font-size: 34px; font-weight: 600; }
+  .footer-logo .soleil { color: var(--terracotta); display: block; font-size: 14px; margin-top: 2px; }
+  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(33,27,20,0.6); }
+
+  .apparait { opacity: 0; transform: translateY(14px); transition: opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1); }
+  .apparait.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .nav-centre { display: none; }
+    .entete { grid-template-columns: 1fr; padding-top: 56px; }
+    .entete-note { display: none; }
+    .filtres { overflow-x: auto; padding-bottom: 16px; }
+    .grille { grid-template-columns: 1fr 1fr; }
+    .footer-haut { grid-template-columns: 1fr; text-align: center; }
+    .footer-liens { justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .apparait { transition-duration: 150ms; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="annonce">Éditions limitées&nbsp;. Capturing energy, not trends.</div>
+
+<nav aria-label="Navigation principale">
+  <a class="logo-nav" href="index.html">
+    <img src="FULL-BLACK.png" alt="KIBO" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'">
+  </a>
+  <div class="nav-centre">
+    <a href="collection.html">Shop</a>
+    <a href="collection.html">Collections</a>
+    <a href="index.html#monde">Our World</a>
+    <a href="#">Stories</a>
+    <a href="index.html#acces">Private Access</a>
+  </div>
+  <div class="nav-droite">
+    <a href="#">Paris / FR</a>
+    <a href="#">Search</a>
+    <a href="#">Bag (0)</a>
+  </div>
+</nav>
+
+<header class="entete">
+  <div class="apparait">
+    <p class="etiquette">Latest Drop — Été 2026</p>
+    <h1>Soleil Rouge</h1>
+    <p class="sous">A summer state of mind. Captured in 100 pieces.</p>
+  </div>
+  <div class="entete-note apparait">
+    Made by hand,<br>worn for memories
+    <span class="ast">✳</span>
+  </div>
+</header>
+
+<div class="filtres" role="tablist" aria-label="Filtrer les pièces">
+  <button class="filtre actif" data-filtre="tout">Tout</button>
+  <button class="filtre" data-filtre="collier">Colliers</button>
+  <button class="filtre" data-filtre="bague">Bagues</button>
+  <button class="filtre" data-filtre="bracelet">Bracelets</button>
+</div>
+
+<section class="grille" id="grille">
+  <a class="produit apparait" data-type="collier" href="#">
+    <div class="produit-photo p1"><span class="badge">Limited</span>[ Photo — Soleil Necklace sur terre cuite ]</div>
+    <p class="produit-cartel">Soleil Necklace<span class="prix">180&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="#">
+    <div class="produit-photo p2">[ Photo — Laguna Necklace porté ]</div>
+    <p class="produit-cartel">Laguna Necklace<span class="prix">160&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bague" href="#">
+    <div class="produit-photo p3">[ Photo — Marea Ring sur sable ]</div>
+    <p class="produit-cartel">Marea Ring<span class="prix">120&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="#">
+    <div class="produit-photo p4">[ Photo — Bondi Necklace, nuque ]</div>
+    <p class="produit-cartel">Bondi Necklace<span class="prix">150&nbsp;€</span></p>
+  </a>
+
+  <div class="interlude">
+    <p>Memories are made to be worn.</p>
+  </div>
+
+  <a class="produit apparait" data-type="bracelet" href="#">
+    <div class="produit-photo p5"><span class="badge">Limited</span>[ Photo — Riviera Bracelet ]</div>
+    <p class="produit-cartel">Riviera Bracelet<span class="prix">95&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="#">
+    <div class="produit-photo p6">[ Photo — Palma Necklace ]</div>
+    <p class="produit-cartel">Palma Necklace<span class="prix">170&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bague" href="#">
+    <div class="produit-photo p7">[ Photo — Rossa Ring ]</div>
+    <p class="produit-cartel">Rossa Ring<span class="prix">110&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="#">
+    <div class="produit-photo p8">[ Photo — Costa Bracelet ]</div>
+    <p class="produit-cartel">Costa Bracelet<span class="prix">90&nbsp;€</span></p>
+  </a>
+</section>
+
+<footer>
+  <div class="footer-haut">
+    <div class="footer-liens">
+      <a href="#">FAQ</a>
+      <a href="#">Shipping &amp; Returns</a>
+      <a href="#">Care Guide</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-logo">
+      <a href="index.html"><img src="FULL-BLACK.png" alt="KIBO" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'"></a>
+      <span class="soleil">☀</span>
+    </div>
+    <div class="footer-liens footer-droite">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
+      <a href="#">Spotify</a>
+    </div>
+  </div>
+  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;All rights reserved</p>
+</footer>
+
+<script>
+(function () {
+  /* Apparitions au scroll */
+  var obs = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) {
+      if (e.isIntersecting) {
+        var freres = e.target.parentElement.querySelectorAll('.apparait');
+        var i = Array.prototype.indexOf.call(freres, e.target);
+        e.target.style.transitionDelay = (i > 0 ? (i % 4) * 80 : 0) + 'ms';
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.apparait').forEach(function (el) { obs.observe(el); });
+
+  /* Filtres */
+  var boutons = document.querySelectorAll('.filtre');
+  boutons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      boutons.forEach(function (x) { x.classList.remove('actif'); });
+      b.classList.add('actif');
+      var f = b.getAttribute('data-filtre');
+      document.querySelectorAll('.produit').forEach(function (p) {
+        var visible = (f === 'tout' || p.getAttribute('data-type') === f);
+        p.classList.toggle('cache', !visible);
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
