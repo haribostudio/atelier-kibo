@@ -203,7 +203,13 @@
     transition: transform 400ms ease;
   }
   .produit:hover .produit-photo { transform: scale(0.985); }
-  .produit:nth-child(1) .produit-photo { background: radial-gradient(circle at 50% 40%, #c25532 0%, #93361c 70%); }
+  .produit:nth-child(1) .produit-photo.photo-daisy { background: url('FLOWER1.png') center / cover no-repeat; }
+  .photo-daisy::after {
+    content: ''; position: absolute; inset: 0;
+    background: url('FLOWER2.png') center / cover no-repeat;
+    opacity: 0; transition: opacity 400ms ease;
+  }
+  .produit:hover .photo-daisy::after { opacity: 1; }
   .produit:nth-child(2) .produit-photo { background: radial-gradient(circle at 50% 45%, #cf9a63 0%, #9c6635 75%); }
   .produit:nth-child(3) .produit-photo { background: radial-gradient(circle at 45% 40%, #d9c49a 0%, #a98d58 75%); }
   .produit:nth-child(4) .produit-photo { background: radial-gradient(circle at 55% 45%, #b97f4f 0%, #7e4c26 75%); }
@@ -423,9 +429,9 @@
     <a class="drop-lien" href="collection.html">Discover the collection</a>
   </div>
   <div class="drop-grille">
-    <a class="produit apparait" href="#">
-      <div class="produit-photo">[ Photo — sur terre cuite ]</div>
-      <p class="produit-cartel">Soleil Necklace<span class="prix">180&nbsp;€</span></p>
+    <a class="produit apparait" href="produit-daisy.html">
+      <div class="produit-photo photo-daisy"></div>
+      <p class="produit-cartel">Daisy Necklace<span class="prix">180&nbsp;€</span></p>
     </a>
     <a class="produit apparait" href="#">
       <div class="produit-photo">[ Photo — porté, clavicule ]</div>

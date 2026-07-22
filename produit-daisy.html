@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daisy Necklace — KIBO Paris</title>
+<meta name="description" content="Daisy Necklace. Perles de verre et d'eau douce, fleurs daisy. Fait main à Paris, numéroté à l'encre. Édition Soleil Rouge — 180 €.">
+<link rel="icon" type="image/png" href="FULL-BLACK.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@400;600&family=Space+Mono&family=Courier+Prime&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================
+     KIBO PARIS — FICHE PIÈCE : SOLEIL NECKLACE
+     Images à gauche, info fixe à droite. Bouton « L'adopter ».
+     ========================================================== */
+  :root {
+    --creme: #F4EDE0;
+    --papier: #EFE6D4;
+    --terracotta: #A63E24;
+    --encre: #211B14;
+    --sable: #D9CDB4;
+    --nuit: #16110C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--creme);
+    color: var(--encre);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.65; }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: 0.04em; }
+
+  .annonce {
+    font-family: 'Courier Prime', monospace;
+    background: var(--terracotta); color: var(--creme);
+    text-align: center; padding: 10px 12px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--creme);
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
+    padding: 14px 32px;
+    border-bottom: 1px solid rgba(33,27,20,0.12);
+  }
+  .logo-nav img { height: 34px; display: block; }
+  .nav-centre, .nav-droite {
+    display: flex; gap: 28px; justify-content: center;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  .nav-droite { gap: 22px; justify-content: flex-end; }
+  .nav-actif { border-bottom: 1px solid var(--encre); padding-bottom: 2px; }
+
+  .fil { padding: 24px 6vw 0; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(33,27,20,0.6); }
+  .fil a { border-bottom: 1px solid rgba(33,27,20,0.3); padding-bottom: 2px; }
+
+  /* ---------- Fiche ---------- */
+  .fiche {
+    display: grid; grid-template-columns: 7fr 5fr; gap: 5vw;
+    padding: 32px 6vw 0; align-items: start;
+  }
+  .photos { display: grid; gap: 18px; }
+  .photo {
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(244,237,224,0.7); font-size: 9px;
+    text-transform: uppercase; letter-spacing: 0.14em; text-align: center; padding: 10px;
+  }
+  .photo-1 { aspect-ratio: 4 / 5; background: url('FLOWER1.png') center / cover no-repeat; }
+  .photo-2 { aspect-ratio: 1 / 1; background: url('FLOWER2.png') center / cover no-repeat; }
+  .photo-3 { aspect-ratio: 4 / 5; background: radial-gradient(circle at 50% 40%, #c25532 0%, #93361c 70%); }
+  .photo .legende {
+    position: absolute; left: 14px; bottom: 12px;
+    font-size: 10px; color: rgba(244,237,224,0.9);
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
+
+  .info { position: sticky; top: 88px; }
+  .info .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .info h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(30px, 3.4vw, 44px); text-transform: uppercase; letter-spacing: 0.08em;
+    margin: 10px 0 6px; line-height: 1.1;
+  }
+  .info .sous { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(33,27,20,0.65); }
+  .info .prix { font-size: 16px; margin: 18px 0 4px; }
+  .info .edition { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(33,27,20,0.6); margin-bottom: 24px; }
+
+  .adopter {
+    width: 100%; background: var(--encre); color: var(--creme); border: none;
+    font: inherit; font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
+    padding: 17px 20px; cursor: pointer;
+    transition: opacity 300ms ease;
+  }
+  .adopter:hover { opacity: 0.85; }
+  .note-boutique {
+    display: none; margin-top: 14px; padding: 14px 16px;
+    background: var(--papier); font-size: 11px; line-height: 1.7;
+    letter-spacing: 0.06em;
+  }
+  .note-boutique a { border-bottom: 1px solid var(--encre); padding-bottom: 1px; }
+
+  .description { margin-top: 28px; }
+  .description p {
+    font-family: 'Cormorant Garamond', serif; letter-spacing: 0.02em;
+    font-size: 17px; line-height: 1.65; color: rgba(33,27,20,0.9);
+    margin-bottom: 1.2em;
+  }
+
+  /* ---------- Accordéons ---------- */
+  .accordeons { margin-top: 12px; border-top: 1px solid rgba(33,27,20,0.2); }
+  details { border-bottom: 1px solid rgba(33,27,20,0.2); }
+  summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 2px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 15px; color: var(--terracotta); transition: transform 300ms ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details .contenu { padding: 0 2px 18px; font-size: 12px; letter-spacing: 0.04em; line-height: 1.8; color: rgba(33,27,20,0.85); }
+
+  /* ---------- Du même voyage ---------- */
+  .voyage { padding: 110px 6vw 90px; }
+  .voyage .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); display: block; margin-bottom: 32px; }
+  .voyage-grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .vp { display: block; }
+  .vp-photo {
+    aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center;
+    color: rgba(244,237,224,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    transition: transform 400ms ease;
+  }
+  .vp:hover .vp-photo { transform: scale(0.985); }
+  .vp1 .vp-photo { background: radial-gradient(circle at 50% 45%, #cf9a63 0%, #9c6635 75%); }
+  .vp2 .vp-photo { background: radial-gradient(circle at 45% 40%, #d9c49a 0%, #a98d58 75%); }
+  .vp3 .vp-photo { background: radial-gradient(circle at 55% 45%, #b97f4f 0%, #7e4c26 75%); }
+  .vp-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
+  .vp-cartel .prix { display: block; margin-top: 3px; color: rgba(33,27,20,0.65); }
+
+  footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(33,27,20,0.12); }
+  .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .footer-droite { justify-content: flex-end; }
+  .footer-logo { text-align: center; }
+  .footer-logo img { height: 40px; }
+  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(33,27,20,0.6); }
+
+  .apparait { opacity: 0; transform: translateY(14px); transition: opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1); }
+  .apparait.visible { opacity: 1; transform: none; }
+
+  /* ---------- Menu mobile ---------- */
+  .burger { display: none; background: none; border: none; color: inherit; cursor: pointer; padding: 4px; }
+  .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
+  .menu-mobile {
+    position: fixed; inset: 0; z-index: 300;
+    background: var(--creme); color: var(--encre);
+    display: none; flex-direction: column; justify-content: center;
+    padding: 32px 36px;
+  }
+  .menu-mobile.ouvert { display: flex; }
+  .menu-mobile a {
+    font-family: 'Space Mono', monospace; font-size: 19px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 20px 0; border-bottom: 1px solid rgba(28,24,19,0.15);
+  }
+  .menu-mobile .fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 26px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1;
+  }
+
+  @media (max-width: 900px) {
+    .nav-centre { display: none; }
+    .burger { display: block; }
+    .fiche { grid-template-columns: 1fr; }
+    .info { position: static; }
+    .voyage-grille { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .apparait { transition-duration: 150ms; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="annonce">Éditions limitées&nbsp;. Capturing energy, not trends.</div>
+
+<nav aria-label="Navigation principale">
+  <a class="logo-nav" href="index.html"><img src="FULL-BLACK.png" alt="KIBO"></a>
+  <div class="nav-centre">
+    <a href="collection.html" class="nav-actif">Shop</a>
+    <a href="collection.html">Collections</a>
+    <a href="our-world.html">Our World</a>
+    <a href="stories.html">Stories</a>
+    <a href="private-access.html">Private Access</a>
+  </div>
+  <div class="nav-droite">
+    <a href="#">Paris / FR</a>
+    <a href="#">Search</a>
+    <a href="#">Bag (0)</a>
+    <button class="burger" aria-label="Ouvrir le menu" onclick="document.getElementById('menuMobile').classList.add('ouvert')">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="menu-mobile" id="menuMobile">
+  <button class="fermer" aria-label="Fermer le menu" onclick="document.getElementById('menuMobile').classList.remove('ouvert')">&#10005;</button>
+  <a href="collection.html">Shop</a>
+  <a href="collection.html">Collections</a>
+  <a href="our-world.html">Our World</a>
+  <a href="stories.html">Stories</a>
+  <a href="private-access.html">Private Access</a>
+</div>
+
+<p class="fil"><a href="collection.html">Soleil Rouge</a>&nbsp;&nbsp;/&nbsp;&nbsp;Daisy Necklace</p>
+
+<main class="fiche">
+  <div class="photos">
+    <div class="photo photo-1"><span class="legende">Daisy Necklace — la pièce</span></div>
+    <div class="photo photo-2"><span class="legende">Le détail — les fleurs daisy</span></div>
+    <div class="photo photo-3">[ Photo — portée, retour de plage ]</div>
+  </div>
+
+  <aside class="info">
+    <span class="etiquette apparait">Soleil Rouge — Été 2026</span>
+    <h1 class="apparait">Daisy Necklace</h1>
+    <p class="sous apparait">Perles de verre et d'eau douce — fleurs daisy</p>
+    <p class="prix apparait">180&nbsp;€</p>
+    <p class="edition apparait">Édition de 100 — numérotée à l'encre</p>
+
+    <button class="adopter apparait" id="btnAdopter">L'adopter</button>
+    <div class="note-boutique" id="noteBoutique">
+      La boutique ouvre bientôt. <a href="private-access.html">Rejoignez le cercle</a> — les membres adoptent leurs pièces avant tout le monde.
+    </div>
+
+    <div class="description apparait">
+      <p>Des perles d'eau douce irrégulières, des perles de verre, et des fleurs daisy qui attrapent la lumière. Monté à la main à l'atelier, à Paris.</p>
+      <p>Il se porte dans l'eau, au soleil, en ville sous un manteau. Il se raye, se patine — et devient plus précieux à mesure qu'il vieillit.</p>
+    </div>
+
+    <div class="accordeons apparait">
+      <details>
+        <summary>Matériaux &amp; origine</summary>
+        <div class="contenu">Perles de verre et perles d'eau douce, sélectionnées une à une. Fil renforcé, fermoir en acier inoxydable doré. Assemblé à Paris.</div>
+      </details>
+      <details>
+        <summary>Fabrication</summary>
+        <div class="contenu">Fait main à l'atelier, en édition de 100 exemplaires numérotés à l'encre. Quand la série est close, elle n'est jamais rééditée.</div>
+      </details>
+      <details>
+        <summary>Livraison &amp; retours</summary>
+        <div class="contenu">Expédié depuis Paris sous 48&nbsp;h, dans une boîte qui se garde. Retours sous 30 jours, sans justification.</div>
+      </details>
+      <details>
+        <summary>Entretien</summary>
+        <div class="contenu">Il ne vous quitte pas — même dans l'eau. Rincer à l'eau claire après la mer, sécher à plat. Revient comme neuf avec un chiffon doux.</div>
+      </details>
+    </div>
+  </aside>
+</main>
+
+<section class="voyage">
+  <span class="etiquette apparait">Du même voyage</span>
+  <div class="voyage-grille">
+    <a class="vp vp1 apparait" href="collection.html">
+      <div class="vp-photo">[ Laguna Necklace ]</div>
+      <p class="vp-cartel">Laguna Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="vp vp2 apparait" href="collection.html">
+      <div class="vp-photo">[ Marea Ring ]</div>
+      <p class="vp-cartel">Marea Ring<span class="prix">120&nbsp;€</span></p>
+    </a>
+    <a class="vp vp3 apparait" href="collection.html">
+      <div class="vp-photo">[ Bondi Necklace ]</div>
+      <p class="vp-cartel">Bondi Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-haut">
+    <div class="footer-liens">
+      <a href="#">FAQ</a>
+      <a href="#">Shipping &amp; Returns</a>
+      <a href="#">Care Guide</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-logo">
+      <a href="index.html"><img src="FULL-BLACK.png" alt="KIBO"></a>
+    </div>
+    <div class="footer-liens footer-droite">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
+      <a href="#">Spotify</a>
+    </div>
+  </div>
+  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;Fait main — Paris</p>
+</footer>
+
+<script>
+(function () {
+  /* Bouton « L'adopter » — BRANCHEMENT STRIPE :
+     quand le lien de paiement Stripe existera, remplacer le contenu
+     de cette fonction par : window.location.href = 'https://buy.stripe.com/...'; */
+  document.getElementById('btnAdopter').addEventListener('click', function () {
+    document.getElementById('noteBoutique').style.display = 'block';
+  });
+
+  var obs = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) {
+      if (e.isIntersecting) {
+        var freres = e.target.parentElement.querySelectorAll('.apparait');
+        var i = Array.prototype.indexOf.call(freres, e.target);
+        e.target.style.transitionDelay = (i > 0 ? (i % 5) * 70 : 0) + 'ms';
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.apparait').forEach(function (el) { obs.observe(el); });
+})();
+</script>
+
+</body>
+</html>

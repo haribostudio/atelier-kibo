@@ -105,7 +105,14 @@
   }
   /* Fonds d'attente — remplacer chaque .produit-photo par :
      <img src="produit-N.jpg" alt="…" style="width:100%;height:100%;object-fit:cover;"> */
-  .p1 { background: radial-gradient(circle at 50% 40%, #c25532 0%, #93361c 70%); }
+  .p1 { background: url('FLOWER1.png') center / cover no-repeat; }
+  .p1::after {
+    content: ''; position: absolute; inset: 0;
+    background: url('FLOWER2.png') center / cover no-repeat;
+    opacity: 0; transition: opacity 400ms ease;
+  }
+  .produit:hover .p1::after { opacity: 1; }
+  .badge { z-index: 2; }
   .p2 { background: radial-gradient(circle at 50% 45%, #cf9a63 0%, #9c6635 75%); }
   .p3 { background: radial-gradient(circle at 45% 40%, #d9c49a 0%, #a98d58 75%); }
   .p4 { background: radial-gradient(circle at 55% 45%, #b97f4f 0%, #7e4c26 75%); }
@@ -231,9 +238,9 @@
 </div>
 
 <section class="grille" id="grille">
-  <a class="produit apparait" data-type="collier" href="produit-soleil.html">
-    <div class="produit-photo p1"><span class="badge">Limited</span>[ Photo — Soleil Necklace sur terre cuite ]</div>
-    <p class="produit-cartel">Soleil Necklace<span class="prix">180&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-daisy.html">
+    <div class="produit-photo p1"><span class="badge">Limited</span></div>
+    <p class="produit-cartel">Daisy Necklace<span class="prix">180&nbsp;€</span></p>
   </a>
   <a class="produit apparait" data-type="collier" href="#">
     <div class="produit-photo p2">[ Photo — Laguna Necklace porté ]</div>
