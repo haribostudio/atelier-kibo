@@ -173,7 +173,7 @@
   /* ---------- Our World ---------- */
   .monde { display: grid; grid-template-columns: 1fr 1.1fr 1.3fr; min-height: 64vh; }
   .monde-photo-g {
-    background: url('photo%20gauche.png') center / cover no-repeat;
+    background: url('photo%20droite.png') center / cover no-repeat;
     clip-path: polygon(0 0, 96% 2%, 100% 100%, 0 98%);
     display: flex; align-items: flex-end; justify-content: center; padding: 14px;
     color: rgba(244,237,224,0.6); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
@@ -183,7 +183,7 @@
   .monde-texte p.serif { font-size: clamp(24px, 2.3vw, 34px); line-height: 1.35; }
   .monde-texte .lien-fleche { margin-top: 32px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--encre); align-self: flex-start; padding-bottom: 3px; }
   .monde-photo-d {
-    background: url('photo%20droite.png') center / cover no-repeat;
+    background: url('plage.jpg') center / cover no-repeat;
     display: flex; align-items: flex-end; justify-content: center; padding: 14px;
     color: rgba(33,27,20,0.5); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
   }
@@ -246,8 +246,7 @@
   .col-note .manuscrit { font-size: clamp(22px, 2vw, 30px); text-transform: uppercase; text-align: center; line-height: 1.5; }
   .col-note .soleil-oeil { display: block; text-align: center; color: var(--terracotta); margin-top: 10px; font-size: 18px; }
   .col-photo2 {
-    /* Remplacer par : palmiers + maison rose */
-    background: linear-gradient(180deg, #c8a06a 0%, #b3714b 55%, #8f4f3a 100%);
+    background: url('photo%20gauche.png') center / cover no-repeat;
     color: rgba(244,237,224,0.6); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
   }
   .col-note2 { background: #EAE0CC; }
@@ -432,7 +431,7 @@
       <span class="soleil-oeil">☀</span>
     </div>
   </div>
-  <div class="col-photo2">[ Photo — palmiers, maison rose ]</div>
+  <div class="col-photo2"></div>
   <div class="col-note2">
     <ul>
       <li>Good times</li>
