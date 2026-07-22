@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our World — KIBO Paris</title>
+<meta name="description" content="KIBO habite une tension : celle d'une marque parisienne fascinée par l'énergie du Sud. Des bijoux qui gardent la mémoire des moments vécus.">
+<link rel="icon" type="image/png" href="FULL-BLACK.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500&family=Space+Mono&family=Courier+Prime&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================
+     KIBO PARIS — OUR WORLD
+     D'après la plateforme de marque, Édition 01.
+     Palette : Chaux, Encre, Soleil, Sanguine, Grand Bleu.
+     Typos : Fraunces (la conteuse), Archivo (la documentariste),
+     Space Mono (l'archiviste). Fer à gauche. Un seul Point Soleil.
+     ========================================================== */
+  :root {
+    --chaux: #F2EDE2;
+    --encre: #1C1813;
+    --soleil: #F5A800;
+    --sanguine: #E8501B;
+    --grand-bleu: #0F2FA6;
+    --bougainvillee: #CE4577;
+    --figuier: #3F5A36;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--chaux);
+    color: var(--encre);
+    font-family: 'Archivo', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.65; }
+  .fraunces { font-family: 'Fraunces', Georgia, serif; font-weight: 300; }
+  .mono {
+    font-family: 'Space Mono', monospace; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+  }
+
+  /* ---------- Bandeau + nav (continuité du site) ---------- */
+  .annonce {
+    font-family: 'Courier Prime', monospace;
+    background: var(--sanguine); color: var(--chaux);
+    text-align: center; padding: 10px 12px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--chaux);
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
+    padding: 14px 32px;
+    border-bottom: 1px solid rgba(28,24,19,0.12);
+  }
+  .logo-nav img { height: 34px; display: block; }
+  .nav-centre, .nav-droite {
+    display: flex; gap: 28px; justify-content: center;
+    font-family: 'Space Mono', monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  .nav-droite { gap: 22px; justify-content: flex-end; }
+  .nav-actif { border-bottom: 1px solid var(--encre); padding-bottom: 2px; }
+
+  /* ---------- Ouverture ---------- */
+  .ouverture { padding: 14vh 8vw 10vh; max-width: 1100px; }
+  .ouverture .meta { color: rgba(28,24,19,0.55); margin-bottom: 40px; display: block; }
+  .ouverture h1 {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: clamp(40px, 6vw, 88px); line-height: 1.08;
+    letter-spacing: -0.01em; max-width: 16ch;
+  }
+  /* Le Point Soleil — unique sur la page */
+  .point-soleil {
+    display: inline-block; width: 0.5em; height: 0.5em;
+    background: var(--soleil); border-radius: 50%;
+    margin-left: 0.15em; vertical-align: baseline;
+  }
+  .ouverture .exergue {
+    margin-top: 56px; max-width: 52ch;
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 19px;
+    color: rgba(28,24,19,0.75);
+  }
+  .ouverture .exergue .mono { display: block; font-style: normal; margin-top: 12px; color: rgba(28,24,19,0.5); }
+
+  /* ---------- Manifeste ---------- */
+  .manifeste { padding: 10vh 8vw; max-width: 900px; }
+  .manifeste .mono { color: var(--sanguine); display: block; margin-bottom: 32px; }
+  .manifeste p {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: clamp(19px, 2vw, 25px); line-height: 1.55;
+    margin-bottom: 1.4em; max-width: 34em;
+  }
+  .manifeste strong { font-weight: 400; }
+
+  /* ---------- Horizon (ratio 58/42, Grand Bleu) ---------- */
+  .horizon { display: grid; grid-template-rows: 58fr 42fr; height: 68vh; }
+  .horizon-ciel {
+    /* Remplacer par une photo d'horizon marin :
+       background: url('horizon.jpg') center / cover; */
+    background: linear-gradient(180deg, #e8ddc8 0%, #d9c49a 100%);
+    display: flex; align-items: flex-end; padding: 0 8vw 24px;
+  }
+  .horizon-mer { background: var(--grand-bleu); display: flex; align-items: flex-start; padding: 24px 8vw; }
+  .horizon .mono { color: rgba(242,237,226,0.85); }
+  .horizon-ciel .mono { color: rgba(28,24,19,0.5); }
+
+  /* ---------- Territoire ---------- */
+  .territoire { padding: 12vh 8vw; display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; max-width: 1300px; }
+  .territoire h2 {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: clamp(28px, 3.4vw, 48px); line-height: 1.15;
+  }
+  .territoire h2 em { font-style: italic; }
+  .territoire .texte p { margin-bottom: 1.3em; max-width: 58ch; font-size: 16px; color: rgba(28,24,19,0.85); }
+  .territoire .mono { display: block; margin-bottom: 24px; color: var(--sanguine); }
+
+  /* ---------- Les cinq piliers ---------- */
+  .piliers { padding: 10vh 8vw 12vh; }
+  .piliers > .mono { display: block; margin-bottom: 48px; color: var(--sanguine); }
+  .piliers-grille { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(28,24,19,0.15); border: 1px solid rgba(28,24,19,0.15); }
+  .pilier { background: var(--chaux); padding: 32px 22px 40px; position: relative; min-height: 320px; display: flex; flex-direction: column; }
+  .pilier .pastille { width: 34px; height: 34px; margin-bottom: 28px; }
+  .pilier h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 26px; margin-bottom: 14px; }
+  .pilier .mots { font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(28,24,19,0.55); line-height: 1.9; margin-bottom: 16px; }
+  .pilier p { font-size: 13.5px; color: rgba(28,24,19,0.85); margin-top: auto; }
+  .pilier p em { font-family: 'Fraunces', serif; }
+  .s-sun .pastille { background: var(--soleil); border-radius: 50%; }
+  .s-sea .pastille { background: var(--grand-bleu); }
+  .s-sound .pastille { background: var(--bougainvillee); border-radius: 50% 50% 0 0; }
+  .s-energy .pastille { background: var(--sanguine); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+  .s-memory .pastille { background: var(--encre); border-radius: 0 50% 50% 50%; }
+
+  /* ---------- Le soleil intérieur (section encre) ---------- */
+  .soleil-interieur {
+    background: var(--encre); color: var(--chaux);
+    padding: 14vh 8vw;
+  }
+  .soleil-interieur .mono { color: var(--soleil); display: block; margin-bottom: 40px; }
+  .soleil-interieur p {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: clamp(20px, 2.4vw, 30px); line-height: 1.5;
+    max-width: 30em; margin-bottom: 1.3em;
+  }
+  .soleil-interieur .petit { font-family: 'Archivo', sans-serif; font-size: 15px; color: rgba(242,237,226,0.75); max-width: 60ch; }
+
+  /* ---------- Bibliothèque d'atmosphères ---------- */
+  .atmospheres { padding: 12vh 8vw; }
+  .atmospheres > .mono { display: block; margin-bottom: 12px; color: var(--sanguine); }
+  .atmospheres h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px, 3.4vw, 46px); margin-bottom: 56px; }
+  .atmo-liste { display: grid; gap: 1px; background: rgba(28,24,19,0.15); border-top: 1px solid rgba(28,24,19,0.15); border-bottom: 1px solid rgba(28,24,19,0.15); }
+  .atmo {
+    background: var(--chaux);
+    display: grid; grid-template-columns: 220px 1fr 2fr; gap: 32px; align-items: center;
+    padding: 28px 0;
+  }
+  .atmo .mono { color: rgba(28,24,19,0.5); }
+  .atmo h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; }
+  .atmo p { font-size: 14.5px; color: rgba(28,24,19,0.8); max-width: 60ch; }
+
+  /* ---------- Photos habitées ---------- */
+  .bande-photos { display: grid; grid-template-columns: 1.2fr 1fr 1.4fr; gap: 1px; background: var(--encre); }
+  .bande-photos > div { height: 52vh; position: relative; background-size: cover; background-position: center; }
+  .bp-1 { background-image: url('HB_20250903_0073.jpg'); background-position: center 80%; }
+  .bp-2 { background-image: url('photo%20droite.png'); }
+  .bp-3 { background-image: url('plage.jpg'); }
+  .bande-photos .legende {
+    position: absolute; left: 16px; bottom: 12px;
+    font-family: 'Space Mono', monospace; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(242,237,226,0.9);
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
+
+  /* ---------- La hiérarchie ---------- */
+  .hierarchie { padding: 12vh 8vw; max-width: 900px; }
+  .hierarchie .mono { display: block; margin-bottom: 40px; color: var(--sanguine); }
+  .hierarchie ol { list-style: none; counter-reset: h; }
+  .hierarchie li {
+    counter-increment: h;
+    display: grid; grid-template-columns: 64px 1fr; align-items: baseline;
+    padding: 22px 0; border-bottom: 1px solid rgba(28,24,19,0.15);
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: clamp(20px, 2.4vw, 30px);
+  }
+  .hierarchie li::before {
+    content: counter(h, decimal-leading-zero);
+    font-family: 'Space Mono', monospace; font-size: 12px; color: rgba(28,24,19,0.45);
+  }
+  .hierarchie .note { margin-top: 28px; font-size: 14px; color: rgba(28,24,19,0.6); }
+
+  /* ---------- Clôture ---------- */
+  .cloture {
+    padding: 16vh 8vw 14vh; text-align: left;
+    border-top: 1px solid rgba(28,24,19,0.15);
+  }
+  .cloture p {
+    font-family: 'Fraunces', serif; font-weight: 300;
+    font-size: clamp(26px, 3.6vw, 52px); line-height: 1.25; max-width: 22em;
+  }
+  .cloture em { font-style: italic; }
+  .cloture .lien {
+    display: inline-block; margin-top: 48px;
+    font-family: 'Space Mono', monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    border-bottom: 1px solid var(--encre); padding-bottom: 4px;
+  }
+
+  /* ---------- Footer (continuité du site) ---------- */
+  footer { padding: 48px 8vw 40px; border-top: 1px solid rgba(28,24,19,0.12); }
+  .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .footer-droite { justify-content: flex-end; }
+  .footer-logo { text-align: center; }
+  .footer-logo img { height: 40px; }
+  .footer-bas { text-align: center; margin-top: 32px; font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(28,24,19,0.6); }
+
+  /* ---------- Apparitions ---------- */
+  .apparait { opacity: 0; transform: translateY(14px); transition: opacity 700ms cubic-bezier(0.16,1,0.3,1), transform 700ms cubic-bezier(0.16,1,0.3,1); }
+  .apparait.visible { opacity: 1; transform: none; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .nav-centre { display: none; }
+    .piliers-grille { grid-template-columns: 1fr; }
+    .pilier { min-height: 0; }
+    .pilier p { margin-top: 16px; }
+    .territoire { grid-template-columns: 1fr; gap: 40px; }
+    .atmo { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
+    .bande-photos { grid-template-columns: 1fr; }
+    .bande-photos > div { height: 44vh; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .apparait { transition-duration: 150ms; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="annonce">Éditions limitées&nbsp;. Capturing energy, not trends.</div>
+
+<nav aria-label="Navigation principale">
+  <a class="logo-nav" href="index.html"><img src="FULL-BLACK.png" alt="KIBO"></a>
+  <div class="nav-centre">
+    <a href="collection.html">Shop</a>
+    <a href="collection.html">Collections</a>
+    <a href="our-world.html" class="nav-actif">Our World</a>
+    <a href="#">Stories</a>
+    <a href="index.html#acces">Private Access</a>
+  </div>
+  <div class="nav-droite">
+    <a href="#">Paris / FR</a>
+    <a href="#">Search</a>
+    <a href="#">Bag (0)</a>
+  </div>
+</nav>
+
+<header class="ouverture">
+  <span class="mono apparait">Our World — Paris × Méditerranée — MMXXVI</span>
+  <h1 class="apparait">Des bijoux qui gardent la mémoire des moments vécus<span class="point-soleil" aria-hidden="true"></span></h1>
+  <div class="exergue apparait">
+    «&nbsp;On ne se souvient pas des jours, on se souvient des instants.&nbsp;»
+    <span class="mono">Cesare Pavese — point de départ de tout ce qui suit</span>
+  </div>
+</header>
+
+<section class="manifeste">
+  <span class="mono apparait">01 — L'idée qui gouverne tout</span>
+  <p class="apparait">Un bijou KIBO est le <strong>témoin d'un moment</strong>. Il était là. Au concert dont on parle encore. Pendant l'été où tout a changé. Au premier rendez-vous. Sur la plage à 23&nbsp;heures. Dans le métro parisien un matin de novembre, quand le sel de l'été dernier semble encore accroché à la chaîne.</p>
+  <p class="apparait">Un accessoire se choisit le matin et s'oublie le soir. Un témoin, lui, accompagne. Il se raye, se patine, prend la trace de la peau et du temps — et devient plus précieux à mesure qu'il vieillit. Nos bijoux ne sont pas finis quand ils sortent de l'atelier&nbsp;: ils sont finis après des années au poignet de quelqu'un.</p>
+  <p class="apparait">Chaque pièce est faite à la main dans notre atelier parisien, puis numérotée à l'encre. Les séries sont closes, jamais rééditées.</p>
+</section>
+
+<div class="horizon" aria-hidden="true">
+  <div class="horizon-ciel"><span class="mono">[ Photo — l'horizon, la mer à 18 h ]</span></div>
+  <div class="horizon-mer"><span class="mono">38.1157° N, 13.3615° E — La mer comme respiration</span></div>
+</div>
+
+<section class="territoire">
+  <div>
+    <span class="mono apparait">02 — Le territoire</span>
+    <h2 class="apparait">L'énergie du Sud, racontée avec <em>l'exigence de Paris</em>.</h2>
+  </div>
+  <div class="texte apparait">
+    <p>KIBO n'habite pas un lieu. KIBO habite une tension&nbsp;: celle d'une marque parisienne fascinée par l'énergie du Sud. Le Sud donne la matière. Paris donne le regard.</p>
+    <p>Cette énergie&nbsp;: une certaine qualité de lumière, une manière de laisser les journées se dilater, des repas qui ne finissent pas, de la musique qui commence sans qu'on l'ait décidé, du sel sur la peau, des amitiés qui se nouent en une nuit. Elle se trouve à Formentera comme dans les Pouilles, à Cadaqués comme à Marseille, dans une ruelle d'Athènes comme sur un quai de Seine en juillet. Elle est un climat intérieur, pas une géographie.</p>
+  </div>
+</section>
+
+<section class="piliers">
+  <span class="mono apparait">03 — Les cinq piliers</span>
+  <div class="piliers-grille">
+    <div class="pilier s-sun apparait">
+      <div class="pastille"></div>
+      <h3>Sun</h3>
+      <div class="mots">La lumière · l'optimisme · la chaleur</div>
+      <p>Une image KIBO peut être mélancolique&nbsp;; elle ne peut pas être froide. <em>SUN n'est pas une saison&nbsp;: c'est une disposition.</em></p>
+    </div>
+    <div class="pilier s-sea apparait">
+      <div class="pastille"></div>
+      <h3>Sea</h3>
+      <div class="mots">Le voyage · l'eau · le sel · les horizons</div>
+      <p>Les bijoux KIBO se portent dans l'eau. <em>Partir, se laisser porter, revenir changé.</em></p>
+    </div>
+    <div class="pilier s-sound apparait">
+      <div class="pastille"></div>
+      <h3>Sound</h3>
+      <div class="mots">Les concerts · les fêtes · les nuits</div>
+      <p>La musique comme organe vital. <em>Vécue depuis la piste, jamais depuis le carré VIP.</em></p>
+    </div>
+    <div class="pilier s-energy apparait">
+      <div class="pastille"></div>
+      <h3>Energy</h3>
+      <div class="mots">L'électricité entre les gens</div>
+      <p>Strictement humain&nbsp;: <em>l'électricité entre les gens, pas les vibrations de l'univers.</em></p>
+    </div>
+    <div class="pilier s-memory apparait">
+      <div class="pastille"></div>
+      <h3>Memory</h3>
+      <div class="mots">La trace · la patine · l'archive</div>
+      <p>Un objet qui devient plus beau parce qu'il est porté. <em>La promesse que ce que l'on vit aujourd'hui comptera.</em></p>
+    </div>
+  </div>
+</section>
+
+<section class="soleil-interieur">
+  <span class="mono apparait">04 — Le soleil intérieur</span>
+  <p class="apparait">Une personne rentre de voyage avec un bijou acheté là-bas. Elle continue de le porter — dans le métro, au bureau, sous un manteau en janvier.</p>
+  <p class="apparait">Le bijou transporte encore la chaleur, le sel, la musique. <em>Le soleil est devenu intérieur.</em></p>
+  <p class="petit apparait">Tout le monde connaît la mélancolie douce du retour, et la fierté secrète de garder un fragment de l'été sur soi. C'est ce qui rend KIBO désirable en novembre.</p>
+</section>
+
+<div class="bande-photos">
+  <div class="bp-1"><span class="legende">La fête — 02:12 — Août</span></div>
+  <div class="bp-2"><span class="legende">Retour de plage — 19:36</span></div>
+  <div class="bp-3"><span class="legende">La mer — 18:04 — Juin</span></div>
+</div>
+
+<section class="atmospheres">
+  <span class="mono apparait">05 — Bibliothèque d'atmosphères</span>
+  <h2 class="apparait">Là où l'énergie se trouve.</h2>
+  <div class="atmo-liste">
+    <div class="atmo apparait">
+      <span class="mono">Formentera — 02:12</span>
+      <h3>Baléare nocturne</h3>
+      <p>La nuit comme territoire de liberté&nbsp;; la musique électronique comme langue commune&nbsp;; l'aube en fin de fête.</p>
+    </div>
+    <div class="atmo apparait">
+      <span class="mono">Sérifos — 13:30</span>
+      <h3>Cycladique minérale</h3>
+      <p>La chaux, la pierre, le vent&nbsp;; le bleu comme événement.</p>
+    </div>
+    <div class="atmo apparait">
+      <span class="mono">Palerme — 21:15</span>
+      <h3>Italienne solaire</h3>
+      <p>La table, la famille élargie, le baroque quotidien.</p>
+    </div>
+    <div class="atmo apparait">
+      <span class="mono">Marseille — 23:47</span>
+      <h3>Ibérique électrique</h3>
+      <p>Le béton chaud, les ports, la jeunesse.</p>
+    </div>
+    <div class="atmo apparait">
+      <span class="mono">Paris — 23:00</span>
+      <h3>Parisienne</h3>
+      <p>Les quais à 23&nbsp;h, une cage d'escalier, un néon de tabac, la ligne&nbsp;2 aérienne au soleil couchant.</p>
+    </div>
+  </div>
+</section>
+
+<section class="hierarchie">
+  <span class="mono apparait">06 — La hiérarchie sacrée</span>
+  <ol>
+    <li class="apparait">Le moment</li>
+    <li class="apparait">Les personnes qui le vivent</li>
+    <li class="apparait">La lumière qui le traverse</li>
+    <li class="apparait">Le bijou qui en témoigne</li>
+  </ol>
+  <p class="note apparait">Cet ordre ne s'inverse jamais.</p>
+</section>
+
+<section class="cloture">
+  <p class="apparait">Le bijou n'est pas le souvenir. <em>Il est la preuve que le moment a existé.</em></p>
+  <a class="lien apparait" href="collection.html">La collection en cours&nbsp;&nbsp;→</a>
+</section>
+
+<footer>
+  <div class="footer-haut">
+    <div class="footer-liens">
+      <a href="#">FAQ</a>
+      <a href="#">Shipping &amp; Returns</a>
+      <a href="#">Care Guide</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-logo">
+      <a href="index.html"><img src="FULL-BLACK.png" alt="KIBO"></a>
+    </div>
+    <div class="footer-liens footer-droite">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Pinterest</a>
+      <a href="#">Spotify</a>
+    </div>
+  </div>
+  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;Fait main — Paris</p>
+</footer>
+
+<script>
+(function () {
+  var obs = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) {
+      if (e.isIntersecting) {
+        var freres = e.target.parentElement.querySelectorAll('.apparait');
+        var i = Array.prototype.indexOf.call(freres, e.target);
+        e.target.style.transitionDelay = (i > 0 ? (i % 5) * 90 : 0) + 'ms';
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.apparait').forEach(function (el) { obs.observe(el); });
+})();
+</script>
+
+</body>
+</html>
