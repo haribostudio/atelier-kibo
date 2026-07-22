@@ -43,11 +43,9 @@
   .annonce {
     font-family: 'Courier Prime', 'Courier New', monospace;
     background: var(--terracotta); color: var(--creme);
-    display: flex; align-items: center; justify-content: center; gap: 14px;
-    padding: 8px 12px;
+    text-align: center; padding: 10px 12px;
     font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
   }
-  .annonce img { height: 22px; display: block; }
 
   /* ---------- Navigation ---------- */
   nav {
@@ -140,9 +138,8 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   }
   .polaroid-img {
-    width: 150px; height: 110px;
-    /* Remplacer par une photo : palmier au coucher du soleil */
-    background: linear-gradient(180deg, #c77b3e 0%, #8a4a26 60%, #3d2b18 100%);
+    width: 150px; height: 130px;
+    background: url('Tarek_01.gif') center / cover no-repeat;
   }
   .tampon {
     width: 92px; height: 92px; border: 1.5px solid var(--creme); border-radius: 50%;
@@ -176,8 +173,7 @@
   /* ---------- Our World ---------- */
   .monde { display: grid; grid-template-columns: 1fr 1.1fr 1.3fr; min-height: 64vh; }
   .monde-photo-g {
-    /* Remplacer par : crique méditerranéenne vue d'en haut */
-    background: linear-gradient(150deg, #4d7c7a 0%, #2e5555 45%, #b9a67e 100%);
+    background: url('8D86D5DE-1623-42F8-8536-4DA559480CFA.jpg') center / cover no-repeat;
     clip-path: polygon(0 0, 96% 2%, 100% 100%, 0 98%);
     display: flex; align-items: flex-end; justify-content: center; padding: 14px;
     color: rgba(244,237,224,0.6); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
@@ -187,8 +183,7 @@
   .monde-texte p.serif { font-size: clamp(24px, 2.3vw, 34px); line-height: 1.35; }
   .monde-texte .lien-fleche { margin-top: 32px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--encre); align-self: flex-start; padding-bottom: 3px; }
   .monde-photo-d {
-    /* Remplacer par : collier posé sur sable/rocher, macro chaude */
-    background: radial-gradient(ellipse 80% 80% at 45% 40%, #d9b98a 0%, #b98d5b 55%, #8a5f37 100%);
+    background: url('IMG_3199.jpeg') center / cover no-repeat;
     display: flex; align-items: flex-end; justify-content: center; padding: 14px;
     color: rgba(33,27,20,0.5); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
   }
@@ -304,7 +299,7 @@
 </head>
 <body>
 
-<div class="annonce"><img src="OUTLINE_WHITE.png" alt="KIBO"><span>Éditions limitées&nbsp;. Capturing energy, not trends.</span></div>
+<div class="annonce">Éditions limitées&nbsp;. Capturing energy, not trends.</div>
 
 <nav aria-label="Navigation principale">
   <a class="logo-nav" href="#">
@@ -336,7 +331,7 @@
         Discover&nbsp;&nbsp;→
       </a>
       <div class="hero-logo">
-        <img src="FULL-BLACK.png" alt="KIBO" style="height:54px" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'">
+        <img src="OUTLINE_WHITE.png" alt="KIBO" style="height:60px" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'">
       </div>
       <div class="hero-soleil">✳</div>
     </div>
@@ -379,13 +374,13 @@
 </div>
 
 <section class="monde" id="monde">
-  <div class="monde-photo-g">[ Photo — crique, plage vue d'en haut ]</div>
+  <div class="monde-photo-g"></div>
   <div class="monde-texte apparait">
     <p class="etiquette">Our World</p>
     <p class="serif">From hidden beaches to secret parties, from Paris to somewhere else.</p>
     <a class="lien-fleche" href="#">Explore&nbsp;&nbsp;→</a>
   </div>
-  <div class="monde-photo-d">[ Photo — collier posé sur le sable, macro ]</div>
+  <div class="monde-photo-d"></div>
 </section>
 
 <section class="drop" id="drop">
