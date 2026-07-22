@@ -145,6 +145,28 @@
   @media (prefers-reduced-motion: reduce) {
     .apparait { transition-duration: 150ms; transform: none; }
   }
+
+  /* ---------- Menu mobile ---------- */
+  .burger { display: none; background: none; border: none; color: inherit; cursor: pointer; padding: 4px; }
+  .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
+  .menu-mobile {
+    position: fixed; inset: 0; z-index: 300;
+    background: var(--creme, #F2EDE2); color: var(--encre);
+    display: none; flex-direction: column; justify-content: center;
+    padding: 32px 36px;
+  }
+  .menu-mobile.ouvert { display: flex; }
+  .menu-mobile a {
+    font-family: 'Space Mono', monospace; font-size: 19px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 20px 0; border-bottom: 1px solid rgba(28,24,19,0.15);
+  }
+  .menu-mobile .fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 26px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1;
+  }
+  @media (max-width: 900px) { .burger { display: block; } }
 </style>
 </head>
 <body>
@@ -164,8 +186,20 @@
     <a href="#">Paris / FR</a>
     <a href="#">Search</a>
     <a href="#">Bag (0)</a>
+    <button class="burger" aria-label="Ouvrir le menu" onclick="document.getElementById('menuMobile').classList.add('ouvert')">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
   </div>
 </nav>
+
+<div class="menu-mobile" id="menuMobile">
+  <button class="fermer" aria-label="Fermer le menu" onclick="document.getElementById('menuMobile').classList.remove('ouvert')">&#10005;</button>
+  <a href="collection.html">Shop</a>
+  <a href="collection.html">Collections</a>
+  <a href="our-world.html">Our World</a>
+  <a href="#">Stories</a>
+  <a href="private-access.html">Private Access</a>
+</div>
 
 <main class="scene">
   <div class="scene-fond" aria-hidden="true"></div>
