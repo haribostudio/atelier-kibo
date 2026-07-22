@@ -68,10 +68,12 @@
   }
   .hero-photo {
     position: absolute; inset: 0;
-    /* Remplacer par : background: url('hero.jpg') center/cover;
-       Photo : collier porté, peau dorée, fin de journée, mer sombre derrière */
-    background:
-      radial-gradient(ellipse 70% 90% at 65% 45%, #b96a3a 0%, #7d3f22 40%, #2c2a1e 100%);
+    background: url('hero.jpg') center / cover no-repeat, #2c2a1e;
+  }
+  /* Voile léger pour la lisibilité du titre */
+  .hero-photo::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(22,17,12,0.18) 0%, rgba(22,17,12,0.05) 45%, rgba(22,17,12,0.35) 100%);
   }
   .hero-note-photo {
     position: absolute; bottom: 14px; left: 0; right: 0; text-align: center;
@@ -284,7 +286,6 @@
 
 <header class="hero">
   <div class="hero-photo"></div>
-  <div class="hero-note-photo">[ Photo hero — collier porté, peau dorée, fin de journée, mer derrière ]</div>
   <div class="hero-contenu">
     <div class="hero-titre">
       <h1>Jewelry for the moments that stay.</h1>
