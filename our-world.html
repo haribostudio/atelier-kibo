@@ -97,18 +97,6 @@
   }
   .manifeste strong { font-weight: 400; }
 
-  /* ---------- Horizon (ratio 58/42, Grand Bleu) ---------- */
-  .horizon { display: grid; grid-template-rows: 58fr 42fr; height: 68vh; }
-  .horizon-ciel {
-    /* Remplacer par une photo d'horizon marin :
-       background: url('horizon.jpg') center / cover; */
-    background: linear-gradient(180deg, #e8ddc8 0%, #d9c49a 100%);
-    display: flex; align-items: flex-end; padding: 0 8vw 24px;
-  }
-  .horizon-mer { background: var(--grand-bleu); display: flex; align-items: flex-start; padding: 24px 8vw; }
-  .horizon .mono { color: rgba(242,237,226,0.85); }
-  .horizon-ciel .mono { color: rgba(28,24,19,0.5); }
-
   /* ---------- Territoire ---------- */
   .territoire { padding: 12vh 8vw; display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; max-width: 1300px; }
   .territoire h2 {
@@ -308,11 +296,6 @@
   <p class="apparait">Un accessoire se choisit le matin et s'oublie le soir. Un témoin, lui, accompagne. Il se raye, se patine, prend la trace de la peau et du temps — et devient plus précieux à mesure qu'il vieillit. Nos bijoux ne sont pas finis quand ils sortent de l'atelier&nbsp;: ils sont finis après des années au poignet de quelqu'un.</p>
   <p class="apparait">Chaque pièce est faite à la main dans notre atelier parisien, puis numérotée à l'encre. Les séries sont closes, jamais rééditées.</p>
 </section>
-
-<div class="horizon" aria-hidden="true">
-  <div class="horizon-ciel"><span class="mono">[ Photo — l'horizon, la mer à 18 h ]</span></div>
-  <div class="horizon-mer"><span class="mono">38.1157° N, 13.3615° E — La mer comme respiration</span></div>
-</div>
 
 <section class="territoire">
   <div>
