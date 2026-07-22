@@ -3,24 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stories — KIBO Paris</title>
-<meta name="description" content="Stories. On a quelque chose à vous raconter — les nuits, les matières, l'atelier. Le magazine de KIBO Paris.">
+<title>La nuit où le scooter est tombé en panne — Stories — KIBO Paris</title>
+<meta name="description" content="La collection 23:47 est née d'une panne de scooter entre Sant Francesc et la plage de Migjorn. Quarante-trois pièces, faites main à Paris. Voici comment ça a commencé.">
 <link rel="icon" type="image/png" href="FULL-BLACK.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500&family=Space+Mono&family=Courier+Prime&display=swap" rel="stylesheet">
 <style>
   /* ==========================================================
-     KIBO PARIS — STORIES
-     Un magazine, pas une boutique. Registre : le Carnet.
-     « KIBO écrit comme on écrit au dos d'une photo. »
+     KIBO PARIS — STORY : 23:47
+     Un court-métrage écrit. Colonne de lecture 680 px,
+     photos pleine largeur, horodatage en intertitres.
      ========================================================== */
   :root {
     --chaux: #F2EDE2;
     --encre: #1C1813;
     --soleil: #F5A800;
     --sanguine: #E8501B;
-    --grand-bleu: #0F2FA6;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -28,8 +27,8 @@
     background: var(--chaux);
     color: var(--encre);
     font-family: 'Archivo', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.8;
   }
   a { color: inherit; text-decoration: none; }
   a:hover { opacity: 0.7; }
@@ -60,84 +59,57 @@
   .nav-droite { gap: 22px; justify-content: flex-end; }
   .nav-actif { border-bottom: 1px solid var(--encre); padding-bottom: 2px; }
 
-  /* ---------- En-tête ---------- */
-  .entete { padding: 12vh 8vw 8vh; max-width: 1100px; }
-  .entete .mono { color: var(--sanguine); display: block; margin-bottom: 28px; }
-  .entete h1 {
+  /* ---------- Article ---------- */
+  .retour { display: inline-block; margin: 40px 8vw 0; }
+  .article-tete { max-width: 680px; margin: 8vh auto 6vh; padding: 0 24px; }
+  .meta-ligne { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 32px; }
+  .meta-ligne .mono { color: rgba(28,24,19,0.55); }
+  .meta-ligne .mono.accent { color: var(--sanguine); }
+  h1 {
     font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(36px, 5vw, 72px); line-height: 1.1;
-    max-width: 18ch;
+    font-size: clamp(34px, 4.6vw, 60px); line-height: 1.12;
+  }
+  .chapo {
+    margin-top: 28px; font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 20px; line-height: 1.6; color: rgba(28,24,19,0.75);
   }
 
-  /* ---------- Story à la une ---------- */
-  .une { padding: 0 8vw 4vh; }
-  .une a { display: block; }
-  .une-photo {
-    aspect-ratio: 16 / 8; overflow: hidden;
+  .photo-pleine {
+    width: 100%; height: 62vh; position: relative;
     background: url('HB_20250903_0073.jpg') center 78% / cover no-repeat;
-    position: relative;
   }
-  .une-photo .meta {
-    position: absolute; left: 20px; bottom: 16px;
-    font-family: 'Space Mono', monospace; font-size: 11px;
+  .photo-pleine .legende {
+    position: absolute; left: 20px; bottom: 14px;
+    font-family: 'Space Mono', monospace; font-size: 10px;
     text-transform: uppercase; letter-spacing: 0.14em;
-    color: rgba(242,237,226,0.95);
-    text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+    color: rgba(242,237,226,0.95); text-shadow: 0 1px 10px rgba(0,0,0,0.6);
   }
-  .une-texte { padding: 28px 0 0; max-width: 720px; }
-  .une-texte .rubrique { color: var(--sanguine); }
-  .une-texte h2 {
-    font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(26px, 3.4vw, 44px); line-height: 1.2; margin: 10px 0 12px;
+  .photo-plage { background-image: url('plage.jpg'); background-position: center; }
+
+  .corps { max-width: 680px; margin: 0 auto; padding: 7vh 24px; }
+  .corps p { margin-bottom: 1.6em; color: rgba(28,24,19,0.92); }
+  .horodatage {
+    font-family: 'Space Mono', monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--sanguine); margin: 52px 0 20px;
   }
-  .une-texte p { color: rgba(28,24,19,0.8); max-width: 60ch; }
-  .une-texte .lire {
-    display: inline-block; margin-top: 18px;
+  .corps > .horodatage:first-child { margin-top: 0; }
+  .exergue {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+    font-size: clamp(24px, 3vw, 34px); line-height: 1.35;
+    margin: 56px 0; color: var(--encre);
+  }
+  .fin {
+    margin-top: 64px; padding-top: 28px;
+    border-top: 1px solid rgba(28,24,19,0.2);
+  }
+  .fin .mono { color: rgba(28,24,19,0.55); display: block; margin-bottom: 16px; }
+  .fin p { font-size: 15px; color: rgba(28,24,19,0.8); margin-bottom: 20px; }
+  .fin a.lien {
     font-family: 'Space Mono', monospace; font-size: 12px;
     text-transform: uppercase; letter-spacing: 0.16em;
     border-bottom: 1px solid var(--encre); padding-bottom: 3px;
   }
-
-  /* ---------- Liste des stories ---------- */
-  .liste { padding: 8vh 8vw 10vh; }
-  .liste > .mono { display: block; margin-bottom: 32px; color: var(--sanguine); }
-  .story {
-    display: grid; grid-template-columns: 200px 1fr auto; gap: 32px; align-items: baseline;
-    padding: 26px 0; border-top: 1px solid rgba(28,24,19,0.15);
-  }
-  .story:last-child { border-bottom: 1px solid rgba(28,24,19,0.15); }
-  .story .meta { color: rgba(28,24,19,0.5); }
-  .story h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.25; }
-  .story .rubrique { color: var(--sanguine); white-space: nowrap; }
-
-  /* ---------- L'article : 23:47 ---------- */
-  .article {
-    background: #EDE6D6;
-    padding: 12vh 8vw;
-  }
-  .article-int { max-width: 680px; margin: 0 auto; }
-  .article .meta-ligne { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 36px; }
-  .article .meta-ligne .mono { color: rgba(28,24,19,0.55); }
-  .article .meta-ligne .mono.accent { color: var(--sanguine); }
-  .article h2 {
-    font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(30px, 4vw, 52px); line-height: 1.15; margin-bottom: 40px;
-  }
-  .article p {
-    font-size: 17px; line-height: 1.8; color: rgba(28,24,19,0.9);
-    margin-bottom: 1.5em;
-  }
-  .article .exergue {
-    font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
-    font-size: clamp(22px, 2.6vw, 30px); line-height: 1.4;
-    margin: 48px 0; color: var(--encre);
-  }
-  .article .fin {
-    font-family: 'Space Mono', monospace; font-size: 11px;
-    text-transform: uppercase; letter-spacing: 0.14em;
-    color: rgba(28,24,19,0.5); margin-top: 48px;
-  }
-  .article .fin a { border-bottom: 1px solid rgba(28,24,19,0.4); padding-bottom: 2px; color: var(--encre); }
 
   footer { padding: 48px 8vw 40px; border-top: 1px solid rgba(28,24,19,0.12); }
   .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
@@ -174,8 +146,7 @@
   @media (max-width: 900px) {
     .nav-centre { display: none; }
     .burger { display: block; }
-    .story { grid-template-columns: 1fr; gap: 6px; }
-    .une-photo { aspect-ratio: 4 / 3; }
+    .photo-pleine { height: 42vh; }
   }
   @media (prefers-reduced-motion: reduce) {
     .apparait { transition-duration: 150ms; transform: none; }
@@ -214,43 +185,46 @@
   <a href="private-access.html">Private Access</a>
 </div>
 
-<header class="entete">
-  <span class="mono apparait">Stories</span>
-  <h1 class="apparait">On a quelque chose à vous raconter.</h1>
+<a class="retour mono" href="stories.html">←&nbsp;&nbsp;Toutes les stories</a>
+
+<header class="article-tete">
+  <div class="meta-ligne apparait">
+    <span class="mono accent">Fête finie</span>
+    <span class="mono">Formentera — Juin</span>
+    <span class="mono">Éd. de 43 — Close</span>
+  </div>
+  <h1 class="apparait">La nuit où le scooter est tombé en panne.</h1>
+  <p class="chapo apparait">La collection 23:47 est née entre Sant Francesc et la plage de Migjorn. Quarante-trois pièces, faites main à Paris, numérotées à l'encre. Voici comment ça a commencé.</p>
 </header>
 
-<section class="une">
-  <a href="story-2347.html" class="apparait">
-    <div class="une-photo">
-      <span class="meta">Formentera — 23:47 — Juin</span>
-    </div>
-    <div class="une-texte">
-      <span class="mono rubrique">Fête finie</span>
-      <h2>La nuit où le scooter est tombé en panne.</h2>
-      <p>La collection 23:47 est née entre Sant Francesc et la plage de Migjorn. Quarante-trois pièces, faites main à Paris. Voici comment ça a commencé.</p>
-      <span class="lire">Lire&nbsp;&nbsp;→</span>
-    </div>
-  </a>
-</section>
+<div class="photo-pleine apparait">
+  <span class="legende">Formentera — 02:12 — La fête que personne n'avait prévue</span>
+</div>
 
-<section class="liste">
-  <span class="mono apparait">À suivre</span>
-  <div class="story apparait">
-    <span class="mono meta">Matières — Bientôt</span>
-    <h3>La nacre n'est jamais blanche.</h3>
-    <span class="mono rubrique">Matières</span>
+<div class="corps">
+  <p class="horodatage apparait">23:47</p>
+  <p class="apparait">Le scooter a rendu l'âme sans prévenir, dans la descente entre Sant Francesc et Migjorn. Pas de réseau. Pas de lampe. Une demi-lune. On a poussé pendant vingt minutes en riant de moins en moins, puis on a arrêté de pousser.</p>
+  <p class="apparait">Quelqu'un avait une enceinte dans son sac. Quelqu'un d'autre avait encore des pêches, achetées le matin au marché, tièdes et un peu écrasées. On s'est assis sur le muret d'un champ. Le premier morceau a suffi.</p>
+
+  <p class="horodatage apparait">00:30</p>
+  <p class="apparait">Des phares sont passés deux fois sans s'arrêter. La troisième voiture s'est arrêtée — pas pour nous dépanner&nbsp;: pour rester. Ils avaient du vin et une meilleure playlist. On a mélangé les deux.</p>
+  <p class="apparait">Les colliers qu'on portait ce soir-là ont pris la poussière du chemin, le sel de l'après-midi, l'odeur des pins chauffés. Personne ne les a enlevés. Personne ne les enlève jamais.</p>
+
+  <p class="exergue apparait">On avait dit une heure. On est restés jusqu'au matin.</p>
+
+  <p class="horodatage apparait">06:15</p>
+  <p class="apparait">La lumière est revenue par la mer. Le champ n'avait rien d'extraordinaire — des pierres, un figuier, un muret. C'est peut-être pour ça qu'on s'en souvient si bien. Quelqu'un a réparé le scooter en trois minutes. Personne n'était pressé de partir.</p>
+
+  <p class="horodatage apparait">L'automne d'après</p>
+  <p class="apparait">De retour à l'atelier, à Paris, on a cherché ce qui restait de cette nuit. Le verre couleur de demi-lune. La pierre chauffée. Le fil qui tient bon quand on pousse un scooter. La collection 23:47 compte quarante-trois pièces — le nombre que l'atelier a fixé, pas le marketing.</p>
+  <p class="apparait">La série est close depuis le 12 octobre. Elle ne sera pas rééditée. Ceux qui les portent savent pourquoi elles s'appellent comme ça.</p>
+
+  <div class="fin apparait">
+    <span class="mono">Fin</span>
+    <p>Chaque pièce KIBO est faite à la main à Paris et numérotée à l'encre. Quand une matière est épuisée, la série s'arrête.</p>
+    <a class="lien" href="collection.html">Voir la collection en cours&nbsp;&nbsp;→</a>
   </div>
-  <div class="story apparait">
-    <span class="mono meta">Atelier — Bientôt</span>
-    <h3>Ce que l'on garde des choses cassées.</h3>
-    <span class="mono rubrique">Atelier</span>
-  </div>
-  <div class="story apparait">
-    <span class="mono meta">Retour de plage — 19:36</span>
-    <h3>Le sel sèche sur la chaîne. On commande encore des frites.</h3>
-    <span class="mono rubrique">Voyages</span>
-  </div>
-</section>
+</div>
 
 <footer>
   <div class="footer-haut">
@@ -278,9 +252,6 @@
   var obs = new IntersectionObserver(function (entrees) {
     entrees.forEach(function (e) {
       if (e.isIntersecting) {
-        var freres = e.target.parentElement.querySelectorAll('.apparait');
-        var i = Array.prototype.indexOf.call(freres, e.target);
-        e.target.style.transitionDelay = (i > 0 ? (i % 4) * 90 : 0) + 'ms';
         e.target.classList.add('visible');
         obs.unobserve(e.target);
       }
