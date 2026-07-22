@@ -111,8 +111,8 @@
   .piliers { padding: 10vh 8vw 12vh; }
   .piliers > .mono { display: block; margin-bottom: 48px; color: var(--sanguine); }
   .piliers-grille { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(28,24,19,0.15); border: 1px solid rgba(28,24,19,0.15); }
-  .pilier { background: var(--chaux); padding: 32px 22px 40px; position: relative; min-height: 320px; display: flex; flex-direction: column; }
-  .pilier .pastille { width: 34px; height: 34px; margin-bottom: 28px; }
+  .pilier { background: var(--chaux); padding: 32px 22px 40px; position: relative; min-height: 0; display: flex; flex-direction: column; }
+  .pilier .pastille { width: 30px; height: 30px; margin-bottom: 20px; }
   .pilier h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 26px; margin-bottom: 14px; }
   .pilier .mots { font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(28,24,19,0.55); line-height: 1.9; margin-bottom: 16px; }
   .pilier p { font-size: 13.5px; color: rgba(28,24,19,0.85); margin-top: auto; }
@@ -183,9 +183,11 @@
 
   /* ---------- Clôture ---------- */
   .cloture {
+    background: var(--encre); color: var(--chaux);
     padding: 16vh 8vw 14vh; text-align: left;
-    border-top: 1px solid rgba(28,24,19,0.15);
   }
+  .cloture .mono { color: var(--soleil); display: block; margin-bottom: 36px; }
+  .cloture .lien { border-color: var(--chaux) !important; }
   .cloture p {
     font-family: 'Fraunces', serif; font-weight: 300;
     font-size: clamp(26px, 3.6vw, 52px); line-height: 1.25; max-width: 22em;
@@ -292,63 +294,39 @@
 
 <section class="manifeste">
   <span class="mono apparait">01 — L'idée qui gouverne tout</span>
-  <p class="apparait">Un bijou KIBO est le <strong>témoin d'un moment</strong>. Il était là. Au concert dont on parle encore. Pendant l'été où tout a changé. Au premier rendez-vous. Sur la plage à 23&nbsp;heures. Dans le métro parisien un matin de novembre, quand le sel de l'été dernier semble encore accroché à la chaîne.</p>
-  <p class="apparait">Un accessoire se choisit le matin et s'oublie le soir. Un témoin, lui, accompagne. Il se raye, se patine, prend la trace de la peau et du temps — et devient plus précieux à mesure qu'il vieillit. Nos bijoux ne sont pas finis quand ils sortent de l'atelier&nbsp;: ils sont finis après des années au poignet de quelqu'un.</p>
-  <p class="apparait">Chaque pièce est faite à la main dans notre atelier parisien, puis numérotée à l'encre. Les séries sont closes, jamais rééditées.</p>
-</section>
-
-<section class="territoire">
-  <div>
-    <span class="mono apparait">02 — Le territoire</span>
-    <h2 class="apparait">L'énergie du Sud, racontée avec <em>l'exigence de Paris</em>.</h2>
-  </div>
-  <div class="texte apparait">
-    <p>KIBO n'habite pas un lieu. KIBO habite une tension&nbsp;: celle d'une marque parisienne fascinée par l'énergie du Sud. Le Sud donne la matière. Paris donne le regard.</p>
-    <p>Cette énergie&nbsp;: une certaine qualité de lumière, une manière de laisser les journées se dilater, des repas qui ne finissent pas, de la musique qui commence sans qu'on l'ait décidé, du sel sur la peau, des amitiés qui se nouent en une nuit. Elle se trouve à Formentera comme dans les Pouilles, à Cadaqués comme à Marseille, dans une ruelle d'Athènes comme sur un quai de Seine en juillet. Elle est un climat intérieur, pas une géographie.</p>
-  </div>
+  <p class="apparait">Un bijou KIBO est le <strong>témoin d'un moment</strong>. Il était là — au concert dont on parle encore, sur la plage à 23&nbsp;heures, dans le métro un matin de novembre, quand le sel de l'été dernier semble encore accroché à la chaîne.</p>
+  <p class="apparait">Il se raye, se patine, et devient plus précieux à mesure qu'il vieillit. <strong>L'énergie du Sud, racontée avec l'exigence de Paris.</strong> Fait main, numéroté à l'encre, jamais réédité.</p>
 </section>
 
 <section class="piliers">
-  <span class="mono apparait">03 — Les cinq piliers</span>
+  <span class="mono apparait">02 — Les cinq piliers</span>
   <div class="piliers-grille">
     <div class="pilier s-sun apparait">
       <div class="pastille"></div>
       <h3>Sun</h3>
-      <div class="mots">La lumière · l'optimisme · la chaleur</div>
-      <p>Une image KIBO peut être mélancolique&nbsp;; elle ne peut pas être froide. <em>SUN n'est pas une saison&nbsp;: c'est une disposition.</em></p>
+      <p><em>Pas une saison&nbsp;: une disposition.</em></p>
     </div>
     <div class="pilier s-sea apparait">
       <div class="pastille"></div>
       <h3>Sea</h3>
-      <div class="mots">Le voyage · l'eau · le sel · les horizons</div>
-      <p>Les bijoux KIBO se portent dans l'eau. <em>Partir, se laisser porter, revenir changé.</em></p>
+      <p><em>Partir, se laisser porter, revenir changé.</em></p>
     </div>
     <div class="pilier s-sound apparait">
       <div class="pastille"></div>
       <h3>Sound</h3>
-      <div class="mots">Les concerts · les fêtes · les nuits</div>
-      <p>La musique comme organe vital. <em>Vécue depuis la piste, jamais depuis le carré VIP.</em></p>
+      <p><em>Depuis la piste, jamais depuis le carré VIP.</em></p>
     </div>
     <div class="pilier s-energy apparait">
       <div class="pastille"></div>
       <h3>Energy</h3>
-      <div class="mots">L'électricité entre les gens</div>
-      <p>Strictement humain&nbsp;: <em>l'électricité entre les gens, pas les vibrations de l'univers.</em></p>
+      <p><em>L'électricité entre les gens.</em></p>
     </div>
     <div class="pilier s-memory apparait">
       <div class="pastille"></div>
       <h3>Memory</h3>
-      <div class="mots">La trace · la patine · l'archive</div>
-      <p>Un objet qui devient plus beau parce qu'il est porté. <em>La promesse que ce que l'on vit aujourd'hui comptera.</em></p>
+      <p><em>Plus beau parce qu'il est porté.</em></p>
     </div>
   </div>
-</section>
-
-<section class="soleil-interieur">
-  <span class="mono apparait">04 — Le soleil intérieur</span>
-  <p class="apparait">Une personne rentre de voyage avec un bijou acheté là-bas. Elle continue de le porter — dans le métro, au bureau, sous un manteau en janvier.</p>
-  <p class="apparait">Le bijou transporte encore la chaleur, le sel, la musique. <em>Le soleil est devenu intérieur.</em></p>
-  <p class="petit apparait">Tout le monde connaît la mélancolie douce du retour, et la fierté secrète de garder un fragment de l'été sur soi. C'est ce qui rend KIBO désirable en novembre.</p>
 </section>
 
 <div class="bande-photos">
@@ -357,50 +335,8 @@
   <div class="bp-3"><span class="legende">La mer — 18:04 — Juin</span></div>
 </div>
 
-<section class="atmospheres">
-  <span class="mono apparait">05 — Bibliothèque d'atmosphères</span>
-  <h2 class="apparait">Là où l'énergie se trouve.</h2>
-  <div class="atmo-liste">
-    <div class="atmo apparait">
-      <span class="mono">Formentera — 02:12</span>
-      <h3>Baléare nocturne</h3>
-      <p>La nuit comme territoire de liberté&nbsp;; la musique électronique comme langue commune&nbsp;; l'aube en fin de fête.</p>
-    </div>
-    <div class="atmo apparait">
-      <span class="mono">Sérifos — 13:30</span>
-      <h3>Cycladique minérale</h3>
-      <p>La chaux, la pierre, le vent&nbsp;; le bleu comme événement.</p>
-    </div>
-    <div class="atmo apparait">
-      <span class="mono">Palerme — 21:15</span>
-      <h3>Italienne solaire</h3>
-      <p>La table, la famille élargie, le baroque quotidien.</p>
-    </div>
-    <div class="atmo apparait">
-      <span class="mono">Marseille — 23:47</span>
-      <h3>Ibérique électrique</h3>
-      <p>Le béton chaud, les ports, la jeunesse.</p>
-    </div>
-    <div class="atmo apparait">
-      <span class="mono">Paris — 23:00</span>
-      <h3>Parisienne</h3>
-      <p>Les quais à 23&nbsp;h, une cage d'escalier, un néon de tabac, la ligne&nbsp;2 aérienne au soleil couchant.</p>
-    </div>
-  </div>
-</section>
-
-<section class="hierarchie">
-  <span class="mono apparait">06 — La hiérarchie sacrée</span>
-  <ol>
-    <li class="apparait">Le moment</li>
-    <li class="apparait">Les personnes qui le vivent</li>
-    <li class="apparait">La lumière qui le traverse</li>
-    <li class="apparait">Le bijou qui en témoigne</li>
-  </ol>
-  <p class="note apparait">Cet ordre ne s'inverse jamais.</p>
-</section>
-
 <section class="cloture">
+  <span class="mono apparait">Le soleil est devenu intérieur</span>
   <p class="apparait">Le bijou n'est pas le souvenir. <em>Il est la preuve que le moment a existé.</em></p>
   <a class="lien apparait" href="collection.html">La collection en cours&nbsp;&nbsp;→</a>
 </section>
