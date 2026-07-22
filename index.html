@@ -43,9 +43,11 @@
   .annonce {
     font-family: 'Courier Prime', 'Courier New', monospace;
     background: var(--terracotta); color: var(--creme);
-    text-align: center; padding: 10px 12px;
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    padding: 8px 12px;
     font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
   }
+  .annonce img { height: 22px; display: block; }
 
   /* ---------- Navigation ---------- */
   nav {
@@ -302,7 +304,7 @@
 </head>
 <body>
 
-<div class="annonce">Éditions limitées&nbsp;. Capturing energy, not trends.</div>
+<div class="annonce"><img src="OUTLINE_WHITE.png" alt="KIBO"><span>Éditions limitées&nbsp;. Capturing energy, not trends.</span></div>
 
 <nav aria-label="Navigation principale">
   <a class="logo-nav" href="#">
