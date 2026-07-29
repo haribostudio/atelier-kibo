@@ -113,7 +113,13 @@
   }
   .produit:hover .p1::after { opacity: 1; }
   .badge { z-index: 2; }
-  .p2 { background: radial-gradient(circle at 50% 45%, #cf9a63 0%, #9c6635 75%); }
+  .p2 { background: url('halfhalf%20copy.jpg') center / cover no-repeat; }
+  .p2::after {
+    content: ''; position: absolute; inset: 0;
+    background: url('half.jpg') center 30% / cover no-repeat;
+    opacity: 0; transition: opacity 400ms ease;
+  }
+  .produit:hover .p2::after { opacity: 1; }
   .p3 { background: radial-gradient(circle at 45% 40%, #d9c49a 0%, #a98d58 75%); }
   .p4 { background: radial-gradient(circle at 55% 45%, #b97f4f 0%, #7e4c26 75%); }
   .p5 { background: radial-gradient(circle at 45% 50%, #a8683f 0%, #6d3a1d 75%); }
@@ -241,9 +247,9 @@
     <div class="produit-photo p1"><span class="badge">Limited</span></div>
     <p class="produit-cartel">Daisy Necklace<span class="prix">180&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="collier" href="#">
-    <div class="produit-photo p2">[ Photo — Laguna Necklace porté ]</div>
-    <p class="produit-cartel">Laguna Necklace<span class="prix">160&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-marrakech.html">
+    <div class="produit-photo p2"><span class="badge">Limited</span></div>
+    <p class="produit-cartel">Marrakech Necklace<span class="prix">140&nbsp;€</span></p>
   </a>
   <a class="produit apparait" data-type="bague" href="#">
     <div class="produit-photo p3">[ Photo — Marea Ring sur sable ]</div>
