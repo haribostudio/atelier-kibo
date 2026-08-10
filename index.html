@@ -234,13 +234,11 @@
     min-height: 44vh; background: var(--sable); overflow: hidden;
   }
   .collage > div { position: relative; display: flex; align-items: center; justify-content: center; padding: 24px; }
-  .col-photo1 {
-    /* Remplacer par : polaroid portrait bord de mer */
-    background: linear-gradient(160deg, #33506b 0%, #6f88a3 100%);
+  .col-photo1 { padding: 0 !important; background: var(--nuit); }
+  .col-photo1 video {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; display: block;
   }
-  .col-photo1 .polaroid { transform: rotate(-3deg); }
-  .col-photo1 .polaroid-img { background: linear-gradient(180deg, #8fa9bd, #4c657c); width: 130px; height: 150px; }
-  .col-photo1 .legende { font-family: 'Caveat', cursive; font-size: 17px; letter-spacing: 0; margin-top: 6px; display: block; text-align: center; color: #1B1E24; }
   .col-note { background: var(--papier); }
   .col-note .manuscrit { font-size: clamp(22px, 2vw, 30px); text-transform: uppercase; text-align: center; line-height: 1.5; }
   .col-note .soleil-oeil { display: block; text-align: center; color: var(--terracotta); margin-top: 10px; font-size: 18px; }
@@ -451,10 +449,9 @@
 
 <section class="collage">
   <div class="col-photo1">
-    <div class="polaroid">
-      <div class="polaroid-img"></div>
-      <span class="legende">Greece, 2023</span>
-    </div>
+    <video autoplay muted loop playsinline preload="metadata" aria-label="Palermo Necklace — vidéo">
+      <source src="palermo.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="col-note">
     <div>

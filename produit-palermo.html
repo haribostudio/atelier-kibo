@@ -73,6 +73,8 @@
     text-transform: uppercase; letter-spacing: 0.14em; text-align: center; padding: 10px;
   }
   .photo-1 { aspect-ratio: 1 / 1; background: url('produit-palermo.jpg?v=3') center / cover no-repeat; }
+  .photo-video { position: relative; overflow: hidden; }
+  .photo-video video { width: 100%; display: block; }
   .photo-1 .legende { color: rgba(27,30,36,0.6); text-shadow: none; }
   .photo .legende {
     position: absolute; left: 14px; bottom: 12px;
@@ -233,6 +235,11 @@
 <main class="fiche">
   <div class="photos">
     <div class="photo photo-1"><span class="legende">Palermo Necklace — la pièce</span></div>
+    <div class="photo-video">
+      <video autoplay muted loop playsinline preload="metadata" aria-label="Palermo Necklace — vidéo">
+        <source src="palermo.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 
   <aside class="info">
