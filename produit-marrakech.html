@@ -186,6 +186,16 @@
   @media (prefers-reduced-motion: reduce) {
     .apparait { transition-duration: 150ms; transform: none; }
   }
+
+  /* ---------- Zoom photos ---------- */
+  .photos .photo { cursor: zoom-in; }
+  .zoom-overlay {
+    position: fixed; inset: 0; z-index: 400;
+    background: rgba(16,19,26,0.93);
+    display: flex; align-items: center; justify-content: center;
+    cursor: zoom-out; padding: 4vh 4vw;
+  }
+  .zoom-overlay img { max-width: 100%; max-height: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
 </style>
 </head>
 <body>
@@ -325,6 +335,34 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.apparait').forEach(function (el) { obs.observe(el); });
+})();
+</script>
+
+
+<script>
+(function () {
+  /* Zoom : survol = loupe qui suit la souris, clic = plein écran */
+  document.querySelectorAll('.photos .photo').forEach(function (p) {
+    var m = getComputedStyle(p).backgroundImage.match(/url\(["']?([^"')]+)["']?\)/);
+    var src = m ? m[1] : null;
+    p.addEventListener('mousemove', function (e) {
+      var r = p.getBoundingClientRect();
+      p.style.backgroundSize = '200%';
+      p.style.backgroundPosition = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
+    });
+    p.addEventListener('mouseleave', function () {
+      p.style.backgroundSize = ''; p.style.backgroundPosition = '';
+    });
+    if (src) {
+      p.addEventListener('click', function () {
+        var o = document.createElement('div'); o.className = 'zoom-overlay';
+        var i = document.createElement('img'); i.src = src; i.alt = '';
+        o.appendChild(i);
+        o.addEventListener('click', function () { o.remove(); });
+        document.body.appendChild(o);
+      });
+    }
+  });
 })();
 </script>
 
