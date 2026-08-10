@@ -88,7 +88,7 @@
   .produit { display: block; transition: opacity 300ms ease; }
   .produit.cache { display: none; }
   .produit-photo {
-    aspect-ratio: 4 / 5; position: relative; overflow: hidden;
+    aspect-ratio: 1 / 1; position: relative; overflow: hidden;
     display: flex; align-items: center; justify-content: center;
     color: rgba(244,237,224,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
     text-align: center; padding: 10px;
@@ -103,29 +103,28 @@
     font-size: 8px; text-transform: uppercase; letter-spacing: 0.16em;
     padding: 4px 8px;
   }
-  /* Fonds d'attente — remplacer chaque .produit-photo par :
-     <img src="produit-N.jpg" alt="…" style="width:100%;height:100%;object-fit:cover;"> */
-  .p1 { background: url('FLOWER1.2.png') center / cover no-repeat; }
-  .p1::after {
-    content: ''; position: absolute; inset: 0;
-    background: url('FLOWER2.png') center / cover no-repeat;
-    opacity: 0; transition: opacity 400ms ease;
-  }
-  .produit:hover .p1::after { opacity: 1; }
+  /* Photos produits */
+  .ph-palermo { background: url('produit-palermo.jpg') center / cover no-repeat; }
+  .ph-limone { background: url('produit-limone.jpg') center / cover no-repeat; }
+  .ph-murano { background: url('produit-murano.jpg') center / cover no-repeat; }
+  .ph-santorini { background: url('produit-santorini.jpg') center / cover no-repeat; }
+  .ph-rio { background: url('produit-rio.jpg') center / cover no-repeat; }
+  .ph-ibiza { background: url('produit-ibiza.jpg') center / cover no-repeat; }
+  .ph-tahiti { background: url('produit-tahiti.jpg') center / cover no-repeat; }
+  .ph-positano { background: url('produit-positano.jpg') center / cover no-repeat; }
+  .ph-capri { background: url('produit-capri.jpg') center / cover no-repeat; }
+  .ph-laguna { background: url('produit-laguna.jpg') center / cover no-repeat; }
+  .ph-casablanca { background: url('produit-casablanca.jpg') center / cover no-repeat; }
+  .ph-amore { background: url('produit-amore.jpg') center / cover no-repeat; }
+  .ph-bodrum { background: url('produit-bodrum.jpg') center / cover no-repeat; }
+  .ph-stella { background: url('produit-stella.jpg') center / cover no-repeat; }
+  .ph-marea { background: url('produit-marea.jpg') center / cover no-repeat; }
+  .ph-riviera { background: url('produit-riviera.jpg') center / cover no-repeat; }
+  .ph-perla { background: url('produit-perla.jpg') center / cover no-repeat; }
+  .ph-sorbet { background: url('produit-sorbet.jpg') center / cover no-repeat; }
+  .ph-menta { background: url('produit-menta.jpg') center / cover no-repeat; }
+  .ph-marina { background: url('produit-marina.jpg') center / cover no-repeat; }
   .badge { z-index: 2; }
-  .p2 { background: url('halfhalf%20copy.jpg') center / cover no-repeat; }
-  .p2::after {
-    content: ''; position: absolute; inset: 0;
-    background: url('half.jpg') center 30% / cover no-repeat;
-    opacity: 0; transition: opacity 400ms ease;
-  }
-  .produit:hover .p2::after { opacity: 1; }
-  .p3 { background: radial-gradient(circle at 45% 40%, #d9c49a 0%, #a98d58 75%); }
-  .p4 { background: radial-gradient(circle at 55% 45%, #b97f4f 0%, #7e4c26 75%); }
-  .p5 { background: radial-gradient(circle at 45% 50%, #a8683f 0%, #6d3a1d 75%); }
-  .p6 { background: radial-gradient(circle at 55% 40%, #d3a878 0%, #8f6134 75%); }
-  .p7 { background: radial-gradient(circle at 50% 45%, #b5502e 0%, #7c2f15 75%); }
-  .p8 { background: radial-gradient(circle at 50% 50%, #c9975f 0%, #855428 75%); }
 
   /* ---------- Interlude éditorial ---------- */
   .interlude {
@@ -227,7 +226,7 @@
   <div class="apparait">
     <p class="etiquette">Latest Drop — Été 2026</p>
     <h1>Soleil Rouge</h1>
-    <p class="sous">A summer state of mind. Captured in 100 pieces.</p>
+    <p class="sous">A summer state of mind. Captured in 20 pieces.</p>
   </div>
   <div class="entete-note apparait">
     Made by hand,<br>worn for memories
@@ -238,47 +237,92 @@
 <div class="filtres" role="tablist" aria-label="Filtrer les pièces">
   <button class="filtre actif" data-filtre="tout">Tout</button>
   <button class="filtre" data-filtre="collier">Colliers</button>
-  <button class="filtre" data-filtre="bague">Bagues</button>
   <button class="filtre" data-filtre="bracelet">Bracelets</button>
 </div>
 
 <section class="grille" id="grille">
-  <a class="produit apparait" data-type="collier" href="produit-daisy.html">
-    <div class="produit-photo p1"><span class="badge">Limited</span></div>
-    <p class="produit-cartel">Daisy Necklace<span class="prix">180&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-palermo.html">
+    <div class="produit-photo ph-palermo"></div>
+    <p class="produit-cartel">Palermo Necklace<span class="prix">160&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="collier" href="produit-marrakech.html">
-    <div class="produit-photo p2"><span class="badge">Limited</span></div>
-    <p class="produit-cartel">Marrakech Necklace<span class="prix">140&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-limone.html">
+    <div class="produit-photo ph-limone"></div>
+    <p class="produit-cartel">Limone Necklace<span class="prix">140&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="bague" href="#">
-    <div class="produit-photo p3">[ Photo — Marea Ring sur sable ]</div>
-    <p class="produit-cartel">Marea Ring<span class="prix">120&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-murano.html">
+    <div class="produit-photo ph-murano"><span class="badge">Limited</span></div>
+    <p class="produit-cartel">Murano Necklace<span class="prix">170&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="collier" href="#">
-    <div class="produit-photo p4">[ Photo — Bondi Necklace, nuque ]</div>
-    <p class="produit-cartel">Bondi Necklace<span class="prix">150&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-santorini.html">
+    <div class="produit-photo ph-santorini"></div>
+    <p class="produit-cartel">Santorini Necklace<span class="prix">150&nbsp;€</span></p>
   </a>
-
+  <a class="produit apparait" data-type="collier" href="produit-rio.html">
+    <div class="produit-photo ph-rio"></div>
+    <p class="produit-cartel">Rio Necklace<span class="prix">150&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-ibiza.html">
+    <div class="produit-photo ph-ibiza"></div>
+    <p class="produit-cartel">Ibiza Necklace<span class="prix">160&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-tahiti.html">
+    <div class="produit-photo ph-tahiti"><span class="badge">Limited</span></div>
+    <p class="produit-cartel">Tahiti Necklace<span class="prix">180&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-positano.html">
+    <div class="produit-photo ph-positano"></div>
+    <p class="produit-cartel">Positano Necklace<span class="prix">140&nbsp;€</span></p>
+  </a>
   <div class="interlude">
     <p>Memories are made to be worn.</p>
   </div>
-
-  <a class="produit apparait" data-type="bracelet" href="#">
-    <div class="produit-photo p5"><span class="badge">Limited</span>[ Photo — Riviera Bracelet ]</div>
-    <p class="produit-cartel">Riviera Bracelet<span class="prix">95&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-capri.html">
+    <div class="produit-photo ph-capri"></div>
+    <p class="produit-cartel">Capri Necklace<span class="prix">150&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="collier" href="#">
-    <div class="produit-photo p6">[ Photo — Palma Necklace ]</div>
-    <p class="produit-cartel">Palma Necklace<span class="prix">170&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-laguna.html">
+    <div class="produit-photo ph-laguna"></div>
+    <p class="produit-cartel">Laguna Necklace<span class="prix">140&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="bague" href="#">
-    <div class="produit-photo p7">[ Photo — Rossa Ring ]</div>
-    <p class="produit-cartel">Rossa Ring<span class="prix">110&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-casablanca.html">
+    <div class="produit-photo ph-casablanca"></div>
+    <p class="produit-cartel">Casablanca Necklace<span class="prix">160&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="bracelet" href="#">
-    <div class="produit-photo p8">[ Photo — Costa Bracelet ]</div>
-    <p class="produit-cartel">Costa Bracelet<span class="prix">90&nbsp;€</span></p>
+  <a class="produit apparait" data-type="collier" href="produit-amore.html">
+    <div class="produit-photo ph-amore"></div>
+    <p class="produit-cartel">Amore Necklace<span class="prix">150&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-bodrum.html">
+    <div class="produit-photo ph-bodrum"></div>
+    <p class="produit-cartel">Bodrum Necklace<span class="prix">140&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-stella.html">
+    <div class="produit-photo ph-stella"><span class="badge">Limited</span></div>
+    <p class="produit-cartel">Stella Necklace<span class="prix">170&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-marea.html">
+    <div class="produit-photo ph-marea"></div>
+    <p class="produit-cartel">Marea Necklace<span class="prix">160&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-riviera.html">
+    <div class="produit-photo ph-riviera"></div>
+    <p class="produit-cartel">Riviera Necklace<span class="prix">170&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-perla.html">
+    <div class="produit-photo ph-perla"></div>
+    <p class="produit-cartel">Perla Bracelet<span class="prix">90&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-sorbet.html">
+    <div class="produit-photo ph-sorbet"></div>
+    <p class="produit-cartel">Sorbet Bracelet<span class="prix">85&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-menta.html">
+    <div class="produit-photo ph-menta"></div>
+    <p class="produit-cartel">Menta Bracelet<span class="prix">80&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-marina.html">
+    <div class="produit-photo ph-marina"></div>
+    <p class="produit-cartel">Marina Bracelet<span class="prix">80&nbsp;€</span></p>
   </a>
 </section>
 

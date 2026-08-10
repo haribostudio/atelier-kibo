@@ -203,22 +203,10 @@
     transition: transform 400ms ease;
   }
   .produit:hover .produit-photo { transform: scale(0.985); }
-  .produit:nth-child(1) .produit-photo.photo-daisy { background: url('FLOWER1.2.png') center / cover no-repeat; }
-  .photo-daisy::after {
-    content: ''; position: absolute; inset: 0;
-    background: url('FLOWER2.png') center / cover no-repeat;
-    opacity: 0; transition: opacity 400ms ease;
-  }
-  .produit:hover .photo-daisy::after { opacity: 1; }
-  .produit:nth-child(2) .produit-photo.photo-marrakech { background: url('halfhalf%20copy.jpg') center / cover no-repeat; }
-  .photo-marrakech::after {
-    content: ''; position: absolute; inset: 0;
-    background: url('half.jpg') center 30% / cover no-repeat;
-    opacity: 0; transition: opacity 400ms ease;
-  }
-  .produit:hover .photo-marrakech::after { opacity: 1; }
-  .produit:nth-child(3) .produit-photo { background: radial-gradient(circle at 45% 40%, #d9c49a 0%, #a98d58 75%); }
-  .produit:nth-child(4) .produit-photo { background: radial-gradient(circle at 55% 45%, #b97f4f 0%, #7e4c26 75%); }
+  .photo-murano { background: url('produit-murano.jpg') center / cover no-repeat; }
+  .photo-stella { background: url('produit-stella.jpg') center / cover no-repeat; }
+  .photo-tahiti { background: url('produit-tahiti.jpg') center / cover no-repeat; }
+  .photo-ibiza { background: url('produit-ibiza.jpg') center / cover no-repeat; }
   .produit-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
   .produit-cartel .prix { display: block; margin-top: 3px; color: rgba(33,27,20,0.65); }
 
@@ -433,21 +421,21 @@
     <a class="drop-lien" href="collection.html">Discover the collection</a>
   </div>
   <div class="drop-grille">
-    <a class="produit apparait" href="produit-daisy.html">
-      <div class="produit-photo photo-daisy"></div>
-      <p class="produit-cartel">Daisy Necklace<span class="prix">180&nbsp;€</span></p>
+    <a class="produit apparait" href="produit-murano.html">
+      <div class="produit-photo photo-murano"></div>
+      <p class="produit-cartel">Murano Necklace<span class="prix">170&nbsp;€</span></p>
     </a>
-    <a class="produit apparait" href="produit-marrakech.html">
-      <div class="produit-photo photo-marrakech"></div>
-      <p class="produit-cartel">Marrakech Necklace<span class="prix">140&nbsp;€</span></p>
+    <a class="produit apparait" href="produit-stella.html">
+      <div class="produit-photo photo-stella"></div>
+      <p class="produit-cartel">Stella Necklace<span class="prix">170&nbsp;€</span></p>
     </a>
-    <a class="produit apparait" href="#">
-      <div class="produit-photo">[ Photo — bagues sur sable ]</div>
-      <p class="produit-cartel">Marea Ring<span class="prix">120&nbsp;€</span></p>
+    <a class="produit apparait" href="produit-tahiti.html">
+      <div class="produit-photo photo-tahiti"></div>
+      <p class="produit-cartel">Tahiti Necklace<span class="prix">180&nbsp;€</span></p>
     </a>
-    <a class="produit apparait" href="#">
-      <div class="produit-photo">[ Photo — porté, nuque ]</div>
-      <p class="produit-cartel">Bondi Necklace<span class="prix">150&nbsp;€</span></p>
+    <a class="produit apparait" href="produit-ibiza.html">
+      <div class="produit-photo photo-ibiza"></div>
+      <p class="produit-cartel">Ibiza Necklace<span class="prix">160&nbsp;€</span></p>
     </a>
   </div>
 </section>
