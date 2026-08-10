@@ -15,11 +15,11 @@
      Rejoindre le cercle. Sombre, nocturne, esprit « Memories ».
      ========================================================== */
   :root {
-    --creme: #F4EDE0;
-    --papier: #EFE6D4;
-    --terracotta: #A63E24;
-    --encre: #211B14;
-    --nuit: #16110C;
+    --creme: #EFF0F2;
+    --papier: #E2E4E8;
+    --terracotta: #0F2FA6;
+    --encre: #1B1E24;
+    --nuit: #10131A;
     --soleil: #F5A800;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -49,7 +49,7 @@
     background: var(--creme); color: var(--encre);
     display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
     padding: 14px 32px;
-    border-bottom: 1px solid rgba(33,27,20,0.12);
+    border-bottom: 1px solid rgba(27,30,36,0.12);
   }
   .logo-nav img { height: 34px; display: block; }
   .nav-centre, .nav-droite {
@@ -68,7 +68,7 @@
   .scene-fond {
     position: absolute; inset: 0;
     background:
-      linear-gradient(rgba(22,17,12,0.55), rgba(22,17,12,0.72)),
+      linear-gradient(rgba(16,19,26,0.55), rgba(16,19,26,0.72)),
       url('HB_20250903_0073.jpg') center 78% / cover no-repeat,
       var(--nuit);
   }
@@ -88,7 +88,7 @@
   .carte .manuscrit {
     font-family: 'Shadows Into Light', cursive;
     font-size: 20px; letter-spacing: 0.06em;
-    margin-top: 18px; color: rgba(244,237,224,0.85);
+    margin-top: 18px; color: rgba(239,240,242,0.85);
   }
   .avantages {
     margin: 44px auto 40px; text-align: left; max-width: 400px;
@@ -96,7 +96,7 @@
   }
   .avantages li {
     display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: baseline;
-    padding: 13px 0; border-bottom: 1px solid rgba(244,237,224,0.18);
+    padding: 13px 0; border-bottom: 1px solid rgba(239,240,242,0.18);
     font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em;
   }
   .avantages .num { color: var(--soleil); font-size: 10px; }
@@ -111,12 +111,12 @@
   form { display: flex; gap: 14px; max-width: 420px; margin: 0 auto; }
   input[type="email"] {
     flex: 1; background: transparent; border: none;
-    border-bottom: 1px solid rgba(244,237,224,0.5);
+    border-bottom: 1px solid rgba(239,240,242,0.5);
     color: var(--creme); font: inherit; font-size: 13px;
     padding: 10px 2px; outline: none; border-radius: 0;
     letter-spacing: 0.06em;
   }
-  input[type="email"]::placeholder { color: rgba(244,237,224,0.45); text-transform: uppercase; font-size: 11px; letter-spacing: 0.14em; }
+  input[type="email"]::placeholder { color: rgba(239,240,242,0.45); text-transform: uppercase; font-size: 11px; letter-spacing: 0.14em; }
   input[type="email"]:focus { border-color: var(--creme); }
   button {
     background: var(--creme); color: var(--encre); border: none;
@@ -127,12 +127,12 @@
   button:hover { opacity: 0.85; }
   .note-bas {
     margin-top: 26px; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: rgba(244,237,224,0.5);
+    color: rgba(239,240,242,0.5);
   }
   .merci { display: none; font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 0.04em; }
 
-  footer { background: var(--nuit); padding: 28px 6vw; text-align: center; border-top: 1px solid rgba(244,237,224,0.15); }
-  .footer-bas { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(244,237,224,0.55); }
+  footer { background: var(--nuit); padding: 28px 6vw; text-align: center; border-top: 1px solid rgba(239,240,242,0.15); }
+  .footer-bas { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(239,240,242,0.55); }
 
   .apparait { opacity: 0; transform: translateY(14px); transition: opacity 700ms cubic-bezier(0.16,1,0.3,1), transform 700ms cubic-bezier(0.16,1,0.3,1); }
   .apparait.visible { opacity: 1; transform: none; }
@@ -151,7 +151,7 @@
   .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
   .menu-mobile {
     position: fixed; inset: 0; z-index: 300;
-    background: var(--creme, #F2EDE2); color: var(--encre);
+    background: var(--creme, #EFF0F2); color: var(--encre);
     display: none; flex-direction: column; justify-content: center;
     padding: 32px 36px;
   }
@@ -159,7 +159,7 @@
   .menu-mobile a {
     font-family: 'Space Mono', monospace; font-size: 19px;
     text-transform: uppercase; letter-spacing: 0.16em;
-    padding: 20px 0; border-bottom: 1px solid rgba(28,24,19,0.15);
+    padding: 20px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
   }
   .menu-mobile .fermer {
     position: absolute; top: 22px; right: 26px;
@@ -240,7 +240,7 @@
     ev.preventDefault();
     var champ = form.querySelector('input[type="email"]');
     if (!champ.value || champ.value.indexOf('@') < 0) {
-      champ.style.borderColor = '#E8501B';
+      champ.style.borderColor = '#0F2FA6';
       champ.placeholder = 'Cette adresse semble incomplète';
       champ.value = '';
       return;

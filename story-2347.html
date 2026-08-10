@@ -16,10 +16,10 @@
      photos pleine largeur, horodatage en intertitres.
      ========================================================== */
   :root {
-    --chaux: #F2EDE2;
-    --encre: #1C1813;
+    --chaux: #EFF0F2;
+    --encre: #1B1E24;
     --soleil: #F5A800;
-    --sanguine: #E8501B;
+    --sanguine: #0F2FA6;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -48,7 +48,7 @@
     background: var(--chaux);
     display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
     padding: 14px 32px;
-    border-bottom: 1px solid rgba(28,24,19,0.12);
+    border-bottom: 1px solid rgba(27,30,36,0.12);
   }
   .logo-nav img { height: 34px; display: block; }
   .nav-centre, .nav-droite {
@@ -63,7 +63,7 @@
   .retour { display: inline-block; margin: 40px 8vw 0; }
   .article-tete { max-width: 680px; margin: 8vh auto 6vh; padding: 0 24px; }
   .meta-ligne { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 32px; }
-  .meta-ligne .mono { color: rgba(28,24,19,0.55); }
+  .meta-ligne .mono { color: rgba(27,30,36,0.55); }
   .meta-ligne .mono.accent { color: var(--sanguine); }
   h1 {
     font-family: 'Fraunces', serif; font-weight: 300;
@@ -71,7 +71,7 @@
   }
   .chapo {
     margin-top: 28px; font-family: 'Fraunces', serif; font-style: italic;
-    font-size: 20px; line-height: 1.6; color: rgba(28,24,19,0.75);
+    font-size: 20px; line-height: 1.6; color: rgba(27,30,36,0.75);
   }
 
   .photo-pleine {
@@ -82,12 +82,12 @@
     position: absolute; left: 20px; bottom: 14px;
     font-family: 'Space Mono', monospace; font-size: 10px;
     text-transform: uppercase; letter-spacing: 0.14em;
-    color: rgba(242,237,226,0.95); text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+    color: rgba(239,240,242,0.95); text-shadow: 0 1px 10px rgba(0,0,0,0.6);
   }
   .photo-plage { background-image: url('plage.jpg'); background-position: center; }
 
   .corps { max-width: 680px; margin: 0 auto; padding: 7vh 24px; }
-  .corps p { margin-bottom: 1.6em; color: rgba(28,24,19,0.92); }
+  .corps p { margin-bottom: 1.6em; color: rgba(27,30,36,0.92); }
   .horodatage {
     font-family: 'Space Mono', monospace; font-size: 12px;
     text-transform: uppercase; letter-spacing: 0.16em;
@@ -101,23 +101,23 @@
   }
   .fin {
     margin-top: 64px; padding-top: 28px;
-    border-top: 1px solid rgba(28,24,19,0.2);
+    border-top: 1px solid rgba(27,30,36,0.2);
   }
-  .fin .mono { color: rgba(28,24,19,0.55); display: block; margin-bottom: 16px; }
-  .fin p { font-size: 15px; color: rgba(28,24,19,0.8); margin-bottom: 20px; }
+  .fin .mono { color: rgba(27,30,36,0.55); display: block; margin-bottom: 16px; }
+  .fin p { font-size: 15px; color: rgba(27,30,36,0.8); margin-bottom: 20px; }
   .fin a.lien {
     font-family: 'Space Mono', monospace; font-size: 12px;
     text-transform: uppercase; letter-spacing: 0.16em;
     border-bottom: 1px solid var(--encre); padding-bottom: 3px;
   }
 
-  footer { padding: 48px 8vw 40px; border-top: 1px solid rgba(28,24,19,0.12); }
+  footer { padding: 48px 8vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
   .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
   .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
   .footer-droite { justify-content: flex-end; }
   .footer-logo { text-align: center; }
   .footer-logo img { height: 40px; }
-  .footer-bas { text-align: center; margin-top: 32px; font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(28,24,19,0.6); }
+  .footer-bas { text-align: center; margin-top: 32px; font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
 
   .apparait { opacity: 0; transform: translateY(14px); transition: opacity 700ms cubic-bezier(0.16,1,0.3,1), transform 700ms cubic-bezier(0.16,1,0.3,1); }
   .apparait.visible { opacity: 1; transform: none; }
@@ -135,7 +135,7 @@
   .menu-mobile a {
     font-family: 'Space Mono', monospace; font-size: 19px;
     text-transform: uppercase; letter-spacing: 0.16em;
-    padding: 20px 0; border-bottom: 1px solid rgba(28,24,19,0.15);
+    padding: 20px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
   }
   .menu-mobile .fermer {
     position: absolute; top: 22px; right: 26px;

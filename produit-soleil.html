@@ -15,12 +15,12 @@
      Images à gauche, info fixe à droite. Bouton « L'adopter ».
      ========================================================== */
   :root {
-    --creme: #F4EDE0;
-    --papier: #EFE6D4;
-    --terracotta: #A63E24;
-    --encre: #211B14;
-    --sable: #D9CDB4;
-    --nuit: #16110C;
+    --creme: #EFF0F2;
+    --papier: #E2E4E8;
+    --terracotta: #0F2FA6;
+    --encre: #1B1E24;
+    --sable: #C6CBD3;
+    --nuit: #10131A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -47,7 +47,7 @@
     background: var(--creme);
     display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
     padding: 14px 32px;
-    border-bottom: 1px solid rgba(33,27,20,0.12);
+    border-bottom: 1px solid rgba(27,30,36,0.12);
   }
   .logo-nav img { height: 34px; display: block; }
   .nav-centre, .nav-droite {
@@ -57,8 +57,8 @@
   .nav-droite { gap: 22px; justify-content: flex-end; }
   .nav-actif { border-bottom: 1px solid var(--encre); padding-bottom: 2px; }
 
-  .fil { padding: 24px 6vw 0; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(33,27,20,0.6); }
-  .fil a { border-bottom: 1px solid rgba(33,27,20,0.3); padding-bottom: 2px; }
+  .fil { padding: 24px 6vw 0; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.6); }
+  .fil a { border-bottom: 1px solid rgba(27,30,36,0.3); padding-bottom: 2px; }
 
   /* ---------- Fiche ---------- */
   .fiche {
@@ -69,7 +69,7 @@
   .photo {
     position: relative; overflow: hidden;
     display: flex; align-items: center; justify-content: center;
-    color: rgba(244,237,224,0.7); font-size: 9px;
+    color: rgba(239,240,242,0.7); font-size: 9px;
     text-transform: uppercase; letter-spacing: 0.14em; text-align: center; padding: 10px;
   }
   .photo-1 { aspect-ratio: 4 / 5; background: url('IMG_3199.jpeg') center / cover no-repeat; }
@@ -77,7 +77,7 @@
   .photo-3 { aspect-ratio: 4 / 5; background: radial-gradient(circle at 50% 40%, #c25532 0%, #93361c 70%); }
   .photo .legende {
     position: absolute; left: 14px; bottom: 12px;
-    font-size: 10px; color: rgba(244,237,224,0.9);
+    font-size: 10px; color: rgba(239,240,242,0.9);
     text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   }
 
@@ -88,9 +88,9 @@
     font-size: clamp(30px, 3.4vw, 44px); text-transform: uppercase; letter-spacing: 0.08em;
     margin: 10px 0 6px; line-height: 1.1;
   }
-  .info .sous { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(33,27,20,0.65); }
+  .info .sous { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.65); }
   .info .prix { font-size: 16px; margin: 18px 0 4px; }
-  .info .edition { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(33,27,20,0.6); margin-bottom: 24px; }
+  .info .edition { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.6); margin-bottom: 24px; }
 
   .adopter {
     width: 100%; background: var(--encre); color: var(--creme); border: none;
@@ -109,13 +109,13 @@
   .description { margin-top: 28px; }
   .description p {
     font-family: 'Cormorant Garamond', serif; letter-spacing: 0.02em;
-    font-size: 17px; line-height: 1.65; color: rgba(33,27,20,0.9);
+    font-size: 17px; line-height: 1.65; color: rgba(27,30,36,0.9);
     margin-bottom: 1.2em;
   }
 
   /* ---------- Accordéons ---------- */
-  .accordeons { margin-top: 12px; border-top: 1px solid rgba(33,27,20,0.2); }
-  details { border-bottom: 1px solid rgba(33,27,20,0.2); }
+  .accordeons { margin-top: 12px; border-top: 1px solid rgba(27,30,36,0.2); }
+  details { border-bottom: 1px solid rgba(27,30,36,0.2); }
   summary {
     list-style: none; cursor: pointer;
     display: flex; justify-content: space-between; align-items: center;
@@ -125,7 +125,7 @@
   summary::-webkit-details-marker { display: none; }
   summary::after { content: '+'; font-size: 15px; color: var(--terracotta); transition: transform 300ms ease; }
   details[open] summary::after { transform: rotate(45deg); }
-  details .contenu { padding: 0 2px 18px; font-size: 12px; letter-spacing: 0.04em; line-height: 1.8; color: rgba(33,27,20,0.85); }
+  details .contenu { padding: 0 2px 18px; font-size: 12px; letter-spacing: 0.04em; line-height: 1.8; color: rgba(27,30,36,0.85); }
 
   /* ---------- Du même voyage ---------- */
   .voyage { padding: 110px 6vw 90px; }
@@ -134,23 +134,23 @@
   .vp { display: block; }
   .vp-photo {
     aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center;
-    color: rgba(244,237,224,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(239,240,242,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
     transition: transform 400ms ease;
   }
   .vp:hover .vp-photo { transform: scale(0.985); }
-  .vp1 .vp-photo { background: radial-gradient(circle at 50% 45%, #cf9a63 0%, #9c6635 75%); }
-  .vp2 .vp-photo { background: radial-gradient(circle at 45% 40%, #d9c49a 0%, #a98d58 75%); }
-  .vp3 .vp-photo { background: radial-gradient(circle at 55% 45%, #b97f4f 0%, #7e4c26 75%); }
+  .vp1 .vp-photo { background: radial-gradient(circle at 50% 45%, #AAB2C0 0%, #6E7787 75%); }
+  .vp2 .vp-photo { background: radial-gradient(circle at 45% 40%, #C9CDD4 0%, #8E96A3 75%); }
+  .vp3 .vp-photo { background: radial-gradient(circle at 55% 45%, #9AA3B2 0%, #5A6273 75%); }
   .vp-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
-  .vp-cartel .prix { display: block; margin-top: 3px; color: rgba(33,27,20,0.65); }
+  .vp-cartel .prix { display: block; margin-top: 3px; color: rgba(27,30,36,0.65); }
 
-  footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(33,27,20,0.12); }
+  footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
   .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
   .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
   .footer-droite { justify-content: flex-end; }
   .footer-logo { text-align: center; }
   .footer-logo img { height: 40px; }
-  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(33,27,20,0.6); }
+  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
 
   .apparait { opacity: 0; transform: translateY(14px); transition: opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1); }
   .apparait.visible { opacity: 1; transform: none; }
@@ -168,7 +168,7 @@
   .menu-mobile a {
     font-family: 'Space Mono', monospace; font-size: 19px;
     text-transform: uppercase; letter-spacing: 0.16em;
-    padding: 20px 0; border-bottom: 1px solid rgba(28,24,19,0.15);
+    padding: 20px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
   }
   .menu-mobile .fermer {
     position: absolute; top: 22px; right: 26px;

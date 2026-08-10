@@ -18,10 +18,10 @@
      Space Mono (l'archiviste). Fer à gauche. Un seul Point Soleil.
      ========================================================== */
   :root {
-    --chaux: #F2EDE2;
-    --encre: #1C1813;
+    --chaux: #EFF0F2;
+    --encre: #1B1E24;
     --soleil: #F5A800;
-    --sanguine: #E8501B;
+    --sanguine: #0F2FA6;
     --grand-bleu: #0F2FA6;
     --bougainvillee: #CE4577;
     --figuier: #3F5A36;
@@ -55,7 +55,7 @@
     background: var(--chaux);
     display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
     padding: 14px 32px;
-    border-bottom: 1px solid rgba(28,24,19,0.12);
+    border-bottom: 1px solid rgba(27,30,36,0.12);
   }
   .logo-nav img { height: 34px; display: block; }
   .nav-centre, .nav-droite {
@@ -68,7 +68,7 @@
 
   /* ---------- Ouverture ---------- */
   .ouverture { padding: 14vh 8vw 10vh; max-width: 1100px; }
-  .ouverture .meta { color: rgba(28,24,19,0.55); margin-bottom: 40px; display: block; }
+  .ouverture .meta { color: rgba(27,30,36,0.55); margin-bottom: 40px; display: block; }
   .ouverture h1 {
     font-family: 'Fraunces', serif; font-weight: 300;
     font-size: clamp(40px, 6vw, 88px); line-height: 1.08;
@@ -83,9 +83,9 @@
   .ouverture .exergue {
     margin-top: 56px; max-width: 52ch;
     font-family: 'Fraunces', serif; font-style: italic; font-size: 19px;
-    color: rgba(28,24,19,0.75);
+    color: rgba(27,30,36,0.75);
   }
-  .ouverture .exergue .mono { display: block; font-style: normal; margin-top: 12px; color: rgba(28,24,19,0.5); }
+  .ouverture .exergue .mono { display: block; font-style: normal; margin-top: 12px; color: rgba(27,30,36,0.5); }
 
   /* ---------- Manifeste ---------- */
   .manifeste { padding: 10vh 8vw; max-width: 900px; }
@@ -104,18 +104,18 @@
     font-size: clamp(28px, 3.4vw, 48px); line-height: 1.15;
   }
   .territoire h2 em { font-style: italic; }
-  .territoire .texte p { margin-bottom: 1.3em; max-width: 58ch; font-size: 16px; color: rgba(28,24,19,0.85); }
+  .territoire .texte p { margin-bottom: 1.3em; max-width: 58ch; font-size: 16px; color: rgba(27,30,36,0.85); }
   .territoire .mono { display: block; margin-bottom: 24px; color: var(--sanguine); }
 
   /* ---------- Les cinq piliers ---------- */
   .piliers { padding: 10vh 8vw 12vh; }
   .piliers > .mono { display: block; margin-bottom: 48px; color: var(--sanguine); }
-  .piliers-grille { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(28,24,19,0.15); border: 1px solid rgba(28,24,19,0.15); }
+  .piliers-grille { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(27,30,36,0.15); border: 1px solid rgba(27,30,36,0.15); }
   .pilier { background: var(--chaux); padding: 32px 22px 40px; position: relative; min-height: 0; display: flex; flex-direction: column; }
   .pilier .pastille { width: 30px; height: 30px; margin-bottom: 20px; }
   .pilier h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 26px; margin-bottom: 14px; }
-  .pilier .mots { font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(28,24,19,0.55); line-height: 1.9; margin-bottom: 16px; }
-  .pilier p { font-size: 13.5px; color: rgba(28,24,19,0.85); margin-top: auto; }
+  .pilier .mots { font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(27,30,36,0.55); line-height: 1.9; margin-bottom: 16px; }
+  .pilier p { font-size: 13.5px; color: rgba(27,30,36,0.85); margin-top: auto; }
   .pilier p em { font-family: 'Fraunces', serif; }
   .s-sun .pastille { background: var(--soleil); border-radius: 50%; }
   .s-sea .pastille { background: var(--grand-bleu); }
@@ -134,21 +134,21 @@
     font-size: clamp(20px, 2.4vw, 30px); line-height: 1.5;
     max-width: 30em; margin-bottom: 1.3em;
   }
-  .soleil-interieur .petit { font-family: 'Archivo', sans-serif; font-size: 15px; color: rgba(242,237,226,0.75); max-width: 60ch; }
+  .soleil-interieur .petit { font-family: 'Archivo', sans-serif; font-size: 15px; color: rgba(239,240,242,0.75); max-width: 60ch; }
 
   /* ---------- Bibliothèque d'atmosphères ---------- */
   .atmospheres { padding: 12vh 8vw; }
   .atmospheres > .mono { display: block; margin-bottom: 12px; color: var(--sanguine); }
   .atmospheres h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px, 3.4vw, 46px); margin-bottom: 56px; }
-  .atmo-liste { display: grid; gap: 1px; background: rgba(28,24,19,0.15); border-top: 1px solid rgba(28,24,19,0.15); border-bottom: 1px solid rgba(28,24,19,0.15); }
+  .atmo-liste { display: grid; gap: 1px; background: rgba(27,30,36,0.15); border-top: 1px solid rgba(27,30,36,0.15); border-bottom: 1px solid rgba(27,30,36,0.15); }
   .atmo {
     background: var(--chaux);
     display: grid; grid-template-columns: 220px 1fr 2fr; gap: 32px; align-items: center;
     padding: 28px 0;
   }
-  .atmo .mono { color: rgba(28,24,19,0.5); }
+  .atmo .mono { color: rgba(27,30,36,0.5); }
   .atmo h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; }
-  .atmo p { font-size: 14.5px; color: rgba(28,24,19,0.8); max-width: 60ch; }
+  .atmo p { font-size: 14.5px; color: rgba(27,30,36,0.8); max-width: 60ch; }
 
   /* ---------- Photos habitées ---------- */
   .bande-photos { display: grid; grid-template-columns: 1.2fr 1fr 1.4fr; gap: 1px; background: var(--encre); }
@@ -160,7 +160,7 @@
     position: absolute; left: 16px; bottom: 12px;
     font-family: 'Space Mono', monospace; font-size: 10px;
     text-transform: uppercase; letter-spacing: 0.14em;
-    color: rgba(242,237,226,0.9);
+    color: rgba(239,240,242,0.9);
     text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   }
 
@@ -171,15 +171,15 @@
   .hierarchie li {
     counter-increment: h;
     display: grid; grid-template-columns: 64px 1fr; align-items: baseline;
-    padding: 22px 0; border-bottom: 1px solid rgba(28,24,19,0.15);
+    padding: 22px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
     font-family: 'Fraunces', serif; font-weight: 300;
     font-size: clamp(20px, 2.4vw, 30px);
   }
   .hierarchie li::before {
     content: counter(h, decimal-leading-zero);
-    font-family: 'Space Mono', monospace; font-size: 12px; color: rgba(28,24,19,0.45);
+    font-family: 'Space Mono', monospace; font-size: 12px; color: rgba(27,30,36,0.45);
   }
-  .hierarchie .note { margin-top: 28px; font-size: 14px; color: rgba(28,24,19,0.6); }
+  .hierarchie .note { margin-top: 28px; font-size: 14px; color: rgba(27,30,36,0.6); }
 
   /* ---------- Clôture ---------- */
   .cloture {
@@ -201,13 +201,13 @@
   }
 
   /* ---------- Footer (continuité du site) ---------- */
-  footer { padding: 48px 8vw 40px; border-top: 1px solid rgba(28,24,19,0.12); }
+  footer { padding: 48px 8vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
   .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
   .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
   .footer-droite { justify-content: flex-end; }
   .footer-logo { text-align: center; }
   .footer-logo img { height: 40px; }
-  .footer-bas { text-align: center; margin-top: 32px; font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(28,24,19,0.6); }
+  .footer-bas { text-align: center; margin-top: 32px; font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
 
   /* ---------- Apparitions ---------- */
   .apparait { opacity: 0; transform: translateY(14px); transition: opacity 700ms cubic-bezier(0.16,1,0.3,1), transform 700ms cubic-bezier(0.16,1,0.3,1); }
@@ -233,7 +233,7 @@
   .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
   .menu-mobile {
     position: fixed; inset: 0; z-index: 300;
-    background: var(--creme, #F2EDE2); color: var(--encre);
+    background: var(--creme, #EFF0F2); color: var(--encre);
     display: none; flex-direction: column; justify-content: center;
     padding: 32px 36px;
   }
@@ -241,7 +241,7 @@
   .menu-mobile a {
     font-family: 'Space Mono', monospace; font-size: 19px;
     text-transform: uppercase; letter-spacing: 0.16em;
-    padding: 20px 0; border-bottom: 1px solid rgba(28,24,19,0.15);
+    padding: 20px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
   }
   .menu-mobile .fermer {
     position: absolute; top: 22px; right: 26px;
