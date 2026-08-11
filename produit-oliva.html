@@ -258,6 +258,11 @@
     border: 1px solid rgba(27,30,36,0.2);
   }
   .coloris-liste a.actif { border: 2px solid var(--encre); }
+  @media (max-width: 900px) {
+    .nav-droite { order: -1; }
+    .nav-droite a { display: none; }
+    .logo-nav { justify-self: end; }
+  }
 </style>
 </head>
 <body>

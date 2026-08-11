@@ -263,6 +263,11 @@
     cursor: pointer; margin-top: 4px; text-decoration: underline;
   }
   .popup .popup-merci { display: none; font-family: 'Cormorant Garamond', serif; font-size: 20px; }
+  @media (max-width: 900px) {
+    .nav-droite { order: -1; }
+    .nav-droite a { display: none; }
+    .logo-nav { justify-self: end; }
+  }
 </style>
 </head>
 <body>
@@ -424,10 +429,6 @@
     <p class="drop-sous">Les îles, la mer profonde, le soleil qui tombe.</p>
   </header>
   <section class="grille">
-    <a class="produit apparait" data-type="collier" href="produit-santorini.html">
-      <div class="produit-photo ph-santorini"></div>
-      <p class="produit-cartel">Santorini Necklace<span class="prix">150&nbsp;€</span></p>
-    </a>
     <a class="produit apparait" data-type="collier" href="produit-ibiza.html">
       <div class="produit-photo ph-ibiza"></div>
       <p class="produit-cartel">Ibiza Necklace<span class="prix">160&nbsp;€</span></p>
@@ -460,6 +461,10 @@
       <div class="produit-photo ph-rosa"></div>
       <p class="produit-cartel">Rosa Necklace<span class="prix">140&nbsp;€</span></p>
     </a>
+    <a class="produit apparait" data-type="collier" href="produit-santorini.html">
+      <div class="produit-photo ph-santorini"></div>
+      <p class="produit-cartel">Santorini Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
     <a class="produit apparait" data-type="collier" href="produit-marea.html">
       <div class="produit-photo ph-marea"></div>
       <p class="produit-cartel">Marea Necklace<span class="prix">160&nbsp;€</span></p>
@@ -468,6 +473,10 @@
       <div class="produit-photo ph-neptune"></div>
       <p class="produit-cartel">Neptune Necklace<span class="prix">170&nbsp;€</span></p>
     </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-marina.html">
+      <div class="produit-photo ph-marina"></div>
+      <p class="produit-cartel">Marina Bracelet<span class="prix">80&nbsp;€</span></p>
+    </a>
     <a class="produit apparait" data-type="collier" href="produit-sunset.html">
       <div class="produit-photo ph-sunset"></div>
       <p class="produit-cartel">Sunset Necklace<span class="prix">170&nbsp;€</span></p>
@@ -475,10 +484,6 @@
     <a class="produit apparait" data-type="collier" href="produit-fiesta.html">
       <div class="produit-photo ph-fiesta"></div>
       <p class="produit-cartel">Fiesta Necklace<span class="prix">170&nbsp;€</span></p>
-    </a>
-    <a class="produit apparait" data-type="bracelet" href="produit-marina.html">
-      <div class="produit-photo ph-marina"></div>
-      <p class="produit-cartel">Marina Bracelet<span class="prix">80&nbsp;€</span></p>
     </a>
   </section>
 </div>

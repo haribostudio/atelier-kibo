@@ -122,6 +122,11 @@
   details[open] summary::after { transform: rotate(45deg); }
   details .contenu { padding: 0 2px 18px; }
   details .contenu p { margin-bottom: 10px; }
+  @media (max-width: 900px) {
+    .nav-droite { order: -1; }
+    .nav-droite a { display: none; }
+    .logo-nav { justify-self: end; }
+  }
 </style>
 </head>
 <body>
