@@ -94,7 +94,6 @@
     text-align: center; padding: 10px;
     transition: transform 400ms ease;
   }
-  .produit:hover .produit-photo { transform: scale(0.985); }
   .produit-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
   .produit-cartel .prix { display: block; margin-top: 3px; color: rgba(27,30,36,0.65); }
   .badge {
@@ -103,29 +102,48 @@
     font-size: 8px; text-transform: uppercase; letter-spacing: 0.16em;
     padding: 4px 8px;
   }
-  /* Photos produits */
-  .ph-palermo { background: url('produit-palermo.jpg?v=3') center / cover no-repeat; }
-  .ph-limone { background: url('produit-limone.jpg?v=3') center / cover no-repeat; }
-  .ph-murano { background: url('produit-murano.jpg?v=3') center / cover no-repeat; }
-  .ph-santorini { background: url('produit-santorini.jpg?v=3') center / cover no-repeat; }
-  .ph-rio { background: url('produit-rio.jpg?v=3') center / cover no-repeat; }
-  .ph-ibiza { background: url('produit-ibiza.jpg?v=3') center / cover no-repeat; }
-  .ph-tahiti { background: url('produit-tahiti.jpg?v=3') center / cover no-repeat; }
-  .ph-positano { background: url('produit-positano.jpg?v=3') center / cover no-repeat; }
-  .ph-capri { background: url('produit-capri.jpg?v=3') center / cover no-repeat; }
-  .ph-laguna { background: url('produit-laguna.jpg?v=3') center / cover no-repeat; }
-  .ph-casablanca { background: url('produit-casablanca.jpg?v=3') center / cover no-repeat; }
-  .ph-amore { background: url('produit-amore.jpg?v=3') center / cover no-repeat; }
-  .ph-bodrum { background: url('produit-bodrum.jpg?v=3') center / cover no-repeat; }
-  .ph-stella { background: url('produit-stella.jpg?v=3') center / cover no-repeat; }
-  .ph-marea { background: url('produit-marea.jpg?v=3') center / cover no-repeat; }
-  .ph-riviera { background: url('produit-riviera.jpg?v=3') center / cover no-repeat; }
-  .ph-perla { background: url('produit-perla.jpg?v=3') center / cover no-repeat; }
-  .ph-sorbet { background: url('produit-sorbet.jpg?v=3') center / cover no-repeat; }
-  .ph-menta { background: url('produit-menta.jpg?v=3') center / cover no-repeat; }
-  .ph-marina { background: url('produit-marina.jpg?v=3') center / cover no-repeat; }
-  .badge { z-index: 2; }
-  /* Survol : bascule vers la 2e photo (édito) */
+  /* Photos produits : calque ::before + zoom au survol */
+  .produit-photo::before {
+    content: ''; position: absolute; inset: 0;
+    background-position: center; background-size: cover; background-repeat: no-repeat;
+    transition: transform 900ms cubic-bezier(0.16,1,0.3,1);
+  }
+  .produit:hover .produit-photo::before { transform: scale(1.07); }
+  .ph-palermo::before { background-image: url('produit-palermo.jpg?v=4'); }
+  .ph-limone::before { background-image: url('produit-limone.jpg?v=4'); }
+  .ph-murano::before { background-image: url('produit-murano.jpg?v=4'); }
+  .ph-santorini::before { background-image: url('produit-santorini.jpg?v=4'); }
+  .ph-rio::before { background-image: url('produit-rio.jpg?v=4'); }
+  .ph-ibiza::before { background-image: url('produit-ibiza.jpg?v=4'); }
+  .ph-tahiti::before { background-image: url('produit-tahiti.jpg?v=4'); }
+  .ph-positano::before { background-image: url('produit-positano.jpg?v=4'); }
+  .ph-capri::before { background-image: url('produit-capri.jpg?v=4'); }
+  .ph-laguna::before { background-image: url('produit-laguna.jpg?v=4'); }
+  .ph-casablanca::before { background-image: url('produit-casablanca.jpg?v=4'); }
+  .ph-amore::before { background-image: url('produit-amore.jpg?v=4'); }
+  .ph-bodrum::before { background-image: url('produit-bodrum.jpg?v=4'); }
+  .ph-stella::before { background-image: url('produit-stella.jpg?v=4'); }
+  .ph-marea::before { background-image: url('produit-marea.jpg?v=4'); }
+  .ph-riviera::before { background-image: url('produit-riviera.jpg?v=4'); }
+  .ph-perla::before { background-image: url('produit-perla.jpg?v=4'); }
+  .ph-sorbet::before { background-image: url('produit-sorbet.jpg?v=4'); }
+  .ph-menta::before { background-image: url('produit-menta.jpg?v=4'); }
+  .ph-marina::before { background-image: url('produit-marina.jpg?v=4'); }
+  .ph-mimosa::before { background-image: url('produit-mimosa.jpg?v=4'); }
+  .ph-oliva::before { background-image: url('produit-oliva.jpg?v=4'); }
+  .ph-rosa::before { background-image: url('produit-rosa.jpg?v=4'); }
+  .ph-bianca::before { background-image: url('produit-bianca.jpg?v=4'); }
+  .ph-amuleto::before { background-image: url('produit-amuleto.jpg?v=4'); }
+  .ph-fiesta::before { background-image: url('produit-fiesta.jpg?v=4'); }
+  .ph-sunset::before { background-image: url('produit-sunset.jpg?v=4'); }
+  .ph-neptune::before { background-image: url('produit-neptune.jpg?v=4'); }
+  .ph-casablanca-bracelet::before { background-image: url('produit-casablanca-bracelet.jpg?v=4'); }
+  .ph-rio-bracelet::before { background-image: url('produit-rio-bracelet.jpg?v=4'); }
+  .ph-positano-bracelet::before { background-image: url('produit-positano-bracelet.jpg?v=4'); }
+  .ph-ibiza-bracelet::before { background-image: url('produit-ibiza-bracelet.jpg?v=4'); }
+  .ph-palermo-bracelet::before { background-image: url('produit-palermo-bracelet.jpg?v=4'); }
+  .ph-tahiti-bracelet::before { background-image: url('produit-tahiti-bracelet.jpg?v=4'); }
+  /* Cartes avec photo édito : bascule vers la 2e image, pas de zoom */
   .ph-amore::after, .ph-menta::after, .ph-tahiti::after, .ph-rio::after {
     content: ''; position: absolute; inset: 0;
     opacity: 0; transition: opacity 400ms ease;
@@ -136,7 +154,9 @@
   .ph-rio::after { background: url('produit-rio-2.jpg') center 25% / cover no-repeat; }
   .produit:hover .ph-amore::after, .produit:hover .ph-menta::after,
   .produit:hover .ph-tahiti::after, .produit:hover .ph-rio::after { opacity: 1; }
-
+  .produit:hover .ph-amore::before, .produit:hover .ph-menta::before,
+  .produit:hover .ph-tahiti::before, .produit:hover .ph-rio::before { transform: none; }
+  .badge { z-index: 2; }
   /* ---------- Interlude éditorial ---------- */
   .interlude {
     grid-column: 1 / -1; display: flex; align-items: center; justify-content: center;
@@ -282,7 +302,7 @@
   <div class="apparait">
     <p class="etiquette">Latest Drop — Été 2026</p>
     <h1>Soleil Rouge</h1>
-    <p class="sous">A summer state of mind. Captured in 20 pieces.</p>
+    <p class="sous">A summer state of mind. Captured in 34 pieces.</p>
   </div>
   <div class="entete-note apparait">
     Made by hand,<br>worn for memories
@@ -379,6 +399,62 @@
   <a class="produit apparait" data-type="bracelet" href="produit-marina.html">
     <div class="produit-photo ph-marina"></div>
     <p class="produit-cartel">Marina Bracelet<span class="prix">80&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-mimosa.html">
+    <div class="produit-photo ph-mimosa"></div>
+    <p class="produit-cartel">Mimosa Necklace<span class="prix">150&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-oliva.html">
+    <div class="produit-photo ph-oliva"></div>
+    <p class="produit-cartel">Oliva Necklace<span class="prix">150&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-rosa.html">
+    <div class="produit-photo ph-rosa"></div>
+    <p class="produit-cartel">Rosa Necklace<span class="prix">140&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-bianca.html">
+    <div class="produit-photo ph-bianca"></div>
+    <p class="produit-cartel">Bianca Necklace<span class="prix">160&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-amuleto.html">
+    <div class="produit-photo ph-amuleto"></div>
+    <p class="produit-cartel">Amuleto Necklace<span class="prix">160&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-fiesta.html">
+    <div class="produit-photo ph-fiesta"><span class="badge">Limited</span></div>
+    <p class="produit-cartel">Fiesta Necklace<span class="prix">170&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-sunset.html">
+    <div class="produit-photo ph-sunset"></div>
+    <p class="produit-cartel">Sunset Necklace<span class="prix">170&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="collier" href="produit-neptune.html">
+    <div class="produit-photo ph-neptune"></div>
+    <p class="produit-cartel">Neptune Necklace<span class="prix">170&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-casablanca-bracelet.html">
+    <div class="produit-photo ph-casablanca-bracelet"></div>
+    <p class="produit-cartel">Casablanca Bracelet<span class="prix">95&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-rio-bracelet.html">
+    <div class="produit-photo ph-rio-bracelet"></div>
+    <p class="produit-cartel">Rio Bracelet<span class="prix">90&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-positano-bracelet.html">
+    <div class="produit-photo ph-positano-bracelet"></div>
+    <p class="produit-cartel">Positano Bracelet<span class="prix">85&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-ibiza-bracelet.html">
+    <div class="produit-photo ph-ibiza-bracelet"></div>
+    <p class="produit-cartel">Ibiza Bracelet<span class="prix">90&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-palermo-bracelet.html">
+    <div class="produit-photo ph-palermo-bracelet"></div>
+    <p class="produit-cartel">Palermo Bracelet<span class="prix">90&nbsp;€</span></p>
+  </a>
+  <a class="produit apparait" data-type="bracelet" href="produit-tahiti-bracelet.html">
+    <div class="produit-photo ph-tahiti-bracelet"></div>
+    <p class="produit-cartel">Tahiti Bracelet<span class="prix">95&nbsp;€</span></p>
   </a>
 </section>
 
