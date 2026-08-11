@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bodrum Necklace — KIBO Paris</title>
-<meta name="description" content="Bodrum Necklace. Verre azur, fleurs bleues — œil protecteur. Fait main à Paris, numéroté à l'encre. Édition Grand Bleu — 140 €.">
+<meta name="description" content="Bodrum Necklace. Verre azur, fleurs bleues — œil protecteur. Fait main à Paris. Édition Grand Bleu — 140 €.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KIBO Paris">
 <meta property="og:title" content="Bodrum Necklace — KIBO Paris">
-<meta property="og:description" content="Bodrum Necklace. Verre azur, fleurs bleues — œil protecteur. Fait main à Paris, numéroté à l'encre. Édition Grand Bleu — 140 €.">
+<meta property="og:description" content="Bodrum Necklace. Verre azur, fleurs bleues — œil protecteur. Fait main à Paris. Édition Grand Bleu — 140 €.">
 <meta property="og:url" content="https://atelier-kibo.com/produit-bodrum.html">
 <meta property="og:image" content="https://atelier-kibo.com/produit-bodrum.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -86,6 +86,11 @@
     position: absolute; left: 14px; bottom: 12px;
     font-size: 10px; color: rgba(230,230,230,0.9);
     text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
+
+  .legende-photo {
+    text-align: right; font-size: 9px; text-transform: uppercase;
+    letter-spacing: 0.14em; color: rgba(27,30,36,0.7); margin-top: -8px;
   }
 
   .info { position: sticky; top: 88px; }
@@ -261,6 +266,7 @@
   @media (max-width: 900px) {
     .nav-droite { order: -1; }
     .nav-droite a { display: none; }
+    .nav-droite .loupe { order: 2; margin-left: 4px; }
     .logo-nav { justify-self: end; }
   }
   /* ---------- Recherche ---------- */
@@ -295,6 +301,15 @@
     background: none; border: none; font-size: 24px; color: inherit;
     cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
   }
+  .tailles { margin: 24px 0 2px; }
+  .tailles .t-label { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.6); margin-bottom: 10px; }
+  .taille-btns { display: flex; gap: 10px; }
+  .taille {
+    background: none; border: 1px solid rgba(27,30,36,0.35); color: var(--encre);
+    font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.14em; padding: 10px 18px; cursor: pointer;
+  }
+  .taille.actif { background: var(--encre); color: var(--creme); border-color: var(--encre); }
 </style>
 </head>
 <body>
@@ -332,7 +347,8 @@
 
 <main class="fiche">
   <div class="photos">
-    <div class="photo photo-1"><span class="legende">Bodrum Necklace — la pièce</span></div>
+    <div class="photo photo-1"></div>
+    <p class="legende-photo">Bodrum Necklace — la pièce</p>
   </div>
 
   <aside class="info">
@@ -340,7 +356,7 @@
     <h1 class="apparait">Bodrum Necklace</h1>
     <p class="sous apparait">Verre azur, fleurs bleues — œil protecteur</p>
     <p class="prix apparait">140&nbsp;€</p>
-    <p class="edition apparait">Édition limitée — numérotée à l'encre</p>
+    <p class="edition apparait">Édition limitée</p>
 
     <div class="coloris apparait">
       <span class="etiquette-coloris">Coloris — Bleu</span>
@@ -351,6 +367,11 @@
         <a href="produit-rosa.html" title="Rose" aria-label="Coloris Rose" style="background-image:url(&#39;produit-rosa.jpg?v=4&#39;)"></a>
       </div>
     </div>
+    <div class="tailles apparait">
+      <span class="t-label">Taille</span>
+      <div class="taille-btns"><button class="taille actif" type="button">40&nbsp;cm</button><button class="taille" type="button">50&nbsp;cm</button></div>
+    </div>
+
     <button class="adopter apparait" id="btnAdopter">L'adopter</button>
     <div class="note-boutique" id="noteBoutique">
       La boutique ouvre bientôt. <a href="private-access.html">Rejoignez le cercle</a> — les membres adoptent leurs pièces avant tout le monde.
@@ -368,7 +389,7 @@
       </details>
       <details>
         <summary>Fabrication</summary>
-        <div class="contenu">Fait main à l'atelier, en édition de 100 exemplaires numérotés à l'encre. Quand la série est close, elle n'est jamais rééditée.</div>
+        <div class="contenu">Fait main à l'atelier, en édition limitée. Quand une série s'épuise, il n'y en a plus — jusqu'à un éventuel retour.</div>
       </details>
       <details>
         <summary>Livraison &amp; retours</summary>
@@ -427,6 +448,13 @@
   /* Bouton « L'adopter » — BRANCHEMENT STRIPE :
      quand le lien de paiement Stripe existera, remplacer le contenu
      de cette fonction par : window.location.href = 'https://buy.stripe.com/...'; */
+  document.querySelectorAll('.taille').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.taille').forEach(function (x) { x.classList.remove('actif'); });
+      b.classList.add('actif');
+    });
+  });
+
   document.getElementById('btnAdopter').addEventListener('click', function () {
     document.getElementById('noteBoutique').style.display = 'block';
   });
