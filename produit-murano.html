@@ -195,6 +195,51 @@
     cursor: zoom-out; padding: 4vh 4vw;
   }
   .zoom-overlay img { max-width: 100%; max-height: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+  /* ---------- Pop-up newsletter ---------- */
+  .popup-fond {
+    position: fixed; inset: 0; z-index: 500;
+    background: rgba(16,19,26,0.55);
+    display: none; align-items: center; justify-content: center; padding: 24px;
+  }
+  .popup-fond.visible { display: flex; }
+  .popup {
+    background: #EFF0F2; color: #1B1E24; max-width: 400px; width: 100%;
+    padding: 40px 36px 32px; position: relative; text-align: center;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  }
+  .popup .fermer-popup {
+    position: absolute; top: 12px; right: 16px;
+    background: none; border: none; font-size: 20px; cursor: pointer;
+    color: inherit; font-family: inherit; line-height: 1; padding: 4px;
+  }
+  .popup .dix {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; line-height: 1;
+    color: #0F2FA6; margin-bottom: 8px;
+  }
+  .popup h3 {
+    font-family: 'Space Mono', monospace; font-weight: 400; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 8px;
+  }
+  .popup p { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.04em; line-height: 1.7; color: rgba(27,30,36,0.7); margin-bottom: 20px; }
+  .popup form { display: flex; flex-direction: column; gap: 12px; }
+  .popup input[type="email"] {
+    background: transparent; border: none; border-bottom: 1px solid rgba(27,30,36,0.4);
+    font-family: 'Space Mono', monospace; font-size: 13px; padding: 10px 2px;
+    outline: none; border-radius: 0; text-align: center; color: inherit;
+  }
+  .popup input[type="email"]:focus { border-color: #1B1E24; }
+  .popup button[type="submit"] {
+    background: #1B1E24; color: #EFF0F2; border: none;
+    font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.16em; padding: 14px; cursor: pointer;
+  }
+  .popup .non-merci {
+    background: none; border: none; font-family: 'Space Mono', monospace; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.5);
+    cursor: pointer; margin-top: 4px; text-decoration: underline;
+  }
+  .popup .popup-merci { display: none; font-family: 'Cormorant Garamond', serif; font-size: 20px; }
 </style>
 </head>
 <body>
@@ -360,6 +405,52 @@
         document.body.appendChild(o);
       });
     }
+  });
+})();
+</script>
+
+
+<div class="popup-fond" id="popupNews" role="dialog" aria-modal="true" aria-label="Newsletter">
+  <div class="popup">
+    <button class="fermer-popup" aria-label="Fermer" onclick="kiboFermerPopup()">&#10005;</button>
+    <div class="dix">&minus;10&nbsp;%</div>
+    <h3>Rejoignez le cercle</h3>
+    <p>Les &eacute;ditions en avant-premi&egrave;re et 10&nbsp;% sur votre premi&egrave;re pi&egrave;ce.</p>
+    <form id="popupForm">
+      <input type="email" name="EMAIL" placeholder="VOTRE E-MAIL" required autocomplete="email">
+      <button type="submit">Recevoir mon code</button>
+      <button type="button" class="non-merci" onclick="kiboFermerPopup()">Non merci</button>
+    </form>
+    <div class="popup-merci" id="popupMerci">Bienvenue dans le cercle.<br>Votre code&nbsp;: <strong>CERCLE10</strong></div>
+  </div>
+</div>
+<script>
+(function () {
+  /* BRANCHEMENT NEWSLETTER (Brevo) : coller ici l'URL d'action du formulaire.
+     Tant que POPUP_ACTION est vide, mode démonstration (aucun envoi). */
+  var POPUP_ACTION = '';
+  var CLE = 'kibo_popup_vu';
+  window.kiboFermerPopup = function () {
+    document.getElementById('popupNews').classList.remove('visible');
+    try { localStorage.setItem(CLE, '1'); } catch (e) {}
+  };
+  var deja = false;
+  try { deja = localStorage.getItem(CLE) === '1'; } catch (e) {}
+  if (!deja) {
+    setTimeout(function () {
+      document.getElementById('popupNews').classList.add('visible');
+    }, 6000);
+  }
+  document.getElementById('popupForm').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (POPUP_ACTION) {
+      var fd = new FormData(ev.target);
+      fetch(POPUP_ACTION, { method: 'POST', body: fd, mode: 'no-cors' });
+    }
+    ev.target.style.display = 'none';
+    document.getElementById('popupMerci').style.display = 'block';
+    try { localStorage.setItem(CLE, '1'); } catch (e) {}
+    setTimeout(window.kiboFermerPopup, 3500);
   });
 })();
 </script>
