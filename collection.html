@@ -84,7 +84,8 @@
   .filtre.actif { color: var(--terracotta); border-bottom: 1px solid var(--terracotta); }
 
   /* ---------- Grille ---------- */
-  .grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 48px 6vw 96px; }
+  .grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 28px 6vw 12px; }
+  .drop-groupe:last-of-type .grille { padding-bottom: 96px; }
   .produit { display: block; transition: opacity 300ms ease; }
   .produit.cache { display: none; }
   .produit-photo {
@@ -96,12 +97,6 @@
   }
   .produit-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
   .produit-cartel .prix { display: block; margin-top: 3px; color: rgba(27,30,36,0.65); }
-  .badge {
-    position: absolute; top: 10px; left: 10px;
-    background: var(--creme); color: var(--terracotta);
-    font-size: 8px; text-transform: uppercase; letter-spacing: 0.16em;
-    padding: 4px 8px;
-  }
   /* Photos produits : calque ::before + zoom au survol */
   .produit-photo::before {
     content: ''; position: absolute; inset: 0;
@@ -156,21 +151,17 @@
   .produit:hover .ph-tahiti::after, .produit:hover .ph-rio::after { opacity: 1; }
   .produit:hover .ph-amore::before, .produit:hover .ph-menta::before,
   .produit:hover .ph-tahiti::before, .produit:hover .ph-rio::before { transform: none; }
-  .badge { z-index: 2; }
-  .badge-perm { background: var(--encre); color: var(--creme); }
-  /* ---------- Interlude éditorial ---------- */
-  .interlude {
-    grid-column: 1 / -1; display: flex; align-items: center; justify-content: center;
-    min-height: 200px; background: var(--nuit); color: var(--creme);
-    position: relative; overflow: hidden; margin: 24px 0;
+  /* ---------- Têtes de sections / drops ---------- */
+  .drop-tete { padding: 72px 6vw 0; }
+  .drop-groupe:first-of-type .drop-tete { padding-top: 44px; }
+  .drop-sur { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .drop-tete h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(28px, 3.2vw, 44px); text-transform: uppercase; letter-spacing: 0.08em;
+    margin-top: 8px; line-height: 1.1;
   }
-  .interlude::before {
-    content: ''; position: absolute; inset: 0;
-    background:
-      radial-gradient(circle at 25% 45%, rgba(45,75,190,0.45) 0%, transparent 45%),
-      radial-gradient(circle at 78% 55%, rgba(110,130,200,0.3) 0%, transparent 40%);
-  }
-  .interlude p { position: relative; font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 2.2vw, 30px); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; padding: 24px; }
+  .drop-sous { margin-top: 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.6); }
+  .drop-groupe.cache { display: none; }
 
   footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
   .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
@@ -318,147 +309,171 @@
   <button class="filtre" data-filtre="bracelet">Bracelets</button>
 </div>
 
-<section class="grille" id="grille">
-  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-palermo.html">
-    <div class="produit-photo ph-palermo"><span class="badge badge-perm">Permanente</span></div>
-    <p class="produit-cartel">Palermo Necklace<span class="prix">160&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-tahiti.html">
-    <div class="produit-photo ph-tahiti"><span class="badge badge-perm">Permanente</span></div>
-    <p class="produit-cartel">Tahiti Necklace<span class="prix">180&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-casablanca.html">
-    <div class="produit-photo ph-casablanca"><span class="badge badge-perm">Permanente</span></div>
-    <p class="produit-cartel">Casablanca Necklace<span class="prix">160&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-amore.html">
-    <div class="produit-photo ph-amore"><span class="badge badge-perm">Permanente</span></div>
-    <p class="produit-cartel">Amore Necklace<span class="prix">150&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-bianca.html">
-    <div class="produit-photo ph-bianca"><span class="badge badge-perm">Permanente</span></div>
-    <p class="produit-cartel">Bianca Necklace<span class="prix">160&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-casablanca-bracelet.html">
-    <div class="produit-photo ph-casablanca-bracelet"><span class="badge badge-perm">Permanente</span></div>
-    <p class="produit-cartel">Casablanca Bracelet<span class="prix">95&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-tahiti-bracelet.html">
-    <div class="produit-photo ph-tahiti-bracelet"><span class="badge badge-perm">Permanente</span></div>
-    <p class="produit-cartel">Tahiti Bracelet<span class="prix">95&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-palermo-bracelet.html">
-    <div class="produit-photo ph-palermo-bracelet"><span class="badge badge-perm">Permanente</span></div>
-    <p class="produit-cartel">Palermo Bracelet<span class="prix">90&nbsp;€</span></p>
-  </a>
-  <div class="interlude">
-    <p>Memories are made to be worn.</p>
-  </div>
-  <a class="produit apparait" data-type="collier" href="produit-limone.html">
-    <div class="produit-photo ph-limone"></div>
-    <p class="produit-cartel">Limone Necklace<span class="prix">140&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-murano.html">
-    <div class="produit-photo ph-murano"><span class="badge">Limited</span></div>
-    <p class="produit-cartel">Murano Necklace<span class="prix">170&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-santorini.html">
-    <div class="produit-photo ph-santorini"></div>
-    <p class="produit-cartel">Santorini Necklace<span class="prix">150&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-rio.html">
-    <div class="produit-photo ph-rio"></div>
-    <p class="produit-cartel">Rio Necklace<span class="prix">150&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-ibiza.html">
-    <div class="produit-photo ph-ibiza"></div>
-    <p class="produit-cartel">Ibiza Necklace<span class="prix">160&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-positano.html">
-    <div class="produit-photo ph-positano"></div>
-    <p class="produit-cartel">Positano Necklace<span class="prix">140&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-capri.html">
-    <div class="produit-photo ph-capri"></div>
-    <p class="produit-cartel">Capri Necklace<span class="prix">150&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-laguna.html">
-    <div class="produit-photo ph-laguna"></div>
-    <p class="produit-cartel">Laguna Necklace<span class="prix">140&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-bodrum.html">
-    <div class="produit-photo ph-bodrum"></div>
-    <p class="produit-cartel">Bodrum Necklace<span class="prix">140&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-stella.html">
-    <div class="produit-photo ph-stella"><span class="badge">Limited</span></div>
-    <p class="produit-cartel">Stella Necklace<span class="prix">170&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-marea.html">
-    <div class="produit-photo ph-marea"></div>
-    <p class="produit-cartel">Marea Necklace<span class="prix">160&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-riviera.html">
-    <div class="produit-photo ph-riviera"></div>
-    <p class="produit-cartel">Riviera Necklace<span class="prix">170&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-perla.html">
-    <div class="produit-photo ph-perla"></div>
-    <p class="produit-cartel">Perla Bracelet<span class="prix">90&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-sorbet.html">
-    <div class="produit-photo ph-sorbet"></div>
-    <p class="produit-cartel">Sorbet Bracelet<span class="prix">85&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-menta.html">
-    <div class="produit-photo ph-menta"></div>
-    <p class="produit-cartel">Menta Bracelet<span class="prix">80&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-marina.html">
-    <div class="produit-photo ph-marina"></div>
-    <p class="produit-cartel">Marina Bracelet<span class="prix">80&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-mimosa.html">
-    <div class="produit-photo ph-mimosa"></div>
-    <p class="produit-cartel">Mimosa Necklace<span class="prix">150&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-oliva.html">
-    <div class="produit-photo ph-oliva"></div>
-    <p class="produit-cartel">Oliva Necklace<span class="prix">150&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-rosa.html">
-    <div class="produit-photo ph-rosa"></div>
-    <p class="produit-cartel">Rosa Necklace<span class="prix">140&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-amuleto.html">
-    <div class="produit-photo ph-amuleto"></div>
-    <p class="produit-cartel">Amuleto Necklace<span class="prix">160&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-fiesta.html">
-    <div class="produit-photo ph-fiesta"><span class="badge">Limited</span></div>
-    <p class="produit-cartel">Fiesta Necklace<span class="prix">170&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-sunset.html">
-    <div class="produit-photo ph-sunset"></div>
-    <p class="produit-cartel">Sunset Necklace<span class="prix">170&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="collier" href="produit-neptune.html">
-    <div class="produit-photo ph-neptune"></div>
-    <p class="produit-cartel">Neptune Necklace<span class="prix">170&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-rio-bracelet.html">
-    <div class="produit-photo ph-rio-bracelet"></div>
-    <p class="produit-cartel">Rio Bracelet<span class="prix">90&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-positano-bracelet.html">
-    <div class="produit-photo ph-positano-bracelet"></div>
-    <p class="produit-cartel">Positano Bracelet<span class="prix">85&nbsp;€</span></p>
-  </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-ibiza-bracelet.html">
-    <div class="produit-photo ph-ibiza-bracelet"></div>
-    <p class="produit-cartel">Ibiza Bracelet<span class="prix">90&nbsp;€</span></p>
-  </a>
-</section>
+<div class="drop-groupe" data-groupe="permanente">
+  <header class="drop-tete apparait">
+    <span class="drop-sur">La Permanente</span>
+    <h2 class="serif">Toujours là</h2>
+    <p class="drop-sous">Les pièces qui restent, saison après saison.</p>
+  </header>
+  <section class="grille">
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-palermo.html">
+      <div class="produit-photo ph-palermo"></div>
+      <p class="produit-cartel">Palermo Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-tahiti.html">
+      <div class="produit-photo ph-tahiti"></div>
+      <p class="produit-cartel">Tahiti Necklace<span class="prix">180&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-casablanca.html">
+      <div class="produit-photo ph-casablanca"></div>
+      <p class="produit-cartel">Casablanca Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-amore.html">
+      <div class="produit-photo ph-amore"></div>
+      <p class="produit-cartel">Amore Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-bianca.html">
+      <div class="produit-photo ph-bianca"></div>
+      <p class="produit-cartel">Bianca Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-casablanca-bracelet.html">
+      <div class="produit-photo ph-casablanca-bracelet"></div>
+      <p class="produit-cartel">Casablanca Bracelet<span class="prix">95&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-tahiti-bracelet.html">
+      <div class="produit-photo ph-tahiti-bracelet"></div>
+      <p class="produit-cartel">Tahiti Bracelet<span class="prix">95&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-palermo-bracelet.html">
+      <div class="produit-photo ph-palermo-bracelet"></div>
+      <p class="produit-cartel">Palermo Bracelet<span class="prix">90&nbsp;€</span></p>
+    </a>
+  </section>
+</div>
+
+<div class="drop-groupe" data-groupe="dolce-vita">
+  <header class="drop-tete apparait">
+    <span class="drop-sur">Drop 01 — Été 2026</span>
+    <h2 class="serif">Dolce Vita</h2>
+    <p class="drop-sous">La Riviera italienne, la lumière de midi, le sucre des agrumes.</p>
+  </header>
+  <section class="grille">
+    <a class="produit apparait" data-type="collier" href="produit-limone.html">
+      <div class="produit-photo ph-limone"></div>
+      <p class="produit-cartel">Limone Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-murano.html">
+      <div class="produit-photo ph-murano"></div>
+      <p class="produit-cartel">Murano Necklace<span class="prix">170&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-capri.html">
+      <div class="produit-photo ph-capri"></div>
+      <p class="produit-cartel">Capri Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-positano.html">
+      <div class="produit-photo ph-positano"></div>
+      <p class="produit-cartel">Positano Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-positano-bracelet.html">
+      <div class="produit-photo ph-positano-bracelet"></div>
+      <p class="produit-cartel">Positano Bracelet<span class="prix">85&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-riviera.html">
+      <div class="produit-photo ph-riviera"></div>
+      <p class="produit-cartel">Riviera Necklace<span class="prix">170&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-laguna.html">
+      <div class="produit-photo ph-laguna"></div>
+      <p class="produit-cartel">Laguna Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-stella.html">
+      <div class="produit-photo ph-stella"></div>
+      <p class="produit-cartel">Stella Necklace<span class="prix">170&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-amuleto.html">
+      <div class="produit-photo ph-amuleto"></div>
+      <p class="produit-cartel">Amuleto Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-perla.html">
+      <div class="produit-photo ph-perla"></div>
+      <p class="produit-cartel">Perla Bracelet<span class="prix">90&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-sorbet.html">
+      <div class="produit-photo ph-sorbet"></div>
+      <p class="produit-cartel">Sorbet Bracelet<span class="prix">85&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-menta.html">
+      <div class="produit-photo ph-menta"></div>
+      <p class="produit-cartel">Menta Bracelet<span class="prix">80&nbsp;€</span></p>
+    </a>
+  </section>
+</div>
+
+<div class="drop-groupe" data-groupe="grand-bleu">
+  <header class="drop-tete apparait">
+    <span class="drop-sur">Drop 02 — Été 2026</span>
+    <h2 class="serif">Grand Bleu</h2>
+    <p class="drop-sous">Les îles, la mer profonde, le soleil qui tombe.</p>
+  </header>
+  <section class="grille">
+    <a class="produit apparait" data-type="collier" href="produit-santorini.html">
+      <div class="produit-photo ph-santorini"></div>
+      <p class="produit-cartel">Santorini Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-ibiza.html">
+      <div class="produit-photo ph-ibiza"></div>
+      <p class="produit-cartel">Ibiza Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-ibiza-bracelet.html">
+      <div class="produit-photo ph-ibiza-bracelet"></div>
+      <p class="produit-cartel">Ibiza Bracelet<span class="prix">90&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-rio.html">
+      <div class="produit-photo ph-rio"></div>
+      <p class="produit-cartel">Rio Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-rio-bracelet.html">
+      <div class="produit-photo ph-rio-bracelet"></div>
+      <p class="produit-cartel">Rio Bracelet<span class="prix">90&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-bodrum.html">
+      <div class="produit-photo ph-bodrum"></div>
+      <p class="produit-cartel">Bodrum Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-mimosa.html">
+      <div class="produit-photo ph-mimosa"></div>
+      <p class="produit-cartel">Mimosa Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-oliva.html">
+      <div class="produit-photo ph-oliva"></div>
+      <p class="produit-cartel">Oliva Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-rosa.html">
+      <div class="produit-photo ph-rosa"></div>
+      <p class="produit-cartel">Rosa Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-marea.html">
+      <div class="produit-photo ph-marea"></div>
+      <p class="produit-cartel">Marea Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-neptune.html">
+      <div class="produit-photo ph-neptune"></div>
+      <p class="produit-cartel">Neptune Necklace<span class="prix">170&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-sunset.html">
+      <div class="produit-photo ph-sunset"></div>
+      <p class="produit-cartel">Sunset Necklace<span class="prix">170&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-fiesta.html">
+      <div class="produit-photo ph-fiesta"></div>
+      <p class="produit-cartel">Fiesta Necklace<span class="prix">170&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-marina.html">
+      <div class="produit-photo ph-marina"></div>
+      <p class="produit-cartel">Marina Bracelet<span class="prix">80&nbsp;€</span></p>
+    </a>
+  </section>
+</div>
 
 <footer>
   <div class="footer-haut">
@@ -511,6 +526,10 @@
           (f === 'permanente' ? p.getAttribute('data-collection') === 'permanente'
                               : p.getAttribute('data-type') === f);
         p.classList.toggle('cache', !visible);
+      });
+      document.querySelectorAll('.drop-groupe').forEach(function (g) {
+        var reste = g.querySelectorAll('.produit:not(.cache)').length;
+        g.classList.toggle('cache', reste === 0);
       });
     });
   });
