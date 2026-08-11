@@ -534,6 +534,13 @@
     });
   });
 
+  /* Deep-link ?g=dolce-vita / ?g=grand-bleu : défiler vers le groupe */
+  var g = new URLSearchParams(location.search).get('g');
+  if (g) {
+    var grp = document.querySelector('.drop-groupe[data-groupe="' + g + '"]');
+    if (grp) setTimeout(function () { grp.scrollIntoView({ behavior: 'smooth' }); }, 400);
+  }
+
   /* Deep-link ?f=permanente */
   var param = new URLSearchParams(location.search).get('f');
   if (param) {

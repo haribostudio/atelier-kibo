@@ -81,7 +81,7 @@
     font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
     color: rgba(230,230,230,0.5);
   }
-  .hero-contenu { position: relative; width: 100%; padding: 64px 6vw; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+  .hero-contenu { position: relative; width: 100%; padding: 64px 6vw; display: grid; grid-template-columns: 1fr; align-items: center; }
   /* Titre manuscrit, façon marqueur blanc sur la photo */
   .hero-titre h1 {
     font-family: 'Shadows Into Light', cursive; font-weight: 400;
@@ -122,32 +122,6 @@
     font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em;
     color: var(--creme);
   }
-  /* Colonne droite : note déchirée + polaroid + tampon */
-  .hero-droite { display: flex; flex-direction: column; gap: 20px; align-items: flex-end; }
-  .note {
-    background: var(--papier); color: var(--encre);
-    padding: 20px 26px; max-width: 210px;
-    transform: rotate(3deg);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
-  }
-  .note li { list-style: none; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; margin: 6px 0; }
-  .polaroid {
-    background: #EDEDED; padding: 8px 8px 26px;
-    transform: rotate(-2deg);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  }
-  .polaroid-img {
-    width: 150px; height: 130px;
-    background: url('Tarek_01.gif') center / cover no-repeat;
-  }
-  .tampon {
-    width: 92px; height: 92px; border: 1.5px solid var(--creme); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em;
-    transform: rotate(-12deg); opacity: 0.9;
-  }
-
   /* ---------- Bande d'icônes dessinées ---------- */
   .bande-icones {
     display: flex; background: var(--creme);
@@ -170,95 +144,140 @@
     .bi-item { flex: 1 1 50%; border-left: none !important; border-top: 1px solid rgba(27,30,36,0.12); }
   }
 
-  /* ---------- Our World ---------- */
-  .monde { display: grid; grid-template-columns: 1fr 1.1fr 1.3fr; min-height: 64vh; }
-  .monde-photo-g {
-    background: url('photo%20droite.png') center / cover no-repeat;
-    clip-path: polygon(0 0, 96% 2%, 100% 100%, 0 98%);
-    display: flex; align-items: flex-end; justify-content: center; padding: 14px;
-    color: rgba(230,230,230,0.6); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+  /* ---------- Marquee ---------- */
+  .marquee {
+    overflow: hidden; padding: 26px 0;
+    border-bottom: 1px solid rgba(27,30,36,0.12);
   }
-  .monde-texte { padding: 9vh 5vw; display: flex; flex-direction: column; justify-content: center; }
-  .monde-texte .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); margin-bottom: 22px; }
-  .monde-texte p.serif { font-size: clamp(24px, 2.3vw, 34px); line-height: 1.35; }
-  .monde-texte .lien-fleche { margin-top: 32px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--encre); align-self: flex-start; padding-bottom: 3px; }
-  .monde-photo-d {
-    background: url('plage.jpg') center / cover no-repeat;
-    display: flex; align-items: flex-end; justify-content: center; padding: 14px;
-    color: rgba(27,30,36,0.5); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+  .marquee-int {
+    display: flex; gap: 72px; width: max-content;
+    animation: defile 30s linear infinite;
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(32px, 3.6vw, 54px);
+    text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap;
+  }
+  .marquee-int .ast { color: var(--terracotta); margin-left: 72px; }
+  @keyframes defile { to { transform: translateX(-50%); } }
+
+  /* ---------- Panneaux collections ---------- */
+  .panneaux { display: flex; min-height: 84vh; background: var(--nuit); }
+  .panneau {
+    position: relative; flex: 1; overflow: hidden;
+    display: flex; align-items: flex-end; padding: 44px 36px;
+    color: var(--creme);
+    transition: flex 800ms cubic-bezier(0.16,1,0.3,1);
+  }
+  .panneau::before {
+    content: ''; position: absolute; inset: 0;
+    background-position: center 30%; background-size: cover;
+    transition: transform 1100ms cubic-bezier(0.16,1,0.3,1);
+  }
+  .panneau::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(16,19,26,0.02) 40%, rgba(16,19,26,0.6) 100%);
+    transition: background 500ms ease;
+  }
+  .panneau:hover { flex: 2; opacity: 1; }
+  .panneau:hover::before { transform: scale(1.06); }
+  .pan-permanente::before { background-image: url('produit-tahiti-2.jpg'); }
+  .pan-dolce::before { background-image: url('produit-menta-2.jpg'); }
+  .pan-bleu::before { background-image: url('produit-rio-2.jpg'); }
+  .panneau > div { position: relative; z-index: 1; }
+  .pan-sur { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(230,230,230,0.85); }
+  .panneau h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(30px, 3.4vw, 50px); text-transform: uppercase;
+    letter-spacing: 0.08em; line-height: 1.05; margin-top: 8px;
+  }
+  .pan-lien {
+    display: inline-block; margin-top: 16px; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    border-bottom: 1px solid var(--creme); padding-bottom: 3px;
   }
 
-  /* ---------- Latest Drop ---------- */
-  .drop { padding: 96px 6vw; }
-  .drop .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
-  .drop h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); text-transform: uppercase; letter-spacing: 0.1em; margin: 12px 0 14px; }
-  .drop h2 .oeil { color: var(--terracotta); font-size: 0.6em; vertical-align: middle; }
-  .drop-sous { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; line-height: 2; }
-  .drop-lien { display: inline-block; margin-top: 18px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--encre); padding-bottom: 3px; }
-  .drop-grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 48px; }
-  .produit-photo {
-    aspect-ratio: 1; position: relative; overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    color: rgba(230,230,230,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
-    transition: transform 400ms ease;
+  /* ---------- Sélection horizontale ---------- */
+  .selection { padding: 92px 0 100px; }
+  .sel-tete { display: flex; align-items: flex-end; justify-content: space-between; padding: 0 6vw 40px; }
+  .sel-tete .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .sel-tete h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(30px, 3.4vw, 46px); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px;
   }
-  .produit:hover .produit-photo { transform: scale(0.985); }
-  .photo-murano { background: url('produit-murano.jpg?v=4') center / cover no-repeat; }
-  .photo-stella { background: url('produit-stella.jpg?v=4') center / cover no-repeat; }
-  .photo-tahiti { background: url('produit-tahiti.jpg?v=4') center / cover no-repeat; }
-  .photo-tahiti::after {
+  .sel-indice { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.55); }
+  .sel-scroll {
+    display: flex; gap: 18px; overflow-x: auto; padding: 0 6vw;
+    scroll-snap-type: x mandatory; scrollbar-width: none;
+  }
+  .sel-scroll::-webkit-scrollbar { display: none; }
+  .sel-carte { flex: 0 0 min(300px, 74vw); scroll-snap-align: start; }
+  .sel-photo { aspect-ratio: 1; position: relative; overflow: hidden; }
+  .sel-photo::before {
     content: ''; position: absolute; inset: 0;
-    background: url('produit-tahiti-2.jpg') center 25% / cover no-repeat;
-    opacity: 0; transition: opacity 400ms ease;
+    background-position: center; background-size: cover;
+    transition: transform 900ms cubic-bezier(0.16,1,0.3,1);
   }
-  .produit:hover .photo-tahiti::after { opacity: 1; }
-  .photo-ibiza { background: url('produit-ibiza.jpg?v=4') center / cover no-repeat; }
+  .sel-carte:hover .sel-photo::before { transform: scale(1.07); }
+  .sel-num {
+    position: absolute; top: 6px; left: 12px; z-index: 1;
+    font-family: 'Cormorant Garamond', serif; font-size: 42px; line-height: 1;
+    color: var(--encre); opacity: 0.8;
+  }
+  .sp-palermo::before { background-image: url('produit-palermo.jpg?v=4'); }
+  .sp-murano::before { background-image: url('produit-murano.jpg?v=4'); }
+  .sp-tahiti::before { background-image: url('produit-tahiti.jpg?v=4'); }
+  .sp-stella::before { background-image: url('produit-stella.jpg?v=4'); }
+  .sp-ibiza::before { background-image: url('produit-ibiza.jpg?v=4'); }
+  .sp-amore::before { background-image: url('produit-amore.jpg?v=4'); }
+  .sp-santorini::before { background-image: url('produit-santorini.jpg?v=4'); }
+  .sp-fiesta::before { background-image: url('produit-fiesta.jpg?v=4'); }
   .produit-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
   .produit-cartel .prix { display: block; margin-top: 3px; color: rgba(27,30,36,0.65); }
 
-  /* ---------- Bande sombre ---------- */
-  .memoire {
-    position: relative; min-height: 46vh; overflow: hidden;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 56px 6vw; color: var(--creme);
+  /* ---------- Manifeste vidéo ---------- */
+  .manifeste {
+    position: relative; min-height: 92vh; overflow: hidden;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 72px 6vw; color: var(--creme);
   }
-  .memoire-fond {
-    position: absolute; inset: 0;
-    background:
-      linear-gradient(rgba(16,19,26,0.30), rgba(16,19,26,0.30)),
-      url('HB_20250903_0073.jpg') center 88% / cover no-repeat,
-      var(--nuit);
+  .manifeste video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .manifeste .voile { position: absolute; inset: 0; background: rgba(16,19,26,0.42); }
+  .manifeste-contenu { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+  .manifeste .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(230,230,230,0.85); }
+  .manifeste h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(36px, 5.4vw, 76px); text-transform: uppercase;
+    letter-spacing: 0.06em; line-height: 1.12; max-width: 15ch; margin-top: 16px;
   }
-  .memoire-titre { position: relative; font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(26px, 3vw, 40px); text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.25; max-width: 14ch; }
-  .memoire-droite { position: relative; text-align: right; }
-  .memoire-droite .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #d9a05f; }
-  .memoire-droite a { display: inline-block; margin-top: 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--creme); padding-bottom: 3px; }
+  .manifeste h2 .oeil { color: #d9a05f; font-size: 0.55em; vertical-align: middle; }
+  .manifeste a.acces {
+    display: inline-block; margin-top: 28px; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    border-bottom: 1px solid var(--creme); padding-bottom: 3px;
+  }
+  .sticker {
+    position: absolute; right: 5vw; bottom: 6vh; z-index: 1;
+    background: var(--papier); color: var(--encre);
+    padding: 16px 22px; transform: rotate(-4deg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
+    font-family: 'Caveat', cursive; font-size: 22px; letter-spacing: 0; text-align: center;
+  }
+  .sticker .soleil-oeil { display: block; color: var(--terracotta); font-size: 16px; margin-top: 2px; }
 
-  /* ---------- Collage ---------- */
-  .collage {
-    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
-    min-height: 44vh; background: var(--sable); overflow: hidden;
+  /* ---------- Our World ---------- */
+  .monde {
+    position: relative; min-height: 58vh; overflow: hidden;
+    display: flex; align-items: center; padding: 72px 6vw;
+    color: var(--creme);
+    background: linear-gradient(90deg, rgba(16,19,26,0.55) 0%, rgba(16,19,26,0.1) 70%), url('plage.jpg') center / cover no-repeat, var(--nuit);
   }
-  .collage > div { position: relative; display: flex; align-items: center; justify-content: center; padding: 24px; }
-  .col-photo1 { padding: 0 !important; background: var(--nuit); }
-  .col-photo1 video {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; display: block;
-  }
-  .col-note { background: var(--papier); }
-  .col-note .manuscrit { font-size: clamp(22px, 2vw, 30px); text-transform: uppercase; text-align: center; line-height: 1.5; }
-  .col-note .soleil-oeil { display: block; text-align: center; color: var(--terracotta); margin-top: 10px; font-size: 18px; }
-  .col-photo2 {
-    background: url('photo%20gauche.png') center / cover no-repeat;
-    color: rgba(230,230,230,0.6); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
-  }
-  .col-note2 { background: #D9D9DB; }
-  .col-note2 ul { list-style: none; text-align: center; }
-  .col-note2 li { font-family: 'Caveat', cursive; font-size: 22px; margin: 4px 0; }
-  .col-note2 .ast { color: var(--terracotta); display: block; margin-top: 8px; }
-  .col-photo3 {
-    background: url('flower%20water.jpg') center / cover no-repeat;
-    color: transparent; font-size: 0;
+  .monde-texte { max-width: 520px; }
+  .monde-texte .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(230,230,230,0.85); margin-bottom: 20px; }
+  .monde-texte p.serif { font-size: clamp(26px, 2.6vw, 38px); line-height: 1.3; }
+  .monde-texte .lien-fleche {
+    display: inline-block; margin-top: 30px; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    border-bottom: 1px solid var(--creme); padding-bottom: 3px;
   }
 
   /* ---------- Footer ---------- */
@@ -280,16 +299,12 @@
   @media (max-width: 900px) {
     .nav-centre { display: none; }
     .hero-contenu { grid-template-columns: 1fr; }
-    .hero-droite { flex-direction: row; align-items: center; justify-content: flex-start; }
-    .tampon { display: none; }
-    .monde { grid-template-columns: 1fr; }
-    .monde-photo-g, .monde-photo-d { min-height: 40vh; clip-path: none; }
-    .drop-grille { grid-template-columns: 1fr 1fr; }
-    .memoire { flex-direction: column; align-items: flex-start; gap: 24px; }
-    .memoire-droite { text-align: left; }
-    .collage { grid-template-columns: 1fr 1fr; }
-    .col-photo1 { min-height: 44vh; }
-    .col-photo3 { display: none; }
+    .panneaux { flex-direction: column; min-height: 0; }
+    .panneau { min-height: 46vh; }
+    .sel-tete { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .manifeste { min-height: 70vh; }
+    .sticker { right: 6vw; bottom: 4vh; }
+    .monde { min-height: 46vh; }
     .footer-haut { grid-template-columns: 1fr; text-align: center; }
     .footer-liens { justify-content: center; }
   }
@@ -415,16 +430,6 @@
       </div>
       <div class="hero-soleil">✳</div>
     </div>
-    <div class="hero-droite">
-      <ul class="note">
-        <li>Good music</li>
-        <li>Sun</li>
-        <li>Salty skin</li>
-        <li>Late nights</li>
-        <li>New memories</li>
-      </ul>
-      <div class="polaroid"><div class="polaroid-img"></div></div>
-      <div class="tampon">Limited<br>✳<br>Edition</div>
     </div>
   </div>
   <div class="hero-bas">Welcome to our world&nbsp;&nbsp;↗</div>
@@ -453,76 +458,97 @@
   </div>
 </div>
 
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-int"><span>La Permanente<span class="ast">✳</span></span><span>Dolce Vita<span class="ast">✳</span></span><span>Grand Bleu<span class="ast">✳</span></span><span>Handmade in Paris<span class="ast">✳</span></span><span>La Permanente<span class="ast">✳</span></span><span>Dolce Vita<span class="ast">✳</span></span><span>Grand Bleu<span class="ast">✳</span></span><span>Handmade in Paris<span class="ast">✳</span></span></div>
+</div>
+
+<section class="panneaux">
+  <a class="panneau pan-permanente" href="collection.html?f=permanente">
+    <div>
+      <p class="pan-sur">Les pièces qui restent</p>
+      <h2>La Permanente</h2>
+      <span class="pan-lien">Découvrir&nbsp;&nbsp;→</span>
+    </div>
+  </a>
+  <a class="panneau pan-dolce" href="collection.html?g=dolce-vita">
+    <div>
+      <p class="pan-sur">Drop 01 — Été 2026</p>
+      <h2>Dolce Vita</h2>
+      <span class="pan-lien">Découvrir&nbsp;&nbsp;→</span>
+    </div>
+  </a>
+  <a class="panneau pan-bleu" href="collection.html?g=grand-bleu">
+    <div>
+      <p class="pan-sur">Drop 02 — Été 2026</p>
+      <h2>Grand Bleu</h2>
+      <span class="pan-lien">Découvrir&nbsp;&nbsp;→</span>
+    </div>
+  </a>
+</section>
+
+<section class="selection">
+  <div class="sel-tete apparait">
+    <div>
+      <p class="etiquette">La sélection</p>
+      <h2>Les pièces du moment</h2>
+    </div>
+    <span class="sel-indice">( scroll )&nbsp;&nbsp;→</span>
+  </div>
+  <div class="sel-scroll">
+    <a class="sel-carte apparait" href="produit-palermo.html">
+      <div class="sel-photo sp-palermo"><span class="sel-num">01</span></div>
+      <p class="produit-cartel">Palermo Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="sel-carte apparait" href="produit-murano.html">
+      <div class="sel-photo sp-murano"><span class="sel-num">02</span></div>
+      <p class="produit-cartel">Murano Necklace<span class="prix">170&nbsp;€</span></p>
+    </a>
+    <a class="sel-carte apparait" href="produit-tahiti.html">
+      <div class="sel-photo sp-tahiti"><span class="sel-num">03</span></div>
+      <p class="produit-cartel">Tahiti Necklace<span class="prix">180&nbsp;€</span></p>
+    </a>
+    <a class="sel-carte apparait" href="produit-stella.html">
+      <div class="sel-photo sp-stella"><span class="sel-num">04</span></div>
+      <p class="produit-cartel">Stella Necklace<span class="prix">170&nbsp;€</span></p>
+    </a>
+    <a class="sel-carte apparait" href="produit-ibiza.html">
+      <div class="sel-photo sp-ibiza"><span class="sel-num">05</span></div>
+      <p class="produit-cartel">Ibiza Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="sel-carte apparait" href="produit-amore.html">
+      <div class="sel-photo sp-amore"><span class="sel-num">06</span></div>
+      <p class="produit-cartel">Amore Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+    <a class="sel-carte apparait" href="produit-santorini.html">
+      <div class="sel-photo sp-santorini"><span class="sel-num">07</span></div>
+      <p class="produit-cartel">Santorini Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+    <a class="sel-carte apparait" href="produit-fiesta.html">
+      <div class="sel-photo sp-fiesta"><span class="sel-num">08</span></div>
+      <p class="produit-cartel">Fiesta Necklace<span class="prix">170&nbsp;€</span></p>
+    </a>
+  </div>
+</section>
+
+<section class="manifeste" id="acces">
+  <video autoplay muted loop playsinline preload="metadata" aria-label="KIBO — vidéo">
+    <source src="palermo.mp4" type="video/mp4">
+  </video>
+  <div class="voile"></div>
+  <div class="manifeste-contenu apparait">
+    <p class="etiquette">Private Access</p>
+    <h2>Memories are made to be worn.&nbsp;<span class="oeil">◉</span></h2>
+    <a class="acces" href="private-access.html">Join the list&nbsp;&nbsp;→</a>
+  </div>
+  <div class="sticker">Always chasing the light<span class="soleil-oeil">☀</span></div>
+</section>
+
 <section class="monde" id="monde">
-  <div class="monde-photo-g"></div>
   <div class="monde-texte apparait">
     <p class="etiquette">Our World</p>
     <p class="serif">From hidden beaches to secret parties, from Paris to somewhere else.</p>
     <a class="lien-fleche" href="our-world.html">Explore&nbsp;&nbsp;→</a>
   </div>
-  <div class="monde-photo-d"></div>
-</section>
-
-<section class="drop" id="drop">
-  <div class="apparait">
-    <p class="etiquette">Été 2026</p>
-    <h2>Dolce Vita &amp; Grand Bleu <span class="oeil">◉</span></h2>
-    <p class="drop-sous">Two drops, one summer.<br>Captured in 34 pieces.</p>
-    <a class="drop-lien" href="collection.html">Discover the collection</a><br>
-    <a class="drop-lien" href="collection.html?f=permanente" style="margin-top:12px;">La Permanente — les pièces qui restent</a>
-  </div>
-  <div class="drop-grille">
-    <a class="produit apparait" href="produit-murano.html">
-      <div class="produit-photo photo-murano"></div>
-      <p class="produit-cartel">Murano Necklace<span class="prix">170&nbsp;€</span></p>
-    </a>
-    <a class="produit apparait" href="produit-stella.html">
-      <div class="produit-photo photo-stella"></div>
-      <p class="produit-cartel">Stella Necklace<span class="prix">170&nbsp;€</span></p>
-    </a>
-    <a class="produit apparait" href="produit-tahiti.html">
-      <div class="produit-photo photo-tahiti"></div>
-      <p class="produit-cartel">Tahiti Necklace<span class="prix">180&nbsp;€</span></p>
-    </a>
-    <a class="produit apparait" href="produit-ibiza.html">
-      <div class="produit-photo photo-ibiza"></div>
-      <p class="produit-cartel">Ibiza Necklace<span class="prix">160&nbsp;€</span></p>
-    </a>
-  </div>
-</section>
-
-<section class="memoire" id="acces">
-  <div class="memoire-fond"></div>
-  <h2 class="memoire-titre apparait">Memories are made to be worn.&nbsp;<span style="color:#d9a05f">◉</span></h2>
-  <div class="memoire-droite apparait">
-    <p class="etiquette">Private Access</p>
-    <a href="private-access.html">Join the list&nbsp;&nbsp;→</a>
-  </div>
-</section>
-
-<section class="collage">
-  <div class="col-photo1">
-    <video autoplay muted loop playsinline preload="metadata" aria-label="Palermo Necklace — vidéo">
-      <source src="palermo.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="col-note">
-    <div>
-      <p class="manuscrit">Always chasing the light</p>
-      <span class="soleil-oeil">☀</span>
-    </div>
-  </div>
-  <div class="col-photo2"></div>
-  <div class="col-note2">
-    <ul>
-      <li>Good times</li>
-      <li>Crazy friends</li>
-      <li>Deep talks</li>
-      <li>No sleep</li>
-      <li><span class="ast">✳</span></li>
-    </ul>
-  </div>
-  <div class="col-photo3" role="img" aria-label="Fleur dans l'eau"></div>
 </section>
 
 <footer>
