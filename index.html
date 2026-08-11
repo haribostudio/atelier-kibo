@@ -69,7 +69,7 @@
   }
   .hero-photo {
     position: absolute; inset: 0;
-    background: url('hero.jpg') center / cover no-repeat, #1C1F26;
+    background: url('hero-2.jpg') center 20% / cover no-repeat, #1C1F26;
   }
   /* Voile léger pour la lisibilité du titre */
   .hero-photo::after {
@@ -195,43 +195,39 @@
     border-bottom: 1px solid var(--creme); padding-bottom: 3px;
   }
 
-  /* ---------- Sélection horizontale ---------- */
-  .selection { padding: 92px 0 100px; }
-  .sel-tete { display: flex; align-items: flex-end; justify-content: space-between; padding: 0 6vw 40px; }
-  .sel-tete .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
-  .sel-tete h2 {
+  /* ---------- Mur de souvenirs ---------- */
+  .souvenirs { background: var(--papier); padding: 96px 6vw 110px; overflow: hidden; }
+  .souvenirs-tete { margin-bottom: 60px; }
+  .souvenirs-tete .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .souvenirs-tete h2 {
     font-family: 'Cormorant Garamond', serif; font-weight: 400;
     font-size: clamp(30px, 3.4vw, 46px); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px;
   }
-  .sel-indice { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.55); }
-  .sel-scroll {
-    display: flex; gap: 18px; overflow-x: auto; padding: 0 6vw;
-    scroll-snap-type: x mandatory; scrollbar-width: none;
+  .souvenirs-tete .sous { margin-top: 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.6); }
+  .mur { display: grid; grid-template-columns: repeat(4, 1fr); gap: 38px; align-items: start; }
+  .pola {
+    display: block; position: relative;
+    background: #EDEDED; padding: 10px 10px 16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    transform: rotate(-2.4deg);
+    transition: transform 500ms cubic-bezier(0.16,1,0.3,1), box-shadow 500ms ease;
   }
-  .sel-scroll::-webkit-scrollbar { display: none; }
-  .sel-carte { flex: 0 0 min(300px, 74vw); scroll-snap-align: start; }
-  .sel-photo { aspect-ratio: 1; position: relative; overflow: hidden; }
-  .sel-photo::before {
-    content: ''; position: absolute; inset: 0;
-    background-position: center; background-size: cover;
-    transition: transform 900ms cubic-bezier(0.16,1,0.3,1);
+  .pola:nth-child(2) { transform: rotate(1.8deg) translateY(26px); }
+  .pola:nth-child(3) { transform: rotate(-1.2deg) translateY(8px); }
+  .pola:nth-child(4) { transform: rotate(2.6deg) translateY(34px); }
+  .pola:hover { transform: rotate(0deg) scale(1.04); box-shadow: 0 22px 48px rgba(0,0,0,0.26); z-index: 2; opacity: 1; }
+  .pola::before {
+    content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-3deg);
+    width: 78px; height: 24px; background: rgba(230,230,230,0.75);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 1;
   }
-  .sel-carte:hover .sel-photo::before { transform: scale(1.07); }
-  .sel-num {
-    position: absolute; top: 6px; left: 12px; z-index: 1;
-    font-family: 'Cormorant Garamond', serif; font-size: 42px; line-height: 1;
-    color: var(--encre); opacity: 0.8;
-  }
-  .sp-palermo::before { background-image: url('produit-palermo.jpg?v=4'); }
-  .sp-murano::before { background-image: url('produit-murano.jpg?v=4'); }
-  .sp-tahiti::before { background-image: url('produit-tahiti.jpg?v=4'); }
-  .sp-stella::before { background-image: url('produit-stella.jpg?v=4'); }
-  .sp-ibiza::before { background-image: url('produit-ibiza.jpg?v=4'); }
-  .sp-amore::before { background-image: url('produit-amore.jpg?v=4'); }
-  .sp-santorini::before { background-image: url('produit-santorini.jpg?v=4'); }
-  .sp-fiesta::before { background-image: url('produit-fiesta.jpg?v=4'); }
-  .produit-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
-  .produit-cartel .prix { display: block; margin-top: 3px; color: rgba(27,30,36,0.65); }
+  .pola .ph { aspect-ratio: 4 / 5; background-position: center 25%; background-size: cover; }
+  .ph-souv-amore { background-image: url('produit-amore-2.jpg'); }
+  .ph-souv-menta { background-image: url('produit-menta-2.jpg'); }
+  .ph-souv-tahiti { background-image: url('produit-tahiti-2.jpg'); }
+  .ph-souv-rio { background-image: url('produit-rio-2.jpg'); }
+  .pola .legende { font-family: 'Caveat', cursive; font-size: 23px; letter-spacing: 0; text-align: center; margin-top: 12px; }
+  .pola .legende .ast { color: var(--terracotta); }
 
   /* ---------- Manifeste vidéo ---------- */
   .manifeste {
@@ -301,7 +297,10 @@
     .hero-contenu { grid-template-columns: 1fr; }
     .panneaux { flex-direction: column; min-height: 0; }
     .panneau { min-height: 46vh; }
-    .sel-tete { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .pan-permanente::before { background-position: center 68%; }
+    .pan-bleu::before { background-position: center 55%; }
+    .mur { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .pola:nth-child(2), .pola:nth-child(4) { transform: rotate(1.8deg) translateY(14px); }
     .manifeste { min-height: 70vh; }
     .sticker { right: 6vw; bottom: 4vh; }
     .monde { min-height: 46vh; }
@@ -486,46 +485,28 @@
   </a>
 </section>
 
-<section class="selection">
-  <div class="sel-tete apparait">
-    <div>
-      <p class="etiquette">La sélection</p>
-      <h2>Les pièces du moment</h2>
-    </div>
-    <span class="sel-indice">( scroll )&nbsp;&nbsp;→</span>
+<section class="souvenirs">
+  <div class="souvenirs-tete apparait">
+    <p class="etiquette">Carnet d'été</p>
+    <h2>Souvenirs portés</h2>
+    <p class="sous">Des pièces vécues, pas seulement portées.</p>
   </div>
-  <div class="sel-scroll">
-    <a class="sel-carte apparait" href="produit-palermo.html">
-      <div class="sel-photo sp-palermo"><span class="sel-num">01</span></div>
-      <p class="produit-cartel">Palermo Necklace<span class="prix">160&nbsp;€</span></p>
+  <div class="mur">
+    <a class="pola apparait" href="produit-amore.html">
+      <div class="ph ph-souv-amore"></div>
+      <p class="legende">Amore — worn all night <span class="ast">✳</span></p>
     </a>
-    <a class="sel-carte apparait" href="produit-murano.html">
-      <div class="sel-photo sp-murano"><span class="sel-num">02</span></div>
-      <p class="produit-cartel">Murano Necklace<span class="prix">170&nbsp;€</span></p>
+    <a class="pola apparait" href="produit-menta.html">
+      <div class="ph ph-souv-menta"></div>
+      <p class="legende">Menta — salty mornings <span class="ast">✳</span></p>
     </a>
-    <a class="sel-carte apparait" href="produit-tahiti.html">
-      <div class="sel-photo sp-tahiti"><span class="sel-num">03</span></div>
-      <p class="produit-cartel">Tahiti Necklace<span class="prix">180&nbsp;€</span></p>
+    <a class="pola apparait" href="produit-tahiti.html">
+      <div class="ph ph-souv-tahiti"></div>
+      <p class="legende">Tahiti — toujours là <span class="ast">✳</span></p>
     </a>
-    <a class="sel-carte apparait" href="produit-stella.html">
-      <div class="sel-photo sp-stella"><span class="sel-num">04</span></div>
-      <p class="produit-cartel">Stella Necklace<span class="prix">170&nbsp;€</span></p>
-    </a>
-    <a class="sel-carte apparait" href="produit-ibiza.html">
-      <div class="sel-photo sp-ibiza"><span class="sel-num">05</span></div>
-      <p class="produit-cartel">Ibiza Necklace<span class="prix">160&nbsp;€</span></p>
-    </a>
-    <a class="sel-carte apparait" href="produit-amore.html">
-      <div class="sel-photo sp-amore"><span class="sel-num">06</span></div>
-      <p class="produit-cartel">Amore Necklace<span class="prix">150&nbsp;€</span></p>
-    </a>
-    <a class="sel-carte apparait" href="produit-santorini.html">
-      <div class="sel-photo sp-santorini"><span class="sel-num">07</span></div>
-      <p class="produit-cartel">Santorini Necklace<span class="prix">150&nbsp;€</span></p>
-    </a>
-    <a class="sel-carte apparait" href="produit-fiesta.html">
-      <div class="sel-photo sp-fiesta"><span class="sel-num">08</span></div>
-      <p class="produit-cartel">Fiesta Necklace<span class="prix">170&nbsp;€</span></p>
+    <a class="pola apparait" href="produit-rio.html">
+      <div class="ph ph-souv-rio"></div>
+      <p class="legende">Rio — sunset club <span class="ast">✳</span></p>
     </a>
   </div>
 </section>
