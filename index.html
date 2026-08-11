@@ -206,6 +206,12 @@
   .photo-murano { background: url('produit-murano.jpg?v=3') center / cover no-repeat; }
   .photo-stella { background: url('produit-stella.jpg?v=3') center / cover no-repeat; }
   .photo-tahiti { background: url('produit-tahiti.jpg?v=3') center / cover no-repeat; }
+  .photo-tahiti::after {
+    content: ''; position: absolute; inset: 0;
+    background: url('produit-tahiti-2.jpg') center 25% / cover no-repeat;
+    opacity: 0; transition: opacity 400ms ease;
+  }
+  .produit:hover .photo-tahiti::after { opacity: 1; }
   .photo-ibiza { background: url('produit-ibiza.jpg?v=3') center / cover no-repeat; }
   .produit-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
   .produit-cartel .prix { display: block; margin-top: 3px; color: rgba(27,30,36,0.65); }
@@ -282,6 +288,7 @@
     .memoire { flex-direction: column; align-items: flex-start; gap: 24px; }
     .memoire-droite { text-align: left; }
     .collage { grid-template-columns: 1fr 1fr; }
+    .col-photo1 { min-height: 44vh; }
     .col-photo3 { display: none; }
     .footer-haut { grid-template-columns: 1fr; text-align: center; }
     .footer-liens { justify-content: center; }

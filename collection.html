@@ -125,6 +125,17 @@
   .ph-menta { background: url('produit-menta.jpg?v=3') center / cover no-repeat; }
   .ph-marina { background: url('produit-marina.jpg?v=3') center / cover no-repeat; }
   .badge { z-index: 2; }
+  /* Survol : bascule vers la 2e photo (édito) */
+  .ph-amore::after, .ph-menta::after, .ph-tahiti::after, .ph-rio::after {
+    content: ''; position: absolute; inset: 0;
+    opacity: 0; transition: opacity 400ms ease;
+  }
+  .ph-amore::after { background: url('produit-amore-2.jpg') center 25% / cover no-repeat; }
+  .ph-menta::after { background: url('produit-menta-2.jpg') center / cover no-repeat; }
+  .ph-tahiti::after { background: url('produit-tahiti-2.jpg') center 25% / cover no-repeat; }
+  .ph-rio::after { background: url('produit-rio-2.jpg') center 25% / cover no-repeat; }
+  .produit:hover .ph-amore::after, .produit:hover .ph-menta::after,
+  .produit:hover .ph-tahiti::after, .produit:hover .ph-rio::after { opacity: 1; }
 
   /* ---------- Interlude éditorial ---------- */
   .interlude {
