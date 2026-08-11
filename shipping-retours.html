@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mentions légales — KIBO Paris</title>
-<meta name="description" content="Mentions légales du site atelier-kibo.com — KIBO Paris, bijoux faits main.">
-<meta name="robots" content="noindex">
+<title>Shipping &amp; Returns — KIBO Paris</title>
+<meta name="description" content="Livraison et retours KIBO Paris. Expédié depuis Paris sous 48 h, livraison offerte dès 120 €, retours sous 30 jours.">
 <link rel="icon" type="image/png" href="FULL-BLACK.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono&family=Courier+Prime&display=swap" rel="stylesheet">
 <style>
   /* ==========================================================
-     KIBO PARIS — MENTIONS LÉGALES
+     KIBO PARIS — SHIPPING & RETURNS
      ========================================================== */
   :root {
     --creme: #EFF0F2;
@@ -59,7 +58,11 @@
   h1 {
     font-family: 'Cormorant Garamond', serif; font-weight: 400;
     font-size: clamp(32px, 4vw, 48px); text-transform: uppercase; letter-spacing: 0.08em;
-    margin: 12px 0 48px; line-height: 1.1;
+    margin: 12px 0 18px; line-height: 1.1;
+  }
+  .intro {
+    font-family: 'Cormorant Garamond', serif; font-size: 18px; letter-spacing: 0.02em;
+    line-height: 1.6; color: rgba(27,30,36,0.85); margin-bottom: 40px;
   }
   h2 {
     font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
@@ -68,6 +71,16 @@
   }
   p { font-size: 12px; letter-spacing: 0.04em; line-height: 1.9; color: rgba(27,30,36,0.85); margin-bottom: 12px; }
   p a { border-bottom: 1px solid rgba(27,30,36,0.4); padding-bottom: 1px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 18px 0 8px; }
+  th, td {
+    text-align: left; padding: 12px 8px;
+    font-size: 11px; letter-spacing: 0.06em;
+    border-bottom: 1px solid rgba(27,30,36,0.15);
+  }
+  th { text-transform: uppercase; letter-spacing: 0.14em; font-weight: 400; color: rgba(27,30,36,0.55); font-size: 10px; }
+  td strong { font-weight: 700; }
+  .note-tarif { font-size: 10px; color: var(--terracotta); text-transform: uppercase; letter-spacing: 0.14em; margin-top: 6px; }
 
   footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
   .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
@@ -135,29 +148,47 @@
 </div>
 
 <main>
-  <span class="etiquette">Informations légales</span>
-  <h1>Mentions légales</h1>
+  <span class="etiquette">Livraison &amp; retours</span>
+  <h1>Shipping &amp; Returns</h1>
+  <p class="intro">Chaque pièce quitte l'atelier dans une boîte qui se garde, expédiée depuis Paris sous 48&nbsp;heures ouvrées. Et si le bijou ne trouve pas sa place, il revient — sans justification.</p>
 
-  <h2>Éditeur du site</h2>
-  <p>Le site atelier-kibo.com est édité par <strong>HARIBO STUDIO</strong>, entreprise unipersonnelle à responsabilité limitée (EURL) au capital de 1&nbsp;000&nbsp;€, immatriculée au Registre du commerce et des sociétés de Paris sous le numéro 100&nbsp;580&nbsp;281.</p>
-  <p>Siège social&nbsp;: 46&nbsp;rue du Faubourg Saint-Martin, 75010 Paris, France.<br>
-  Numéro de TVA intracommunautaire&nbsp;: FR45100580281.<br>
-  Contact&nbsp;: <a href="mailto:harryboeki@me.com">harryboeki@me.com</a></p>
+  <h2>Expédition</h2>
+  <p>Les commandes sont préparées à l'atelier, à Paris, et remises au transporteur sous 48&nbsp;heures ouvrées. Chaque bijou voyage dans son écrin KIBO, prêt à être offert — y compris à soi-même.</p>
+  <p>Un e-mail avec le numéro de suivi vous est envoyé dès l'expédition.</p>
 
-  <h2>Directeur de la publication</h2>
-  <p>Harry Boeki, gérant de HARIBO STUDIO.</p>
+  <h2>Tarifs &amp; délais</h2>
+  <table>
+    <thead>
+      <tr><th>Zone</th><th>Délai indicatif</th><th>Tarif</th><th>Offerte dès</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>France métropolitaine</td><td>2 à 4 jours ouvrés</td><td><strong>6&nbsp;€</strong></td><td>120&nbsp;€</td></tr>
+      <tr><td>Union européenne</td><td>4 à 7 jours ouvrés</td><td><strong>12&nbsp;€</strong></td><td>160&nbsp;€</td></tr>
+      <tr><td>Suisse &amp; Royaume-Uni</td><td>5 à 8 jours ouvrés</td><td><strong>16&nbsp;€</strong></td><td>180&nbsp;€</td></tr>
+      <tr><td>Reste du monde</td><td>7 à 10 jours ouvrés</td><td><strong>25&nbsp;€</strong></td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p class="note-tarif">✳ Toutes les commandes sont expédiées depuis la France</p>
+  <p>Les frais d'expédition sont calculés automatiquement selon la destination au moment du paiement.</p>
 
-  <h2>Hébergement</h2>
-  <p>Le site est hébergé par <strong>Cloudflare, Inc.</strong>, 101 Townsend Street, San Francisco, CA 94107, États-Unis — <a href="https://www.cloudflare.com" target="_blank" rel="noopener">www.cloudflare.com</a>.</p>
+  <h2>Douanes (hors Union européenne)</h2>
+  <p>Les commandes expédiées hors de l'Union européenne peuvent être soumises à des taxes, droits de douane ou frais supplémentaires selon la législation locale. KIBO Paris prend en charge l'expédition, mais les frais de douane locaux restent à la charge du destinataire.</p>
 
-  <h2>Propriété intellectuelle</h2>
-  <p>L'ensemble des éléments du site atelier-kibo.com — textes, photographies, vidéos, logos, marques, créations et mises en page — est la propriété exclusive de HARIBO STUDIO, sauf mention contraire. Toute reproduction, représentation ou exploitation, totale ou partielle, sans autorisation écrite préalable est interdite et constituerait une contrefaçon au sens des articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+  <h2>Délais, annulations &amp; conditions particulières</h2>
+  <p>Pendant les lancements de collection et les fêtes de fin d'année, la demande concentrée sur quelques jours peut allonger les délais d'expédition. Tous les délais de transit sont indicatifs et ne constituent pas des dates de livraison garanties.</p>
+  <p>KIBO Paris ne saurait être tenue responsable des erreurs de livraison lorsque l'adresse fournie à la commande est incorrecte ou incomplète, ni des annulations qui ne peuvent être traitées à temps du fait de la rapidité de préparation des commandes.</p>
+  <p>Dans des cas exceptionnels indépendants de notre volonté, une commande peut être annulée&nbsp;: vous en seriez alors informé sous 24&nbsp;heures ouvrées et remboursé sur le moyen de paiement d'origine.</p>
 
-  <h2>Données personnelles</h2>
-  <p>Les adresses e-mail collectées via les formulaires d'inscription (newsletter, Private Access) sont destinées exclusivement à HARIBO STUDIO et ne sont ni vendues ni transmises à des tiers. Conformément au Règlement général sur la protection des données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données, que vous pouvez exercer en écrivant à <a href="mailto:harryboeki@me.com">harryboeki@me.com</a>.</p>
+  <h2>Retours &amp; échanges</h2>
+  <p>Vous disposez de <strong>30 jours</strong> à compter de la réception pour retourner une pièce, sans justification. Le bijou doit être non porté, dans son écrin d'origine.</p>
+  <p>Pour lancer un retour, écrivez-nous à <a href="mailto:harryboeki@me.com">harryboeki@me.com</a> avec votre numéro de commande — nous vous répondons sous 48&nbsp;heures avec la marche à suivre. Les frais de retour sont à votre charge&nbsp;; nous recommandons un envoi suivi.</p>
+  <p>Le remboursement est effectué sur le moyen de paiement d'origine sous 14 jours après réception de la pièce à l'atelier. Un échange contre une autre pièce de la collection est possible, sous réserve de disponibilité — les éditions étant limitées, mieux vaut nous écrire vite.</p>
 
-  <h2>Responsabilité</h2>
-  <p>HARIBO STUDIO s'efforce d'assurer l'exactitude des informations publiées sur ce site, mais ne saurait être tenue responsable des erreurs, omissions ou de l'indisponibilité temporaire du site. Les photographies des pièces ne sont pas contractuelles&nbsp;: chaque bijou étant fait main, de légères variations peuvent exister.</p>
+  <h2>Droit de rétractation</h2>
+  <p>Conformément au Code de la consommation, vous bénéficiez d'un droit de rétractation légal de 14 jours à compter de la réception — notre politique de retour de 30 jours le couvre et l'étend.</p>
+
+  <h2>Une question&nbsp;?</h2>
+  <p>Écrivez-nous à <a href="mailto:harryboeki@me.com">harryboeki@me.com</a>. On répond vite, et c'est un humain de l'atelier qui vous lit.</p>
 </main>
 
 <footer>
@@ -167,6 +198,7 @@
       <a href="shipping-retours.html">Shipping &amp; Returns</a>
       <a href="#">Care Guide</a>
       <a href="#">Contact</a>
+      <a href="mentions-legales.html">Mentions légales</a>
     </div>
     <div class="footer-logo">
       <a href="index.html"><img src="FULL-BLACK.png" alt="KIBO"></a>
