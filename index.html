@@ -15,11 +15,11 @@
      Crème, terracotta, lumière dorée, polaroids, notes manuscrites.
      ========================================================== */
   :root {
-    --creme: #EFF0F2;
-    --papier: #E2E4E8;
+    --creme: #E6E6E6;
+    --papier: #DCDCDC;
     --terracotta: #0F2FA6;
     --encre: #1B1E24;
-    --sable: #C6CBD3;
+    --sable: #C4C4C6;
     --nuit: #10131A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -79,7 +79,7 @@
   .hero-note-photo {
     position: absolute; bottom: 14px; left: 0; right: 0; text-align: center;
     font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
-    color: rgba(239,240,242,0.5);
+    color: rgba(230,230,230,0.5);
   }
   .hero-contenu { position: relative; width: 100%; padding: 64px 6vw; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
   /* Titre manuscrit, façon marqueur blanc sur la photo */
@@ -133,7 +133,7 @@
   }
   .note li { list-style: none; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; margin: 6px 0; }
   .polaroid {
-    background: #F2F3F5; padding: 8px 8px 26px;
+    background: #EDEDED; padding: 8px 8px 26px;
     transform: rotate(-2deg);
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   }
@@ -176,7 +176,7 @@
     background: url('photo%20droite.png') center / cover no-repeat;
     clip-path: polygon(0 0, 96% 2%, 100% 100%, 0 98%);
     display: flex; align-items: flex-end; justify-content: center; padding: 14px;
-    color: rgba(239,240,242,0.6); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(230,230,230,0.6); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
   }
   .monde-texte { padding: 9vh 5vw; display: flex; flex-direction: column; justify-content: center; }
   .monde-texte .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); margin-bottom: 22px; }
@@ -199,7 +199,7 @@
   .produit-photo {
     aspect-ratio: 1; position: relative; overflow: hidden;
     display: flex; align-items: center; justify-content: center;
-    color: rgba(239,240,242,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(230,230,230,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
     transition: transform 400ms ease;
   }
   .produit:hover .produit-photo { transform: scale(0.985); }
@@ -250,9 +250,9 @@
   .col-note .soleil-oeil { display: block; text-align: center; color: var(--terracotta); margin-top: 10px; font-size: 18px; }
   .col-photo2 {
     background: url('photo%20gauche.png') center / cover no-repeat;
-    color: rgba(239,240,242,0.6); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(230,230,230,0.6); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
   }
-  .col-note2 { background: #DFE2E7; }
+  .col-note2 { background: #D9D9DB; }
   .col-note2 ul { list-style: none; text-align: center; }
   .col-note2 li { font-family: 'Caveat', cursive; font-size: 22px; margin: 4px 0; }
   .col-note2 .ast { color: var(--terracotta); display: block; margin-top: 8px; }
@@ -303,7 +303,7 @@
   .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
   .menu-mobile {
     position: fixed; inset: 0; z-index: 300;
-    background: var(--creme, #EFF0F2); color: var(--encre);
+    background: var(--creme, #E6E6E6); color: var(--encre);
     display: none; flex-direction: column; justify-content: center;
     padding: 32px 36px;
   }
@@ -328,7 +328,7 @@
   }
   .popup-fond.visible { display: flex; }
   .popup {
-    background: #EFF0F2; color: #1B1E24; max-width: 400px; width: 100%;
+    background: #E6E6E6; color: #1B1E24; max-width: 400px; width: 100%;
     padding: 40px 36px 32px; position: relative; text-align: center;
     box-shadow: 0 24px 80px rgba(0,0,0,0.4);
   }
@@ -354,7 +354,7 @@
   }
   .popup input[type="email"]:focus { border-color: #1B1E24; }
   .popup button[type="submit"] {
-    background: #1B1E24; color: #EFF0F2; border: none;
+    background: #1B1E24; color: #E6E6E6; border: none;
     font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase;
     letter-spacing: 0.16em; padding: 14px; cursor: pointer;
   }
@@ -468,7 +468,8 @@
     <p class="etiquette">Latest Drop</p>
     <h2>Soleil Rouge <span class="oeil">◉</span></h2>
     <p class="drop-sous">A summer state of mind.<br>Captured in 100 pieces.</p>
-    <a class="drop-lien" href="collection.html">Discover the collection</a>
+    <a class="drop-lien" href="collection.html">Discover the collection</a><br>
+    <a class="drop-lien" href="collection.html?f=permanente" style="margin-top:12px;">La Permanente — les pièces qui restent</a>
   </div>
   <div class="drop-grille">
     <a class="produit apparait" href="produit-murano.html">

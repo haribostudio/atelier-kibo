@@ -15,11 +15,11 @@
      Même design system que la home v3 « summer memories ».
      ========================================================== */
   :root {
-    --creme: #EFF0F2;
-    --papier: #E2E4E8;
+    --creme: #E6E6E6;
+    --papier: #DCDCDC;
     --terracotta: #0F2FA6;
     --encre: #1B1E24;
-    --sable: #C6CBD3;
+    --sable: #C4C4C6;
     --nuit: #10131A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -90,7 +90,7 @@
   .produit-photo {
     aspect-ratio: 1 / 1; position: relative; overflow: hidden;
     display: flex; align-items: center; justify-content: center;
-    color: rgba(239,240,242,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(230,230,230,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
     text-align: center; padding: 10px;
     transition: transform 400ms ease;
   }
@@ -157,6 +157,7 @@
   .produit:hover .ph-amore::before, .produit:hover .ph-menta::before,
   .produit:hover .ph-tahiti::before, .produit:hover .ph-rio::before { transform: none; }
   .badge { z-index: 2; }
+  .badge-perm { background: var(--encre); color: var(--creme); }
   /* ---------- Interlude éditorial ---------- */
   .interlude {
     grid-column: 1 / -1; display: flex; align-items: center; justify-content: center;
@@ -202,7 +203,7 @@
   .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
   .menu-mobile {
     position: fixed; inset: 0; z-index: 300;
-    background: var(--creme, #EFF0F2); color: var(--encre);
+    background: var(--creme, #E6E6E6); color: var(--encre);
     display: none; flex-direction: column; justify-content: center;
     padding: 32px 36px;
   }
@@ -227,7 +228,7 @@
   }
   .popup-fond.visible { display: flex; }
   .popup {
-    background: #EFF0F2; color: #1B1E24; max-width: 400px; width: 100%;
+    background: #E6E6E6; color: #1B1E24; max-width: 400px; width: 100%;
     padding: 40px 36px 32px; position: relative; text-align: center;
     box-shadow: 0 24px 80px rgba(0,0,0,0.4);
   }
@@ -253,7 +254,7 @@
   }
   .popup input[type="email"]:focus { border-color: #1B1E24; }
   .popup button[type="submit"] {
-    background: #1B1E24; color: #EFF0F2; border: none;
+    background: #1B1E24; color: #E6E6E6; border: none;
     font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase;
     letter-spacing: 0.16em; padding: 14px; cursor: pointer;
   }
@@ -312,13 +313,14 @@
 
 <div class="filtres" role="tablist" aria-label="Filtrer les pièces">
   <button class="filtre actif" data-filtre="tout">Tout</button>
+  <button class="filtre" data-filtre="permanente">La Permanente</button>
   <button class="filtre" data-filtre="collier">Colliers</button>
   <button class="filtre" data-filtre="bracelet">Bracelets</button>
 </div>
 
 <section class="grille" id="grille">
-  <a class="produit apparait" data-type="collier" href="produit-palermo.html">
-    <div class="produit-photo ph-palermo"></div>
+  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-palermo.html">
+    <div class="produit-photo ph-palermo"><span class="badge badge-perm">Permanente</span></div>
     <p class="produit-cartel">Palermo Necklace<span class="prix">160&nbsp;€</span></p>
   </a>
   <a class="produit apparait" data-type="collier" href="produit-limone.html">
@@ -341,8 +343,8 @@
     <div class="produit-photo ph-ibiza"></div>
     <p class="produit-cartel">Ibiza Necklace<span class="prix">160&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="collier" href="produit-tahiti.html">
-    <div class="produit-photo ph-tahiti"><span class="badge">Limited</span></div>
+  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-tahiti.html">
+    <div class="produit-photo ph-tahiti"><span class="badge badge-perm">Permanente</span></div>
     <p class="produit-cartel">Tahiti Necklace<span class="prix">180&nbsp;€</span></p>
   </a>
   <a class="produit apparait" data-type="collier" href="produit-positano.html">
@@ -360,8 +362,8 @@
     <div class="produit-photo ph-laguna"></div>
     <p class="produit-cartel">Laguna Necklace<span class="prix">140&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="collier" href="produit-casablanca.html">
-    <div class="produit-photo ph-casablanca"></div>
+  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-casablanca.html">
+    <div class="produit-photo ph-casablanca"><span class="badge badge-perm">Permanente</span></div>
     <p class="produit-cartel">Casablanca Necklace<span class="prix">160&nbsp;€</span></p>
   </a>
   <a class="produit apparait" data-type="collier" href="produit-amore.html">
@@ -376,8 +378,8 @@
     <div class="produit-photo ph-stella"><span class="badge">Limited</span></div>
     <p class="produit-cartel">Stella Necklace<span class="prix">170&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="collier" href="produit-marea.html">
-    <div class="produit-photo ph-marea"></div>
+  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-marea.html">
+    <div class="produit-photo ph-marea"><span class="badge badge-perm">Permanente</span></div>
     <p class="produit-cartel">Marea Necklace<span class="prix">160&nbsp;€</span></p>
   </a>
   <a class="produit apparait" data-type="collier" href="produit-riviera.html">
@@ -412,8 +414,8 @@
     <div class="produit-photo ph-rosa"></div>
     <p class="produit-cartel">Rosa Necklace<span class="prix">140&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="collier" href="produit-bianca.html">
-    <div class="produit-photo ph-bianca"></div>
+  <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-bianca.html">
+    <div class="produit-photo ph-bianca"><span class="badge badge-perm">Permanente</span></div>
     <p class="produit-cartel">Bianca Necklace<span class="prix">160&nbsp;€</span></p>
   </a>
   <a class="produit apparait" data-type="collier" href="produit-amuleto.html">
@@ -432,8 +434,8 @@
     <div class="produit-photo ph-neptune"></div>
     <p class="produit-cartel">Neptune Necklace<span class="prix">170&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-casablanca-bracelet.html">
-    <div class="produit-photo ph-casablanca-bracelet"></div>
+  <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-casablanca-bracelet.html">
+    <div class="produit-photo ph-casablanca-bracelet"><span class="badge badge-perm">Permanente</span></div>
     <p class="produit-cartel">Casablanca Bracelet<span class="prix">95&nbsp;€</span></p>
   </a>
   <a class="produit apparait" data-type="bracelet" href="produit-rio-bracelet.html">
@@ -448,12 +450,12 @@
     <div class="produit-photo ph-ibiza-bracelet"></div>
     <p class="produit-cartel">Ibiza Bracelet<span class="prix">90&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-palermo-bracelet.html">
-    <div class="produit-photo ph-palermo-bracelet"></div>
+  <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-palermo-bracelet.html">
+    <div class="produit-photo ph-palermo-bracelet"><span class="badge badge-perm">Permanente</span></div>
     <p class="produit-cartel">Palermo Bracelet<span class="prix">90&nbsp;€</span></p>
   </a>
-  <a class="produit apparait" data-type="bracelet" href="produit-tahiti-bracelet.html">
-    <div class="produit-photo ph-tahiti-bracelet"></div>
+  <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-tahiti-bracelet.html">
+    <div class="produit-photo ph-tahiti-bracelet"><span class="badge badge-perm">Permanente</span></div>
     <p class="produit-cartel">Tahiti Bracelet<span class="prix">95&nbsp;€</span></p>
   </a>
 </section>
@@ -505,11 +507,20 @@
       b.classList.add('actif');
       var f = b.getAttribute('data-filtre');
       document.querySelectorAll('.produit').forEach(function (p) {
-        var visible = (f === 'tout' || p.getAttribute('data-type') === f);
+        var visible = (f === 'tout') ||
+          (f === 'permanente' ? p.getAttribute('data-collection') === 'permanente'
+                              : p.getAttribute('data-type') === f);
         p.classList.toggle('cache', !visible);
       });
     });
   });
+
+  /* Deep-link ?f=permanente */
+  var param = new URLSearchParams(location.search).get('f');
+  if (param) {
+    var cible = document.querySelector('.filtre[data-filtre="' + param + '"]');
+    if (cible) cible.click();
+  }
 })();
 </script>
 

@@ -15,11 +15,11 @@
      Images à gauche, info fixe à droite. Bouton « L'adopter ».
      ========================================================== */
   :root {
-    --creme: #EFF0F2;
-    --papier: #E2E4E8;
+    --creme: #E6E6E6;
+    --papier: #DCDCDC;
     --terracotta: #0F2FA6;
     --encre: #1B1E24;
-    --sable: #C6CBD3;
+    --sable: #C4C4C6;
     --nuit: #10131A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -69,14 +69,14 @@
   .photo {
     position: relative; overflow: hidden;
     display: flex; align-items: center; justify-content: center;
-    color: rgba(239,240,242,0.7); font-size: 9px;
+    color: rgba(230,230,230,0.7); font-size: 9px;
     text-transform: uppercase; letter-spacing: 0.14em; text-align: center; padding: 10px;
   }
   .photo-1 { aspect-ratio: 1 / 1; background: url('produit-casablanca-bracelet.jpg?v=4') center / cover no-repeat; }
   .photo-1 .legende { color: rgba(27,30,36,0.6); text-shadow: none; }
   .photo .legende {
     position: absolute; left: 14px; bottom: 12px;
-    font-size: 10px; color: rgba(239,240,242,0.9);
+    font-size: 10px; color: rgba(230,230,230,0.9);
     text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   }
 
@@ -133,7 +133,7 @@
   .vp { display: block; }
   .vp-photo {
     aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center;
-    color: rgba(239,240,242,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(230,230,230,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
     transition: transform 400ms ease;
   }
   .vp:hover .vp-photo { transform: scale(0.985); }
@@ -204,7 +204,7 @@
   }
   .popup-fond.visible { display: flex; }
   .popup {
-    background: #EFF0F2; color: #1B1E24; max-width: 400px; width: 100%;
+    background: #E6E6E6; color: #1B1E24; max-width: 400px; width: 100%;
     padding: 40px 36px 32px; position: relative; text-align: center;
     box-shadow: 0 24px 80px rgba(0,0,0,0.4);
   }
@@ -230,7 +230,7 @@
   }
   .popup input[type="email"]:focus { border-color: #1B1E24; }
   .popup button[type="submit"] {
-    background: #1B1E24; color: #EFF0F2; border: none;
+    background: #1B1E24; color: #E6E6E6; border: none;
     font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase;
     letter-spacing: 0.16em; padding: 14px; cursor: pointer;
   }
@@ -281,11 +281,11 @@
   </div>
 
   <aside class="info">
-    <span class="etiquette apparait">Soleil Rouge — Été 2026</span>
+    <span class="etiquette apparait">La Permanente — toujours là</span>
     <h1 class="apparait">Casablanca Bracelet</h1>
     <p class="sous apparait">Demi-chaîne acier — perles d'eau douce</p>
     <p class="prix apparait">95&nbsp;€</p>
-    <p class="edition apparait">Édition limitée — numérotée à l'encre</p>
+    <p class="edition apparait">Collection permanente — numérotée à l'encre</p>
 
     <button class="adopter apparait" id="btnAdopter">L'adopter</button>
     <div class="note-boutique" id="noteBoutique">
