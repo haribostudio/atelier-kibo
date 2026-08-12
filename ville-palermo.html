@@ -3,24 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mentions légales — KIBO Paris</title>
-<meta name="description" content="Mentions légales du site atelier-kibo.com — KIBO Paris, bijoux faits main.">
+<title>Palermo — City Guide KIBO Paris</title>
+<meta name="description" content="Palermo, le city guide KIBO — où manger, dormir, danser en Sicile. La ville qui a donné son nom au Palermo Necklace.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KIBO Paris">
-<meta property="og:title" content="Mentions légales — KIBO Paris">
-<meta property="og:description" content="Mentions légales du site atelier-kibo.com — KIBO Paris, bijoux faits main.">
-<meta property="og:url" content="https://atelier-kibo.com/mentions-legales.html">
-<meta property="og:image" content="https://atelier-kibo.com/og-home.jpg">
+<meta property="og:title" content="Palermo — City Guide KIBO Paris">
+<meta property="og:description" content="Palermo, le city guide KIBO — où manger, dormir, danser en Sicile. La ville qui a donné son nom au Palermo Necklace.">
+<meta property="og:url" content="https://atelier-kibo.com/ville-palermo.html">
+<meta property="og:image" content="https://atelier-kibo.com/produit-palermo.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://atelier-kibo.com/og-home.jpg">
-<meta name="robots" content="noindex">
+<meta name="twitter:image" content="https://atelier-kibo.com/produit-palermo.jpg">
 <link rel="icon" type="image/png" href="FULL-BLACK.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono&family=Courier+Prime&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono&family=Courier+Prime&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 <style>
   /* ==========================================================
-     KIBO PARIS — MENTIONS LÉGALES
+     KIBO PARIS — FAQ
      ========================================================== */
   :root {
     --creme: #E6E6E6;
@@ -109,6 +108,20 @@
     .nav-centre { display: none; }
     .burger { display: block; }
   }
+
+  .groupe { font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--terracotta); margin: 48px 0 6px; }
+  details { border-bottom: 1px solid rgba(27,30,36,0.15); }
+  summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding: 16px 2px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 15px; color: var(--terracotta); transition: transform 300ms ease; flex-shrink: 0; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details .contenu { padding: 0 2px 18px; }
+  details .contenu p { margin-bottom: 10px; }
   @media (max-width: 900px) {
     .nav-droite { order: -1; }
     .nav-droite a { display: none; }
@@ -147,6 +160,36 @@
     background: none; border: none; font-size: 24px; color: inherit;
     cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
   }
+
+  /* ---------- City Guide ville ---------- */
+  main { max-width: 720px; }
+  .chapo { font-family: 'Cormorant Garamond', serif; font-size: 19px; letter-spacing: 0.02em;
+    line-height: 1.6; color: rgba(27,30,36,0.85); margin-bottom: 40px; }
+  .note-manuscrite {
+    background: var(--papier); padding: 18px 24px; max-width: 300px;
+    transform: rotate(-2deg); margin: 8px 0 44px;
+    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    font-family: 'Caveat', cursive; font-size: 21px; letter-spacing: 0; line-height: 1.35;
+  }
+  .note-manuscrite .ast { color: var(--terracotta); }
+  .groupe-cg { font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--terracotta); margin: 48px 0 6px; padding-top: 26px; border-top: 1px solid rgba(27,30,36,0.15); }
+  .lieu { margin: 18px 0; }
+  .lieu .l-nom { font-size: 13px; letter-spacing: 0.08em; font-weight: 700; }
+  .lieu .l-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.5); margin-left: 8px; }
+  .lieu p { margin: 4px 0 0; }
+  .lieu.a-completer { opacity: 0.45; }
+  .piece-nee {
+    display: grid; grid-template-columns: 130px 1fr; gap: 22px; align-items: center;
+    border: 1px solid rgba(27,30,36,0.2); padding: 20px; margin: 56px 0 8px;
+  }
+  .piece-nee .pn-img { aspect-ratio: 1; background: url('produit-palermo.jpg?v=4') center / cover no-repeat; }
+  .piece-nee .pn-et { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .piece-nee .pn-nom { font-family: 'Cormorant Garamond', serif; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em; margin: 4px 0 8px; }
+  .piece-nee a.pn-lien { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--encre); padding-bottom: 2px; }
+  .retour-carte { display: inline-block; margin-bottom: 34px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid rgba(27,30,36,0.4); padding-bottom: 2px; }
+  @media (max-width: 640px) { .piece-nee { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -183,29 +226,87 @@
 </div>
 
 <main>
-  <span class="etiquette">Informations légales</span>
-  <h1>Mentions légales</h1>
+  <a class="retour-carte" href="city-guides.html">← Tous les City Guides</a>
+  <span class="etiquette">City Guide — 01 · Sicile, Italie</span>
+  <h1>Palermo</h1>
+  <p class="chapo">Palerme ne se visite pas, elle se vit. Les marchés qui crient dès l'aube, le sel sur la peau à Mondello, les façades baroques qui s'effritent au soleil. C'est ici, entre deux étals de perles anciennes, qu'est né le Palermo Necklace.</p>
+  <div class="note-manuscrite">« On est arrivés pour deux jours, on est restés neuf. » <span class="ast">✳︎</span></div>
 
-  <h2>Éditeur du site</h2>
-  <p>Le site atelier-kibo.com est édité par <strong>HARIBO STUDIO</strong>, entreprise unipersonnelle à responsabilité limitée (EURL) au capital de 1&nbsp;000&nbsp;€, immatriculée au Registre du commerce et des sociétés de Paris sous le numéro 100&nbsp;580&nbsp;281.</p>
-  <p>Siège social&nbsp;: 46&nbsp;rue du Faubourg Saint-Martin, 75010 Paris, France.<br>
-  Numéro de TVA intracommunautaire&nbsp;: FR45100580281.<br>
-  Contact&nbsp;: <a href="mailto:hello@atelier-kibo.com">hello@atelier-kibo.com</a></p>
+  <p class="groupe-cg">Manger</p>
+  <div class="lieu">
+    <span class="l-nom">Antica Focacceria San Francesco</span><span class="l-tag">Kalsa</span>
+    <p>Depuis 1834. Le pani ca meusa des courageux, les arancine des autres. Institution absolue, à tagguer les yeux fermés.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Mercato di Ballarò</span><span class="l-tag">Albergheria</span>
+    <p>Le ventre de Palerme. Street food, poulpe bouilli, panelle — venir affamé, repartir heureux.</p>
+  </div>
+  <div class="lieu a-completer">
+    <span class="l-nom">À compléter</span><span class="l-tag">notre table du soir</span>
+    <p>La trattoria où on a fêté la dernière perle trouvée.</p>
+  </div>
 
-  <h2>Directeur de la publication</h2>
-  <p>Harry Boeki, gérant de HARIBO STUDIO.</p>
+  <p class="groupe-cg">Dormir</p>
+  <div class="lieu a-completer">
+    <span class="l-nom">À compléter</span><span class="l-tag">Kalsa ou Vucciria</span>
+    <p>Le palazzo aux volets verts.</p>
+  </div>
+  <div class="lieu a-completer">
+    <span class="l-nom">À compléter</span><span class="l-tag">bord de mer</span>
+    <p>Pour se réveiller face à Mondello.</p>
+  </div>
 
-  <h2>Hébergement</h2>
-  <p>Le site est hébergé par <strong>Cloudflare, Inc.</strong>, 101 Townsend Street, San Francisco, CA 94107, États-Unis — <a href="https://www.cloudflare.com" target="_blank" rel="noopener">www.cloudflare.com</a>.</p>
+  <p class="groupe-cg">Faire la fête</p>
+  <div class="lieu">
+    <span class="l-nom">Taverna Azzurra</span><span class="l-tag">Vucciria</span>
+    <p>Le bar le plus célèbre du marché. Sangue et vino cotto au comptoir, la nuit commence ici et finit sur la place.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">La Vucciria, la nuit</span><span class="l-tag">Vucciria</span>
+    <p>Le marché devient dancefloor à ciel ouvert. Personne ne dort, tout le monde danse.</p>
+  </div>
+  <div class="lieu a-completer">
+    <span class="l-nom">À compléter</span><span class="l-tag">l'adresse secrète</span>
+    <p>Celle qu'on ne donne qu'aux amis.</p>
+  </div>
 
-  <h2>Propriété intellectuelle</h2>
-  <p>L'ensemble des éléments du site atelier-kibo.com — textes, photographies, vidéos, logos, marques, créations et mises en page — est la propriété exclusive de HARIBO STUDIO, sauf mention contraire. Toute reproduction, représentation ou exploitation, totale ou partielle, sans autorisation écrite préalable est interdite et constituerait une contrefaçon au sens des articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+  <p class="groupe-cg">Shopping &amp; perles</p>
+  <div class="lieu">
+    <span class="l-nom">Mercato delle Pulci</span><span class="l-tag">près de la cathédrale</span>
+    <p>Les puces de Palerme — c'est là qu'on chine perles anciennes, corail et verre. L'origine de tout.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Mercato del Capo</span><span class="l-tag">Capo</span>
+    <p>Tissus, céramiques, majoliques — l'énergie sicilienne en couleurs.</p>
+  </div>
+  <div class="lieu a-completer">
+    <span class="l-nom">À compléter</span><span class="l-tag">notre fournisseur</span>
+    <p>Le comptoir de perles qu'on garde précieusement.</p>
+  </div>
 
-  <h2>Données personnelles</h2>
-  <p>Les adresses e-mail collectées via les formulaires d'inscription (newsletter, Private Access) sont destinées exclusivement à HARIBO STUDIO et ne sont ni vendues ni transmises à des tiers. Conformément au Règlement général sur la protection des données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données, que vous pouvez exercer en écrivant à <a href="mailto:hello@atelier-kibo.com">hello@atelier-kibo.com</a>.</p>
+  <p class="groupe-cg">Rencontres &amp; rituels</p>
+  <div class="lieu">
+    <span class="l-nom">Quattro Canti au lever du jour</span><span class="l-tag">centre</span>
+    <p>La place octogonale vide à 7h, lumière dorée sur le baroque. Le seul moment où Palerme murmure.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Mondello en fin de journée</span><span class="l-tag">plage</span>
+    <p>L'eau turquoise, les cabines Liberty, granita citron. Le sel qui reste sur la peau — capturé dans la pièce.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Foro Italico au coucher</span><span class="l-tag">front de mer</span>
+    <p>Les palermitains s'y retrouvent tous. S'asseoir, regarder, se laisser adopter.</p>
+  </div>
 
-  <h2>Responsabilité</h2>
-  <p>HARIBO STUDIO s'efforce d'assurer l'exactitude des informations publiées sur ce site, mais ne saurait être tenue responsable des erreurs, omissions ou de l'indisponibilité temporaire du site. Les photographies des pièces ne sont pas contractuelles&nbsp;: chaque bijou étant fait main, de légères variations peuvent exister.</p>
+  <div class="piece-nee">
+    <div class="pn-img"></div>
+    <div>
+      <span class="pn-et">La pièce née ici</span>
+      <p class="pn-nom">Palermo Necklace</p>
+      <p style="margin-bottom:10px;">Perles d'eau douce, argent vieilli, smileys bleus — l'énergie de la Vucciria un samedi soir.</p>
+      <a class="pn-lien" href="produit-palermo.html">Voir la pièce&nbsp;&nbsp;→</a>
+    </div>
+  </div>
 </main>
 
 <footer>
