@@ -61,7 +61,11 @@
   }
   .nav-droite { gap: 22px; justify-content: flex-end; }
 
-  main { max-width: 680px; margin: 0 auto; padding: 80px 24px 110px; }
+  main { max-width: 680px; margin: 0 auto; padding: 80px 24px 110px; position: relative; }
+  .tampon { position: absolute; top: 96px; right: -18px; width: 210px;
+    transform: rotate(-9deg); mix-blend-mode: multiply; opacity: 0.9;
+    pointer-events: none; user-select: none; }
+  @media (max-width: 760px) { .tampon { width: 128px; right: 4px; top: 84px; } }
   .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
   h1 {
     font-family: 'Cormorant Garamond', serif; font-weight: 400;
@@ -254,6 +258,7 @@
 
 <main>
   <a class="retour-carte" href="city-guides.html">← Tous les City Guides</a>
+  <img class="tampon" src="tampon-marrakech.png?v=1" alt="Tampon KIBO Marrakech">
   <span class="etiquette">City Guide — 02 · Maroc</span>
   <h1>Marrakech</h1>
   <span class="cg-kick">Get lost. Stay curious. Eat with your hands.</span>
