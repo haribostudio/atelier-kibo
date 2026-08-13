@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our World — KIBO Paris</title>
-<meta name="description" content="KIBO habite une tension : celle d'une marque parisienne fascinée par l'énergie du Sud. Des bijoux qui gardent la mémoire des moments vécus.">
+<meta name="description" content="L'univers KIBO Paris — le manifeste, les cinq piliers, la provenance des perles. L'énergie du Sud, racontée avec l'exigence de Paris.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KIBO Paris">
 <meta property="og:title" content="Our World — KIBO Paris">
-<meta property="og:description" content="KIBO habite une tension : celle d'une marque parisienne fascinée par l'énergie du Sud. Des bijoux qui gardent la mémoire des moments vécus.">
+<meta property="og:description" content="L'univers KIBO Paris — le manifeste, les cinq piliers, la provenance des perles. L'énergie du Sud, racontée avec l'exigence de Paris.">
 <meta property="og:url" content="https://atelier-kibo.com/our-world.html">
 <meta property="og:image" content="https://atelier-kibo.com/og-home.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,51 +16,40 @@
 <link rel="icon" type="image/png" href="FULL-BLACK.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Archivo:wght@400;500&family=Space+Mono&family=Courier+Prime&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono&family=Courier+Prime&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 <style>
   /* ==========================================================
-     KIBO PARIS — OUR WORLD
-     D'après la plateforme de marque, Édition 01.
-     Palette : Chaux, Encre, Soleil, Sanguine, Grand Bleu.
-     Typos : Fraunces (la conteuse), Archivo (la documentariste),
-     Space Mono (l'archiviste). Fer à gauche. Un seul Point Soleil.
+     KIBO PARIS — FAQ
      ========================================================== */
   :root {
-    --chaux: #E6E6E6;
+    --creme: #E6E6E6;
+    --papier: #DCDCDC;
+    --terracotta: #0F2FA6;
     --encre: #1B1E24;
-    --soleil: #F5A800;
-    --sanguine: #0F2FA6;
-    --grand-bleu: #0F2FA6;
-    --bougainvillee: #CE4577;
-    --figuier: #3F5A36;
+    --nuit: #10131A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--chaux);
+    background: var(--creme);
     color: var(--encre);
-    font-family: 'Archivo', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
   }
   a { color: inherit; text-decoration: none; }
   a:hover { opacity: 0.65; }
-  .fraunces { font-family: 'Fraunces', Georgia, serif; font-weight: 300; }
-  .mono {
-    font-family: 'Space Mono', monospace; font-size: 11px;
-    text-transform: uppercase; letter-spacing: 0.14em;
-  }
 
-  /* ---------- Bandeau + nav (continuité du site) ---------- */
   .annonce {
     font-family: 'Courier Prime', monospace;
-    background: var(--sanguine); color: var(--chaux);
+    background: var(--terracotta); color: var(--creme);
     text-align: center; padding: 10px 12px;
     font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
   }
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: var(--chaux);
+    background: var(--creme);
     display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
     padding: 14px 32px;
     border-bottom: 1px solid rgba(27,30,36,0.12);
@@ -68,180 +57,39 @@
   .logo-nav img { height: 34px; display: block; }
   .nav-centre, .nav-droite {
     display: flex; gap: 28px; justify-content: center;
-    font-family: 'Space Mono', monospace; font-size: 12px;
-    text-transform: uppercase; letter-spacing: 0.16em;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
   }
   .nav-droite { gap: 22px; justify-content: flex-end; }
-  .nav-actif { border-bottom: 1px solid var(--encre); padding-bottom: 2px; }
 
-  /* ---------- Ouverture ---------- */
-  .ouverture { padding: 14vh 8vw 10vh; max-width: 1100px; }
-  .ouverture .meta { color: rgba(27,30,36,0.55); margin-bottom: 40px; display: block; }
-  .ouverture h1 {
-    font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(40px, 6vw, 88px); line-height: 1.08;
-    letter-spacing: -0.01em; max-width: 16ch;
+  main { max-width: 680px; margin: 0 auto; padding: 80px 24px 110px; }
+  .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(32px, 4vw, 48px); text-transform: uppercase; letter-spacing: 0.08em;
+    margin: 12px 0 48px; line-height: 1.1;
   }
-  /* Le Point Soleil — unique sur la page */
-  .point-soleil {
-    display: inline-block; width: 0.5em; height: 0.5em;
-    background: var(--soleil); border-radius: 50%;
-    margin-left: 0.15em; vertical-align: baseline;
+  h2 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+    margin: 44px 0 14px; padding-top: 24px;
+    border-top: 1px solid rgba(27,30,36,0.15);
   }
-  .ouverture .exergue {
-    margin-top: 56px; max-width: 52ch;
-    font-family: 'Fraunces', serif; font-style: italic; font-size: 19px;
-    color: rgba(27,30,36,0.75);
-  }
-  .ouverture .exergue .mono { display: block; font-style: normal; margin-top: 12px; color: rgba(27,30,36,0.5); }
+  p { font-size: 12px; letter-spacing: 0.04em; line-height: 1.9; color: rgba(27,30,36,0.85); margin-bottom: 12px; }
+  p a { border-bottom: 1px solid rgba(27,30,36,0.4); padding-bottom: 1px; }
 
-  /* ---------- Manifeste ---------- */
-  .manifeste { padding: 10vh 8vw; max-width: 900px; }
-  .manifeste .mono { color: var(--sanguine); display: block; margin-bottom: 32px; }
-  .manifeste p {
-    font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(19px, 2vw, 25px); line-height: 1.55;
-    margin-bottom: 1.4em; max-width: 34em;
-  }
-  .manifeste strong { font-weight: 400; }
-
-  /* ---------- Territoire ---------- */
-  .territoire { padding: 12vh 8vw; display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; max-width: 1300px; }
-  .territoire h2 {
-    font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(28px, 3.4vw, 48px); line-height: 1.15;
-  }
-  .territoire h2 em { font-style: italic; }
-  .territoire .texte p { margin-bottom: 1.3em; max-width: 58ch; font-size: 16px; color: rgba(27,30,36,0.85); }
-  .territoire .mono { display: block; margin-bottom: 24px; color: var(--sanguine); }
-
-  /* ---------- Les cinq piliers ---------- */
-  .piliers { padding: 10vh 8vw 12vh; }
-  .piliers > .mono { display: block; margin-bottom: 48px; color: var(--sanguine); }
-  .piliers-grille { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: rgba(27,30,36,0.15); border: 1px solid rgba(27,30,36,0.15); }
-  .pilier { background: var(--chaux); padding: 32px 22px 40px; position: relative; min-height: 0; display: flex; flex-direction: column; }
-  .pilier .pastille { width: 30px; height: 30px; margin-bottom: 20px; }
-  .pilier h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 26px; margin-bottom: 14px; }
-  .pilier .mots { font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(27,30,36,0.55); line-height: 1.9; margin-bottom: 16px; }
-  .pilier p { font-size: 13.5px; color: rgba(27,30,36,0.85); margin-top: auto; }
-  .pilier p em { font-family: 'Fraunces', serif; }
-  .s-sun .pastille { background: var(--soleil); border-radius: 50%; }
-  .s-sea .pastille { background: var(--grand-bleu); }
-  .s-sound .pastille { background: var(--bougainvillee); border-radius: 50% 50% 0 0; }
-  .s-energy .pastille { background: var(--sanguine); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
-  .s-memory .pastille { background: var(--encre); border-radius: 0 50% 50% 50%; }
-
-  /* ---------- Le soleil intérieur (section encre) ---------- */
-  .soleil-interieur {
-    background: var(--encre); color: var(--chaux);
-    padding: 14vh 8vw;
-  }
-  .soleil-interieur .mono { color: var(--soleil); display: block; margin-bottom: 40px; }
-  .soleil-interieur p {
-    font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(20px, 2.4vw, 30px); line-height: 1.5;
-    max-width: 30em; margin-bottom: 1.3em;
-  }
-  .soleil-interieur .petit { font-family: 'Archivo', sans-serif; font-size: 15px; color: rgba(230,230,230,0.75); max-width: 60ch; }
-
-  /* ---------- Bibliothèque d'atmosphères ---------- */
-  .atmospheres { padding: 12vh 8vw; }
-  .atmospheres > .mono { display: block; margin-bottom: 12px; color: var(--sanguine); }
-  .atmospheres h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(28px, 3.4vw, 46px); margin-bottom: 56px; }
-  .atmo-liste { display: grid; gap: 1px; background: rgba(27,30,36,0.15); border-top: 1px solid rgba(27,30,36,0.15); border-bottom: 1px solid rgba(27,30,36,0.15); }
-  .atmo {
-    background: var(--chaux);
-    display: grid; grid-template-columns: 220px 1fr 2fr; gap: 32px; align-items: center;
-    padding: 28px 0;
-  }
-  .atmo .mono { color: rgba(27,30,36,0.5); }
-  .atmo h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; }
-  .atmo p { font-size: 14.5px; color: rgba(27,30,36,0.8); max-width: 60ch; }
-
-  /* ---------- Photos habitées ---------- */
-  .bande-photos { display: grid; grid-template-columns: 1.2fr 1fr 1.4fr; gap: 1px; background: var(--encre); }
-  .bande-photos > div { height: 52vh; position: relative; background-size: cover; background-position: center; }
-  .bp-1 { background-image: url('HB_20250903_0073.jpg'); background-position: center 80%; }
-  .bp-2 { background-image: url('photo%20droite.png'); }
-  .bp-3 { background-image: url('plage.jpg'); }
-  .bande-photos .legende {
-    position: absolute; left: 16px; bottom: 12px;
-    font-family: 'Space Mono', monospace; font-size: 10px;
-    text-transform: uppercase; letter-spacing: 0.14em;
-    color: rgba(230,230,230,0.9);
-    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-  }
-
-  /* ---------- La hiérarchie ---------- */
-  .hierarchie { padding: 12vh 8vw; max-width: 900px; }
-  .hierarchie .mono { display: block; margin-bottom: 40px; color: var(--sanguine); }
-  .hierarchie ol { list-style: none; counter-reset: h; }
-  .hierarchie li {
-    counter-increment: h;
-    display: grid; grid-template-columns: 64px 1fr; align-items: baseline;
-    padding: 22px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
-    font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(20px, 2.4vw, 30px);
-  }
-  .hierarchie li::before {
-    content: counter(h, decimal-leading-zero);
-    font-family: 'Space Mono', monospace; font-size: 12px; color: rgba(27,30,36,0.45);
-  }
-  .hierarchie .note { margin-top: 28px; font-size: 14px; color: rgba(27,30,36,0.6); }
-
-  /* ---------- Clôture ---------- */
-  .cloture {
-    background: var(--encre); color: var(--chaux);
-    padding: 16vh 8vw 14vh; text-align: left;
-  }
-  .cloture .mono { color: var(--soleil); display: block; margin-bottom: 36px; }
-  .cloture .lien { border-color: var(--chaux) !important; }
-  .cloture p {
-    font-family: 'Fraunces', serif; font-weight: 300;
-    font-size: clamp(26px, 3.6vw, 52px); line-height: 1.25; max-width: 22em;
-  }
-  .cloture em { font-style: italic; }
-  .cloture .lien {
-    display: inline-block; margin-top: 48px;
-    font-family: 'Space Mono', monospace; font-size: 12px;
-    text-transform: uppercase; letter-spacing: 0.16em;
-    border-bottom: 1px solid var(--encre); padding-bottom: 4px;
-  }
-
-  /* ---------- Footer (continuité du site) ---------- */
-  footer { padding: 48px 8vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
+  footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
   .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
-  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
   .footer-droite { justify-content: flex-end; }
   .footer-logo { text-align: center; }
   .footer-logo img { height: 40px; }
-  .footer-bas { text-align: center; margin-top: 32px; font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
-
-  /* ---------- Apparitions ---------- */
-  .apparait { opacity: 0; transform: translateY(14px); transition: opacity 700ms cubic-bezier(0.16,1,0.3,1), transform 700ms cubic-bezier(0.16,1,0.3,1); }
-  .apparait.visible { opacity: 1; transform: none; }
-
-  /* ---------- Responsive ---------- */
-  @media (max-width: 980px) {
-    .nav-centre { display: none; }
-    .piliers-grille { grid-template-columns: 1fr; }
-    .pilier { min-height: 0; }
-    .pilier p { margin-top: 16px; }
-    .territoire { grid-template-columns: 1fr; gap: 40px; }
-    .atmo { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; }
-    .bande-photos { grid-template-columns: 1fr; }
-    .bande-photos > div { height: 44vh; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .apparait { transition-duration: 150ms; transform: none; }
-  }
+  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
 
   /* ---------- Menu mobile ---------- */
   .burger { display: none; background: none; border: none; color: inherit; cursor: pointer; padding: 4px; }
   .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
   .menu-mobile {
     position: fixed; inset: 0; z-index: 300;
-    background: var(--creme, #E6E6E6); color: var(--encre);
+    background: var(--creme); color: var(--encre);
     display: none; flex-direction: column; justify-content: center;
     padding: 32px 36px;
   }
@@ -256,52 +104,24 @@
     background: none; border: none; font-size: 26px; color: inherit;
     cursor: pointer; font-family: inherit; line-height: 1;
   }
-  @media (max-width: 900px) { .burger { display: block; } }
+  @media (max-width: 900px) {
+    .nav-centre { display: none; }
+    .burger { display: block; }
+  }
 
-  /* ---------- Pop-up newsletter ---------- */
-  .popup-fond {
-    position: fixed; inset: 0; z-index: 500;
-    background: rgba(16,19,26,0.55);
-    display: none; align-items: center; justify-content: center; padding: 24px;
+  .groupe { font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--terracotta); margin: 48px 0 6px; }
+  details { border-bottom: 1px solid rgba(27,30,36,0.15); }
+  summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding: 16px 2px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em;
   }
-  .popup-fond.visible { display: flex; }
-  .popup {
-    background: #E6E6E6; color: #1B1E24; max-width: 400px; width: 100%;
-    padding: 40px 36px 32px; position: relative; text-align: center;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
-  }
-  .popup .fermer-popup {
-    position: absolute; top: 12px; right: 16px;
-    background: none; border: none; font-size: 20px; cursor: pointer;
-    color: inherit; font-family: inherit; line-height: 1; padding: 4px;
-  }
-  .popup .dix {
-    font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; line-height: 1;
-    color: #0F2FA6; margin-bottom: 8px;
-  }
-  .popup h3 {
-    font-family: 'Space Mono', monospace; font-weight: 400; font-size: 12px;
-    text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 8px;
-  }
-  .popup p { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.04em; line-height: 1.7; color: rgba(27,30,36,0.7); margin-bottom: 20px; }
-  .popup form { display: flex; flex-direction: column; gap: 12px; }
-  .popup input[type="email"] {
-    background: transparent; border: none; border-bottom: 1px solid rgba(27,30,36,0.4);
-    font-family: 'Space Mono', monospace; font-size: 13px; padding: 10px 2px;
-    outline: none; border-radius: 0; text-align: center; color: inherit;
-  }
-  .popup input[type="email"]:focus { border-color: #1B1E24; }
-  .popup button[type="submit"] {
-    background: #1B1E24; color: #E6E6E6; border: none;
-    font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase;
-    letter-spacing: 0.16em; padding: 14px; cursor: pointer;
-  }
-  .popup .non-merci {
-    background: none; border: none; font-family: 'Space Mono', monospace; font-size: 10px;
-    text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.5);
-    cursor: pointer; margin-top: 4px; text-decoration: underline;
-  }
-  .popup .popup-merci { display: none; font-family: 'Cormorant Garamond', serif; font-size: 20px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 15px; color: var(--terracotta); transition: transform 300ms ease; flex-shrink: 0; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details .contenu { padding: 0 2px 18px; }
+  details .contenu p { margin-bottom: 10px; }
   @media (max-width: 900px) {
     .nav-droite { order: -1; }
     .nav-droite a { display: none; }
@@ -340,6 +160,84 @@
     background: none; border: none; font-size: 24px; color: inherit;
     cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
   }
+
+  /* ---------- Our World v2 ---------- */
+  .ow-hero { padding: 14vh 6vw 10vh; }
+  .ow-hero .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--terracotta); }
+  .ow-hero h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(44px, 7vw, 104px); line-height: 1.04;
+    text-transform: uppercase; letter-spacing: 0.04em; margin: 18px 0 0; max-width: 14ch;
+  }
+  .ow-hero h1 .bleu { color: var(--terracotta); }
+  .ow-hero .ast { color: var(--terracotta); }
+  .ow-hero .sous-hero { margin-top: 26px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.65); }
+
+  .ow-manifeste { padding: 10vh 6vw 11vh; border-top: 1px solid rgba(27,30,36,0.12); display: grid; grid-template-columns: 1fr 1.35fr; gap: 6vw; align-items: start; }
+  .ow-num { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--terracotta); }
+  .ow-manifeste .colonne h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(26px, 3vw, 42px); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 12px; line-height: 1.15; }
+  .ow-texte p { font-family: 'Cormorant Garamond', serif; font-size: 20px; letter-spacing: 0.02em; line-height: 1.65; color: rgba(27,30,36,0.9); margin-bottom: 20px; }
+  .ow-texte strong { font-weight: 500; }
+  .note-caveat {
+    background: var(--papier); padding: 16px 22px; max-width: 300px;
+    transform: rotate(-2deg); margin-top: 26px;
+    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    font-family: 'Caveat', cursive; font-size: 21px; letter-spacing: 0; line-height: 1.35;
+  }
+  .note-caveat .ast { color: var(--terracotta); }
+
+  /* piliers : rangées qui s'allument */
+  .ow-piliers { border-top: 1px solid rgba(27,30,36,0.12); padding: 10vh 0 0; }
+  .ow-piliers .ow-num, .ow-piliers h2 { padding: 0 6vw; }
+  .ow-piliers h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(26px, 3vw, 42px); text-transform: uppercase; letter-spacing: 0.06em; margin: 12px 0 48px; }
+  .pilier-rang {
+    display: grid; grid-template-columns: 90px 1fr 1.2fr; gap: 4vw; align-items: center;
+    padding: 34px 6vw; border-top: 1px solid rgba(27,30,36,0.15);
+    transition: background 450ms ease, color 450ms ease; cursor: default;
+  }
+  .pilier-rang:last-of-type { border-bottom: 1px solid rgba(27,30,36,0.15); }
+  .pilier-rang .pr-num { font-size: 10px; letter-spacing: 0.2em; color: rgba(27,30,36,0.5); transition: color 450ms ease; }
+  .pilier-rang .pr-nom { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(34px, 4.6vw, 64px); text-transform: uppercase; letter-spacing: 0.06em; line-height: 1; }
+  .pilier-rang .pr-ligne { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; line-height: 1.9; }
+  .pilier-rang:hover { background: var(--pc, var(--encre)); color: #fff; }
+  .pilier-rang:hover .pr-num { color: rgba(255,255,255,0.7); }
+
+  /* provenance */
+  .ow-provenance { padding: 11vh 6vw; background: var(--papier); }
+  .ow-provenance h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(26px, 3vw, 42px); text-transform: uppercase; letter-spacing: 0.06em; margin: 12px 0 18px; }
+  .ow-provenance .intro { font-family: 'Cormorant Garamond', serif; font-size: 20px; line-height: 1.6; max-width: 62ch; color: rgba(27,30,36,0.9); margin-bottom: 44px; }
+  .prov-grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .prov {
+    background: var(--creme); border-top: 3px solid var(--vc, var(--encre));
+    padding: 20px 20px 22px;
+  }
+  .prov .pv-titre { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 700; }
+  .prov .pv-lieu { display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.55); margin: 4px 0 10px; }
+  .prov p { font-size: 12px; letter-spacing: 0.04em; line-height: 1.8; color: rgba(27,30,36,0.85); }
+  .prov-cta { display: inline-block; margin-top: 36px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--encre); padding-bottom: 3px; }
+
+  /* clôture */
+  .ow-cloture {
+    position: relative; min-height: 72vh; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    padding: 72px 6vw; color: #E6E6E6;
+    background: linear-gradient(rgba(16,19,26,0.45), rgba(16,19,26,0.45)), url('HB_20250903_0073.jpg') center 80% / cover no-repeat, var(--nuit);
+  }
+  .ow-cloture .etiq { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #d9a05f; }
+  .ow-cloture h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(30px, 4.4vw, 60px); text-transform: uppercase; letter-spacing: 0.06em;
+    line-height: 1.18; max-width: 20ch; margin: 18px 0 30px;
+  }
+  .ow-cloture a { display: inline-block; margin: 0 14px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid #E6E6E6; padding-bottom: 3px; }
+
+  .apparait { opacity: 0; transform: translateY(14px); transition: opacity 700ms cubic-bezier(0.16,1,0.3,1), transform 700ms cubic-bezier(0.16,1,0.3,1); }
+  .apparait.visible { opacity: 1; transform: none; }
+  @media (max-width: 800px) {
+    .ow-manifeste { grid-template-columns: 1fr; gap: 28px; }
+    .pilier-rang { grid-template-columns: 1fr; gap: 8px; padding: 26px 6vw; }
+  }
 </style>
 </head>
 <body>
@@ -350,7 +248,7 @@
   <a class="logo-nav" href="index.html"><img src="FULL-BLACK.png" alt="KIBO"></a>
   <div class="nav-centre">
     <a href="collection.html">Collections</a>
-    <a href="our-world.html" class="nav-actif">Our World</a>
+    <a href="our-world.html">Our World</a>
     <a href="city-guides.html">City Guides</a>
     <a href="private-access.html">Private Access</a>
   </div>
@@ -371,64 +269,109 @@
   <a href="private-access.html">Private Access</a>
 </div>
 
-<header class="ouverture">
-  <span class="mono apparait">Our World — Paris × Méditerranée — MMXXVI</span>
-  <h1 class="apparait">Des bijoux qui gardent la mémoire des moments vécus<span class="point-soleil" aria-hidden="true"></span></h1>
-  <div class="exergue apparait">
-    «&nbsp;On ne se souvient pas des jours, on se souvient des instants.&nbsp;»
-    <span class="mono">Cesare Pavese — point de départ de tout ce qui suit</span>
-  </div>
+<header class="ow-hero">
+  <span class="etiquette apparait">Our World</span>
+  <h1 class="apparait">L'énergie du Sud, racontée avec <span class="bleu">l'exigence de Paris</span><span class="ast">&nbsp;✳︎</span></h1>
+  <p class="sous-hero apparait">Fait main à Paris. En édition limitée. Porté pour les souvenirs.</p>
 </header>
 
-<section class="manifeste">
-  <span class="mono apparait">01 — L'idée qui gouverne tout</span>
-  <p class="apparait">Un bijou KIBO est le <strong>témoin d'un moment</strong>. Il était là — au concert dont on parle encore, sur la plage à 23&nbsp;heures, dans le métro un matin de novembre, quand le sel de l'été dernier semble encore accroché à la chaîne.</p>
-  <p class="apparait">Il se raye, se patine, et devient plus précieux à mesure qu'il vieillit. <strong>L'énergie du Sud, racontée avec l'exigence de Paris.</strong> Fait main, en édition limitée.</p>
-</section>
-
-<section class="piliers">
-  <span class="mono apparait">02 — Les cinq piliers</span>
-  <div class="piliers-grille">
-    <div class="pilier s-sun apparait">
-      <div class="pastille"></div>
-      <h3>Sun</h3>
-      <p><em>Pas une saison&nbsp;: une disposition.</em></p>
-    </div>
-    <div class="pilier s-sea apparait">
-      <div class="pastille"></div>
-      <h3>Sea</h3>
-      <p><em>Partir, se laisser porter, revenir changé.</em></p>
-    </div>
-    <div class="pilier s-sound apparait">
-      <div class="pastille"></div>
-      <h3>Sound</h3>
-      <p><em>Depuis la piste, jamais depuis le carré VIP.</em></p>
-    </div>
-    <div class="pilier s-energy apparait">
-      <div class="pastille"></div>
-      <h3>Energy</h3>
-      <p><em>L'électricité entre les gens.</em></p>
-    </div>
-    <div class="pilier s-memory apparait">
-      <div class="pastille"></div>
-      <h3>Memory</h3>
-      <p><em>Plus beau parce qu'il est porté.</em></p>
-    </div>
+<section class="ow-manifeste">
+  <div class="colonne apparait">
+    <span class="ow-num">01 — Le manifeste</span>
+    <h2>Le témoin d'un moment</h2>
+    <div class="note-caveat">« Le sel de l'été dernier encore accroché à la chaîne » <span class="ast">✳︎</span></div>
+  </div>
+  <div class="ow-texte apparait">
+    <p>Un bijou KIBO est le <strong>témoin d'un moment</strong>. Il était là — au concert dont on parle encore, sur la plage à 23&nbsp;heures, dans le métro un matin de novembre.</p>
+    <p>Il se raye, se patine, et devient plus précieux à mesure qu'il vieillit. On ne le range pas&nbsp;: on le vit. Dans l'eau, au soleil, en ville sous un manteau.</p>
+    <p>Chaque pièce est montée à la main à l'atelier, à Paris, en édition limitée. Quand une série s'épuise, il n'y en a plus — jusqu'à un éventuel retour.</p>
   </div>
 </section>
 
-<div class="bande-photos">
-  <div class="bp-1"><span class="legende">La fête — 02:12 — Août</span></div>
-  <div class="bp-2"><span class="legende">Retour de plage — 19:36</span></div>
-  <div class="bp-3"><span class="legende">La mer — 18:04 — Juin</span></div>
-</div>
-
-<section class="cloture">
-  <span class="mono apparait">Le soleil est devenu intérieur</span>
-  <p class="apparait">Le bijou n'est pas le souvenir. <em>Il est la preuve que le moment a existé.</em></p>
-  <a class="lien apparait" href="collection.html">La collection en cours&nbsp;&nbsp;→</a>
+<section class="ow-piliers">
+  <span class="ow-num">02 — Les cinq piliers</span>
+  <h2 class="apparait">Ce qui nous gouverne</h2>
+  <div class="pilier-rang apparait" style="--pc:#F0A63A;">
+    <span class="pr-num">I</span>
+    <span class="pr-nom">Sun</span>
+    <span class="pr-ligne">Pas une saison&nbsp;: une disposition.</span>
+  </div>
+  <div class="pilier-rang apparait" style="--pc:#2E6FD8;">
+    <span class="pr-num">II</span>
+    <span class="pr-nom">Sea</span>
+    <span class="pr-ligne">Partir, se laisser porter, revenir changé.</span>
+  </div>
+  <div class="pilier-rang apparait" style="--pc:#8E6FC1;">
+    <span class="pr-num">III</span>
+    <span class="pr-nom">Sound</span>
+    <span class="pr-ligne">Depuis la piste, jamais depuis le carré VIP.</span>
+  </div>
+  <div class="pilier-rang apparait" style="--pc:#E2574C;">
+    <span class="pr-num">IV</span>
+    <span class="pr-nom">Energy</span>
+    <span class="pr-ligne">L'électricité entre les gens.</span>
+  </div>
+  <div class="pilier-rang apparait" style="--pc:#2FA48E;">
+    <span class="pr-num">V</span>
+    <span class="pr-nom">Memory</span>
+    <span class="pr-ligne">Plus beau parce qu'il est porté.</span>
+  </div>
 </section>
 
+<section class="ow-provenance">
+  <span class="ow-num">03 — La provenance</span>
+  <h2 class="apparait">D'où viennent nos perles</h2>
+  <p class="intro apparait">On ne commande pas nos perles sur catalogue. On les trouve — sur les marchés, chez les artisans, dans les fonds de tiroirs des puces. Chaque ville laisse quelque chose&nbsp;; chaque pièce s'en souvient.</p>
+  <div class="prov-grille">
+    <div class="prov apparait" style="--vc:#E2574C;">
+      <span class="pv-titre">Perles anciennes &amp; corail</span>
+      <span class="pv-lieu">Palerme — Mercato delle Pulci</span>
+      <p>Chinées aux puces, une à une. L'origine de tout — c'est là que la première pièce est née.</p>
+    </div>
+    <div class="prov apparait" style="--vc:#8E6FC1;">
+      <span class="pv-titre">Verre millefiori</span>
+      <span class="pv-lieu">Murano — Venise</span>
+      <p>Le verre filé aux mille fleurs, soufflé sur la lagune depuis sept siècles.</p>
+    </div>
+    <div class="prov apparait" style="--vc:#7C9A4E;">
+      <span class="pv-titre">Charms &amp; trouvailles</span>
+      <span class="pv-lieu">Marrakech, Tokyo, Bodrum</span>
+      <p>Mains protectrices, yeux, étoiles de mer — ramenés des souks, des puces et des comptoirs croisés en route.</p>
+    </div>
+    <div class="prov apparait" style="--vc:#0F2FA6;">
+      <span class="pv-titre">Perles d'eau douce</span>
+      <span class="pv-lieu">Sélection atelier — Paris</span>
+      <p>Baroques, irrégulières, vivantes. Sélectionnées une à une, montées sur fil renforcé à l'atelier.</p>
+    </div>
+  </div>
+  <a class="prov-cta apparait" href="city-guides.html">Suivre la route des perles — les City Guides&nbsp;&nbsp;→</a>
+</section>
+
+<section class="ow-cloture">
+  <span class="etiq apparait">Le soleil est devenu intérieur</span>
+  <h2 class="apparait">Le bijou n'est pas le souvenir. Il est la preuve que le moment a existé.</h2>
+  <div class="apparait">
+    <a href="collection.html">La collection&nbsp;&nbsp;→</a>
+    <a href="city-guides.html">Les villes&nbsp;&nbsp;→</a>
+  </div>
+</section>
+
+<script>
+(function () {
+  var obs = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) {
+      if (e.isIntersecting) {
+        var freres = e.target.parentElement.querySelectorAll('.apparait');
+        var i = Array.prototype.indexOf.call(freres, e.target);
+        e.target.style.transitionDelay = (i > 0 ? (i % 6) * 80 : 0) + 'ms';
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.apparait').forEach(function (el) { obs.observe(el); });
+})();
+</script>
 <footer>
   <div class="footer-haut">
     <div class="footer-liens">
@@ -436,7 +379,6 @@
       <a href="shipping-retours.html">Shipping &amp; Returns</a>
       <a href="care-guide.html">Care Guide</a>
       <a href="#">Contact</a>
-      <a href="mentions-legales.html">Mentions légales</a>
     </div>
     <div class="footer-logo">
       <a href="index.html"><img src="FULL-BLACK.png" alt="KIBO"></a>
@@ -448,71 +390,8 @@
       <a href="#">Spotify</a>
     </div>
   </div>
-  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;Fait main — Paris</p>
+  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;<a href="mentions-legales.html">Mentions légales</a></p>
 </footer>
-
-<script>
-(function () {
-  var obs = new IntersectionObserver(function (entrees) {
-    entrees.forEach(function (e) {
-      if (e.isIntersecting) {
-        var freres = e.target.parentElement.querySelectorAll('.apparait');
-        var i = Array.prototype.indexOf.call(freres, e.target);
-        e.target.style.transitionDelay = (i > 0 ? (i % 5) * 90 : 0) + 'ms';
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.apparait').forEach(function (el) { obs.observe(el); });
-})();
-</script>
-
-
-<div class="popup-fond" id="popupNews" role="dialog" aria-modal="true" aria-label="Newsletter">
-  <div class="popup">
-    <button class="fermer-popup" aria-label="Fermer" onclick="kiboFermerPopup()">&#10005;</button>
-    <div class="dix">&minus;10&nbsp;%</div>
-    <h3>Rejoignez le cercle</h3>
-    <p>Les &eacute;ditions en avant-premi&egrave;re et 10&nbsp;% sur votre premi&egrave;re pi&egrave;ce.</p>
-    <form id="popupForm">
-      <input type="email" name="EMAIL" placeholder="VOTRE E-MAIL" required autocomplete="email">
-      <button type="submit">Recevoir mon code</button>
-      <button type="button" class="non-merci" onclick="kiboFermerPopup()">Non merci</button>
-    </form>
-    <div class="popup-merci" id="popupMerci">Bienvenue dans le cercle.<br>Votre code&nbsp;: <strong>CERCLE10</strong></div>
-  </div>
-</div>
-<script>
-(function () {
-  /* BRANCHEMENT NEWSLETTER (Brevo) : coller ici l'URL d'action du formulaire.
-     Tant que POPUP_ACTION est vide, mode démonstration (aucun envoi). */
-  var POPUP_ACTION = '';
-  var CLE = 'kibo_popup_vu';
-  window.kiboFermerPopup = function () {
-    document.getElementById('popupNews').classList.remove('visible');
-    try { localStorage.setItem(CLE, '1'); } catch (e) {}
-  };
-  var deja = false;
-  try { deja = localStorage.getItem(CLE) === '1'; } catch (e) {}
-  if (!deja) {
-    setTimeout(function () {
-      document.getElementById('popupNews').classList.add('visible');
-    }, 6000);
-  }
-  document.getElementById('popupForm').addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    if (POPUP_ACTION) {
-      var fd = new FormData(ev.target);
-      fetch(POPUP_ACTION, { method: 'POST', body: fd, mode: 'no-cors' });
-    }
-    ev.target.style.display = 'none';
-    document.getElementById('popupMerci').style.display = 'block';
-    try { localStorage.setItem(CLE, '1'); } catch (e) {}
-    setTimeout(window.kiboFermerPopup, 3500);
-  });
-})();
-</script>
 
 
 <div class="rech-fond" id="rechFond" role="dialog" aria-modal="true" aria-label="Recherche">
