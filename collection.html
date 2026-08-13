@@ -147,18 +147,24 @@
   .ph-palermo-bracelet::before { background-image: url('produit-palermo-bracelet.jpg?v=4'); }
   .ph-tahiti-bracelet::before { background-image: url('produit-tahiti-bracelet.jpg?v=4'); }
   /* Cartes avec photo édito : bascule vers la 2e image, pas de zoom */
-  .ph-amore::after, .ph-menta::after, .ph-tahiti::after, .ph-rio::after {
+  .ph-amore::after, .ph-menta::after, .ph-tahiti::after, .ph-rio::after,
+  .ph-bianca::after, .ph-neptune::after, .ph-sunset::after {
     content: ''; position: absolute; inset: 0;
     opacity: 0; transition: opacity 400ms ease;
   }
   .ph-amore::after { background: url('produit-amore-2.jpg') center 25% / cover no-repeat; }
   .ph-menta::after { background: url('produit-menta-2.jpg') center / cover no-repeat; }
+  .ph-bianca::after { background: url('produit-bianca-2.jpg') center / cover no-repeat; }
+  .ph-neptune::after { background: url('produit-neptune-2.jpg') center / cover no-repeat; }
+  .ph-sunset::after { background: url('produit-sunset-2.jpg') center / cover no-repeat; }
   .ph-tahiti::after { background: url('produit-tahiti-2.jpg') center 25% / cover no-repeat; }
   .ph-rio::after { background: url('produit-rio-2.jpg') center 25% / cover no-repeat; }
   .produit:hover .ph-amore::after, .produit:hover .ph-menta::after,
-  .produit:hover .ph-tahiti::after, .produit:hover .ph-rio::after { opacity: 1; }
+  .produit:hover .ph-tahiti::after, .produit:hover .ph-rio::after,
+  .produit:hover .ph-bianca::after, .produit:hover .ph-neptune::after, .produit:hover .ph-sunset::after { opacity: 1; }
   .produit:hover .ph-amore::before, .produit:hover .ph-menta::before,
-  .produit:hover .ph-tahiti::before, .produit:hover .ph-rio::before { transform: none; }
+  .produit:hover .ph-tahiti::before, .produit:hover .ph-rio::before,
+  .produit:hover .ph-bianca::before, .produit:hover .ph-neptune::before, .produit:hover .ph-sunset::before { transform: none; }
   /* ---------- Têtes de sections / drops ---------- */
   .drop-tete { padding: 72px 6vw 0; }
   .drop-groupe:first-of-type .drop-tete { padding-top: 44px; }
