@@ -189,18 +189,30 @@
     border-bottom: 1px solid rgba(15,47,166,0.35); padding-bottom: 1px; }
   .cg-kick { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px;
     color: rgba(27,30,36,0.8); display: block; margin: -6px 0 22px; }
-  .tl-heure { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.2em;
-    color: var(--grand-bleu, #0F2FA6); display: block; margin: 38px 0 4px; }
+  .tl-heure { font-family: 'Space Mono', monospace; font-size: 19px; font-weight: 700; letter-spacing: 0.12em;
+    color: var(--grand-bleu, #0F2FA6); display: block; margin: 46px 0 6px; }
   .l-kick { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px;
     color: rgba(27,30,36,0.72); display: block; margin: 1px 0 8px; }
   .l-adr { font-size: 10px; letter-spacing: 0.08em; color: rgba(27,30,36,0.55);
     display: block; margin-top: 7px; }
-  .rules { margin: 44px 0; border-top: 1px solid rgba(27,30,36,0.2); padding-top: 26px; }
-  .rules .r { margin-bottom: 20px; }
-  .rules .r-num { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.2em;
-    color: var(--grand-bleu, #0F2FA6); margin-right: 10px; }
-  .rules .r-tit { font-weight: 700; letter-spacing: 0.02em; }
-  .rules .r p { margin: 4px 0 0 0; color: rgba(27,30,36,0.8); }
+  .cg-photo { margin: 38px 0 30px; }
+  .cg-photo img { width: 100%; display: block; }
+  .cg-photo .ph-cap { display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: rgba(27,30,36,0.5); margin-top: 8px; }
+  .cg-photo .ph-credit { white-space: nowrap; color: rgba(27,30,36,0.35); }
+  .rules { margin: 54px auto 54px; max-width: 560px; background: var(--papier);
+    padding: 34px 38px 30px; transform: rotate(-0.8deg);
+    clip-path: polygon(1% 0.5%, 99% 0%, 100% 99%, 2% 100%, 0% 55%);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.16); }
+  .rules .rules-titre { font-family: 'Caveat', cursive; font-size: 30px; margin: 0 0 18px;
+    color: var(--encre, #1B1E24); }
+  .rules .rules-titre .ast { color: var(--terracotta); }
+  .rules .r { margin-bottom: 15px; transform: rotate(0.3deg); }
+  .rules .r-num { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.2em;
+    color: var(--grand-bleu, #0F2FA6); margin-right: 9px; }
+  .rules .r-tit { font-family: 'Caveat', cursive; font-size: 24px; letter-spacing: 0; }
+  .rules .r p { margin: 1px 0 0 30px; color: rgba(27,30,36,0.75); font-size: 12px; }
   .piece-nee .pn-img { aspect-ratio: 1; background: var(--papier); display: flex; align-items: center; justify-content: center; font-family: 'Caveat', cursive; font-size: 52px; color: var(--terracotta); }
   .piece-nee .pn-et { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
   .piece-nee .pn-nom { font-family: 'Cormorant Garamond', serif; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em; margin: 4px 0 8px; }
@@ -248,6 +260,10 @@
   <p class="chapo">Marrakech n'est pas une ville que l'on visite dans le bon ordre. On peut partir chercher un musée et finir devant un sandwich à 12 dirhams, entrer dans une boutique pour cinq minutes et en ressortir une heure plus tard, traverser une porte qui ne ressemble à rien et découvrir un jardin, une collection d'art ou quelqu'un qui vous offre un thé. C'est ici, entre deux comptoirs de la médina, que les premiers colliers KIBO ont été montés — perle par perle. Notre conseil&nbsp;: gardez quelques adresses dans votre téléphone, mais pas trop de programme. Marchez. Regardez les portes. Et de temps en temps, rangez Google Maps.</p>
   <div class="note-manuscrite">« Le premier collier, on l'a fini le soir même, sur le toit. » <span class="ast">✳︎</span></div>
 
+  <div class="cg-photo"><img src="guide-marrakech-toits.jpg?v=1" alt="Les toits de la médina, au matin" loading="lazy">
+    <div class="ph-cap"><span>Les toits de la médina, au matin</span><span class="ph-credit">photo Miša Stefanović — CC BY-SA ✳︎ en attendant les nôtres</span></div>
+  </div>
+
   <span class="tl-heure">8:03 AM</span>
   <div class="lieu">
     <span class="l-nom">Pronto Caffè</span>
@@ -275,12 +291,8 @@
     <p>Ne vous fiez surtout pas à la façade. Derrière le 144 Arset Aouzal : tapis empilés, lanternes, tables, objets anciens, verrerie, paniers. Moins une boutique qu'un endroit dans lequel on fouille. Ne venez pas avec une liste — demandez à voir ce qui est caché derrière.</p>
     <span class="l-adr">→ 144 Arset Aouzal</span>
   </div>
-  <span class="tl-heure">11:47 AM</span>
-  <div class="lieu">
-    <span class="l-nom">Maison Culturelle du Tapis</span><a class="l-ig" href="https://www.instagram.com/maisonculturelledutapis/" target="_blank" rel="noopener">Instagram</a>
-    <span class="l-kick">Learn before you buy.</span>
-    <p>Après avoir vu cent tapis dans les souks, on finit paradoxalement par ne plus les regarder. Ce petit musée permet de recommencer : techniques de tissage, régions, symboles, matières — tout ce que les vendeurs n'ont pas toujours le temps d'expliquer. Montez ensuite sur le toit, prenez un thé. Vous regarderez les tapis différemment en redescendant.</p>
-    <span class="l-adr">→ 17–18 Derb Deffa ou Rbaâ, Laksour</span>
+  <div class="cg-photo"><img src="guide-marrakech-souk.jpg?v=1" alt="Les étals de la médina" loading="lazy">
+    <div class="ph-cap"><span>Les étals de la médina</span><span class="ph-credit">photo Anja Disseldorp — CC BY ✳︎ en attendant les nôtres</span></div>
   </div>
   <span class="tl-heure">12:41 PM</span>
   <div class="lieu">
@@ -294,12 +306,6 @@
     <span class="l-nom">The Juice Guy</span>
     <span class="l-kick">The 10-dirham reset.</span>
     <p>Vous allez en croiser des dizaines : un comptoir, des bananes suspendues, des oranges, un blender qui a vu passer quelques millions de fruits. Orange si vous voulez faire simple, avocat-banane si une boisson peut raisonnablement remplacer un déjeuner. Quelques dirhams plus tard, repartez. Pas de pin, pas de réservation, pas d'Instagram. C'est aussi ça, un city guide.</p>
-  </div>
-  <span class="tl-heure">1:37 PM</span>
-  <div class="lieu">
-    <span class="l-nom">Cornes de gazelle</span>
-    <span class="l-kick">Buy first. Ask later.</span>
-    <p>Évitez de chercher « best Moroccan pastry Marrakech ». Entrez dans une pâtisserie de quartier où les plateaux disparaissent vite. Amande, fleur d'oranger, miel, sésame, noix — montrez du doigt, prenez-en cinq différentes. Vous apprendrez leurs noms après.</p>
   </div>
   <span class="tl-heure">2:04 PM</span>
   <div class="lieu">
@@ -358,13 +364,6 @@
     <p>À Al Maaden, le Musée d'Art Contemporain Africain Al Maaden rassemble peinture, photographie, sculpture et création contemporaine d'Afrique et de sa diaspora. L'espace est calme, loin de l'énergie de la médina. Prenez votre temps, puis restez au café ou dans le jardin avant de repartir.</p>
     <span class="l-adr">→ Al Maaden, Sidi Youssef Ben Ali</span>
   </div>
-  <span class="tl-heure">—</span>
-  <div class="lieu">
-    <span class="l-nom">Comptoir des Mines</span><a class="l-ig" href="https://www.instagram.com/cmgmarrakech/" target="_blank" rel="noopener">Instagram</a>
-    <span class="l-kick">Marrakech was modern before Instagram.</span>
-    <p>Dans un immeuble Art déco des années 1930 à Guéliz, la galerie expose la création contemporaine marocaine et africaine. L'architecture fait partie de la visite : parquets, volumes, détails — une autre strate de Marrakech, très loin de l'image du riad.</p>
-    <span class="l-adr">→ 62 Rue Yougoslavie, Guéliz</span>
-  </div>
 
   <p class="groupe-cg">La nuit tombe</p>
   <span class="tl-heure">6:57 PM</span>
@@ -374,12 +373,18 @@
     <p>Ne montez pas directement sur le toit : le parcours passe par un espace d'exposition et un concept store avant d'arriver au rooftop. C'est ce qui rend l'adresse intéressante. Puis commandez quelque chose et laissez Marrakech faire le reste — à cette heure-là, les murs changent de couleur toutes les dix minutes.</p>
     <span class="l-adr">→ 58 angle Rue El Ksour &amp; Rue Fhal Zefriti</span>
   </div>
+  <div class="cg-photo"><img src="guide-marrakech-jemaa.jpg?v=1" alt="Jemaa el-Fna, le deuxième service" loading="lazy">
+    <div class="ph-cap"><span>Jemaa el-Fna, le deuxième service</span><span class="ph-credit">photo Andrzej Kosiński — CC BY-SA ✳︎ en attendant les nôtres</span></div>
+  </div>
   <span class="tl-heure">7:26 PM</span>
   <div class="lieu">
     <span class="l-nom">MÖ-MÖ</span><a class="l-ig" href="https://www.instagram.com/momo_jemaa_el_fna/" target="_blank" rel="noopener">Instagram</a>
     <span class="l-kick">Watch Jemaa el-Fna switch on.</span>
     <p>Montez sur la terrasse juste avant la nuit. En dessous, Jemaa el-Fna commence son deuxième service : les stands apparaissent, les lumières s'allument, la fumée monte, la foule change. Ne venez pas uniquement pour dîner. Venez regarder la place devenir Jemaa el-Fna.</p>
     <span class="l-adr">→ 1 Rue Riad Zitoun el Kdim</span>
+  </div>
+  <div class="cg-photo"><img src="guide-marrakech-koutoubia.jpg?v=1" alt="La Koutoubia à l'heure dorée" loading="lazy">
+    <div class="ph-cap"><span>La Koutoubia à l'heure dorée</span><span class="ph-credit">photo mattk1979 — CC BY-SA ✳︎ en attendant les nôtres</span></div>
   </div>
   <span class="tl-heure">8:42 PM</span>
   <div class="lieu">
@@ -406,7 +411,7 @@
   </div>
 
   <div class="rules">
-    <p class="groupe-cg">The Marrakech Rules</p>
+    <p class="rules-titre">The Marrakech Rules <span class="ast">✳︎</span></p>
     <div class="r"><span class="r-num">01</span><span class="r-tit">Get lost once a day.</span>
       <p>Sans Google Maps. Même trente minutes suffisent.</p></div>
     <div class="r"><span class="r-num">02</span><span class="r-tit">Eat somewhere with plastic chairs.</span>
