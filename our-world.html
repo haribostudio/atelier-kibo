@@ -200,7 +200,9 @@
   .pilier-rang .pr-num { font-size: 10px; letter-spacing: 0.2em; color: rgba(27,30,36,0.5); transition: color 450ms ease; }
   .pilier-rang .pr-nom { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(34px, 4.6vw, 64px); text-transform: uppercase; letter-spacing: 0.06em; line-height: 1; }
   .pilier-rang .pr-ligne { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; line-height: 1.9; }
+  .pr-plus { display: block; margin-top: 7px; font-size: 10px; letter-spacing: 0.12em; text-transform: none; color: rgba(27,30,36,0.55); transition: color 450ms ease; }
   .pilier-rang:hover { background: var(--pc, var(--encre)); color: #fff; }
+  .pilier-rang:hover .pr-plus { color: rgba(255,255,255,0.75); }
   .pilier-rang:hover .pr-num { color: rgba(255,255,255,0.7); }
 
   /* provenance */
@@ -236,7 +238,10 @@
   .apparait.visible { opacity: 1; transform: none; }
   @media (max-width: 800px) {
     .ow-manifeste { grid-template-columns: 1fr; gap: 28px; }
-    .pilier-rang { grid-template-columns: 1fr; gap: 8px; padding: 26px 6vw; }
+    .pilier-rang { grid-template-columns: 1fr; gap: 8px; padding: 26px 6vw;
+      background: var(--pc, var(--encre)); color: #fff; border-color: transparent; }
+    .pilier-rang .pr-num { color: rgba(255,255,255,0.7); }
+    .pilier-rang .pr-plus { color: rgba(255,255,255,0.75); }
   }
 </style>
 </head>
@@ -278,13 +283,13 @@
 <section class="ow-manifeste">
   <div class="colonne apparait">
     <span class="ow-num">01 — Le manifeste</span>
-    <h2>Le témoin d'un moment</h2>
+    <h2>Des moments qui restent</h2>
     <div class="note-caveat">« Le sel de l'été dernier encore accroché à la chaîne » <span class="ast">✳︎</span></div>
   </div>
   <div class="ow-texte apparait">
-    <p>Un bijou KIBO est le <strong>témoin d'un moment</strong>. Il était là — au concert dont on parle encore, sur la plage à 23&nbsp;heures, dans le métro un matin de novembre.</p>
-    <p>Il se raye, se patine, et devient plus précieux à mesure qu'il vieillit. On ne le range pas&nbsp;: on le vit. Dans l'eau, au soleil, en ville sous un manteau.</p>
-    <p>Chaque pièce est montée à la main à l'atelier, à Paris, en édition limitée. Quand une série s'épuise, il n'y en a plus — jusqu'à un éventuel retour.</p>
+    <p>On traverse des périodes, des villes, des nuits, des histoires. Certaines passent vite, d'autres restent avec nous longtemps. <strong>KIBO est là pour toutes ces étapes</strong> — celles qu'on attendait, celles qu'on n'avait pas prévues, celles qu'on aimerait revivre encore.</p>
+    <p>Nos bijoux se portent au fil du temps, se mélangent, se rayent, changent avec nous. Ils gardent un peu de chaque endroit, de chaque rencontre, de chaque bonne énergie qu'on a envie d'emporter.</p>
+    <p>Des pièces faites pour vivre avec vous, et pour traverser tout ce qui vient après.</p>
   </div>
 </section>
 
@@ -294,58 +299,62 @@
   <div class="pilier-rang apparait" style="--pc:#F0A63A;">
     <span class="pr-num">I</span>
     <span class="pr-nom">Sun</span>
-    <span class="pr-ligne">Pas une saison&nbsp;: une disposition.</span>
+    <span class="pr-ligne">Pas une saison&nbsp;: une disposition.<span class="pr-plus">Chercher la lumière, même quand l'été est loin.</span></span>
   </div>
   <div class="pilier-rang apparait" style="--pc:#2E6FD8;">
     <span class="pr-num">II</span>
     <span class="pr-nom">Sea</span>
-    <span class="pr-ligne">Partir, se laisser porter, revenir changé.</span>
+    <span class="pr-ligne">La mer, c'est le mouvement.<span class="pr-plus">Les départs improvisés, les retours différents.</span></span>
   </div>
   <div class="pilier-rang apparait" style="--pc:#8E6FC1;">
     <span class="pr-num">III</span>
     <span class="pr-nom">Sound</span>
-    <span class="pr-ligne">Depuis la piste, jamais depuis le carré VIP.</span>
+    <span class="pr-ligne">La musique accompagne les moments qu'on finit par ne jamais oublier.</span>
   </div>
   <div class="pilier-rang apparait" style="--pc:#E2574C;">
     <span class="pr-num">IV</span>
     <span class="pr-nom">Energy</span>
-    <span class="pr-ligne">L'électricité entre les gens.</span>
+    <span class="pr-ligne">La connexion entre les gens.<span class="pr-plus">Certaines énergies ne s'expliquent pas vraiment. On sait juste qu'on veut les garder.</span></span>
   </div>
   <div class="pilier-rang apparait" style="--pc:#2FA48E;">
     <span class="pr-num">V</span>
     <span class="pr-nom">Memory</span>
-    <span class="pr-ligne">Plus beau parce qu'il est porté.</span>
+    <span class="pr-ligne">Ce qu'on garde, même quand le moment est passé.</span>
   </div>
 </section>
 
 <section class="ow-provenance">
-  <span class="ow-num">03 — La provenance</span>
-  <h2 class="apparait">D'où viennent nos perles</h2>
-  <p class="intro apparait">On ne commande pas nos perles sur catalogue. On les trouve — sur les marchés, chez les artisans, dans les fonds de tiroirs des puces. Chaque ville laisse quelque chose&nbsp;; chaque pièce s'en souvient.</p>
+  <span class="ow-num">03 — Les matières</span>
+  <h2 class="apparait">Ce qu'on met entre vos mains</h2>
+  <p class="intro apparait">Chaque perle est choisie pour ce qu'elle est&nbsp;: sa forme, son éclat, son caractère. Des matières de qualité, sélectionnées avec soin auprès de fournisseurs qu'on connaît — puis montées à la main, une à une, à l'atelier à Paris.</p>
   <div class="prov-grille">
-    <div class="prov apparait" style="--vc:#E2574C;">
-      <span class="pv-titre">Perles anciennes &amp; corail</span>
-      <span class="pv-lieu">Palerme — Mercato delle Pulci</span>
-      <p>Chinées aux puces, une à une. L'origine de tout — c'est là que la première pièce est née.</p>
-    </div>
-    <div class="prov apparait" style="--vc:#8E6FC1;">
-      <span class="pv-titre">Verre millefiori</span>
-      <span class="pv-lieu">Murano — Venise</span>
-      <p>Le verre filé aux mille fleurs, soufflé sur la lagune depuis sept siècles.</p>
-    </div>
-    <div class="prov apparait" style="--vc:#7C9A4E;">
-      <span class="pv-titre">Charms &amp; trouvailles</span>
-      <span class="pv-lieu">Marrakech, Tokyo, Bodrum</span>
-      <p>Mains protectrices, yeux, étoiles de mer — ramenés des souks, des puces et des comptoirs croisés en route.</p>
-    </div>
     <div class="prov apparait" style="--vc:#0F2FA6;">
       <span class="pv-titre">Perles d'eau douce</span>
-      <span class="pv-lieu">Sélection atelier — Paris</span>
-      <p>Baroques, irrégulières, vivantes. Sélectionnées une à une, montées sur fil renforcé à l'atelier.</p>
+      <span class="pv-lieu">Le cœur des pièces</span>
+      <p>Baroques, irrégulières, vivantes. Aucune n'est identique — c'est exactement ce qu'on aime.</p>
+    </div>
+    <div class="prov apparait" style="--vc:#E2574C;">
+      <span class="pv-titre">Perles de verre</span>
+      <span class="pv-lieu">La couleur</span>
+      <p>Verre filé, millefiori, smileys, fleurs et étoiles — les touches qui donnent à chaque pièce son humeur.</p>
+    </div>
+    <div class="prov apparait" style="--vc:#E86FA4;">
+      <span class="pv-titre">Nacre</span>
+      <span class="pv-lieu">La douceur</span>
+      <p>Des reflets pastel qui changent avec la lumière, du matin à la nuit.</p>
+    </div>
+    <div class="prov apparait" style="--vc:#2FA48E;">
+      <span class="pv-titre">Acier &amp; argent vieilli</span>
+      <span class="pv-lieu">Ce qui dure</span>
+      <p>Chaînes et fermoirs en acier inoxydable, détails d'argent vieilli. Pensés pour l'eau, le sel et le temps.</p>
     </div>
   </div>
-  <a class="prov-cta apparait" href="city-guides.html">Suivre la route des perles — les City Guides&nbsp;&nbsp;→</a>
+  <a class="prov-cta apparait" href="collection.html">Voir les pièces&nbsp;&nbsp;→</a>
 </section>
+
+
+
+
 
 <section class="ow-cloture">
   <span class="etiq apparait">Le soleil est devenu intérieur</span>
