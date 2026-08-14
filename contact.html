@@ -161,6 +161,29 @@
     cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
   }
 
+  /* ---------- Formulaire ---------- */
+  .formulaire { margin: 8px 0 48px; }
+  .champ { margin-bottom: 22px; }
+  .champ label { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); margin-bottom: 8px; }
+  .champ input, .champ select, .champ textarea {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid rgba(27,30,36,0.4);
+    font-family: 'Space Mono', monospace; font-size: 13px; letter-spacing: 0.04em;
+    padding: 10px 2px; outline: none; border-radius: 0; color: var(--encre);
+  }
+  .champ select { cursor: pointer; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%231B1E24' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 4px center; }
+  .champ textarea { min-height: 120px; resize: vertical; }
+  .champ input:focus, .champ select:focus, .champ textarea:focus { border-color: var(--encre); }
+  .envoyer {
+    background: var(--encre); color: #E6E6E6; border: none;
+    font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.16em; padding: 16px 38px; cursor: pointer;
+  }
+  .envoyer:hover { opacity: 0.85; }
+  .form-note { margin-top: 14px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.5); }
+  .form-merci { display: none; font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-top: 18px; }
   /* ---------- Contact ---------- */
   main.contact { max-width: 720px; }
   .mail-bloc {
@@ -222,8 +245,37 @@
   <h1>Écrivez-nous</h1>
   <p style="font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:0.02em; line-height:1.6; color:rgba(27,30,36,0.85); margin-bottom:36px;">Pas de chatbot, pas de service client anonyme&nbsp;: c'est l'atelier qui répond, sous 24 à 48&nbsp;heures ouvrées.</p>
 
+  <form class="formulaire" id="formContact">
+    <div class="champ">
+      <label for="fc-objet">Objet</label>
+      <select id="fc-objet" name="objet" required>
+        <option value="Commande">Une commande</option>
+        <option value="Livraison &amp; retours">Livraison &amp; retours</option>
+        <option value="Taille &amp; entretien">Taille &amp; entretien</option>
+        <option value="Presse">Presse</option>
+        <option value="Collaboration">Collaboration</option>
+        <option value="Autre">Autre</option>
+      </select>
+    </div>
+    <div class="champ">
+      <label for="fc-nom">Votre nom</label>
+      <input id="fc-nom" name="nom" type="text" required autocomplete="name">
+    </div>
+    <div class="champ">
+      <label for="fc-email">Votre e-mail</label>
+      <input id="fc-email" name="email" type="email" required autocomplete="email">
+    </div>
+    <div class="champ">
+      <label for="fc-message">Votre message</label>
+      <textarea id="fc-message" name="message" required></textarea>
+    </div>
+    <button class="envoyer" type="submit">Envoyer</button>
+    <p class="form-note">L'envoi ouvre votre application e-mail avec le message pr&eacute;par&eacute;.</p>
+    <p class="form-merci" id="formMerci">Merci — votre message est parti. On vous r&eacute;pond sous 24 &agrave; 48&nbsp;h.</p>
+  </form>
+
   <div class="mail-bloc">
-    <span class="m-label">Une seule adresse</span>
+    <span class="m-label">Ou directement</span>
     <a class="m-adresse" href="mailto:hello@atelier-kibo.com">hello@atelier-kibo.com</a>
     <span class="m-note">Réponse sous 24–48 h ouvrées — Paris, France</span>
   </div>
@@ -244,6 +296,32 @@
   <div class="note-contact">« Les plus beaux messages qu'on reçoit racontent où la pièce a voyagé. » <span class="ast">✳︎</span></div>
 </main>
 
+<script>
+(function () {
+  /* BRANCHEMENT FORMSPREE : coller ici l'URL du formulaire (ex. https://formspree.io/f/xxxx).
+     Tant que FORM_ACTION est vide, l'envoi passe par l'application e-mail du visiteur. */
+  var FORM_ACTION = '';
+  var f = document.getElementById('formContact');
+  if (!f) return;
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var objet = f.objet.value, nom = f.nom.value, email = f.email.value, message = f.message.value;
+    if (FORM_ACTION) {
+      var fd = new FormData(f);
+      fetch(FORM_ACTION, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+        .then(function () {
+          f.querySelector('.envoyer').style.display = 'none';
+          f.querySelector('.form-note').style.display = 'none';
+          document.getElementById('formMerci').style.display = 'block';
+        });
+    } else {
+      var sujet = encodeURIComponent('[KIBO] ' + objet + ' — ' + nom);
+      var corps = encodeURIComponent(message + '\n\n—\n' + nom + '\n' + email);
+      location.href = 'mailto:hello@atelier-kibo.com?subject=' + sujet + '&body=' + corps;
+    }
+  });
+})();
+</script>
 <footer>
   <div class="footer-haut">
     <div class="footer-liens">
