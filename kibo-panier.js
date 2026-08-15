@@ -11,6 +11,8 @@
   /* ---------- styles ---------- */
   var css = document.createElement('style');
   css.textContent =
+    '.kibo-logo-wrap{display:flex;align-items:center;gap:16px;min-width:0}' +
+    '@media (max-width:900px){.kibo-logo-wrap{justify-self:end}}' +
     '#kiboPanierBtn{position:relative;background:none;border:none;cursor:pointer;padding:4px;color:inherit;display:inline-flex;align-items:center;font:inherit}' +
     '#kiboPanierBtn:hover{opacity:.6}' +
     '#kiboPanierBtn svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;display:block}' +
@@ -55,10 +57,11 @@
   var toast = document.createElement('div'); toast.id = 'kiboToast';
   var logoNav = document.querySelector('.logo-nav');
   if (logoNav) {
-    logoNav.insertAdjacentElement('afterend', btn);
-    var navEl = logoNav.closest('nav');
-    if (navEl) navEl.style.gridTemplateColumns = 'auto auto 1fr auto';
-    btn.style.marginLeft = '4px';
+    var wrap = document.createElement('div');
+    wrap.className = 'kibo-logo-wrap';
+    logoNav.parentNode.insertBefore(wrap, logoNav);
+    wrap.appendChild(logoNav);
+    wrap.appendChild(btn);
   } else {
     var navDroite = document.querySelector('.nav-droite');
     if (navDroite) { navDroite.insertBefore(btn, navDroite.querySelector('.loupe') || null); }
