@@ -16,8 +16,7 @@
     '#kiboPanierBtn svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;display:block}' +
     '#kiboPanierBtn.flottant{position:fixed;right:22px;bottom:22px;z-index:9000;width:56px;height:56px;border-radius:50%;background:#1B1E24;color:#E6E6E6;justify-content:center;box-shadow:0 6px 24px rgba(27,30,36,.25);padding:0}' +
     '#kiboPanierBtn.flottant svg{width:22px;height:22px}' +
-    '#kiboPanierBadge{position:absolute;top:-5px;right:-7px;background:#0F2FA6;color:#fff;border-radius:50%;min-width:16px;height:16px;font-size:9px;line-height:16px;text-align:center;font-family:inherit;display:none}' +
-    '#kiboPanierBadge.visible{display:block}' +
+    '#kiboPanierBadge{position:absolute;top:-5px;right:-7px;background:#0F2FA6;color:#fff;border-radius:50%;min-width:16px;height:16px;font-size:9px;line-height:16px;text-align:center;font-family:inherit;display:block}' +
     '#kiboVoile{position:fixed;inset:0;background:rgba(27,30,36,.45);z-index:9001;opacity:0;pointer-events:none;transition:opacity .3s}' +
     '#kiboVoile.ouvert{opacity:1;pointer-events:auto}' +
     '#kiboTiroir{position:fixed;top:0;right:0;bottom:0;width:min(420px,94vw);background:#E6E6E6;color:#1B1E24;z-index:9002;transform:translateX(105%);transition:transform .35s ease;display:flex;flex-direction:column;font-size:13px}' +
@@ -71,7 +70,6 @@
     var n = nb(lire());
     var badge = document.getElementById('kiboPanierBadge');
     badge.textContent = n;
-    badge.classList.toggle('visible', n > 0);
     if (btn.classList.contains('flottant')) btn.style.display = n > 0 ? 'inline-flex' : 'none';
   }
   function euros(n) { return (n % 1 ? n.toFixed(2).replace('.', ',') : n) + ' €'; }
