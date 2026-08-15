@@ -54,11 +54,17 @@
   var tiroir = document.createElement('aside'); tiroir.id = 'kiboTiroir';
   tiroir.innerHTML = '<header><h2>Votre panier</h2><button id="kiboFermer" aria-label="Fermer">✕</button></header><div id="kiboLignes"></div><div id="kiboPied"><div id="kiboTotal"><span>Total</span><span id="kiboTotalVal"></span></div><div id="kiboLivraison">Livraison offerte en France dès 120 € — calculée au paiement.</div><button id="kiboPayer">Passer au paiement</button></div>';
   var toast = document.createElement('div'); toast.id = 'kiboToast';
-  var navDroite = document.querySelector('.nav-droite');
-  if (navDroite) {
-    var loupe = navDroite.querySelector('.loupe');
-    navDroite.insertBefore(btn, loupe || null);
-  } else { btn.classList.add('flottant'); document.body.appendChild(btn); }
+  var logoNav = document.querySelector('.logo-nav');
+  if (logoNav) {
+    logoNav.insertAdjacentElement('afterend', btn);
+    var navEl = logoNav.closest('nav');
+    if (navEl) navEl.style.gridTemplateColumns = 'auto auto 1fr auto';
+    btn.style.marginLeft = '4px';
+  } else {
+    var navDroite = document.querySelector('.nav-droite');
+    if (navDroite) { navDroite.insertBefore(btn, navDroite.querySelector('.loupe') || null); }
+    else { btn.classList.add('flottant'); document.body.appendChild(btn); }
+  }
   document.body.appendChild(voile); document.body.appendChild(tiroir); document.body.appendChild(toast);
 
   function majBadge() {
