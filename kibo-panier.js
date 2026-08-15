@@ -214,4 +214,11 @@
   }
 
   majBadge();
+
+  /* ---------- stats de visite (Cloudflare Web Analytics) ---------- */
+  var cf = document.createElement('script');
+  cf.defer = true;
+  cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  cf.setAttribute('data-cf-beacon', '{"token": "de1a2bf33b51446dbc2b18b04e5d24f6"}');
+  document.head.appendChild(cf);
 })();
