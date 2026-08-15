@@ -13,8 +13,10 @@
   css.textContent =
     /* Nav v9 : logo au centre, menu à droite ; mobile = burger | logo | panier + loupe */
     'nav{grid-template-columns:1fr 1fr !important;gap:16px !important}' +
-    '.kibo-nav-gauche{grid-column:1;display:flex;align-items:center;justify-content:flex-start}' +
-    'nav>.logo-nav{grid-area:auto;justify-self:center !important;display:flex;align-items:center;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}' +
+    '.kibo-nav-gauche{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:flex-start}' +
+    'nav>.logo-nav{grid-row:1}' +
+    'nav>.logo-nav{grid-column:1;justify-self:start !important;display:flex;align-items:center;position:static;transform:none}' +
+    '@media (max-width:1180px){nav>.logo-nav{grid-area:auto;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);justify-self:center !important}}' +
     'nav{position:sticky}' +
     '@media (max-width:1180px){.nav-droite .nav-centre{display:none !important}.kibo-nav-gauche .burger{display:block}}' +
     '.nav-droite{grid-column:2;display:flex;align-items:center;justify-content:flex-end;gap:22px;order:0 !important}' +
