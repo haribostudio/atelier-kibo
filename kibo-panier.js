@@ -18,8 +18,8 @@
     'nav{position:sticky}' +
     '@media (max-width:1180px){.nav-droite .nav-centre{display:none !important}.kibo-nav-gauche .burger{display:block}}' +
     '.nav-droite{grid-column:2;display:flex;align-items:center;justify-content:flex-end;gap:22px;order:0 !important}' +
-    '.nav-droite .nav-centre{display:flex;gap:22px;margin-right:4px;white-space:nowrap;font-size:11px}' +
-    '.nav-droite{gap:18px}' +
+    '.nav-droite .nav-centre{display:flex;gap:18px;margin-right:4px;white-space:nowrap;font-size:11px;letter-spacing:.11em}' +
+    '.nav-droite{gap:16px;min-width:0}' +
     '@media (max-width:900px){.nav-droite .nav-centre{display:none !important}.nav-droite{gap:14px}.kibo-nav-gauche .burger{display:block}nav{padding-left:18px !important;padding-right:18px !important}}' +
     '#kiboPanierBtn{position:relative;background:none;border:none;cursor:pointer;padding:4px;color:inherit;display:inline-flex;align-items:center;font:inherit}' +
     '#kiboPanierBtn:hover{opacity:.6}' +
