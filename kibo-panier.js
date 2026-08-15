@@ -12,7 +12,9 @@
   var css = document.createElement('style');
   css.textContent =
     '.kibo-logo-wrap{display:flex;align-items:center;gap:16px;min-width:0}' +
-    '@media (max-width:900px){.kibo-logo-wrap{justify-self:end}}' +
+    '.nav-droite{align-items:center}' +
+    '.kibo-logo-wrap img{display:block}' +
+    '@media (max-width:900px){.nav-droite{order:0 !important}}' +
     '#kiboPanierBtn{position:relative;background:none;border:none;cursor:pointer;padding:4px;color:inherit;display:inline-flex;align-items:center;font:inherit}' +
     '#kiboPanierBtn:hover{opacity:.6}' +
     '#kiboPanierBtn svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;display:block}' +
@@ -56,12 +58,15 @@
   tiroir.innerHTML = '<header><h2>Votre panier</h2><button id="kiboFermer" aria-label="Fermer">✕</button></header><div id="kiboLignes"></div><div id="kiboPied"><div id="kiboTotal"><span>Total</span><span id="kiboTotalVal"></span></div><div id="kiboLivraison">Livraison offerte en France dès 120 € — calculée au paiement.</div><button id="kiboPayer">Passer au paiement</button></div>';
   var toast = document.createElement('div'); toast.id = 'kiboToast';
   var logoNav = document.querySelector('.logo-nav');
-  if (logoNav) {
+  var navDroiteK = document.querySelector('.nav-droite');
+  if (logoNav && navDroiteK) {
     var wrap = document.createElement('div');
     wrap.className = 'kibo-logo-wrap';
-    logoNav.parentNode.insertBefore(wrap, logoNav);
     wrap.appendChild(logoNav);
     wrap.appendChild(btn);
+    var paris = Array.prototype.slice.call(navDroiteK.querySelectorAll('a')).filter(function (a) { return /Paris/i.test(a.textContent); })[0];
+    if (paris) { navDroiteK.insertBefore(wrap, paris); paris.remove(); }
+    else { navDroiteK.insertBefore(wrap, navDroiteK.firstChild); }
   } else {
     var navDroite = document.querySelector('.nav-droite');
     if (navDroite) { navDroite.insertBefore(btn, navDroite.querySelector('.loupe') || null); }
