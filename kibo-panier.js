@@ -47,7 +47,9 @@
     '#kiboPayer:hover{opacity:.85}' +
     '#kiboVide{text-align:center;padding:60px 0;color:rgba(27,30,36,.55);font-size:12px;text-transform:uppercase;letter-spacing:.14em}' +
     '#kiboToast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);background:#1B1E24;color:#E6E6E6;padding:10px 22px;font-size:11px;text-transform:uppercase;letter-spacing:.16em;z-index:9003;opacity:0;transition:all .3s;pointer-events:none}' +
-    '#kiboToast.visible{opacity:1;transform:translateX(-50%)}';
+    '#kiboToast.visible{opacity:1;transform:translateX(-50%)}' +
+    '.taille.kibo-epuise{opacity:.35;text-decoration:line-through;pointer-events:none}' +
+    '#btnAdopter.kibo-epuise{opacity:.45;pointer-events:none}';
   document.head.appendChild(css);
 
   /* ---------- DOM ---------- */
@@ -156,5 +158,32 @@
       });
     });
   }
+  /* ---------- disponibilite en direct depuis Shopify ---------- */
+  if (ba && window.KIBO_VARIANTS) {
+    var handle = location.pathname.split('/').pop().replace('.html', '').replace(/^produit-/, '');
+    fetch(SHOP + '/products/' + handle + '.js').then(function (r) { return r.json(); }).then(function (prod) {
+      var dispo = {};
+      prod.variants.forEach(function (v) { dispo[v.id] = v.available; });
+      var btns = document.querySelectorAll('.taille-btns .taille');
+      var reste = false;
+      KIBO_VARIANTS.forEach(function (id, i) {
+        if (dispo[id] === false) { if (btns[i]) { btns[i].classList.add('kibo-epuise'); } }
+        else { reste = true; }
+      });
+      var actIdx = -1;
+      btns.forEach(function (b, i) { if (b.classList.contains('actif')) actIdx = i; });
+      if (actIdx >= 0 && dispo[KIBO_VARIANTS[actIdx]] === false) {
+        for (var i = 0; i < KIBO_VARIANTS.length; i++) {
+          if (dispo[KIBO_VARIANTS[i]] !== false && btns[i]) {
+            btns.forEach(function (x) { x.classList.remove('actif'); });
+            btns[i].classList.add('actif');
+            break;
+          }
+        }
+      }
+      if (!reste) { ba.textContent = 'Épuisé — revient bientôt'; ba.classList.add('kibo-epuise'); }
+    }).catch(function () {});
+  }
+
   majBadge();
 })();
