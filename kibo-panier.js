@@ -12,14 +12,17 @@
   var css = document.createElement('style');
   css.textContent =
     /* Nav v9 : logo au centre, menu à droite ; mobile = burger | logo | panier + loupe */
-    'nav{grid-template-columns:1fr 1fr !important;gap:16px !important}' +
+    'nav{grid-template-columns:1fr auto 1fr !important;gap:16px !important}' +
+    '@media (max-width:1180px){nav{grid-template-columns:1fr 1fr !important}}' +
     '.kibo-nav-gauche{grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:flex-start}' +
     'nav>.logo-nav{grid-row:1}' +
     'nav>.logo-nav{grid-column:1;justify-self:start !important;display:flex;align-items:center;position:static;transform:none}' +
     '@media (max-width:1180px){nav>.logo-nav{grid-area:auto;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);justify-self:center !important}}' +
     'nav{position:sticky}' +
     '@media (max-width:1180px){.nav-droite .nav-centre{display:none !important}.kibo-nav-gauche .burger{display:block}}' +
-    '.nav-droite{grid-column:2;display:flex;align-items:center;justify-content:flex-end;gap:22px;order:0 !important}' +
+    '.nav-droite{grid-column:3;grid-row:1;display:flex;align-items:center;justify-content:flex-end;gap:22px;order:0 !important}' +
+    'nav>.nav-centre{grid-column:2;grid-row:1;display:flex;gap:22px;white-space:nowrap;font-size:11px;letter-spacing:.11em;justify-content:center}' +
+    '@media (max-width:1180px){.nav-droite{grid-column:2}nav>.nav-centre{display:none !important}}' +
     '.nav-droite .nav-centre{display:flex;gap:18px;margin-right:4px;white-space:nowrap;font-size:11px;letter-spacing:.11em}' +
     '.nav-droite{gap:16px;min-width:0}' +
     '@media (max-width:900px){.nav-droite .nav-centre{display:none !important}.nav-droite{gap:14px}.kibo-nav-gauche .burger{display:block}nav{padding-left:18px !important;padding-right:18px !important}}' +
@@ -84,8 +87,8 @@
     var paris = Array.prototype.slice.call(navDroiteK.querySelectorAll('a')).filter(function (a) { return /Paris/i.test(a.textContent); })[0];
     if (paris) paris.remove();
     var centre = navEl.querySelector('.nav-centre');
-    if (centre) navDroiteK.insertBefore(centre, navDroiteK.firstChild);
     navDroiteK.insertBefore(btn, navDroiteK.querySelector('.loupe') || null);
+    if (centre) navEl.appendChild(centre);
     navEl.appendChild(navDroiteK);
   } else {
     var navDroite = document.querySelector('.nav-droite');
