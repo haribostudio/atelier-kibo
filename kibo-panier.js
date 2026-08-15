@@ -49,7 +49,8 @@
     '#kiboToast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);background:#1B1E24;color:#E6E6E6;padding:10px 22px;font-size:11px;text-transform:uppercase;letter-spacing:.16em;z-index:9003;opacity:0;transition:all .3s;pointer-events:none}' +
     '#kiboToast.visible{opacity:1;transform:translateX(-50%)}' +
     '.taille.kibo-epuise{opacity:.35;text-decoration:line-through;pointer-events:none}' +
-    '#btnAdopter.kibo-epuise{opacity:.45;pointer-events:none}';
+    '#btnAdopter.kibo-epuise{opacity:.45;pointer-events:none}' +
+    '.kibo-reassort{display:inline-block;margin-top:12px;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(27,30,36,.65);text-decoration:underline}';
   document.head.appendChild(css);
 
   /* ---------- DOM ---------- */
@@ -182,6 +183,15 @@
         }
       }
       if (!reste) { ba.textContent = 'Épuisé — revient bientôt'; ba.classList.add('kibo-epuise'); }
+      var unEpuise = KIBO_VARIANTS.some(function (id) { return dispo[id] === false; });
+      if (unEpuise && !document.querySelector('.kibo-reassort')) {
+        var titre = (document.querySelector('.info h1') || { textContent: document.title }).textContent.trim();
+        var lien = document.createElement('a');
+        lien.className = 'kibo-reassort';
+        lien.href = 'mailto:hello@atelier-kibo.com?subject=' + encodeURIComponent('Réassort — ' + titre) + '&body=' + encodeURIComponent('Bonjour, prévenez-moi quand cette pièce revient : ' + titre + ' — ' + location.href.split('?')[0]);
+        lien.textContent = 'Me prévenir du réassort ✉';
+        ba.insertAdjacentElement('afterend', lien);
+      }
     }).catch(function () {});
   }
 
