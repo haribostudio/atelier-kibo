@@ -175,6 +175,8 @@
   .halo { fill: none; stroke-width: 0.6; opacity: 0.9;
           transform-box: fill-box; transform-origin: center; animation: pulse 2.6s ease-out infinite; }
   .med .halo { stroke-width: 0.35; }
+  .ville.a-venir .halo { animation: none; opacity: 0; }
+  .ville.a-venir .pt { opacity: 0.45; }
   @keyframes pulse { 0% { transform: scale(0.55); opacity: 0.9; } 70% { transform: scale(1.35); opacity: 0; } 100% { opacity: 0; } }
   .nom { fill: var(--encre); font-family: 'Space Mono', monospace; letter-spacing: 0.12em; opacity: 0; transition: opacity 250ms ease; }
   .ville:hover .nom { opacity: 1; }
