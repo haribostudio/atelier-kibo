@@ -12,9 +12,11 @@
   var css = document.createElement('style');
   css.textContent =
     '.kibo-logo-wrap{display:flex;align-items:center;gap:16px;min-width:0}' +
-    '.nav-droite{align-items:center;justify-content:flex-end}' +
+    'nav{grid-template-columns:1fr max-content 1fr !important}' +
+    '.nav-centre{grid-column:2}' +
+    '.nav-droite{grid-column:3;align-items:center;justify-content:flex-end}' +
     '.kibo-logo-wrap img{display:block}' +
-    '@media (max-width:900px){.nav-droite{order:0 !important}}' +
+    '@media (max-width:900px){.nav-droite{order:0 !important}.nav-droite .logo-nav{display:block !important}}' +
     '#kiboPanierBtn{position:relative;background:none;border:none;cursor:pointer;padding:4px;color:inherit;display:inline-flex;align-items:center;font:inherit}' +
     '#kiboPanierBtn:hover{opacity:.6}' +
     '#kiboPanierBtn svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;display:block}' +
