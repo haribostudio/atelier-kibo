@@ -12,7 +12,7 @@
   var css = document.createElement('style');
   css.textContent =
     '.kibo-logo-wrap{display:flex;align-items:center;gap:16px;min-width:0}' +
-    '.nav-droite{align-items:center}' +
+    '.nav-droite{align-items:center;justify-content:flex-end}' +
     '.kibo-logo-wrap img{display:block}' +
     '@media (max-width:900px){.nav-droite{order:0 !important}}' +
     '#kiboPanierBtn{position:relative;background:none;border:none;cursor:pointer;padding:4px;color:inherit;display:inline-flex;align-items:center;font:inherit}' +
