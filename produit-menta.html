@@ -435,8 +435,13 @@
     });
   });
 
+  var KIBO_VARIANTS = [54267620458834, 54267620491602];
   document.getElementById('btnAdopter').addEventListener('click', function () {
-    document.getElementById('noteBoutique').style.display = 'block';
+    var btns = document.querySelectorAll('.taille-btns .taille');
+    var idx = 0;
+    btns.forEach(function (b, i) { if (b.classList.contains('actif')) idx = i; });
+    var v = KIBO_VARIANTS[Math.min(idx, KIBO_VARIANTS.length - 1)];
+    window.location.href = 'https://djcwtp-ui.myshopify.com/cart/' + v + ':1';
   });
 
   var obs = new IntersectionObserver(function (entrees) {
