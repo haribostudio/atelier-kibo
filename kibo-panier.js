@@ -215,12 +215,13 @@
 
   majBadge();
 
-  /* ---------- popup cercle : envoi des emails vers Shopify ---------- */
-  var pf = document.getElementById('popupForm');
-  if (pf) {
+  /* ---------- cercle : envoi des emails vers Shopify (popup + page Private Access) ---------- */
+  ['popupForm', 'formCercle'].forEach(function (fid) {
+    var pf = document.getElementById(fid);
+    if (!pf) return;
     pf.addEventListener('submit', function () {
       var champ = pf.querySelector('input[name="EMAIL"]');
-      if (!champ || !champ.value) return;
+      if (!champ || !champ.value || champ.value.indexOf('@') < 0) return;
       var fd = new FormData();
       fd.append('form_type', 'customer');
       fd.append('utf8', '✓');
@@ -228,7 +229,7 @@
       fd.append('contact[tags]', 'cercle');
       fetch(SHOP + '/contact', { method: 'POST', body: fd, mode: 'no-cors' });
     });
-  }
+  });
 
   /* ---------- stats de visite (Cloudflare Web Analytics) ---------- */
   var cf = document.createElement('script');
