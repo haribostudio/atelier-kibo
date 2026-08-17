@@ -215,6 +215,21 @@
 
   majBadge();
 
+  /* ---------- popup cercle : envoi des emails vers Shopify ---------- */
+  var pf = document.getElementById('popupForm');
+  if (pf) {
+    pf.addEventListener('submit', function () {
+      var champ = pf.querySelector('input[name="EMAIL"]');
+      if (!champ || !champ.value) return;
+      var fd = new FormData();
+      fd.append('form_type', 'customer');
+      fd.append('utf8', '✓');
+      fd.append('contact[email]', champ.value);
+      fd.append('contact[tags]', 'cercle');
+      fetch(SHOP + '/contact', { method: 'POST', body: fd, mode: 'no-cors' });
+    });
+  }
+
   /* ---------- stats de visite (Cloudflare Web Analytics) ---------- */
   var cf = document.createElement('script');
   cf.defer = true;
