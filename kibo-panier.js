@@ -59,6 +59,8 @@
     '#kiboToast.visible{opacity:1;transform:translateX(-50%)}' +
     '.taille.kibo-epuise{opacity:.35;text-decoration:line-through;pointer-events:none}' +
     '#btnAdopter.kibo-epuise{opacity:.45;pointer-events:none}' +
+    '.kibo-surmesure{display:block;margin-top:14px;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(27,30,36,.6)}' +
+    '.kibo-surmesure:hover{opacity:.7}' +
     '.kibo-reassort{display:inline-block;margin-top:12px;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(27,30,36,.65);text-decoration:underline}';
   document.head.appendChild(css);
 
@@ -214,6 +216,22 @@
   }
 
   majBadge();
+
+  /* ---------- sur mesure : accès discrets ---------- */
+  if (ba && !document.querySelector('.kibo-surmesure')) {
+    var sm = document.createElement('a');
+    sm.className = 'kibo-surmesure';
+    sm.href = 'sur-mesure.html';
+    sm.textContent = 'Une envie particulière ? L\'atelier crée sur mesure →';
+    ba.insertAdjacentElement('afterend', sm);
+  }
+  var fl = document.querySelector('.footer-liens');
+  if (fl && !fl.querySelector('a[href="sur-mesure.html"]')) {
+    var fsm = document.createElement('a');
+    fsm.href = 'sur-mesure.html';
+    fsm.textContent = 'Sur mesure';
+    fl.appendChild(fsm);
+  }
 
   /* ---------- cercle : envoi des emails vers Shopify (popup + page Private Access) ---------- */
   ['popupForm', 'formCercle'].forEach(function (fid) {
