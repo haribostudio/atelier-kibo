@@ -1,5 +1,13 @@
 name: Generer la version anglaise
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'kibo-panier.js'
+      - 'tools/**'
+      - '.github/workflows/version-anglaise.yml'
 permissions:
   contents: write
 jobs:
