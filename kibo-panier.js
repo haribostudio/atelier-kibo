@@ -86,7 +86,7 @@
     '.kibo-sel a{opacity:.5}.kibo-sel a.actif{opacity:1;border-bottom:1px solid currentColor}' +
     '.kibo-sel-sep{opacity:.4}' +
     '.kibo-sel select{background:none;border:none;font-family:inherit;font-size:11px;letter-spacing:.1em;color:inherit;cursor:pointer;-webkit-appearance:none;appearance:none;padding:2px}' +
-    '@media (max-width:900px){.kibo-sel{gap:6px}}' +
+    '@media (max-width:900px){.kibo-sel{gap:6px}.nav-droite .kibo-sel a{display:inline-block !important}}' +
     '.kibo-reassort{display:inline-block;margin-top:12px;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(27,30,36,.65);text-decoration:underline}';
   document.head.appendChild(css);
 
