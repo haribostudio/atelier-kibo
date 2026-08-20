@@ -255,13 +255,14 @@
       <li class="apparait"><span class="num">01</span><span>Les éditions, avant tout le monde</span></li>
       <li class="apparait"><span class="num">02</span><span>La bande-son de chaque collection</span></li>
       <li class="apparait"><span class="num">03</span><span>Les invitations — fêtes &amp; atelier</span></li>
+      <li class="apparait"><span class="num">04</span><span>Les cartes secrètes des City Guides</span></li>
     </ul>
 
     <form id="formCercle" class="apparait" novalidate>
       <input type="email" name="EMAIL" placeholder="Votre adresse" aria-label="Adresse e-mail" required>
       <button type="submit">Join the list</button>
     </form>
-    <p class="merci" id="merci">C'est noté. À bientôt.</p>
+    <p class="merci" id="merci">C'est noté. À bientôt.<br><a href="cercle-marrakech.html" style="border-bottom:1px solid currentColor;">La carte Marrakech du Cercle&nbsp;&nbsp;→</a></p>
     <p class="note-bas apparait">Six lettres par an, pas davantage. Désinscription en un clic.</p>
   </div>
 </main>
@@ -272,12 +273,7 @@
 
 <script>
 (function () {
-  /* ---- BRANCHEMENT BREVO ----
-     Coller ici l'URL d'action du formulaire Brevo entre les guillemets.
-     Exemple : var FORM_ACTION = 'https://xxxxxxx.sibforms.com/serve/xxxxx';
-     Vide = mode démonstration (aucun envoi). */
-  var FORM_ACTION = '';
-
+  /* ---- Branchement Shopify (clients tagges newsletter,cercle) ---- */
   var form = document.getElementById('formCercle');
   var merci = document.getElementById('merci');
   form.addEventListener('submit', function (ev) {
@@ -289,10 +285,12 @@
       champ.value = '';
       return;
     }
-    if (FORM_ACTION) {
-      var data = new FormData(form);
-      fetch(FORM_ACTION, { method: 'POST', body: data, mode: 'no-cors' });
-    }
+    var fd = new FormData();
+    fd.append('form_type', 'customer');
+    fd.append('utf8', '\u2713');
+    fd.append('contact[email]', champ.value);
+    fd.append('contact[tags]', 'newsletter,cercle');
+    try { fetch('https://djcwtp-ui.myshopify.com/contact', { method: 'POST', body: fd, mode: 'no-cors' }); } catch (e) {}
     form.style.display = 'none';
     merci.style.display = 'block';
   });
