@@ -13,6 +13,7 @@
     ajoute: 'Added to cart \u2713', epuise: 'Sold out \u2014 back soon',
     reassort: 'Tell me when it returns \u2709', reassortSujet: 'Restock \u2014 ', reassortCorps: 'Hello, please let me know when this piece returns: ',
     surmesure: 'Something particular in mind? The atelier makes to order \u2192', surmesureCourt: 'Made to order',
+    assortiB: 'The matching bracelet', assortiC: 'The matching necklace',
     piece: 'KIBO piece'
   } : {
     panier: 'Votre panier', vide: 'Votre panier est vide', retirer: 'Retirer', payer: 'Passer au paiement', total: 'Total',
@@ -21,6 +22,7 @@
     ajoute: 'Ajout\u00e9 au panier \u2713', epuise: '\u00c9puis\u00e9 \u2014 revient bient\u00f4t',
     reassort: 'Me pr\u00e9venir du r\u00e9assort \u2709', reassortSujet: 'R\u00e9assort \u2014 ', reassortCorps: 'Bonjour, pr\u00e9venez-moi quand cette pi\u00e8ce revient : ',
     surmesure: 'Une envie particuli\u00e8re ? L\'atelier cr\u00e9e sur mesure \u2192', surmesureCourt: 'Sur mesure',
+    assortiB: 'Le bracelet assorti', assortiC: 'Le collier assorti',
     piece: 'Pi\u00e8ce KIBO'
   };
 
@@ -87,6 +89,14 @@
     '.kibo-sel-sep{opacity:.4}' +
     '.kibo-sel select{background:none;border:none;font-family:inherit;font-size:11px;letter-spacing:.1em;color:inherit;cursor:pointer;-webkit-appearance:none;appearance:none;padding:2px}' +
     '@media (max-width:900px){.kibo-sel{gap:6px}.nav-droite .kibo-sel a{display:inline-block !important}}' +
+    '.kibo-parure{display:flex;align-items:center;gap:14px;margin-top:16px;border:1px solid rgba(27,30,36,.18);padding:12px 14px;text-decoration:none}' +
+    '.kibo-parure:hover{border-color:#1B1E24;opacity:1}' +
+    '.kibo-parure img{width:54px;height:54px;object-fit:cover;background:#DCDCDC}' +
+    '.kibo-parure .kp-inf{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}' +
+    '.kibo-parure .kp-label{font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:#0F2FA6}' +
+    '.kibo-parure .kp-nom{font-size:11px;text-transform:uppercase;letter-spacing:.1em}' +
+    '.kibo-parure .kp-prix{font-size:11px;color:rgba(27,30,36,.6)}' +
+    '.kibo-parure .kp-fleche{font-size:14px}' +
     '.kibo-reassort{display:inline-block;margin-top:12px;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(27,30,36,.65);text-decoration:underline}';
   document.head.appendChild(css);
 
@@ -261,6 +271,32 @@
     fsm.href = 'sur-mesure.html';
     fsm.textContent = L.surmesureCourt;
     fl.appendChild(fsm);
+  }
+
+  /* ---------- la parure : collier et bracelet assortis ---------- */
+  var PAIRES = ['palermo', 'casablanca', 'rio', 'positano', 'ibiza', 'laguna', 'tahiti'];
+  if (ba) {
+    var hp = location.pathname.split('/').pop().replace('.html', '').replace(/^produit-/, '');
+    var estBracelet = /-bracelet$/.test(hp);
+    var baseP = estBracelet ? hp.replace(/-bracelet$/, '') : hp;
+    if (PAIRES.indexOf(baseP) !== -1) {
+      var autreHandle = estBracelet ? baseP : baseP + '-bracelet';
+      var autrePage = 'produit-' + autreHandle;
+      var prefixeImg = EN ? '../' : '';
+      fetch(SHOP + '/products/' + autreHandle + '.js').then(function (r) { return r.json(); }).then(function (prod) {
+        var px = prod.variants[0].price;
+        if (px >= 1000) px = px / 100;
+        var carte = document.createElement('a');
+        carte.className = 'kibo-parure';
+        carte.href = autrePage + '.html';
+        carte.innerHTML = '<img src="' + prefixeImg + autrePage + '.jpg?v=4" alt="">' +
+          '<span class="kp-inf"><span class="kp-label">' + (estBracelet ? L.assortiC : L.assortiB) + '</span>' +
+          '<span class="kp-nom">' + prod.title + '</span>' +
+          '<span class="kp-prix">' + euros(px) + '</span></span>' +
+          '<span class="kp-fleche">\u2192</span>';
+        ba.insertAdjacentElement('afterend', carte);
+      }).catch(function () {});
+    }
   }
 
   /* ---------- sélecteur langue + devise ---------- */
