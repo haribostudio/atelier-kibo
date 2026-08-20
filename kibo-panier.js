@@ -2,6 +2,27 @@
 (function () {
   var SHOP = 'https://djcwtp-ui.myshopify.com';
   var CLE = 'kibo_panier';
+  var EN = location.pathname.indexOf('/en/') === 0;
+  var DEVISE = (function(){ try { return localStorage.getItem('kibo_devise') || 'EUR'; } catch(e){ return 'EUR'; } })();
+  var TAUX = { EUR: 1, USD: 1.16, GBP: 0.87 };
+  var SYM = { EUR: '\u20ac', USD: '$', GBP: '\u00a3' };
+  var L = EN ? {
+    panier: 'Your cart', vide: 'Your cart is empty', retirer: 'Remove', payer: 'Checkout', total: 'Total',
+    livraison: 'Free shipping in France over 120 \u20ac \u2014 calculated at checkout.',
+    noteDevise: ' Payment is charged in euros.',
+    ajoute: 'Added to cart \u2713', epuise: 'Sold out \u2014 back soon',
+    reassort: 'Tell me when it returns \u2709', reassortSujet: 'Restock \u2014 ', reassortCorps: 'Hello, please let me know when this piece returns: ',
+    surmesure: 'Something particular in mind? The atelier makes to order \u2192', surmesureCourt: 'Made to order',
+    piece: 'KIBO piece'
+  } : {
+    panier: 'Votre panier', vide: 'Votre panier est vide', retirer: 'Retirer', payer: 'Passer au paiement', total: 'Total',
+    livraison: 'Livraison offerte en France d\u00e8s 120 \u20ac \u2014 calcul\u00e9e au paiement.',
+    noteDevise: ' Paiement d\u00e9bit\u00e9 en euros.',
+    ajoute: 'Ajout\u00e9 au panier \u2713', epuise: '\u00c9puis\u00e9 \u2014 revient bient\u00f4t',
+    reassort: 'Me pr\u00e9venir du r\u00e9assort \u2709', reassortSujet: 'R\u00e9assort \u2014 ', reassortCorps: 'Bonjour, pr\u00e9venez-moi quand cette pi\u00e8ce revient : ',
+    surmesure: 'Une envie particuli\u00e8re ? L\'atelier cr\u00e9e sur mesure \u2192', surmesureCourt: 'Sur mesure',
+    piece: 'Pi\u00e8ce KIBO'
+  };
 
   function lire() { try { return JSON.parse(localStorage.getItem(CLE)) || []; } catch (e) { return []; } }
   function ecrire(p) { localStorage.setItem(CLE, JSON.stringify(p)); majBadge(); }
@@ -61,6 +82,11 @@
     '#btnAdopter.kibo-epuise{opacity:.45;pointer-events:none}' +
     '.kibo-surmesure{display:block;margin-top:14px;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(27,30,36,.6)}' +
     '.kibo-surmesure:hover{opacity:.7}' +
+    '.kibo-sel{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}' +
+    '.kibo-sel a{opacity:.5}.kibo-sel a.actif{opacity:1;border-bottom:1px solid currentColor}' +
+    '.kibo-sel-sep{opacity:.4}' +
+    '.kibo-sel select{background:none;border:none;font-family:inherit;font-size:11px;letter-spacing:.1em;color:inherit;cursor:pointer;-webkit-appearance:none;appearance:none;padding:2px}' +
+    '@media (max-width:900px){.kibo-sel{gap:6px}}' +
     '.kibo-reassort{display:inline-block;margin-top:12px;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:rgba(27,30,36,.65);text-decoration:underline}';
   document.head.appendChild(css);
 
@@ -71,7 +97,7 @@
   btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span id="kiboPanierBadge">0</span>';
   var voile = document.createElement('div'); voile.id = 'kiboVoile';
   var tiroir = document.createElement('aside'); tiroir.id = 'kiboTiroir';
-  tiroir.innerHTML = '<header><h2>Votre panier</h2><button id="kiboFermer" aria-label="Fermer">✕</button></header><div id="kiboLignes"></div><div id="kiboPied"><div id="kiboTotal"><span>Total</span><span id="kiboTotalVal"></span></div><div id="kiboLivraison">Livraison offerte en France dès 120 € — calculée au paiement.</div><button id="kiboPayer">Passer au paiement</button></div>';
+  tiroir.innerHTML = '<header><h2>' + L.panier + '</h2><button id="kiboFermer" aria-label="Fermer">✕</button></header><div id="kiboLignes"></div><div id="kiboPied"><div id="kiboTotal"><span>' + L.total + '</span><span id="kiboTotalVal"></span></div><div id="kiboLivraison">' + L.livraison + (DEVISE !== 'EUR' ? L.noteDevise : '') + '</div><button id="kiboPayer">' + L.payer + '</button></div>';
   var toast = document.createElement('div'); toast.id = 'kiboToast';
   var navEl = document.querySelector('nav');
   var logoNav = document.querySelector('.logo-nav');
@@ -105,12 +131,16 @@
     badge.textContent = n;
     if (btn.classList.contains('flottant')) btn.style.display = n > 0 ? 'inline-flex' : 'none';
   }
-  function euros(n) { return (n % 1 ? n.toFixed(2).replace('.', ',') : n) + ' €'; }
+  function euros(n) {
+    var v = n * TAUX[DEVISE];
+    if (DEVISE !== 'EUR') { v = Math.round(v); return SYM[DEVISE] + v; }
+    return (v % 1 ? v.toFixed(2).replace('.', ',') : v) + ' €';
+  }
 
   function rendre() {
     var p = lire();
     var zone = document.getElementById('kiboLignes');
-    if (!p.length) { zone.innerHTML = '<div id="kiboVide">Votre panier est vide</div>'; }
+    if (!p.length) { zone.innerHTML = '<div id="kiboVide">' + L.vide + '</div>'; }
     else {
       zone.innerHTML = p.map(function (a, i) {
         return '<div class="kibo-ligne">' +
@@ -119,7 +149,7 @@
           (a.taille ? '<span class="taille">' + a.taille + '</span>' : '') +
           '<div class="prix">' + euros(a.prix) + '</div>' +
           '<div class="kibo-qte"><button data-i="' + i + '" data-d="-1">−</button><span>' + a.qte + '</span><button data-i="' + i + '" data-d="1">+</button></div>' +
-          '<button class="kibo-suppr" data-i="' + i + '">Retirer</button></div></div>';
+          '<button class="kibo-suppr" data-i="' + i + '">' + L.retirer + '</button></div></div>';
       }).join('');
     }
     document.getElementById('kiboTotalVal').textContent = euros(total(p));
@@ -152,7 +182,7 @@
       var ex = p.find(function (a) { return a.id === art.id; });
       if (ex) ex.qte += 1; else { art.qte = 1; p.push(art); }
       ecrire(p);
-      toast.textContent = 'Ajouté au panier ✓';
+      toast.textContent = L.ajoute;
       toast.classList.add('visible');
       setTimeout(function () { toast.classList.remove('visible'); }, 1600);
       setTimeout(ouvrir, 500);
@@ -172,7 +202,7 @@
       var prixEl = document.querySelector('.info .prix') || document.querySelector('.prix.apparait');
       KiboPanier.ajouter({
         id: KIBO_VARIANTS[idx],
-        titre: h1 ? h1.textContent.trim() : 'Pièce KIBO',
+        titre: h1 ? h1.textContent.trim() : L.piece,
         prix: prixEl ? parseFloat(prixEl.textContent.replace(/[^0-9,\.]/g, '').replace(',', '.')) || 0 : 0,
         taille: btns.length ? btns[idx].textContent.replace(/\s+/g, ' ').trim() : '',
         img: og ? og.content : ''
@@ -202,14 +232,14 @@
           }
         }
       }
-      if (!reste) { ba.textContent = 'Épuisé — revient bientôt'; ba.classList.add('kibo-epuise'); }
+      if (!reste) { ba.textContent = L.epuise; ba.classList.add('kibo-epuise'); }
       var unEpuise = KIBO_VARIANTS.some(function (id) { return dispo[id] === false; });
       if (unEpuise && !document.querySelector('.kibo-reassort')) {
         var titre = (document.querySelector('.info h1') || { textContent: document.title }).textContent.trim();
         var lien = document.createElement('a');
         lien.className = 'kibo-reassort';
-        lien.href = 'mailto:hello@atelier-kibo.com?subject=' + encodeURIComponent('Réassort — ' + titre) + '&body=' + encodeURIComponent('Bonjour, prévenez-moi quand cette pièce revient : ' + titre + ' — ' + location.href.split('?')[0]);
-        lien.textContent = 'Me prévenir du réassort ✉';
+        lien.href = 'mailto:hello@atelier-kibo.com?subject=' + encodeURIComponent(L.reassortSujet + titre) + '&body=' + encodeURIComponent(L.reassortCorps + titre + ' — ' + location.href.split('?')[0]);
+        lien.textContent = L.reassort;
         ba.insertAdjacentElement('afterend', lien);
       }
     }).catch(function () {});
@@ -222,15 +252,51 @@
     var sm = document.createElement('a');
     sm.className = 'kibo-surmesure';
     sm.href = 'sur-mesure.html';
-    sm.textContent = 'Une envie particulière ? L\'atelier crée sur mesure →';
+    sm.textContent = L.surmesure;
     ba.insertAdjacentElement('afterend', sm);
   }
   var fl = document.querySelector('.footer-liens');
   if (fl && !fl.querySelector('a[href="sur-mesure.html"]')) {
     var fsm = document.createElement('a');
     fsm.href = 'sur-mesure.html';
-    fsm.textContent = 'Sur mesure';
+    fsm.textContent = L.surmesureCourt;
     fl.appendChild(fsm);
+  }
+
+  /* ---------- sélecteur langue + devise ---------- */
+  var navD2 = document.querySelector('.nav-droite');
+  if (navD2 && !document.querySelector('.kibo-sel')) {
+    var sel = document.createElement('div');
+    sel.className = 'kibo-sel';
+    var cheminFR = EN ? location.pathname.replace(/^\/en\//, '/') : location.pathname;
+    var cheminEN = EN ? location.pathname : ('/en' + (location.pathname === '/' ? '/' : location.pathname));
+    sel.innerHTML = '<a href="' + cheminFR + '"' + (EN ? '' : ' class="actif"') + '>FR</a><span class="kibo-sel-sep">/</span><a href="' + cheminEN + '"' + (EN ? ' class="actif"' : '') + '>EN</a>' +
+      '<select id="kiboDevise" aria-label="Devise"><option value="EUR">\u20ac</option><option value="USD">$</option><option value="GBP">\u00a3</option></select>';
+    navD2.insertBefore(sel, navD2.firstChild);
+    var selD = document.getElementById('kiboDevise');
+    selD.value = DEVISE;
+    selD.addEventListener('change', function () {
+      try { localStorage.setItem('kibo_devise', selD.value); } catch (e) {}
+      location.reload();
+    });
+  }
+  if (DEVISE !== 'EUR') {
+    var marche = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (nd) {
+        var p = nd.parentElement && nd.parentElement.tagName;
+        if (p === 'SCRIPT' || p === 'STYLE' || p === 'SELECT' || p === 'OPTION') return NodeFilter.FILTER_REJECT;
+        return /\d\s?\u20ac/.test(nd.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+      }
+    });
+    var noeuds = [];
+    while (marche.nextNode()) noeuds.push(marche.currentNode);
+    noeuds.forEach(function (nd) {
+      nd.nodeValue = nd.nodeValue.replace(/(\d[\d\s]*(?:[.,]\d+)?)\s?\u20ac/g, function (m0, num) {
+        var e = parseFloat(num.replace(/\s/g, '').replace(',', '.'));
+        if (isNaN(e)) return m0;
+        return SYM[DEVISE] + Math.round(e * TAUX[DEVISE]);
+      });
+    });
   }
 
   /* ---------- cercle : envoi des emails vers Shopify (popup + page Private Access) ---------- */
