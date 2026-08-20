@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIBO Paris — Jewelry for the moments that stay</title>
+<link rel="alternate" hreflang="fr" href="https://atelier-kibo.com/">
+<link rel="alternate" hreflang="en" href="https://atelier-kibo.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://atelier-kibo.com/">
+<meta name="description" content="KIBO Paris. Handmade jewelry, limited editions. Jewelry for the moments that stay — capturing energy, not trends.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KIBO Paris">
+<meta property="og:title" content="KIBO Paris — Jewelry for the moments that stay">
+<meta property="og:description" content="KIBO Paris. Handmade jewelry, limited editions. Jewelry for the moments that stay — capturing energy, not trends.">
+<meta property="og:url" content="https://atelier-kibo.com/">
+<meta property="og:image" content="https://atelier-kibo.com/og-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://atelier-kibo.com/og-home.jpg">
+<link rel="icon" type="image/png" href="../FULL-BLACK.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Courier+Prime:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================
+     KIBO PARIS — v3 « summer memories »
+     Crème, terracotta, lumière dorée, polaroids, notes manuscrites.
+     ========================================================== */
+  :root {
+    --creme: #E6E6E6;
+    --papier: #DCDCDC;
+    --terracotta: #0F2FA6;
+    --encre: #1B1E24;
+    --sable: #C4C4C6;
+    --nuit: #10131A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--creme);
+    color: var(--encre);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.6; }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: 0.04em; }
+  .manuscrit { font-family: 'Caveat', cursive; letter-spacing: 0; }
+  .rouge { color: var(--terracotta); }
+  .maj { text-transform: uppercase; }
+
+  /* ---------- Bandeau annonce ---------- */
+  .annonce {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    background: var(--terracotta); color: var(--creme);
+    text-align: center; padding: 10px 12px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+
+  /* ---------- Navigation ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--creme);
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
+    padding: 14px 32px;
+    border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .logo-nav { display: flex; align-items: center; }
+  .logo-nav img { height: 34px; display: block; }
+  .logo-nav .logo-texte { font-family: 'Caveat', cursive; font-size: 30px; font-weight: 600; letter-spacing: 0; }
+  .nav-centre { display: flex; gap: 28px; justify-content: center; text-transform: uppercase; font-size: 12px; letter-spacing: 0.16em; }
+  .nav-droite { display: flex; gap: 22px; text-transform: uppercase; font-size: 12px; letter-spacing: 0.16em; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; min-height: 92vh; overflow: hidden;
+    display: flex; align-items: center;
+    color: var(--creme);
+  }
+  .hero-photo {
+    position: absolute; inset: 0;
+    background: url('../hero-2.jpg') center 20% / cover no-repeat, #1C1F26;
+  }
+  /* Voile léger pour la lisibilité du titre */
+  .hero-photo::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(16,19,26,0.18) 0%, rgba(16,19,26,0.05) 45%, rgba(16,19,26,0.35) 100%);
+  }
+  .hero-note-photo {
+    position: absolute; bottom: 14px; left: 0; right: 0; text-align: center;
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: rgba(230,230,230,0.5);
+  }
+  .hero-contenu { position: relative; width: 100%; padding: 64px 6vw; display: grid; grid-template-columns: 1fr; align-items: center; }
+  /* Titre manuscrit, façon marqueur blanc sur la photo */
+  .hero-titre h1 {
+    font-family: 'Shadows Into Light', cursive; font-weight: 400;
+    font-size: clamp(36px, 4.4vw, 64px); line-height: 1.3;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    max-width: 13ch;
+  }
+  .stay { position: relative; display: inline-block; }
+  .trait-stay {
+    position: absolute; left: -4%; bottom: -12px;
+    width: 108%; height: 16px; overflow: visible;
+  }
+  .trait-stay path { stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; }
+  /* « Discover » entouré au crayon */
+  .discover {
+    position: relative; display: inline-block; margin-top: 36px;
+    padding: 14px 38px;
+    font-family: 'Shadows Into Light', cursive; font-size: 18px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--creme);
+  }
+  .discover:hover { opacity: 1; }
+  .discover .cercle {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    overflow: visible;
+  }
+  .discover .cercle path {
+    stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round;
+    transition: stroke-width 300ms ease;
+  }
+  .discover:hover .cercle path { stroke-width: 3; }
+  .hero-logo { margin-top: 24px; }
+  .hero-logo img { height: 54px; filter: none; }
+  .hero-logo .logo-texte { font-family: 'Caveat', cursive; font-size: 52px; font-weight: 600; color: var(--terracotta); }
+  .hero-soleil { margin-top: 8px; color: var(--terracotta); font-size: 20px; }
+  .hero-bas {
+    position: absolute; bottom: 40px; left: 6vw;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--creme);
+  }
+  /* ---------- Bande d'icônes dessinées ---------- */
+  .bande-icones {
+    display: flex; background: var(--creme);
+    border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .bi-item {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    gap: 14px; padding: 18px 10px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+    white-space: nowrap;
+  }
+  .bi-item + .bi-item { border-left: 1px solid rgba(27,30,36,0.25); }
+  .bi-item svg {
+    width: 26px; height: 26px; flex-shrink: 0;
+    stroke: var(--encre); fill: none;
+    stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+  }
+  @media (max-width: 900px) {
+    .bande-icones { flex-wrap: wrap; }
+    .bi-item { flex: 1 1 50%; border-left: none !important; border-top: 1px solid rgba(27,30,36,0.12); }
+  }
+
+  /* ---------- Marquee ---------- */
+  .marquee {
+    overflow: hidden; padding: 26px 0;
+    border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .marquee-int {
+    display: flex; gap: 72px; width: max-content;
+    animation: defile 30s linear infinite;
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(32px, 3.6vw, 54px);
+    text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap;
+  }
+  .marquee-int .ast { color: var(--terracotta); margin-left: 72px; }
+  @keyframes defile { to { transform: translateX(-50%); } }
+
+  /* ---------- Panneaux collections ---------- */
+  .panneaux { display: flex; min-height: 84vh; background: var(--nuit); }
+  .panneau {
+    position: relative; flex: 1; overflow: hidden;
+    display: flex; align-items: flex-end; padding: 44px 36px;
+    color: var(--creme);
+    transition: flex 800ms cubic-bezier(0.16,1,0.3,1);
+  }
+  .panneau::before {
+    content: ''; position: absolute; inset: 0;
+    background-position: center 30%; background-size: cover;
+    transition: transform 1100ms cubic-bezier(0.16,1,0.3,1);
+  }
+  .panneau::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(16,19,26,0.02) 40%, rgba(16,19,26,0.6) 100%);
+    transition: background 500ms ease;
+  }
+  .panneau:hover { flex: 2; opacity: 1; }
+  .panneau:hover::before { transform: scale(1.06); }
+  .pan-permanente::before { background-image: url('../panneau-permanente.jpg'); }
+  .pan-dolce::before { background-image: url('../panneau-dolce-vita.jpg'); background-position: center 62%; }
+  .pan-bleu::before { background-image: url('../panneau-grand-bleu.jpg'); }
+  .panneau > div { position: relative; z-index: 1; }
+  .pan-sur { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(230,230,230,0.85); }
+  .panneau h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(30px, 3.4vw, 50px); text-transform: uppercase;
+    letter-spacing: 0.08em; line-height: 1.05; margin-top: 8px;
+  }
+  .pan-lien {
+    display: inline-block; margin-top: 16px; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    border-bottom: 1px solid var(--creme); padding-bottom: 3px;
+  }
+
+  /* ---------- Mur de souvenirs ---------- */
+  .souvenirs { background: var(--papier); padding: 96px 6vw 110px; overflow: hidden; }
+  .souvenirs-tete { margin-bottom: 60px; }
+  .souvenirs-tete .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .souvenirs-tete h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(30px, 3.4vw, 46px); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 10px;
+  }
+  .souvenirs-tete .sous { margin-top: 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.6); }
+  .mur { display: grid; grid-template-columns: repeat(4, 1fr); gap: 38px; align-items: start; }
+  .pola {
+    display: block; position: relative;
+    background: #EDEDED; padding: 10px 10px 16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    transform: rotate(-2.4deg);
+    transition: transform 500ms cubic-bezier(0.16,1,0.3,1), box-shadow 500ms ease;
+  }
+  .pola:nth-child(2) { transform: rotate(1.8deg) translateY(26px); }
+  .pola:nth-child(3) { transform: rotate(-1.2deg) translateY(8px); }
+  .pola:nth-child(4) { transform: rotate(2.6deg) translateY(34px); }
+  .pola:hover { transform: rotate(0deg) scale(1.04); box-shadow: 0 22px 48px rgba(0,0,0,0.26); z-index: 2; opacity: 1; }
+  .pola::before {
+    content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-3deg);
+    width: 78px; height: 24px; background: rgba(230,230,230,0.75);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 1;
+  }
+  .pola .ph { aspect-ratio: 4 / 5; background-position: center 25%; background-size: cover; }
+  .ph-souv-1 { background-image: url('../pola-1.jpg'); }
+  .ph-souv-2 { background-image: url('../photo%202.JPG'); }
+  .ph-souv-3 { background-image: url('../pola-3.jpg'); }
+  .ph-souv-rio { background-image: url('../produit-rio-2.jpg'); }
+  .pola .legende { font-family: 'Caveat', cursive; font-size: 23px; letter-spacing: 0; text-align: center; margin-top: 12px; }
+  .pola .legende .ast { color: var(--terracotta); }
+
+  /* ---------- Manifeste vidéo ---------- */
+  .manifeste {
+    position: relative; min-height: 92vh; overflow: hidden;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    padding: 72px 6vw; color: var(--creme);
+  }
+  .manifeste video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .manifeste .voile { position: absolute; inset: 0; background: rgba(16,19,26,0.42); }
+  .manifeste-contenu { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+  .manifeste .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(230,230,230,0.85); }
+  .manifeste h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(36px, 5.4vw, 76px); text-transform: uppercase;
+    letter-spacing: 0.06em; line-height: 1.12; max-width: 15ch; margin-top: 16px;
+  }
+  .manifeste h2 .oeil { color: #d9a05f; font-size: 0.55em; vertical-align: middle; }
+  .manifeste a.acces {
+    display: inline-block; margin-top: 28px; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    border-bottom: 1px solid var(--creme); padding-bottom: 3px;
+  }
+  .sticker {
+    position: absolute; right: 5vw; bottom: 6vh; z-index: 1;
+    background: var(--papier); color: var(--encre);
+    padding: 16px 22px; transform: rotate(-4deg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
+    font-family: 'Caveat', cursive; font-size: 22px; letter-spacing: 0; text-align: center;
+  }
+  .sticker .soleil-oeil { display: block; color: var(--terracotta); font-size: 16px; margin-top: 2px; }
+
+  /* ---------- Respiration bracelets ---------- */
+  .respire { display: block; overflow: hidden; position: relative; }
+  .respire-texte {
+    position: absolute; left: 6vw; top: 50%; transform: translateY(-50%);
+    z-index: 1; color: var(--encre); max-width: 340px;
+  }
+  .respire-texte .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .respire-texte h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(26px, 2.8vw, 42px); text-transform: uppercase;
+    letter-spacing: 0.08em; line-height: 1.15; margin-top: 10px;
+  }
+  .respire-lien {
+    display: inline-block; margin-top: 16px; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    border-bottom: 1px solid var(--encre); padding-bottom: 3px;
+  }
+  .respire-img {
+    height: 52vh; background: url('../bandeau-bracelets.jpg') center 42% / cover no-repeat;
+    transition: transform 1200ms cubic-bezier(0.16,1,0.3,1);
+  }
+  .respire:hover .respire-img { transform: scale(1.03); }
+  .respire:hover { opacity: 1; }
+
+  /* ---------- Our World ---------- */
+  .monde {
+    position: relative; min-height: 58vh; overflow: hidden;
+    display: flex; align-items: center; padding: 72px 6vw;
+    color: var(--creme);
+    background: linear-gradient(90deg, rgba(16,19,26,0.55) 0%, rgba(16,19,26,0.1) 70%), url('../plage.jpg') center / cover no-repeat, var(--nuit);
+  }
+  .monde-texte { max-width: 520px; }
+  .monde-texte .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(230,230,230,0.85); margin-bottom: 20px; }
+  .monde-texte p.serif { font-size: clamp(26px, 2.6vw, 38px); line-height: 1.3; }
+  .monde-texte .lien-fleche {
+    display: inline-block; margin-top: 30px; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    border-bottom: 1px solid var(--creme); padding-bottom: 3px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 48px 6vw 40px; }
+  .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .footer-droite { justify-content: flex-end; }
+  .footer-logo { text-align: center; }
+  .footer-logo img { height: 40px; }
+  .footer-logo .logo-texte { font-family: 'Caveat', cursive; font-size: 34px; font-weight: 600; }
+  .footer-logo .soleil { color: var(--terracotta); display: block; font-size: 14px; margin-top: 2px; }
+  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
+
+  /* ---------- Apparitions ---------- */
+  .apparait { opacity: 0; transform: translateY(14px); transition: opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1); }
+  .apparait.visible { opacity: 1; transform: none; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .nav-centre { display: none; }
+    .hero-contenu { grid-template-columns: 1fr; }
+    .panneaux { flex-direction: column; min-height: 0; }
+    .panneau { min-height: 46vh; }
+    .pan-permanente::before { background-position: center 68%; }
+    .pan-bleu::before { background-position: center 55%; }
+    .mur { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .pola:nth-child(2), .pola:nth-child(4) { transform: rotate(1.8deg) translateY(14px); }
+    .manifeste { min-height: 70vh; }
+    .sticker { right: 6vw; bottom: 4vh; }
+    .respire-img { height: 38vh; }
+    .respire-texte { max-width: 240px; }
+    .monde { min-height: 46vh; }
+    .footer-haut { grid-template-columns: 1fr; text-align: center; }
+    .footer-liens { justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-int { animation: none; }
+    .apparait { transition-duration: 150ms; transform: none; }
+  }
+
+  /* ---------- Menu mobile ---------- */
+  .burger { display: none; background: none; border: none; color: inherit; cursor: pointer; padding: 4px; }
+  .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
+  .menu-mobile {
+    position: fixed; inset: 0; z-index: 300;
+    background: var(--creme, #E6E6E6); color: var(--encre);
+    display: none; flex-direction: column; justify-content: center;
+    padding: 32px 36px;
+  }
+  .menu-mobile.ouvert { display: flex; }
+  .menu-mobile a {
+    font-family: 'Space Mono', monospace; font-size: 19px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 20px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
+  }
+  .menu-mobile .fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 26px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1;
+  }
+  @media (max-width: 900px) { .burger { display: block; } }
+
+  /* ---------- Pop-up newsletter ---------- */
+  .popup-fond {
+    position: fixed; inset: 0; z-index: 500;
+    background: rgba(16,19,26,0.55);
+    display: none; align-items: center; justify-content: center; padding: 24px;
+  }
+  .popup-fond.visible { display: flex; }
+  .popup {
+    background: #E6E6E6; color: #1B1E24; max-width: 400px; width: 100%;
+    padding: 40px 36px 32px; position: relative; text-align: center;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  }
+  .popup .fermer-popup {
+    position: absolute; top: 12px; right: 16px;
+    background: none; border: none; font-size: 20px; cursor: pointer;
+    color: inherit; font-family: inherit; line-height: 1; padding: 4px;
+  }
+  .popup .dix {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; line-height: 1;
+    color: #0F2FA6; margin-bottom: 8px;
+  }
+  .popup h3 {
+    font-family: 'Space Mono', monospace; font-weight: 400; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 8px;
+  }
+  .popup p { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.04em; line-height: 1.7; color: rgba(27,30,36,0.7); margin-bottom: 20px; }
+  .popup form { display: flex; flex-direction: column; gap: 12px; }
+  .popup input[type="email"] {
+    background: transparent; border: none; border-bottom: 1px solid rgba(27,30,36,0.4);
+    font-family: 'Space Mono', monospace; font-size: 13px; padding: 10px 2px;
+    outline: none; border-radius: 0; text-align: center; color: inherit;
+  }
+  .popup input[type="email"]:focus { border-color: #1B1E24; }
+  .popup button[type="submit"] {
+    background: #1B1E24; color: #E6E6E6; border: none;
+    font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.16em; padding: 14px; cursor: pointer;
+  }
+  .popup .non-merci {
+    background: none; border: none; font-family: 'Space Mono', monospace; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.5);
+    cursor: pointer; margin-top: 4px; text-decoration: underline;
+  }
+  .popup .popup-merci { display: none; font-family: 'Cormorant Garamond', serif; font-size: 20px; }
+  @media (max-width: 900px) {
+    .nav-droite { order: -1; }
+    .nav-droite a { display: none; }
+    .nav-droite .loupe { order: 2; margin-left: 4px; }
+    .logo-nav { justify-self: end; }
+  }
+  /* ---------- Recherche ---------- */
+  .loupe { background: none; border: none; cursor: pointer; padding: 4px; color: inherit; display: inline-flex; align-items: center; }
+  .loupe svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; display: block; }
+  .loupe:hover { opacity: 0.6; }
+  .rech-fond {
+    position: fixed; inset: 0; z-index: 400;
+    background: rgba(230,230,230,0.97);
+    display: none; justify-content: center;
+    padding: 14vh 6vw 40px; color: #1B1E24;
+  }
+  .rech-fond.visible { display: flex; }
+  .rech-boite { width: 100%; max-width: 640px; }
+  .rech-boite input {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid rgba(27,30,36,0.5);
+    font-family: 'Space Mono', monospace; font-size: 16px; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 12px 2px; outline: none; border-radius: 0; color: inherit;
+  }
+  .rech-boite input:focus { border-color: #1B1E24; }
+  .rech-resultats { margin-top: 28px; }
+  .rech-resultats a {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 18px;
+    padding: 13px 2px; border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .rech-resultats .rt { font-family: 'Cormorant Garamond', serif; font-size: 21px; letter-spacing: 0.04em; }
+  .rech-resultats .rs { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.55); white-space: nowrap; }
+  .rech-vide { margin-top: 28px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.55); }
+  .rech-fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 24px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="annonce">Limited editions&nbsp;. Capturing energy, not trends.</div>
+
+<nav aria-label="Main navigation">
+  <a class="logo-nav" href="#">
+    <img src="../FULL-BLACK.png" alt="KIBO" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'">
+  </a>
+  <div class="nav-centre">
+    <a href="collection.html">Collections</a>
+    <a href="our-world.html">Our World</a>
+    <a href="city-guides.html">City Guides</a>
+    <a href="private-access.html">Private Access</a>
+  </div>
+  <div class="nav-droite">
+    <a href="#">Paris / EN</a>
+    <button class="loupe" aria-label="Search" onclick="kiboOuvrirRecherche()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.6 15.6 L21 21"/></svg></button>
+    <button class="burger" aria-label="Open menu" onclick="document.getElementById('menuMobile').classList.add('ouvert')">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="menu-mobile" id="menuMobile">
+  <button class="fermer" aria-label="Close menu" onclick="document.getElementById('menuMobile').classList.remove('ouvert')">&#10005;</button>
+  <a href="collection.html">Collections</a>
+  <a href="our-world.html">Our World</a>
+  <a href="city-guides.html">City Guides</a>
+  <a href="private-access.html">Private Access</a>
+</div>
+
+<header class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-contenu">
+    <div class="hero-titre">
+      <h1>Jewelry<br>for the<br>moments<br>that <span class="stay">stay<svg class="trait-stay" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M4 5 C 32 1, 82 1, 116 4"/><path d="M12 11 C 42 8, 88 8, 110 10"/></svg></span></h1>
+      <a class="discover" href="collection.html">
+        <svg class="cercle" viewBox="0 0 190 60" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M96 5 C 148 2 184 13 183 30 C 182 50 141 57 93 56 C 45 55 8 48 7 30 C 6 12 44 6 100 6"/>
+        </svg>
+        Discover&nbsp;&nbsp;→
+      </a>
+      <div class="hero-logo">
+        <img src="../OUTLINE_WHITE.png" alt="KIBO" style="height:60px" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'">
+      </div>
+      <div class="hero-soleil">✳︎</div>
+    </div>
+    </div>
+  </div>
+  <div class="hero-bas">Welcome to our world&nbsp;&nbsp;↗</div>
+</header>
+
+<div class="bande-icones">
+  <div class="bi-item">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9 C5 5.5, 9 5.5, 12 9 C15 12.5, 19 12.5, 22 9"/><path d="M2 16 C5 12.5, 9 12.5, 12 16 C15 19.5, 19 19.5, 22 16"/></svg>
+    <span>Handmade in Paris</span>
+  </div>
+  <div class="bi-item">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22 C12.5 16, 11.5 11, 10.5 8.5"/><path d="M10.5 8.5 C7.5 5.5, 4.5 4.5, 2 5.5 C5 7, 8 8, 10.5 8.5"/><path d="M10.5 8.5 C9.5 4.5, 7.5 2, 4.5 1.5 C7 3.5, 9 6, 10.5 8.5"/><path d="M10.5 8.5 C13.5 5, 17 4, 20 5 C17 7, 13.5 8, 10.5 8.5"/><path d="M10.5 8.5 C12.5 4.5, 15.5 2.5, 18.5 3 C16 4.5, 13 6.5, 10.5 8.5"/></svg>
+    <span>Limited Editions</span>
+  </div>
+  <div class="bi-item">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 C6.5 6, 17.5 6, 22 12 C17.5 18, 6.5 18, 2 12 Z"/><circle cx="12" cy="12" r="3"/></svg>
+    <span>Capturing Energy</span>
+  </div>
+  <div class="bi-item">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2 L12 4.5"/><path d="M12 19.5 L12 22"/><path d="M2 12 L4.5 12"/><path d="M19.5 12 L22 12"/><path d="M4.9 4.9 L6.7 6.7"/><path d="M17.3 17.3 L19.1 19.1"/><path d="M4.9 19.1 L6.7 17.3"/><path d="M17.3 6.7 L19.1 4.9"/></svg>
+    <span>Unisex</span>
+  </div>
+  <div class="bi-item">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M8.5 9.5 L8.6 9.5"/><path d="M15.4 9.5 L15.5 9.5"/><path d="M8 14 C9.8 16.8, 14.2 16.8, 16 14"/></svg>
+    <span>Not Trends</span>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-int"><span>La Permanente<span class="ast">✳︎</span></span><span>Soleil Rouge<span class="ast">✳︎</span></span><span>Grand Bleu<span class="ast">✳︎</span></span><span>Handmade in Paris<span class="ast">✳︎</span></span><span>La Permanente<span class="ast">✳︎</span></span><span>Soleil Rouge<span class="ast">✳︎</span></span><span>Grand Bleu<span class="ast">✳︎</span></span><span>Handmade in Paris<span class="ast">✳︎</span></span></div>
+</div>
+
+<section class="panneaux">
+  <a class="panneau pan-permanente" href="collection.html?f=permanente">
+    <div>
+      <p class="pan-sur">The pieces that stay</p>
+      <h2>La Permanente</h2>
+      <span class="pan-lien">Discover&nbsp;&nbsp;→</span>
+    </div>
+  </a>
+  <a class="panneau pan-dolce" href="collection.html?g=dolce-vita">
+    <div>
+      <p class="pan-sur">Drop 01 — Summer 2026</p>
+      <h2>Soleil Rouge</h2>
+      <span class="pan-lien">Discover&nbsp;&nbsp;→</span>
+    </div>
+  </a>
+  <a class="panneau pan-bleu" href="collection.html?g=grand-bleu">
+    <div>
+      <p class="pan-sur">Drop 02 — Summer 2026</p>
+      <h2>Grand Bleu</h2>
+      <span class="pan-lien">Discover&nbsp;&nbsp;→</span>
+    </div>
+  </a>
+</section>
+
+<section class="souvenirs">
+  <div class="souvenirs-tete apparait">
+    <p class="etiquette">Summer journal</p>
+    <h2>Worn memories</h2>
+    <p class="sous">Pieces that are lived, not just worn.</p>
+  </div>
+  <div class="mur">
+    <a class="pola apparait" href="produit-positano.html">
+      <div class="ph ph-souv-1"></div>
+      <p class="legende">Positano — golden hour <span class="ast">✳︎</span></p>
+    </a>
+    <a class="pola apparait" href="produit-amuleto.html">
+      <div class="ph ph-souv-2"></div>
+      <p class="legende">Amuleto &amp; Palermo — worn together <span class="ast">✳︎</span></p>
+    </a>
+    <a class="pola apparait" href="produit-amore.html">
+      <div class="ph ph-souv-3"></div>
+      <p class="legende">Amore — worn all night <span class="ast">✳︎</span></p>
+    </a>
+    <a class="pola apparait" href="produit-rio.html">
+      <div class="ph ph-souv-rio"></div>
+      <p class="legende">Rio — sunset club <span class="ast">✳︎</span></p>
+    </a>
+  </div>
+</section>
+
+<section class="manifeste" id="acces">
+  <video autoplay muted loop playsinline preload="metadata" aria-label="KIBO — video">
+    <source src="../palermo.mp4" type="video/mp4">
+  </video>
+  <div class="voile"></div>
+  <div class="manifeste-contenu apparait">
+    <p class="etiquette">Private Access</p>
+    <h2>Memories are made to be worn.&nbsp;<span class="oeil">◉</span></h2>
+    <a class="acces" href="private-access.html">Join the list&nbsp;&nbsp;→</a>
+  </div>
+  <div class="sticker">Always chasing the light<span class="soleil-oeil">☀</span></div>
+</section>
+
+<a class="respire" href="collection.html?f=bracelet" aria-label="See the bracelets">
+  <div class="respire-img" role="img" aria-label="KIBO bracelets on the wrist"></div>
+  <div class="respire-texte apparait">
+    <p class="etiquette">The Bracelets</p>
+    <h2>To wear stacked, summer and winter.</h2>
+    <span class="respire-lien">Discover&nbsp;&nbsp;→</span>
+  </div>
+</a>
+
+<section class="monde" id="monde">
+  <div class="monde-texte apparait">
+    <p class="etiquette">Our World</p>
+    <p class="serif">From hidden beaches to secret parties, from Paris to somewhere else.</p>
+    <a class="lien-fleche" href="our-world.html">Explore&nbsp;&nbsp;→</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-haut">
+    <div class="footer-liens">
+      <a href="faq.html">FAQ</a>
+      <a href="shipping-retours.html">Shipping &amp; Returns</a>
+      <a href="care-guide.html">Care Guide</a>
+      <a href="contact.html">Contact</a>
+      <a href="mentions-legales.html">Legal notice</a>
+    </div>
+    <div class="footer-logo">
+      <img src="../FULL-BLACK.png" alt="KIBO" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'">
+      <span class="soleil">☀</span>
+    </div>
+    <div class="footer-liens footer-droite">
+      <a href="https://www.instagram.com/atelier.kibo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#">Spotify</a>
+    </div>
+  </div>
+  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;All rights reserved</p>
+</footer>
+
+<script>
+(function () {
+  var obs = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) {
+      if (e.isIntersecting) {
+        var freres = e.target.parentElement.querySelectorAll('.apparait');
+        var i = Array.prototype.indexOf.call(freres, e.target);
+        e.target.style.transitionDelay = (i > 0 ? i * 80 : 0) + 'ms';
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.apparait').forEach(function (el) { obs.observe(el); });
+})();
+</script>
+
+
+<div class="popup-fond" id="popupNews" role="dialog" aria-modal="true" aria-label="Newsletter">
+  <div class="popup">
+    <button class="fermer-popup" aria-label="Close" onclick="kiboFermerPopup()">&#10005;</button>
+    <div class="dix">&minus;10&nbsp;%</div>
+    <h3>Join the circle</h3>
+    <p>Early access to the editions, and 10&nbsp;% off your first piece.</p>
+    <form id="popupForm">
+      <input type="email" name="EMAIL" placeholder="YOUR EMAIL" required autocomplete="email">
+      <button type="submit">Get my code</button>
+      <button type="button" class="non-merci" onclick="kiboFermerPopup()">No thanks</button>
+    </form>
+    <div class="popup-merci" id="popupMerci">Welcome to the circle.<br>Your code: <strong>CERCLE10</strong></div>
+  </div>
+</div>
+<script>
+(function () {
+  /* BRANCHEMENT NEWSLETTER (Brevo) : coller ici l'URL d'action du formulaire.
+     Tant que POPUP_ACTION est vide, mode démonstration (aucun envoi). */
+  var POPUP_ACTION = '';
+  var CLE = 'kibo_popup_vu';
+  window.kiboFermerPopup = function () {
+    document.getElementById('popupNews').classList.remove('visible');
+    try { localStorage.setItem(CLE, '1'); } catch (e) {}
+  };
+  var deja = false;
+  try { deja = localStorage.getItem(CLE) === '1'; } catch (e) {}
+  if (!deja) {
+    setTimeout(function () {
+      document.getElementById('popupNews').classList.add('visible');
+    }, 6000);
+  }
+  document.getElementById('popupForm').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (POPUP_ACTION) {
+      var fd = new FormData(ev.target);
+      fetch(POPUP_ACTION, { method: 'POST', body: fd, mode: 'no-cors' });
+    }
+    ev.target.style.display = 'none';
+    document.getElementById('popupMerci').style.display = 'block';
+    try { localStorage.setItem(CLE, '1'); } catch (e) {}
+    setTimeout(window.kiboFermerPopup, 3500);
+  });
+})();
+</script>
+
+
+<div class="rech-fond" id="rechFond" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="rech-fermer" aria-label="Close" onclick="kiboFermerRecherche()">&#10005;</button>
+  <div class="rech-boite">
+    <input id="rechInput" type="search" placeholder="Search for a piece, a page&hellip;" autocomplete="off">
+    <div class="rech-resultats" id="rechResultats"></div>
+  </div>
+</div>
+<script>
+(function () {
+  var INDEX = [{"t": "Palermo Necklace", "u": "produit-palermo.html", "s": "La Permanente — 180 €"}, {"t": "Limone Necklace", "u": "produit-limone.html", "s": "Soleil Rouge — 140 €"}, {"t": "Murano Necklace", "u": "produit-murano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Santorini Necklace", "u": "produit-santorini.html", "s": "Grand Bleu — 140 €"}, {"t": "Rio Necklace", "u": "produit-rio.html", "s": "Grand Bleu — 90 €"}, {"t": "Ibiza Necklace", "u": "produit-ibiza.html", "s": "Grand Bleu — 140 €"}, {"t": "Tahiti Necklace", "u": "produit-tahiti.html", "s": "La Permanente — 160 €"}, {"t": "Positano Necklace", "u": "produit-positano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Capri Necklace", "u": "produit-capri.html", "s": "Soleil Rouge — 120 €"}, {"t": "Laguna Necklace", "u": "produit-laguna.html", "s": "Soleil Rouge — 120 €"}, {"t": "Casablanca Necklace", "u": "produit-casablanca.html", "s": "La Permanente — 160 €"}, {"t": "Amore Necklace", "u": "produit-amore.html", "s": "La Permanente — 190 €"}, {"t": "Bodrum Necklace", "u": "produit-bodrum.html", "s": "Grand Bleu — 90 €"}, {"t": "Stella Necklace", "u": "produit-stella.html", "s": "Soleil Rouge — 140 €"}, {"t": "Marea Necklace", "u": "produit-marea.html", "s": "Grand Bleu — 140 €"}, {"t": "Riviera Necklace", "u": "produit-riviera.html", "s": "Soleil Rouge — 140 €"}, {"t": "Perla Bracelet", "u": "produit-perla.html", "s": "Soleil Rouge — 55 €"}, {"t": "Laguna Bracelet", "u": "produit-laguna-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Menta Bracelet", "u": "produit-menta.html", "s": "Soleil Rouge — 50 €"}, {"t": "Marina Bracelet", "u": "produit-marina.html", "s": "Grand Bleu — 50 €"}, {"t": "Mimosa Necklace", "u": "produit-mimosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Oliva Necklace", "u": "produit-oliva.html", "s": "Grand Bleu — 90 €"}, {"t": "Rosa Necklace", "u": "produit-rosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Bianca Necklace", "u": "produit-bianca.html", "s": "La Permanente — 150 €"}, {"t": "Amuleto Necklace", "u": "produit-amuleto.html", "s": "Soleil Rouge — 140 €"}, {"t": "Fiesta Necklace", "u": "produit-fiesta.html", "s": "Grand Bleu — 120 €"}, {"t": "Sunset Necklace", "u": "produit-sunset.html", "s": "Grand Bleu — 120 €"}, {"t": "Neptune Necklace", "u": "produit-neptune.html", "s": "Grand Bleu — 120 €"}, {"t": "Casablanca Bracelet", "u": "produit-casablanca-bracelet.html", "s": "La Permanente — 50 €"}, {"t": "Rio Bracelet", "u": "produit-rio-bracelet.html", "s": "Grand Bleu — 40 €"}, {"t": "Positano Bracelet", "u": "produit-positano-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Ibiza Bracelet", "u": "produit-ibiza-bracelet.html", "s": "Grand Bleu — 45 €"}, {"t": "Palermo Bracelet", "u": "produit-palermo-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "Tahiti Bracelet", "u": "produit-tahiti-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "The Collection", "u": "collection.html", "s": "34 handmade pieces"}, {"t": "La Permanente", "u": "collection.html?f=permanente", "s": "The pieces that stay"}, {"t": "Soleil Rouge", "u": "collection.html?g=dolce-vita", "s": "Drop 01 — Summer 2026"}, {"t": "Grand Bleu", "u": "collection.html?g=grand-bleu", "s": "Drop 02 — Summer 2026"}, {"t": "City Guides", "u": "city-guides.html", "s": "The cities we love"}, {"t": "Palermo — City Guide", "u": "ville-palermo.html", "s": "Eat, sleep, dance in Sicily"}, {"t": "Marrakech — City Guide", "u": "ville-marrakech.html", "s": "Eat, sleep, dance in Marrakech"}, {"t": "Tokyo — City Guide", "u": "ville-tokyo.html", "s": "Eat, sleep, dance in Tokyo"}, {"t": "Contact", "u": "contact.html", "s": "Write to the atelier"}, {"t": "Our World", "u": "our-world.html", "s": "The world of KIBO"}, {"t": "Private Access", "u": "private-access.html", "s": "Join the circle"}, {"t": "FAQ", "u": "faq.html", "s": "Frequently asked questions"}, {"t": "Shipping & Returns", "u": "shipping-retours.html", "s": "Shipping and returns"}, {"t": "Care Guide", "u": "care-guide.html", "s": "Caring for your pieces"}, {"t": "Legal notice", "u": "mentions-legales.html", "s": "Legal information"}];
+  function normaliser(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  var fond = document.getElementById('rechFond');
+  var champ = document.getElementById('rechInput');
+  var zone = document.getElementById('rechResultats');
+  window.kiboOuvrirRecherche = function () {
+    fond.classList.add('visible');
+    champ.value = ''; afficher('');
+    setTimeout(function () { champ.focus(); }, 50);
+  };
+  window.kiboFermerRecherche = function () { fond.classList.remove('visible'); };
+  function afficher(q) {
+    var nq = normaliser(q.trim());
+    var res = nq
+      ? INDEX.filter(function (e) { return normaliser(e.t + ' ' + e.s).indexOf(nq) !== -1; })
+      : INDEX.slice(34, 38);
+    res = res.slice(0, 8);
+    if (!res.length) {
+      zone.innerHTML = '<p class="rech-vide">Aucun r&eacute;sultat &mdash; essayez &laquo; collier &raquo;, &laquo; bracelet &raquo; ou un nom de ville.</p>';
+      return;
+    }
+    zone.innerHTML = res.map(function (e) {
+      return '<a href="' + e.u + '"><span class="rt">' + e.t + '</span><span class="rs">' + e.s + '</span></a>';
+    }).join('');
+  }
+  champ.addEventListener('input', function () { afficher(champ.value); });
+  champ.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') { var p = zone.querySelector('a'); if (p) location.href = p.getAttribute('href'); }
+  });
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') kiboFermerRecherche();
+  });
+})();
+</script>
+
+<script src="../kibo-panier.js?v=8" defer></script>
+</body>
+</html>

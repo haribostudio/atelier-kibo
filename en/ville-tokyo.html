@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tokyo — City Guide KIBO Paris</title>
+<link rel="alternate" hreflang="fr" href="https://atelier-kibo.com/ville-tokyo.html">
+<link rel="alternate" hreflang="en" href="https://atelier-kibo.com/en/ville-tokyo.html">
+<link rel="alternate" hreflang="x-default" href="https://atelier-kibo.com/ville-tokyo.html">
+<meta name="description" content="Tokyo, the KIBO city guide — where to eat, sleep, dance in Japan. Our tried-and-tested addresses, from Golden Gai to the Oi flea market.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KIBO Paris">
+<meta property="og:title" content="Tokyo — City Guide KIBO Paris">
+<meta property="og:description" content="Tokyo, the KIBO city guide — where to eat, sleep, dance in Japan. Our tried-and-tested addresses, from Golden Gai to the Oi flea market.">
+<meta property="og:url" content="https://atelier-kibo.com/en/ville-tokyo.html">
+<meta property="og:image" content="https://atelier-kibo.com/guide-tokyo-shibuya.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://atelier-kibo.com/guide-tokyo-shibuya.jpg">
+<link rel="icon" type="image/png" href="../FULL-BLACK.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono&family=Courier+Prime&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================
+     KIBO PARIS — FAQ
+     ========================================================== */
+  :root {
+    --creme: #E6E6E6;
+    --papier: #DCDCDC;
+    --terracotta: #0F2FA6;
+    --encre: #1B1E24;
+    --nuit: #10131A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--creme);
+    color: var(--encre);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.65; }
+
+  .annonce {
+    font-family: 'Courier Prime', monospace;
+    background: var(--terracotta); color: var(--creme);
+    text-align: center; padding: 10px 12px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--creme);
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
+    padding: 14px 32px;
+    border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .logo-nav img { height: 34px; display: block; }
+  .nav-centre, .nav-droite {
+    display: flex; gap: 28px; justify-content: center;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  .nav-droite { gap: 22px; justify-content: flex-end; }
+
+  main { max-width: 680px; margin: 0 auto; padding: 80px 24px 110px; }
+  .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(32px, 4vw, 48px); text-transform: uppercase; letter-spacing: 0.08em;
+    margin: 12px 0 48px; line-height: 1.1;
+  }
+  h2 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+    margin: 44px 0 14px; padding-top: 24px;
+    border-top: 1px solid rgba(27,30,36,0.15);
+  }
+  p { font-size: 12px; letter-spacing: 0.04em; line-height: 1.9; color: rgba(27,30,36,0.85); margin-bottom: 12px; }
+  p a { border-bottom: 1px solid rgba(27,30,36,0.4); padding-bottom: 1px; }
+
+  footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
+  .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .footer-droite { justify-content: flex-end; }
+  .footer-logo { text-align: center; }
+  .footer-logo img { height: 40px; }
+  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
+
+  /* ---------- Menu mobile ---------- */
+  .burger { display: none; background: none; border: none; color: inherit; cursor: pointer; padding: 4px; }
+  .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
+  .menu-mobile {
+    position: fixed; inset: 0; z-index: 300;
+    background: var(--creme); color: var(--encre);
+    display: none; flex-direction: column; justify-content: center;
+    padding: 32px 36px;
+  }
+  .menu-mobile.ouvert { display: flex; }
+  .menu-mobile a {
+    font-family: 'Space Mono', monospace; font-size: 19px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 20px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
+  }
+  .menu-mobile .fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 26px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1;
+  }
+  @media (max-width: 900px) {
+    .nav-centre { display: none; }
+    .burger { display: block; }
+  }
+
+  .groupe { font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--terracotta); margin: 48px 0 6px; }
+  details { border-bottom: 1px solid rgba(27,30,36,0.15); }
+  summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding: 16px 2px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 15px; color: var(--terracotta); transition: transform 300ms ease; flex-shrink: 0; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details .contenu { padding: 0 2px 18px; }
+  details .contenu p { margin-bottom: 10px; }
+  @media (max-width: 900px) {
+    .nav-droite { order: -1; }
+    .nav-droite a { display: none; }
+    .nav-droite .loupe { order: 2; margin-left: 4px; }
+    .logo-nav { justify-self: end; }
+  }
+  /* ---------- Recherche ---------- */
+  .loupe { background: none; border: none; cursor: pointer; padding: 4px; color: inherit; display: inline-flex; align-items: center; }
+  .loupe svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; display: block; }
+  .loupe:hover { opacity: 0.6; }
+  .rech-fond {
+    position: fixed; inset: 0; z-index: 400;
+    background: rgba(230,230,230,0.97);
+    display: none; justify-content: center;
+    padding: 14vh 6vw 40px; color: #1B1E24;
+  }
+  .rech-fond.visible { display: flex; }
+  .rech-boite { width: 100%; max-width: 640px; }
+  .rech-boite input {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid rgba(27,30,36,0.5);
+    font-family: 'Space Mono', monospace; font-size: 16px; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 12px 2px; outline: none; border-radius: 0; color: inherit;
+  }
+  .rech-boite input:focus { border-color: #1B1E24; }
+  .rech-resultats { margin-top: 28px; }
+  .rech-resultats a {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 18px;
+    padding: 13px 2px; border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .rech-resultats .rt { font-family: 'Cormorant Garamond', serif; font-size: 21px; letter-spacing: 0.04em; }
+  .rech-resultats .rs { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.55); white-space: nowrap; }
+  .rech-vide { margin-top: 28px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.55); }
+  .rech-fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 24px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
+  }
+
+  /* ---------- City Guide ville ---------- */
+  main { max-width: 720px; }
+  .chapo { font-family: 'Cormorant Garamond', serif; font-size: 19px; letter-spacing: 0.02em;
+    line-height: 1.6; color: rgba(27,30,36,0.85); margin-bottom: 40px; }
+  .note-manuscrite {
+    background: var(--papier); padding: 18px 24px; max-width: 300px;
+    transform: rotate(-2deg); margin: 8px 0 44px;
+    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    font-family: 'Caveat', cursive; font-size: 21px; letter-spacing: 0; line-height: 1.35;
+  }
+  .note-manuscrite .ast { color: var(--terracotta); }
+  .groupe-cg { font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--terracotta); margin: 48px 0 6px; padding-top: 26px; border-top: 1px solid rgba(27,30,36,0.15); }
+  .lieu { margin: 18px 0; }
+  .lieu .l-nom { font-size: 13px; letter-spacing: 0.08em; font-weight: 700; }
+  .lieu .l-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.5); margin-left: 8px; }
+  .lieu p { margin: 4px 0 0; }
+  .lieu.a-completer { opacity: 0.45; }
+  .piece-nee {
+    display: grid; grid-template-columns: 130px 1fr; gap: 22px; align-items: center;
+    border: 1px solid rgba(27,30,36,0.2); padding: 20px; margin: 56px 0 8px;
+  }
+  .piece-nee .pn-img { aspect-ratio: 1; background: var(--papier); display: flex;
+    align-items: center; justify-content: center; font-family: 'Caveat', cursive;
+    font-size: 52px; color: var(--terracotta); }
+  .cg-photo { margin: 38px 0 30px; }
+  .cg-photo img { width: 100%; display: block; }
+  .cg-photo .ph-cap { display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: rgba(27,30,36,0.5); margin-top: 8px; }
+  .cg-photo .ph-credit { white-space: nowrap; color: rgba(27,30,36,0.35); }
+  .l-ig { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--terracotta); margin-left: 10px;
+    border-bottom: 1px solid rgba(15,47,166,0.35); padding-bottom: 1px; }
+  .piece-nee .pn-et { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .piece-nee .pn-nom { font-family: 'Cormorant Garamond', serif; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em; margin: 4px 0 8px; }
+  .piece-nee a.pn-lien { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--encre); padding-bottom: 2px; }
+  .retour-carte { display: inline-block; margin-bottom: 34px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid rgba(27,30,36,0.4); padding-bottom: 2px; }
+  @media (max-width: 640px) { .piece-nee { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="annonce">Limited editions&nbsp;. Capturing energy, not trends.</div>
+
+<nav aria-label="Main navigation">
+  <a class="logo-nav" href="index.html"><img src="../FULL-BLACK.png" alt="KIBO"></a>
+  <div class="nav-centre">
+    <a href="collection.html">Collections</a>
+    <a href="our-world.html">Our World</a>
+    <a href="city-guides.html">City Guides</a>
+    <a href="private-access.html">Private Access</a>
+  </div>
+  <div class="nav-droite">
+    <a href="#">Paris / EN</a>
+    <button class="loupe" aria-label="Search" onclick="kiboOuvrirRecherche()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.6 15.6 L21 21"/></svg></button>
+    <button class="burger" aria-label="Open menu" onclick="document.getElementById('menuMobile').classList.add('ouvert')">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="menu-mobile" id="menuMobile">
+  <button class="fermer" aria-label="Close menu" onclick="document.getElementById('menuMobile').classList.remove('ouvert')">&#10005;</button>
+  <a href="collection.html">Collections</a>
+  <a href="our-world.html">Our World</a>
+    <a href="city-guides.html">City Guides</a>
+  <a href="private-access.html">Private Access</a>
+</div>
+
+<main>
+  <a class="retour-carte" href="city-guides.html">← All City Guides</a>
+  <span class="etiquette">City Guide — 03 · Japan</span>
+  <h1>Tokyo</h1>
+  <p class="chapo">Tokyo is lived neighborhood by neighborhood, like cities sewn together. The steam of the yokocho under the rails, the silence of shrines at eight in the morning, the neon replacing daylight. We left with full notebooks — and these addresses, tested one by one, that we repeat to ourselves like mantras.</p>
+  <div class="note-manuscrite">“Eight seats at the counter, in Golden Gai. The best dinner of the trip.” <span class="ast">✳︎</span></div>
+
+  <div class="cg-photo"><img src="../guide-tokyo-shibuya.jpg?v=1" alt="Shibuya Crossing, at night" loading="lazy">
+    <div class="ph-cap"><span>Shibuya Crossing, at night</span><span class="ph-credit">photo Benh Lieu Song — CC BY-SA ✳︎ while we wait for our own</span></div>
+  </div>
+
+  <p class="groupe-cg">Eat</p>
+  <div class="lieu">
+    <span class="l-nom">Barubora-ya</span><span class="l-tag">Golden Gai, Shinjuku</span>
+    <p>Eight seats, one counter, the chef cooking thirty centimeters away. Okonomiyaki, skewers, curry udon — the best dinner in Japan, no debate.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Ishibashi</span><span class="l-tag">Sotokanda</span>
+    <p>Tokyo's oldest sukiyaki — 1870, older than the Eiffel Tower. Private tatami room, hostess in kimono, wagyu dipped in beaten egg. A ceremony. Book ahead.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Asakusa Amairo</span><span class="l-tag">Asakusa</span><a class="l-ig" href="https://www.instagram.com/asakusaamairo/" target="_blank" rel="noopener">Instagram</a>
+    <p>Family-run tempura with an airy batter, the master at the stove in front of you. Arrive at noon sharp — the line is part of the ritual.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Kayaba Coffee</span><span class="l-tag">Yanaka</span><a class="l-ig" href="https://www.instagram.com/kayabacoffee/" target="_blank" rel="noopener">Instagram</a>
+    <p>A restored 1938 kissaten, tatami upstairs. Breakfast from before the modern world, in the Tokyo of cats and cemeteries.</p>
+  </div>
+
+  <p class="groupe-cg">Sleep</p>
+  <div class="lieu">
+    <span class="l-nom">The Edo Sakura</span><span class="l-tag">Iriya</span><a class="l-ig" href="https://www.instagram.com/the_edosakura_tokyo/" target="_blank" rel="noopener">Instagram</a>
+    <p>A small house set apart, between Ueno and Asakusa. Residential, silent Tokyo — the one not shown enough.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">hotel MONday Akihabara-Asakusabashi</span><span class="l-tag">Asakusabashi</span><a class="l-ig" href="https://www.instagram.com/hotelmonday_group/" target="_blank" rel="noopener">Instagram</a>
+    <p>The perfect base on the east side: Kuramae on foot, the Yamanote around the corner. Simple, clean, unbeatable.</p>
+  </div>
+
+  <div class="cg-photo"><img src="../guide-tokyo-omoide.jpg?v=1" alt="Omoide Yokocho, Shinjuku" loading="lazy">
+    <div class="ph-cap"><span>Omoide Yokocho, Shinjuku</span><span class="ph-credit">photo Dick Thomas Johnson — CC BY ✳︎ while we wait for our own</span></div>
+  </div>
+
+  <p class="groupe-cg">Party</p>
+  <div class="lieu">
+    <span class="l-nom">Golden Gai</span><span class="l-tag">Shinjuku</span><a class="l-ig" href="https://www.instagram.com/albatross_goldengai/" target="_blank" rel="noopener">Instagram</a>
+    <p>Two hundred six-seat bars in six alleys. Start at Albatross — red velvet, chandeliers, Japanese whisky — and end wherever the night decides. Cash only.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Omoide Yokocho</span><span class="l-tag">West Shinjuku</span>
+    <p>Lanterns and yakitori smoke under the rails. A drink at the counter of Nogataya, run by the old couple, before diving into Kabukichō.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Andaz Rooftop Bar</span><span class="l-tag">Toranomon, 52nd floor</span><a class="l-ig" href="https://www.instagram.com/andaztokyo/" target="_blank" rel="noopener">Instagram</a>
+    <p>The most dizzying sunset in the city. Tokyo Tower on one side, Mount Fuji if the sky allows. Book, arrive before 7 pm.</p>
+  </div>
+
+  <div class="cg-photo"><img src="../guide-tokyo-goldengai.jpg?v=1" alt="Golden Gai, six alleys, two hundred bars" loading="lazy">
+    <div class="ph-cap"><span>Golden Gai, six alleys, two hundred bars</span><span class="ph-credit">photo Alexkom000 — CC BY ✳︎ while we wait for our own</span></div>
+  </div>
+
+  <p class="groupe-cg">Shopping &amp; beads</p>
+  <div class="lieu">
+    <span class="l-nom">Oi Racecourse Flea Market</span><span class="l-tag">Ōi, on Sundays</span>
+    <p>Tokyo's largest flea market — 500 stalls at the racecourse, 80&nbsp;% locals. Kimonos, ceramics, cameras. Come early, bring cash in small bills.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Kakimori</span><span class="l-tag">Kuramae</span><a class="l-ig" href="https://www.instagram.com/kakimori_tokyoshop/" target="_blank" rel="noopener">Instagram</a>
+    <p>The made-to-order notebook: cover, papers, binding, engraving the same day. And all of Kuramae — Tokyo's Brooklyn — around it.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Re Camera</span><span class="l-tag">Taitō</span><a class="l-ig" href="https://www.instagram.com/re_camera_insta/" target="_blank" rel="noopener">Instagram</a>
+    <p>The cult camera shop. Ricoh GRs you can't find in Europe, vintage Contax, expert advice. You walk in curious, you walk out equipped.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">ManiA — Furugi 83</span><span class="l-tag">Shimokitazawa</span><a class="l-ig" href="https://www.instagram.com/mania_by_furugi83/" target="_blank" rel="noopener">Instagram</a>
+    <p>Shimokita's signature vintage Disney, in the middle of the hundred-thrift-store district. Leave room in your suitcase.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Daikanyama T-Site</span><span class="l-tag">Daikanyama</span><a class="l-ig" href="https://www.instagram.com/daikanyama.tsutaya/" target="_blank" rel="noopener">Instagram</a>
+    <p>The most beautiful bookstore in the world, three pavilions set among the trees. You lose two hours there without meaning to.</p>
+  </div>
+
+  <div class="cg-photo"><img src="../guide-tokyo-nezu.jpg?v=1" alt="Nezu Shrine, the torii tunnel" loading="lazy">
+    <div class="ph-cap"><span>Nezu Shrine, the torii tunnel</span><span class="ph-credit">photo BWard 1997 — CC BY ✳︎ while we wait for our own</span></div>
+  </div>
+
+  <p class="groupe-cg">Encounters &amp; rituals</p>
+  <div class="lieu">
+    <span class="l-nom">Meiji-jingū at opening time</span><span class="l-tag">Harajuku</span>
+    <p>A forest in the middle of the city, giant cypress torii, the row of sake barrels. Be there at 8:30, before everyone else — the crunch of gravel, and nothing else.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Nezu Shrine</span><span class="l-tag">Nezu</span><a class="l-ig" href="https://www.instagram.com/nedujinja_official/" target="_blank" rel="noopener">Instagram</a>
+    <p>The vermilion torii tunnel, the secret version of Fushimi Inari (1705). Azaleas in spring, silence all year round.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">Zōjō-ji + Tokyo Tower</span><span class="l-tag">Shibakoen</span>
+    <p>The temple and the tower in the same frame — both Tokyos in one image. Go for the photo, stay for the calm.</p>
+  </div>
+  <div class="lieu">
+    <span class="l-nom">teamLab Planets</span><span class="l-tag">Toyosu</span><a class="l-ig" href="https://www.instagram.com/teamlab.planets/" target="_blank" rel="noopener">Instagram</a>
+    <p>Barefoot in the water, surrounded by lights. Book, go after nightfall, let yourself be swallowed.</p>
+  </div>
+
+  <div class="cg-photo"><img src="../guide-tokyo-zojoji.jpg?v=1" alt="Zōjō-ji and Tokyo Tower" loading="lazy">
+    <div class="ph-cap"><span>Zōjō-ji and Tokyo Tower</span><span class="ph-credit">photo Ymblanter — CC BY-SA ✳︎ while we wait for our own</span></div>
+  </div>
+
+  <div class="piece-nee">
+    <div class="pn-img">✳︎</div>
+    <div>
+      <span class="pn-et">The piece born here</span>
+      <p class="pn-nom">Not yet</p>
+      <p style="margin-bottom:10px;">Tokyo is waiting for its piece. When it is born, it will be here.</p>
+      <a class="pn-lien" href="collection.html">See the collection&nbsp;&nbsp;→</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-haut">
+    <div class="footer-liens">
+      <a href="faq.html">FAQ</a>
+      <a href="shipping-retours.html">Shipping &amp; Returns</a>
+      <a href="care-guide.html">Care Guide</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-logo">
+      <a href="index.html"><img src="../FULL-BLACK.png" alt="KIBO"></a>
+    </div>
+    <div class="footer-liens footer-droite">
+      <a href="https://www.instagram.com/atelier.kibo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#">Spotify</a>
+    </div>
+  </div>
+  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;<a href="mentions-legales.html">Legal notice</a></p>
+</footer>
+
+
+<div class="rech-fond" id="rechFond" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="rech-fermer" aria-label="Close" onclick="kiboFermerRecherche()">&#10005;</button>
+  <div class="rech-boite">
+    <input id="rechInput" type="search" placeholder="Search for a piece, a page&hellip;" autocomplete="off">
+    <div class="rech-resultats" id="rechResultats"></div>
+  </div>
+</div>
+<script>
+(function () {
+  var INDEX = [{"t": "Palermo Necklace", "u": "produit-palermo.html", "s": "La Permanente — 180 €"}, {"t": "Limone Necklace", "u": "produit-limone.html", "s": "Soleil Rouge — 140 €"}, {"t": "Murano Necklace", "u": "produit-murano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Santorini Necklace", "u": "produit-santorini.html", "s": "Grand Bleu — 140 €"}, {"t": "Rio Necklace", "u": "produit-rio.html", "s": "Grand Bleu — 90 €"}, {"t": "Ibiza Necklace", "u": "produit-ibiza.html", "s": "Grand Bleu — 140 €"}, {"t": "Tahiti Necklace", "u": "produit-tahiti.html", "s": "La Permanente — 160 €"}, {"t": "Positano Necklace", "u": "produit-positano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Capri Necklace", "u": "produit-capri.html", "s": "Soleil Rouge — 120 €"}, {"t": "Laguna Necklace", "u": "produit-laguna.html", "s": "Soleil Rouge — 120 €"}, {"t": "Casablanca Necklace", "u": "produit-casablanca.html", "s": "La Permanente — 160 €"}, {"t": "Amore Necklace", "u": "produit-amore.html", "s": "La Permanente — 190 €"}, {"t": "Bodrum Necklace", "u": "produit-bodrum.html", "s": "Grand Bleu — 90 €"}, {"t": "Stella Necklace", "u": "produit-stella.html", "s": "Soleil Rouge — 140 €"}, {"t": "Marea Necklace", "u": "produit-marea.html", "s": "Grand Bleu — 140 €"}, {"t": "Riviera Necklace", "u": "produit-riviera.html", "s": "Soleil Rouge — 140 €"}, {"t": "Perla Bracelet", "u": "produit-perla.html", "s": "Soleil Rouge — 55 €"}, {"t": "Laguna Bracelet", "u": "produit-laguna-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Menta Bracelet", "u": "produit-menta.html", "s": "Soleil Rouge — 50 €"}, {"t": "Marina Bracelet", "u": "produit-marina.html", "s": "Grand Bleu — 50 €"}, {"t": "Mimosa Necklace", "u": "produit-mimosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Oliva Necklace", "u": "produit-oliva.html", "s": "Grand Bleu — 90 €"}, {"t": "Rosa Necklace", "u": "produit-rosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Bianca Necklace", "u": "produit-bianca.html", "s": "La Permanente — 150 €"}, {"t": "Amuleto Necklace", "u": "produit-amuleto.html", "s": "Soleil Rouge — 140 €"}, {"t": "Fiesta Necklace", "u": "produit-fiesta.html", "s": "Grand Bleu — 120 €"}, {"t": "Sunset Necklace", "u": "produit-sunset.html", "s": "Grand Bleu — 120 €"}, {"t": "Neptune Necklace", "u": "produit-neptune.html", "s": "Grand Bleu — 120 €"}, {"t": "Casablanca Bracelet", "u": "produit-casablanca-bracelet.html", "s": "La Permanente — 50 €"}, {"t": "Rio Bracelet", "u": "produit-rio-bracelet.html", "s": "Grand Bleu — 40 €"}, {"t": "Positano Bracelet", "u": "produit-positano-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Ibiza Bracelet", "u": "produit-ibiza-bracelet.html", "s": "Grand Bleu — 45 €"}, {"t": "Palermo Bracelet", "u": "produit-palermo-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "Tahiti Bracelet", "u": "produit-tahiti-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "The Collection", "u": "collection.html", "s": "34 handmade pieces"}, {"t": "La Permanente", "u": "collection.html?f=permanente", "s": "The pieces that stay"}, {"t": "Soleil Rouge", "u": "collection.html?g=dolce-vita", "s": "Drop 01 — Summer 2026"}, {"t": "Grand Bleu", "u": "collection.html?g=grand-bleu", "s": "Drop 02 — Summer 2026"}, {"t": "City Guides", "u": "city-guides.html", "s": "The cities we love"}, {"t": "Palermo — City Guide", "u": "ville-palermo.html", "s": "Eat, sleep, dance in Sicily"}, {"t": "Marrakech — City Guide", "u": "ville-marrakech.html", "s": "Eat, sleep, dance in Marrakech"}, {"t": "Tokyo — City Guide", "u": "ville-tokyo.html", "s": "Eat, sleep, dance in Tokyo"}, {"t": "Contact", "u": "contact.html", "s": "Write to the atelier"}, {"t": "Our World", "u": "our-world.html", "s": "The world of KIBO"}, {"t": "Private Access", "u": "private-access.html", "s": "Join the circle"}, {"t": "FAQ", "u": "faq.html", "s": "Frequently asked questions"}, {"t": "Shipping & Returns", "u": "shipping-retours.html", "s": "Shipping and returns"}, {"t": "Care Guide", "u": "care-guide.html", "s": "Caring for your pieces"}, {"t": "Legal notice", "u": "mentions-legales.html", "s": "Legal information"}];
+  function normaliser(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  var fond = document.getElementById('rechFond');
+  var champ = document.getElementById('rechInput');
+  var zone = document.getElementById('rechResultats');
+  window.kiboOuvrirRecherche = function () {
+    fond.classList.add('visible');
+    champ.value = ''; afficher('');
+    setTimeout(function () { champ.focus(); }, 50);
+  };
+  window.kiboFermerRecherche = function () { fond.classList.remove('visible'); };
+  function afficher(q) {
+    var nq = normaliser(q.trim());
+    var res = nq
+      ? INDEX.filter(function (e) { return normaliser(e.t + ' ' + e.s).indexOf(nq) !== -1; })
+      : INDEX.slice(34, 38);
+    res = res.slice(0, 8);
+    if (!res.length) {
+      zone.innerHTML = '<p class="rech-vide">Aucun r&eacute;sultat &mdash; essayez &laquo; collier &raquo;, &laquo; bracelet &raquo; ou un nom de ville.</p>';
+      return;
+    }
+    zone.innerHTML = res.map(function (e) {
+      return '<a href="' + e.u + '"><span class="rt">' + e.t + '</span><span class="rs">' + e.s + '</span></a>';
+    }).join('');
+  }
+  champ.addEventListener('input', function () { afficher(champ.value); });
+  champ.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') { var p = zone.querySelector('a'); if (p) location.href = p.getAttribute('href'); }
+  });
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') kiboFermerRecherche();
+  });
+})();
+</script>
+
+<script src="../kibo-panier.js?v=8" defer></script>
+</body>
+</html>

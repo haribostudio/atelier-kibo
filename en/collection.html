@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collections — KIBO Paris</title>
+<link rel="alternate" hreflang="fr" href="https://atelier-kibo.com/collection.html">
+<link rel="alternate" hreflang="en" href="https://atelier-kibo.com/en/collection.html">
+<link rel="alternate" hreflang="x-default" href="https://atelier-kibo.com/collection.html">
+<meta name="description" content="The KIBO Paris collections. Handmade necklaces, rings and bracelets, limited editions. La Permanente, Soleil Rouge, Grand Bleu.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KIBO Paris">
+<meta property="og:title" content="Collections — KIBO Paris">
+<meta property="og:description" content="The KIBO Paris collections. Handmade necklaces, rings and bracelets, limited editions. La Permanente, Soleil Rouge, Grand Bleu.">
+<meta property="og:url" content="https://atelier-kibo.com/en/collection.html">
+<meta property="og:image" content="https://atelier-kibo.com/og-home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://atelier-kibo.com/og-home.jpg">
+<link rel="icon" type="image/png" href="../FULL-BLACK.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================
+     KIBO PARIS — Page Collections
+     Même design system que la home v3 « summer memories ».
+     ========================================================== */
+  :root {
+    --creme: #E6E6E6;
+    --papier: #DCDCDC;
+    --terracotta: #0F2FA6;
+    --encre: #1B1E24;
+    --sable: #C4C4C6;
+    --nuit: #10131A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--creme);
+    color: var(--encre);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.6; }
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: 0.04em; }
+
+  .annonce {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    background: var(--terracotta); color: var(--creme);
+    text-align: center; padding: 10px 12px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--creme);
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
+    padding: 14px 32px;
+    border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .logo-nav { display: flex; align-items: center; }
+  .logo-nav img { height: 34px; display: block; }
+  .logo-nav .logo-texte { font-family: 'Caveat', cursive; font-size: 30px; font-weight: 600; letter-spacing: 0; }
+  .nav-centre { display: flex; gap: 28px; justify-content: center; text-transform: uppercase; font-size: 12px; letter-spacing: 0.16em; }
+  .nav-droite { display: flex; gap: 22px; text-transform: uppercase; font-size: 12px; letter-spacing: 0.16em; }
+
+  /* ---------- En-tête de collection ---------- */
+  .entete { padding: 88px 6vw 56px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; }
+  .entete .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .entete h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(38px, 4.6vw, 64px); text-transform: uppercase; letter-spacing: 0.08em;
+    margin-top: 10px; line-height: 1.1;
+  }
+  .entete .sous { margin-top: 14px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.7); }
+  .entete-note {
+    background: var(--papier); padding: 18px 24px; max-width: 200px;
+    transform: rotate(2deg); box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
+    font-family: 'Caveat', cursive; font-size: 20px; letter-spacing: 0; text-align: center;
+  }
+  .entete-note .ast { color: var(--terracotta); display: block; font-size: 15px; margin-top: 4px; font-family: 'Space Mono', monospace; }
+
+  /* ---------- Filtres ---------- */
+  .filtres {
+    display: flex; gap: 28px; padding: 0 6vw 28px;
+    border-bottom: 1px solid rgba(27,30,36,0.12);
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  .filtre { background: none; border: none; font: inherit; letter-spacing: inherit; text-transform: inherit; color: rgba(27,30,36,0.55); cursor: pointer; padding: 0 0 4px; }
+  .filtre:hover { color: var(--encre); }
+  .filtre.actif { color: var(--terracotta); border-bottom: 1px solid var(--terracotta); }
+
+  /* ---------- Grille ---------- */
+  .grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 28px 6vw 12px; }
+  .drop-groupe:last-of-type .grille { padding-bottom: 96px; }
+  .produit { display: block; transition: opacity 300ms ease; }
+  .produit.cache { display: none; }
+  .produit-photo {
+    aspect-ratio: 1 / 1; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(230,230,230,0.65); font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    text-align: center; padding: 10px;
+    transition: transform 400ms ease;
+  }
+  .produit-cartel { margin-top: 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; }
+  .produit-cartel .prix { display: block; margin-top: 3px; color: rgba(27,30,36,0.65); }
+  /* Photos produits : calque ::before + zoom au survol */
+  .produit-photo::before {
+    content: ''; position: absolute; inset: 0;
+    background-position: center; background-size: cover; background-repeat: no-repeat;
+    transition: transform 900ms cubic-bezier(0.16,1,0.3,1);
+  }
+  .produit:hover .produit-photo::before { transform: scale(1.07); }
+  .ph-palermo::before { background-image: url('../produit-palermo.jpg?v=4'); }
+  .ph-limone::before { background-image: url('../produit-limone.jpg?v=4'); }
+  .ph-murano::before { background-image: url('../produit-murano.jpg?v=4'); }
+  .ph-santorini::before { background-image: url('../produit-santorini.jpg?v=4'); }
+  .ph-rio::before { background-image: url('../produit-rio.jpg?v=4'); }
+  .ph-ibiza::before { background-image: url('../produit-ibiza.jpg?v=4'); }
+  .ph-tahiti::before { background-image: url('../produit-tahiti.jpg?v=4'); }
+  .ph-positano::before { background-image: url('../produit-positano.jpg?v=4'); }
+  .ph-capri::before { background-image: url('../produit-capri.jpg?v=4'); }
+  .ph-laguna::before { background-image: url('../produit-laguna.jpg?v=4'); }
+  .ph-casablanca::before { background-image: url('../produit-casablanca.jpg?v=4'); }
+  .ph-amore::before { background-image: url('../produit-amore.jpg?v=4'); }
+  .ph-bodrum::before { background-image: url('../produit-bodrum.jpg?v=4'); }
+  .ph-stella::before { background-image: url('../produit-stella.jpg?v=4'); }
+  .ph-marea::before { background-image: url('../produit-marea.jpg?v=4'); }
+  .ph-riviera::before { background-image: url('../produit-riviera.jpg?v=4'); }
+  .ph-perla::before { background-image: url('../produit-perla.jpg?v=4'); }
+  .ph-laguna-bracelet::before { background-image: url('../produit-laguna-bracelet.jpg?v=4'); }
+  .ph-menta::before { background-image: url('../produit-menta.jpg?v=4'); }
+  .ph-marina::before { background-image: url('../produit-marina.jpg?v=4'); }
+  .ph-mimosa::before { background-image: url('../produit-mimosa.jpg?v=4'); }
+  .ph-oliva::before { background-image: url('../produit-oliva.jpg?v=4'); }
+  .ph-rosa::before { background-image: url('../produit-rosa.jpg?v=4'); }
+  .ph-bianca::before { background-image: url('../produit-bianca.jpg?v=4'); }
+  .ph-amuleto::before { background-image: url('../produit-amuleto.jpg?v=4'); }
+  .ph-fiesta::before { background-image: url('../produit-fiesta.jpg?v=4'); }
+  .ph-sunset::before { background-image: url('../produit-sunset.jpg?v=4'); }
+  .ph-neptune::before { background-image: url('../produit-neptune.jpg?v=4'); }
+  .ph-casablanca-bracelet::before { background-image: url('../produit-casablanca-bracelet.jpg?v=4'); }
+  .ph-rio-bracelet::before { background-image: url('../produit-rio-bracelet.jpg?v=4'); }
+  .ph-positano-bracelet::before { background-image: url('../produit-positano-bracelet.jpg?v=4'); }
+  .ph-ibiza-bracelet::before { background-image: url('../produit-ibiza-bracelet.jpg?v=4'); }
+  .ph-palermo-bracelet::before { background-image: url('../produit-palermo-bracelet.jpg?v=4'); }
+  .ph-tahiti-bracelet::before { background-image: url('../produit-tahiti-bracelet.jpg?v=4'); }
+  /* Cartes avec photo édito : bascule vers la 2e image, pas de zoom */
+  .ph-amore::after, .ph-menta::after, .ph-tahiti::after, .ph-rio::after,
+  .ph-bianca::after, .ph-neptune::after, .ph-sunset::after,
+  .ph-palermo::after, .ph-amuleto::after {
+    content: ''; position: absolute; inset: 0;
+    opacity: 0; transition: opacity 400ms ease;
+  }
+  .ph-amore::after { background: url('../produit-amore-2.jpg') center 25% / cover no-repeat; }
+  .ph-menta::after { background: url('../produit-menta-2.jpg') center / cover no-repeat; }
+  .ph-bianca::after { background: url('../produit-bianca-2.jpg') center / cover no-repeat; }
+  .ph-neptune::after { background: url('../produit-neptune-2.jpg') center / cover no-repeat; }
+  .ph-sunset::after { background: url('../produit-sunset-2.jpg') center / cover no-repeat; }
+  .ph-tahiti::after { background: url('../produit-tahiti-2.jpg') center 25% / cover no-repeat; }
+  .ph-rio::after { background: url('../produit-rio-2.jpg') center 25% / cover no-repeat; }
+  .ph-palermo::after { background: url('../produit-palermo-2.jpg') center 20% / cover no-repeat; }
+  .ph-amuleto::after { background: url('../produit-amuleto-2.jpg') center 30% / cover no-repeat; }
+  .produit:hover .ph-amore::after, .produit:hover .ph-menta::after,
+  .produit:hover .ph-tahiti::after, .produit:hover .ph-rio::after,
+  .produit:hover .ph-bianca::after, .produit:hover .ph-neptune::after, .produit:hover .ph-sunset::after,
+  .produit:hover .ph-palermo::after, .produit:hover .ph-amuleto::after { opacity: 1; }
+  .produit:hover .ph-amore::before, .produit:hover .ph-menta::before,
+  .produit:hover .ph-tahiti::before, .produit:hover .ph-rio::before,
+  .produit:hover .ph-bianca::before, .produit:hover .ph-neptune::before, .produit:hover .ph-sunset::before,
+  .produit:hover .ph-palermo::before, .produit:hover .ph-amuleto::before { transform: none; }
+  /* ---------- Têtes de sections / drops ---------- */
+  .drop-tete { padding: 72px 6vw 0; }
+  .drop-groupe:first-of-type .drop-tete { padding-top: 44px; }
+  .drop-sur { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .drop-tete h2 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(28px, 3.2vw, 44px); text-transform: uppercase; letter-spacing: 0.08em;
+    margin-top: 8px; line-height: 1.1;
+  }
+  .drop-sous { margin-top: 8px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.6); }
+  .drop-groupe.cache { display: none; }
+
+  footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
+  .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .footer-droite { justify-content: flex-end; }
+  .footer-logo { text-align: center; }
+  .footer-logo img { height: 40px; }
+  .footer-logo .logo-texte { font-family: 'Caveat', cursive; font-size: 34px; font-weight: 600; }
+  .footer-logo .soleil { color: var(--terracotta); display: block; font-size: 14px; margin-top: 2px; }
+  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
+
+  .apparait { opacity: 0; transform: translateY(14px); transition: opacity 600ms cubic-bezier(0.16,1,0.3,1), transform 600ms cubic-bezier(0.16,1,0.3,1); }
+  .apparait.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .nav-centre { display: none; }
+    .entete { grid-template-columns: 1fr; padding-top: 56px; }
+    .entete-note { display: none; }
+    .filtres { overflow-x: auto; padding-bottom: 16px; }
+    .grille { grid-template-columns: 1fr 1fr; }
+    .footer-haut { grid-template-columns: 1fr; text-align: center; }
+    .footer-liens { justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .apparait { transition-duration: 150ms; transform: none; }
+  }
+
+  /* ---------- Menu mobile ---------- */
+  .burger { display: none; background: none; border: none; color: inherit; cursor: pointer; padding: 4px; }
+  .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
+  .menu-mobile {
+    position: fixed; inset: 0; z-index: 300;
+    background: var(--creme, #E6E6E6); color: var(--encre);
+    display: none; flex-direction: column; justify-content: center;
+    padding: 32px 36px;
+  }
+  .menu-mobile.ouvert { display: flex; }
+  .menu-mobile a {
+    font-family: 'Space Mono', monospace; font-size: 19px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 20px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
+  }
+  .menu-mobile .fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 26px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1;
+  }
+  @media (max-width: 900px) { .burger { display: block; } }
+
+  /* ---------- Pop-up newsletter ---------- */
+  .popup-fond {
+    position: fixed; inset: 0; z-index: 500;
+    background: rgba(16,19,26,0.55);
+    display: none; align-items: center; justify-content: center; padding: 24px;
+  }
+  .popup-fond.visible { display: flex; }
+  .popup {
+    background: #E6E6E6; color: #1B1E24; max-width: 400px; width: 100%;
+    padding: 40px 36px 32px; position: relative; text-align: center;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+  }
+  .popup .fermer-popup {
+    position: absolute; top: 12px; right: 16px;
+    background: none; border: none; font-size: 20px; cursor: pointer;
+    color: inherit; font-family: inherit; line-height: 1; padding: 4px;
+  }
+  .popup .dix {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; line-height: 1;
+    color: #0F2FA6; margin-bottom: 8px;
+  }
+  .popup h3 {
+    font-family: 'Space Mono', monospace; font-weight: 400; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 8px;
+  }
+  .popup p { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.04em; line-height: 1.7; color: rgba(27,30,36,0.7); margin-bottom: 20px; }
+  .popup form { display: flex; flex-direction: column; gap: 12px; }
+  .popup input[type="email"] {
+    background: transparent; border: none; border-bottom: 1px solid rgba(27,30,36,0.4);
+    font-family: 'Space Mono', monospace; font-size: 13px; padding: 10px 2px;
+    outline: none; border-radius: 0; text-align: center; color: inherit;
+  }
+  .popup input[type="email"]:focus { border-color: #1B1E24; }
+  .popup button[type="submit"] {
+    background: #1B1E24; color: #E6E6E6; border: none;
+    font-family: 'Space Mono', monospace; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.16em; padding: 14px; cursor: pointer;
+  }
+  .popup .non-merci {
+    background: none; border: none; font-family: 'Space Mono', monospace; font-size: 10px;
+    text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.5);
+    cursor: pointer; margin-top: 4px; text-decoration: underline;
+  }
+  .popup .popup-merci { display: none; font-family: 'Cormorant Garamond', serif; font-size: 20px; }
+  @media (max-width: 900px) {
+    .nav-droite { order: -1; }
+    .nav-droite a { display: none; }
+    .nav-droite .loupe { order: 2; margin-left: 4px; }
+    .logo-nav { justify-self: end; }
+  }
+  /* ---------- Recherche ---------- */
+  .loupe { background: none; border: none; cursor: pointer; padding: 4px; color: inherit; display: inline-flex; align-items: center; }
+  .loupe svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; display: block; }
+  .loupe:hover { opacity: 0.6; }
+  .rech-fond {
+    position: fixed; inset: 0; z-index: 400;
+    background: rgba(230,230,230,0.97);
+    display: none; justify-content: center;
+    padding: 14vh 6vw 40px; color: #1B1E24;
+  }
+  .rech-fond.visible { display: flex; }
+  .rech-boite { width: 100%; max-width: 640px; }
+  .rech-boite input {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid rgba(27,30,36,0.5);
+    font-family: 'Space Mono', monospace; font-size: 16px; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 12px 2px; outline: none; border-radius: 0; color: inherit;
+  }
+  .rech-boite input:focus { border-color: #1B1E24; }
+  .rech-resultats { margin-top: 28px; }
+  .rech-resultats a {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 18px;
+    padding: 13px 2px; border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .rech-resultats .rt { font-family: 'Cormorant Garamond', serif; font-size: 21px; letter-spacing: 0.04em; }
+  .rech-resultats .rs { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.55); white-space: nowrap; }
+  .rech-vide { margin-top: 28px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.55); }
+  .rech-fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 24px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="annonce">Limited editions&nbsp;. Capturing energy, not trends.</div>
+
+<nav aria-label="Main navigation">
+  <a class="logo-nav" href="index.html">
+    <img src="../FULL-BLACK.png" alt="KIBO" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'">
+  </a>
+  <div class="nav-centre">
+    <a href="collection.html">Collections</a>
+    <a href="our-world.html">Our World</a>
+    <a href="city-guides.html">City Guides</a>
+    <a href="private-access.html">Private Access</a>
+  </div>
+  <div class="nav-droite">
+    <a href="#">Paris / EN</a>
+    <button class="loupe" aria-label="Search" onclick="kiboOuvrirRecherche()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.6 15.6 L21 21"/></svg></button>
+    <button class="burger" aria-label="Open menu" onclick="document.getElementById('menuMobile').classList.add('ouvert')">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="menu-mobile" id="menuMobile">
+  <button class="fermer" aria-label="Close menu" onclick="document.getElementById('menuMobile').classList.remove('ouvert')">&#10005;</button>
+  <a href="collection.html">Collections</a>
+  <a href="our-world.html">Our World</a>
+    <a href="city-guides.html">City Guides</a>
+  <a href="private-access.html">Private Access</a>
+</div>
+
+<header class="entete">
+  <div class="apparait">
+    <p class="etiquette">Summer 2026</p>
+    <h1>The Collection</h1>
+    <p class="sous">La Permanente, Soleil Rouge, Grand Bleu — 34 handmade pieces.</p>
+  </div>
+  <div class="entete-note apparait">
+    Made by hand,<br>worn for memories
+    <span class="ast">✳︎</span>
+  </div>
+</header>
+
+<div class="filtres" role="tablist" aria-label="Filter pieces">
+  <button class="filtre actif" data-filtre="tout">All</button>
+  <button class="filtre" data-filtre="permanente">La Permanente</button>
+  <button class="filtre" data-filtre="collier">Necklaces</button>
+  <button class="filtre" data-filtre="bracelet">Bracelets</button>
+</div>
+
+<div class="drop-groupe" data-groupe="permanente">
+  <header class="drop-tete apparait">
+    <span class="drop-sur">La Permanente</span>
+    <h2 class="serif">Always there</h2>
+    <p class="drop-sous">The pieces that stay, season after season.</p>
+  </header>
+  <section class="grille">
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-palermo.html">
+      <div class="produit-photo ph-palermo"></div>
+      <p class="produit-cartel">Palermo Necklace<span class="prix">180&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-palermo-bracelet.html">
+      <div class="produit-photo ph-palermo-bracelet"></div>
+      <p class="produit-cartel">Palermo Bracelet<span class="prix">55&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-tahiti.html">
+      <div class="produit-photo ph-tahiti"></div>
+      <p class="produit-cartel">Tahiti Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-tahiti-bracelet.html">
+      <div class="produit-photo ph-tahiti-bracelet"></div>
+      <p class="produit-cartel">Tahiti Bracelet<span class="prix">55&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-casablanca.html">
+      <div class="produit-photo ph-casablanca"></div>
+      <p class="produit-cartel">Casablanca Necklace<span class="prix">160&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" data-collection="permanente" href="produit-casablanca-bracelet.html">
+      <div class="produit-photo ph-casablanca-bracelet"></div>
+      <p class="produit-cartel">Casablanca Bracelet<span class="prix">50&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-amore.html">
+      <div class="produit-photo ph-amore"></div>
+      <p class="produit-cartel">Amore Necklace<span class="prix">190&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" data-collection="permanente" href="produit-bianca.html">
+      <div class="produit-photo ph-bianca"></div>
+      <p class="produit-cartel">Bianca Necklace<span class="prix">150&nbsp;€</span></p>
+    </a>
+  </section>
+</div>
+
+<div class="drop-groupe" data-groupe="dolce-vita">
+  <header class="drop-tete apparait">
+    <span class="drop-sur">Drop 01 — Summer 2026</span>
+    <h2 class="serif">Soleil Rouge</h2>
+    <p class="drop-sous">The Italian Riviera, the midday light, the sweetness of citrus.</p>
+  </header>
+  <section class="grille">
+    <a class="produit apparait" data-type="collier" href="produit-positano.html">
+      <div class="produit-photo ph-positano"></div>
+      <p class="produit-cartel">Positano Necklace<span class="prix">120&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-positano-bracelet.html">
+      <div class="produit-photo ph-positano-bracelet"></div>
+      <p class="produit-cartel">Positano Bracelet<span class="prix">45&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-laguna.html">
+      <div class="produit-photo ph-laguna"></div>
+      <p class="produit-cartel">Laguna Necklace<span class="prix">120&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-laguna-bracelet.html">
+      <div class="produit-photo ph-laguna-bracelet"></div>
+      <p class="produit-cartel">Laguna Bracelet<span class="prix">45&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-limone.html">
+      <div class="produit-photo ph-limone"></div>
+      <p class="produit-cartel">Limone Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-murano.html">
+      <div class="produit-photo ph-murano"></div>
+      <p class="produit-cartel">Murano Necklace<span class="prix">120&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-capri.html">
+      <div class="produit-photo ph-capri"></div>
+      <p class="produit-cartel">Capri Necklace<span class="prix">120&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-riviera.html">
+      <div class="produit-photo ph-riviera"></div>
+      <p class="produit-cartel">Riviera Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-stella.html">
+      <div class="produit-photo ph-stella"></div>
+      <p class="produit-cartel">Stella Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-amuleto.html">
+      <div class="produit-photo ph-amuleto"></div>
+      <p class="produit-cartel">Amuleto Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-perla.html">
+      <div class="produit-photo ph-perla"></div>
+      <p class="produit-cartel">Perla Bracelet<span class="prix">55&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-menta.html">
+      <div class="produit-photo ph-menta"></div>
+      <p class="produit-cartel">Menta Bracelet<span class="prix">50&nbsp;€</span></p>
+    </a>
+  </section>
+</div>
+
+<div class="drop-groupe" data-groupe="grand-bleu">
+  <header class="drop-tete apparait">
+    <span class="drop-sur">Drop 02 — Summer 2026</span>
+    <h2 class="serif">Grand Bleu</h2>
+    <p class="drop-sous">The islands, the deep sea, the sun going down.</p>
+  </header>
+  <section class="grille">
+    <a class="produit apparait" data-type="collier" href="produit-ibiza.html">
+      <div class="produit-photo ph-ibiza"></div>
+      <p class="produit-cartel">Ibiza Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-ibiza-bracelet.html">
+      <div class="produit-photo ph-ibiza-bracelet"></div>
+      <p class="produit-cartel">Ibiza Bracelet<span class="prix">45&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-rio.html">
+      <div class="produit-photo ph-rio"></div>
+      <p class="produit-cartel">Rio Necklace<span class="prix">90&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-rio-bracelet.html">
+      <div class="produit-photo ph-rio-bracelet"></div>
+      <p class="produit-cartel">Rio Bracelet<span class="prix">40&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-bodrum.html">
+      <div class="produit-photo ph-bodrum"></div>
+      <p class="produit-cartel">Bodrum Necklace<span class="prix">90&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-mimosa.html">
+      <div class="produit-photo ph-mimosa"></div>
+      <p class="produit-cartel">Mimosa Necklace<span class="prix">90&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-oliva.html">
+      <div class="produit-photo ph-oliva"></div>
+      <p class="produit-cartel">Oliva Necklace<span class="prix">90&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-rosa.html">
+      <div class="produit-photo ph-rosa"></div>
+      <p class="produit-cartel">Rosa Necklace<span class="prix">90&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-santorini.html">
+      <div class="produit-photo ph-santorini"></div>
+      <p class="produit-cartel">Santorini Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-marea.html">
+      <div class="produit-photo ph-marea"></div>
+      <p class="produit-cartel">Marea Necklace<span class="prix">140&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-sunset.html">
+      <div class="produit-photo ph-sunset"></div>
+      <p class="produit-cartel">Sunset Necklace<span class="prix">120&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-fiesta.html">
+      <div class="produit-photo ph-fiesta"></div>
+      <p class="produit-cartel">Fiesta Necklace<span class="prix">120&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="collier" href="produit-neptune.html">
+      <div class="produit-photo ph-neptune"></div>
+      <p class="produit-cartel">Neptune Necklace<span class="prix">120&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" data-type="bracelet" href="produit-marina.html">
+      <div class="produit-photo ph-marina"></div>
+      <p class="produit-cartel">Marina Bracelet<span class="prix">50&nbsp;€</span></p>
+    </a>
+    <a class="produit apparait" href="sur-mesure.html">
+      <div class="produit-photo" style="background:url('../carte-sur-mesure.jpg') center/cover no-repeat #E6E6E6;"></div>
+      <p class="produit-cartel">Made to order<span class="prix">The Atelier</span></p>
+    </a>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-haut">
+    <div class="footer-liens">
+      <a href="faq.html">FAQ</a>
+      <a href="shipping-retours.html">Shipping &amp; Returns</a>
+      <a href="care-guide.html">Care Guide</a>
+      <a href="contact.html">Contact</a>
+      <a href="mentions-legales.html">Legal notice</a>
+    </div>
+    <div class="footer-logo">
+      <a href="index.html"><img src="../FULL-BLACK.png" alt="KIBO" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'"></a>
+      <span class="soleil">☀</span>
+    </div>
+    <div class="footer-liens footer-droite">
+      <a href="https://www.instagram.com/atelier.kibo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#">Spotify</a>
+    </div>
+  </div>
+  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;All rights reserved</p>
+</footer>
+
+<script>
+(function () {
+  /* Apparitions au scroll */
+  var obs = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (e) {
+      if (e.isIntersecting) {
+        var freres = e.target.parentElement.querySelectorAll('.apparait');
+        var i = Array.prototype.indexOf.call(freres, e.target);
+        e.target.style.transitionDelay = (i > 0 ? (i % 4) * 80 : 0) + 'ms';
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.apparait').forEach(function (el) { obs.observe(el); });
+
+  /* Filtres */
+  var boutons = document.querySelectorAll('.filtre');
+  boutons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      boutons.forEach(function (x) { x.classList.remove('actif'); });
+      b.classList.add('actif');
+      var f = b.getAttribute('data-filtre');
+      document.querySelectorAll('.produit').forEach(function (p) {
+        var visible = (f === 'tout') ||
+          (f === 'permanente' ? p.getAttribute('data-collection') === 'permanente'
+                              : p.getAttribute('data-type') === f);
+        p.classList.toggle('cache', !visible);
+      });
+      document.querySelectorAll('.drop-groupe').forEach(function (g) {
+        var reste = g.querySelectorAll('.produit:not(.cache)').length;
+        g.classList.toggle('cache', reste === 0);
+      });
+    });
+  });
+
+  /* Deep-link ?g=dolce-vita / ?g=grand-bleu : défiler vers le groupe */
+  var g = new URLSearchParams(location.search).get('g');
+  if (g) {
+    var grp = document.querySelector('.drop-groupe[data-groupe="' + g + '"]');
+    if (grp) setTimeout(function () { grp.scrollIntoView({ behavior: 'smooth' }); }, 400);
+  }
+
+  /* Deep-link ?f=permanente */
+  var param = new URLSearchParams(location.search).get('f');
+  if (param) {
+    var cible = document.querySelector('.filtre[data-filtre="' + param + '"]');
+    if (cible) cible.click();
+  }
+})();
+</script>
+
+
+<div class="popup-fond" id="popupNews" role="dialog" aria-modal="true" aria-label="Newsletter">
+  <div class="popup">
+    <button class="fermer-popup" aria-label="Close" onclick="kiboFermerPopup()">&#10005;</button>
+    <div class="dix">&minus;10&nbsp;%</div>
+    <h3>Join the circle</h3>
+    <p>Early access to the editions, and 10&nbsp;% off your first piece.</p>
+    <form id="popupForm">
+      <input type="email" name="EMAIL" placeholder="YOUR EMAIL" required autocomplete="email">
+      <button type="submit">Get my code</button>
+      <button type="button" class="non-merci" onclick="kiboFermerPopup()">No thanks</button>
+    </form>
+    <div class="popup-merci" id="popupMerci">Welcome to the circle.<br>Your code: <strong>CERCLE10</strong></div>
+  </div>
+</div>
+<script>
+(function () {
+  /* BRANCHEMENT NEWSLETTER (Brevo) : coller ici l'URL d'action du formulaire.
+     Tant que POPUP_ACTION est vide, mode démonstration (aucun envoi). */
+  var POPUP_ACTION = '';
+  var CLE = 'kibo_popup_vu';
+  window.kiboFermerPopup = function () {
+    document.getElementById('popupNews').classList.remove('visible');
+    try { localStorage.setItem(CLE, '1'); } catch (e) {}
+  };
+  var deja = false;
+  try { deja = localStorage.getItem(CLE) === '1'; } catch (e) {}
+  if (!deja) {
+    setTimeout(function () {
+      document.getElementById('popupNews').classList.add('visible');
+    }, 6000);
+  }
+  document.getElementById('popupForm').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (POPUP_ACTION) {
+      var fd = new FormData(ev.target);
+      fetch(POPUP_ACTION, { method: 'POST', body: fd, mode: 'no-cors' });
+    }
+    ev.target.style.display = 'none';
+    document.getElementById('popupMerci').style.display = 'block';
+    try { localStorage.setItem(CLE, '1'); } catch (e) {}
+    setTimeout(window.kiboFermerPopup, 3500);
+  });
+})();
+</script>
+
+
+<div class="rech-fond" id="rechFond" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="rech-fermer" aria-label="Close" onclick="kiboFermerRecherche()">&#10005;</button>
+  <div class="rech-boite">
+    <input id="rechInput" type="search" placeholder="Search for a piece, a page&hellip;" autocomplete="off">
+    <div class="rech-resultats" id="rechResultats"></div>
+  </div>
+</div>
+<script>
+(function () {
+  var INDEX = [{"t": "Palermo Necklace", "u": "produit-palermo.html", "s": "La Permanente — 180 €"}, {"t": "Limone Necklace", "u": "produit-limone.html", "s": "Soleil Rouge — 140 €"}, {"t": "Murano Necklace", "u": "produit-murano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Santorini Necklace", "u": "produit-santorini.html", "s": "Grand Bleu — 140 €"}, {"t": "Rio Necklace", "u": "produit-rio.html", "s": "Grand Bleu — 90 €"}, {"t": "Ibiza Necklace", "u": "produit-ibiza.html", "s": "Grand Bleu — 140 €"}, {"t": "Tahiti Necklace", "u": "produit-tahiti.html", "s": "La Permanente — 160 €"}, {"t": "Positano Necklace", "u": "produit-positano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Capri Necklace", "u": "produit-capri.html", "s": "Soleil Rouge — 120 €"}, {"t": "Laguna Necklace", "u": "produit-laguna.html", "s": "Soleil Rouge — 120 €"}, {"t": "Casablanca Necklace", "u": "produit-casablanca.html", "s": "La Permanente — 160 €"}, {"t": "Amore Necklace", "u": "produit-amore.html", "s": "La Permanente — 190 €"}, {"t": "Bodrum Necklace", "u": "produit-bodrum.html", "s": "Grand Bleu — 90 €"}, {"t": "Stella Necklace", "u": "produit-stella.html", "s": "Soleil Rouge — 140 €"}, {"t": "Marea Necklace", "u": "produit-marea.html", "s": "Grand Bleu — 140 €"}, {"t": "Riviera Necklace", "u": "produit-riviera.html", "s": "Soleil Rouge — 140 €"}, {"t": "Perla Bracelet", "u": "produit-perla.html", "s": "Soleil Rouge — 55 €"}, {"t": "Laguna Bracelet", "u": "produit-laguna-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Menta Bracelet", "u": "produit-menta.html", "s": "Soleil Rouge — 50 €"}, {"t": "Marina Bracelet", "u": "produit-marina.html", "s": "Grand Bleu — 50 €"}, {"t": "Mimosa Necklace", "u": "produit-mimosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Oliva Necklace", "u": "produit-oliva.html", "s": "Grand Bleu — 90 €"}, {"t": "Rosa Necklace", "u": "produit-rosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Bianca Necklace", "u": "produit-bianca.html", "s": "La Permanente — 150 €"}, {"t": "Amuleto Necklace", "u": "produit-amuleto.html", "s": "Soleil Rouge — 140 €"}, {"t": "Fiesta Necklace", "u": "produit-fiesta.html", "s": "Grand Bleu — 120 €"}, {"t": "Sunset Necklace", "u": "produit-sunset.html", "s": "Grand Bleu — 120 €"}, {"t": "Neptune Necklace", "u": "produit-neptune.html", "s": "Grand Bleu — 120 €"}, {"t": "Casablanca Bracelet", "u": "produit-casablanca-bracelet.html", "s": "La Permanente — 50 €"}, {"t": "Rio Bracelet", "u": "produit-rio-bracelet.html", "s": "Grand Bleu — 40 €"}, {"t": "Positano Bracelet", "u": "produit-positano-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Ibiza Bracelet", "u": "produit-ibiza-bracelet.html", "s": "Grand Bleu — 45 €"}, {"t": "Palermo Bracelet", "u": "produit-palermo-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "Tahiti Bracelet", "u": "produit-tahiti-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "The Collection", "u": "collection.html", "s": "34 handmade pieces"}, {"t": "La Permanente", "u": "collection.html?f=permanente", "s": "The pieces that stay"}, {"t": "Soleil Rouge", "u": "collection.html?g=dolce-vita", "s": "Drop 01 — Summer 2026"}, {"t": "Grand Bleu", "u": "collection.html?g=grand-bleu", "s": "Drop 02 — Summer 2026"}, {"t": "City Guides", "u": "city-guides.html", "s": "The cities we love"}, {"t": "Palermo — City Guide", "u": "ville-palermo.html", "s": "Eat, sleep, dance in Sicily"}, {"t": "Contact", "u": "contact.html", "s": "Write to the atelier"}, {"t": "Our World", "u": "our-world.html", "s": "The world of KIBO"}, {"t": "Private Access", "u": "private-access.html", "s": "Join the circle"}, {"t": "FAQ", "u": "faq.html", "s": "Frequently asked questions"}, {"t": "Shipping & Returns", "u": "shipping-retours.html", "s": "Shipping and returns"}, {"t": "Care Guide", "u": "care-guide.html", "s": "Caring for your pieces"}, {"t": "Legal notice", "u": "mentions-legales.html", "s": "Legal information"}];
+  function normaliser(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  var fond = document.getElementById('rechFond');
+  var champ = document.getElementById('rechInput');
+  var zone = document.getElementById('rechResultats');
+  window.kiboOuvrirRecherche = function () {
+    fond.classList.add('visible');
+    champ.value = ''; afficher('');
+    setTimeout(function () { champ.focus(); }, 50);
+  };
+  window.kiboFermerRecherche = function () { fond.classList.remove('visible'); };
+  function afficher(q) {
+    var nq = normaliser(q.trim());
+    var res = nq
+      ? INDEX.filter(function (e) { return normaliser(e.t + ' ' + e.s).indexOf(nq) !== -1; })
+      : INDEX.slice(34, 38);
+    res = res.slice(0, 8);
+    if (!res.length) {
+      zone.innerHTML = '<p class="rech-vide">Aucun r&eacute;sultat &mdash; essayez &laquo; collier &raquo;, &laquo; bracelet &raquo; ou un nom de ville.</p>';
+      return;
+    }
+    zone.innerHTML = res.map(function (e) {
+      return '<a href="' + e.u + '"><span class="rt">' + e.t + '</span><span class="rs">' + e.s + '</span></a>';
+    }).join('');
+  }
+  champ.addEventListener('input', function () { afficher(champ.value); });
+  champ.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') { var p = zone.querySelector('a'); if (p) location.href = p.getAttribute('href'); }
+  });
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') kiboFermerRecherche();
+  });
+})();
+</script>
+
+<script src="../kibo-panier.js?v=8" defer></script>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marrakech — City Guide KIBO Paris</title>
+<link rel="alternate" hreflang="fr" href="https://atelier-kibo.com/ville-marrakech.html">
+<link rel="alternate" hreflang="en" href="https://atelier-kibo.com/en/ville-marrakech.html">
+<link rel="alternate" hreflang="x-default" href="https://atelier-kibo.com/ville-marrakech.html">
+<meta name="description" content="One day in Marrakech — the KIBO city guide. Get lost. Stay curious. Eat with your hands. The city where the first KIBO pieces were born.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KIBO Paris">
+<meta property="og:title" content="Marrakech — City Guide KIBO Paris">
+<meta property="og:description" content="One day in Marrakech — the KIBO city guide. Get lost. Stay curious. Eat with your hands. The city where the first KIBO pieces were born.">
+<meta property="og:url" content="https://atelier-kibo.com/en/ville-marrakech.html">
+<meta property="og:image" content="https://atelier-kibo.com/FULL-BLACK.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://atelier-kibo.com/FULL-BLACK.png">
+<link rel="icon" type="image/png" href="../FULL-BLACK.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono&family=Courier+Prime&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================
+     KIBO PARIS — FAQ
+     ========================================================== */
+  :root {
+    --creme: #E6E6E6;
+    --papier: #DCDCDC;
+    --terracotta: #0F2FA6;
+    --encre: #1B1E24;
+    --nuit: #10131A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--creme);
+    color: var(--encre);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.65; }
+
+  .annonce {
+    font-family: 'Courier Prime', monospace;
+    background: var(--terracotta); color: var(--creme);
+    text-align: center; padding: 10px 12px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--creme);
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
+    padding: 14px 32px;
+    border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .logo-nav img { height: 34px; display: block; }
+  .nav-centre, .nav-droite {
+    display: flex; gap: 28px; justify-content: center;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  .nav-droite { gap: 22px; justify-content: flex-end; }
+
+  main { max-width: 680px; margin: 0 auto; padding: 80px 24px 110px; position: relative; }
+  .tampon { position: absolute; top: 96px; right: -18px; width: 210px;
+    transform: rotate(-9deg); mix-blend-mode: multiply; opacity: 0.9;
+    pointer-events: none; user-select: none; }
+  @media (max-width: 760px) { .tampon { width: 128px; right: 4px; top: 84px; } }
+  .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(32px, 4vw, 48px); text-transform: uppercase; letter-spacing: 0.08em;
+    margin: 12px 0 48px; line-height: 1.1;
+  }
+  h2 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+    margin: 44px 0 14px; padding-top: 24px;
+    border-top: 1px solid rgba(27,30,36,0.15);
+  }
+  p { font-size: 12px; letter-spacing: 0.04em; line-height: 1.9; color: rgba(27,30,36,0.85); margin-bottom: 12px; }
+  p a { border-bottom: 1px solid rgba(27,30,36,0.4); padding-bottom: 1px; }
+
+  footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
+  .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .footer-droite { justify-content: flex-end; }
+  .footer-logo { text-align: center; }
+  .footer-logo img { height: 40px; }
+  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
+
+  /* ---------- Menu mobile ---------- */
+  .burger { display: none; background: none; border: none; color: inherit; cursor: pointer; padding: 4px; }
+  .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
+  .menu-mobile {
+    position: fixed; inset: 0; z-index: 300;
+    background: var(--creme); color: var(--encre);
+    display: none; flex-direction: column; justify-content: center;
+    padding: 32px 36px;
+  }
+  .menu-mobile.ouvert { display: flex; }
+  .menu-mobile a {
+    font-family: 'Space Mono', monospace; font-size: 19px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 20px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
+  }
+  .menu-mobile .fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 26px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1;
+  }
+  @media (max-width: 900px) {
+    .nav-centre { display: none; }
+    .burger { display: block; }
+  }
+
+  .groupe { font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--terracotta); margin: 48px 0 6px; }
+  details { border-bottom: 1px solid rgba(27,30,36,0.15); }
+  summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding: 16px 2px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 15px; color: var(--terracotta); transition: transform 300ms ease; flex-shrink: 0; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details .contenu { padding: 0 2px 18px; }
+  details .contenu p { margin-bottom: 10px; }
+  @media (max-width: 900px) {
+    .nav-droite { order: -1; }
+    .nav-droite a { display: none; }
+    .nav-droite .loupe { order: 2; margin-left: 4px; }
+    .logo-nav { justify-self: end; }
+  }
+  /* ---------- Recherche ---------- */
+  .loupe { background: none; border: none; cursor: pointer; padding: 4px; color: inherit; display: inline-flex; align-items: center; }
+  .loupe svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; display: block; }
+  .loupe:hover { opacity: 0.6; }
+  .rech-fond {
+    position: fixed; inset: 0; z-index: 400;
+    background: rgba(230,230,230,0.97);
+    display: none; justify-content: center;
+    padding: 14vh 6vw 40px; color: #1B1E24;
+  }
+  .rech-fond.visible { display: flex; }
+  .rech-boite { width: 100%; max-width: 640px; }
+  .rech-boite input {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid rgba(27,30,36,0.5);
+    font-family: 'Space Mono', monospace; font-size: 16px; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 12px 2px; outline: none; border-radius: 0; color: inherit;
+  }
+  .rech-boite input:focus { border-color: #1B1E24; }
+  .rech-resultats { margin-top: 28px; }
+  .rech-resultats a {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 18px;
+    padding: 13px 2px; border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .rech-resultats .rt { font-family: 'Cormorant Garamond', serif; font-size: 21px; letter-spacing: 0.04em; }
+  .rech-resultats .rs { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.55); white-space: nowrap; }
+  .rech-vide { margin-top: 28px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.55); }
+  .rech-fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 24px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
+  }
+
+  /* ---------- City Guide ville ---------- */
+  main { max-width: 720px; }
+  .chapo { font-family: 'Cormorant Garamond', serif; font-size: 19px; letter-spacing: 0.02em;
+    line-height: 1.6; color: rgba(27,30,36,0.85); margin-bottom: 40px; }
+  .note-manuscrite {
+    background: var(--papier); padding: 18px 24px; max-width: 300px;
+    transform: rotate(-2deg); margin: 8px 0 44px;
+    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    font-family: 'Caveat', cursive; font-size: 21px; letter-spacing: 0; line-height: 1.35;
+  }
+  .note-manuscrite .ast { color: var(--terracotta); }
+  .groupe-cg { font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--terracotta); margin: 48px 0 6px; padding-top: 26px; border-top: 1px solid rgba(27,30,36,0.15); }
+  .lieu { margin: 18px 0; }
+  .lieu .l-nom { font-size: 13px; letter-spacing: 0.08em; font-weight: 700; }
+  .lieu .l-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.5); margin-left: 8px; }
+  .lieu p { margin: 4px 0 0; }
+  .lieu.a-completer { opacity: 0.45; }
+  .piece-nee {
+    display: grid; grid-template-columns: 130px 1fr; gap: 22px; align-items: center;
+    border: 1px solid rgba(27,30,36,0.2); padding: 20px; margin: 56px 0 8px;
+  }
+  .l-ig { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--terracotta, #0F2FA6); margin-left: 10px;
+    border-bottom: 1px solid rgba(15,47,166,0.35); padding-bottom: 1px; }
+  .cg-kick { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px;
+    color: rgba(27,30,36,0.8); display: block; margin: -6px 0 22px; }
+  .tl-heure { font-family: 'Space Mono', monospace; font-size: 19px; font-weight: 700; letter-spacing: 0.12em;
+    color: var(--grand-bleu, #0F2FA6); display: block; margin: 46px 0 6px; }
+  .l-kick { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px;
+    color: rgba(27,30,36,0.72); display: block; margin: 1px 0 8px; }
+  .l-adr { font-size: 10px; letter-spacing: 0.08em; color: rgba(27,30,36,0.55);
+    display: block; margin-top: 7px; }
+    .cercle-bloc { margin: 60px auto 10px; max-width: 620px; background: var(--papier);
+    padding: 40px 44px 36px; transform: rotate(0.6deg);
+    clip-path: polygon(0.5% 1%, 99.5% 0%, 100% 98.5%, 1% 100%, 0% 50%);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.16); }
+  .cercle-bloc .cb-et { font-family: 'Caveat', cursive; font-size: 32px; display: block; margin-bottom: 10px; }
+  .cercle-bloc .cb-et .ast { color: var(--terracotta); }
+  .cercle-bloc h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 26px;
+    text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px; }
+  .cercle-bloc p { font-size: 12px; line-height: 1.7; color: rgba(27,30,36,0.8); margin-bottom: 18px; }
+  .cercle-bloc form { display: flex; gap: 10px; }
+  .cercle-bloc input[type="email"] { flex: 1; background: none; border: none;
+    border-bottom: 1px solid rgba(27,30,36,0.45); font-family: 'Space Mono', monospace;
+    font-size: 12px; padding: 10px 2px; outline: none; border-radius: 0; color: inherit; }
+  .cercle-bloc input[type="email"]:focus { border-color: var(--grand-bleu, #0F2FA6); }
+  .cercle-bloc button { background: var(--encre, #1B1E24); color: #E6E6E6; border: none;
+    font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.16em; padding: 12px 18px; cursor: pointer; }
+  .cercle-bloc button:hover { opacity: 0.85; }
+  .cercle-bloc .cb-note { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(27,30,36,0.5); margin: 12px 0 0; }
+  @media (max-width: 600px) { .cercle-bloc form { flex-direction: column; } }
+  .cg-photo { margin: 38px 0 30px; }
+  .cg-photo img { width: 100%; display: block; }
+  .cg-photo .ph-cap { display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: rgba(27,30,36,0.5); margin-top: 8px; }
+  .cg-photo .ph-credit { white-space: nowrap; color: rgba(27,30,36,0.35); }
+  .rules { margin: 54px auto 54px; max-width: 560px; background: var(--papier);
+    padding: 34px 38px 30px; transform: rotate(-0.8deg);
+    clip-path: polygon(1% 0.5%, 99% 0%, 100% 99%, 2% 100%, 0% 55%);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.16); }
+  .rules .rules-titre { font-family: 'Caveat', cursive; font-size: 30px; margin: 0 0 18px;
+    color: var(--encre, #1B1E24); }
+  .rules .rules-titre .ast { color: var(--terracotta); }
+  .rules .r { margin-bottom: 15px; transform: rotate(0.3deg); }
+  .rules .r-num { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.2em;
+    color: var(--grand-bleu, #0F2FA6); margin-right: 9px; }
+  .rules .r-tit { font-family: 'Caveat', cursive; font-size: 24px; letter-spacing: 0; }
+  .rules .r p { margin: 1px 0 0 30px; color: rgba(27,30,36,0.75); font-size: 12px; }
+  .piece-nee .pn-img { aspect-ratio: 1; background: var(--papier); display: flex; align-items: center; justify-content: center; font-family: 'Caveat', cursive; font-size: 52px; color: var(--terracotta); }
+  .piece-nee .pn-et { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .piece-nee .pn-nom { font-family: 'Cormorant Garamond', serif; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em; margin: 4px 0 8px; }
+  .piece-nee a.pn-lien { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--encre); padding-bottom: 2px; }
+  .retour-carte { display: inline-block; margin-bottom: 34px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid rgba(27,30,36,0.4); padding-bottom: 2px; }
+  @media (max-width: 640px) { .piece-nee { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="annonce">Limited editions&nbsp;. Capturing energy, not trends.</div>
+
+<nav aria-label="Main navigation">
+  <a class="logo-nav" href="index.html"><img src="../FULL-BLACK.png" alt="KIBO"></a>
+  <div class="nav-centre">
+    <a href="collection.html">Collections</a>
+    <a href="our-world.html">Our World</a>
+    <a href="city-guides.html">City Guides</a>
+    <a href="private-access.html">Private Access</a>
+  </div>
+  <div class="nav-droite">
+    <a href="#">Paris / EN</a>
+    <button class="loupe" aria-label="Search" onclick="kiboOuvrirRecherche()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.6 15.6 L21 21"/></svg></button>
+    <button class="burger" aria-label="Open menu" onclick="document.getElementById('menuMobile').classList.add('ouvert')">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="menu-mobile" id="menuMobile">
+  <button class="fermer" aria-label="Close menu" onclick="document.getElementById('menuMobile').classList.remove('ouvert')">&#10005;</button>
+  <a href="collection.html">Collections</a>
+  <a href="our-world.html">Our World</a>
+    <a href="city-guides.html">City Guides</a>
+  <a href="private-access.html">Private Access</a>
+</div>
+
+<main>
+  <a class="retour-carte" href="city-guides.html">← All City Guides</a>
+  <img class="tampon" src="../tampon-marrakech.png?v=1" alt="KIBO Marrakech stamp">
+  <span class="etiquette">City Guide — 02 · Morocco</span>
+  <h1>Marrakech</h1>
+  <span class="cg-kick">Get lost. Stay curious. Eat with your hands.</span>
+  <p class="chapo">Marrakech is not a city you visit in the right order. You can set out looking for a museum and end up in front of a 12-dirham sandwich, walk into a shop for five minutes and come out an hour later, step through a door that looks like nothing and discover a garden, an art collection, or someone offering you tea. It's here, between two counters of the medina, that the first KIBO necklaces were assembled — bead by bead. Our advice: keep a few addresses on your phone, but not too much of a plan. Walk. Look at the doors. And from time to time, put Google Maps away.</p>
+  <div class="note-manuscrite">“The first necklace — we finished it that same evening, on the rooftop.” <span class="ast">✳︎</span></div>
+
+  <div class="cg-photo"><img src="../guide-marrakech-toits.jpg?v=1" alt="The rooftops of the medina, in the morning" loading="lazy">
+    <div class="ph-cap"><span>The rooftops of the medina, in the morning</span><span class="ph-credit">photo Miša Stefanović — CC BY-SA ✳︎ while we wait for our own</span></div>
+  </div>
+
+  <span class="tl-heure">8:03 AM</span>
+  <div class="lieu">
+    <span class="l-nom">Pronto Caffè</span>
+    <span class="l-kick">For the first coffee.</span>
+    <p>Start before Marrakech is fully awake. On Riad Zitoun el Kdim, Pronto Caffè fits into almost nothing: a wooden counter, an espresso machine, a few square meters. Have a coffee — the spiced cortado is a good idea — then ask the barista where he'd go for lunch. People who make good coffee usually know other people who make good things.</p>
+    <span class="l-adr">→ Rue Riad Zitoun el Kdim, medina</span>
+  </div>
+  <span class="tl-heure">9:17 AM</span>
+  <div class="lieu">
+    <span class="l-nom">The Medina</span>
+    <span class="l-kick">Take the long way.</span>
+    <p>Now, get lost. Not metaphorically: actually put your phone away for an hour. The streets of Marrakech have this strange ability to take you, in a few meters, from a crowded souk to a perfectly silent alley. If Google Maps says right and a street on the left looks more interesting — go left.</p>
+  </div>
+  <span class="tl-heure">10:06 AM</span>
+  <div class="lieu">
+    <span class="l-nom">Riad Yima</span><a class="l-ig" href="https://www.instagram.com/riadyima/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">The door you almost missed.</span>
+    <p>Somewhere behind Rahba Lakdima hides the riad-gallery of artist Hassan Hajjaj. Photography, furniture made from salvaged signs, saturated colors, Moroccan popular culture: his universe takes over the entire house. The entrance looks like that of a private home — go in, go up, have a tea. If you feel like you've got the wrong address, you're probably almost there.</p>
+    <span class="l-adr">→ 52 Derb Aarjane, Rahba Lakdima</span>
+  </div>
+  <span class="tl-heure">11:02 AM</span>
+  <div class="lieu">
+    <span class="l-nom">Mustapha Blaoui</span><a class="l-ig" href="https://www.instagram.com/mustaphablaoui/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Marrakech's cabinet of curiosities.</span>
+    <p>Don't trust the facade. Behind 144 Arset Aouzal: stacked rugs, lanterns, tables, antiques, glassware, baskets. Less a shop than a place you dig through. Don't come with a list — ask to see what's hidden in the back.</p>
+    <span class="l-adr">→ 144 Arset Aouzal</span>
+  </div>
+  <div class="cg-photo"><img src="../guide-marrakech-souk.jpg?v=1" alt="The stalls of the medina" loading="lazy">
+    <div class="ph-cap"><span>The stalls of the medina</span><span class="ph-credit">photo Anja Disseldorp — CC BY ✳︎ while we wait for our own</span></div>
+  </div>
+  <span class="tl-heure">12:41 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Chez Omar — Derb Dabachi</span>
+    <span class="l-kick">Forget the tablecloth.</span>
+    <p>Time to stop with the beautiful addresses. Look for Chez Omar and the little snack stands around it: a hot plate, bread, harira, plastic stools. Order whatever goes fastest — the mixed sandwich is a good option. Don't check whether the place is in a guide. Look instead at who's eating next to you.</p>
+    <span class="l-adr">→ Derb Dabachi</span>
+  </div>
+  <span class="tl-heure">1:16 PM</span>
+  <div class="lieu">
+    <span class="l-nom">The Juice Guy</span>
+    <span class="l-kick">The 10-dirham reset.</span>
+    <p>You'll pass dozens of them: a counter, hanging bananas, oranges, a blender that has seen a few million fruits go by. Orange if you want to keep it simple, avocado-banana if a drink can reasonably replace lunch. A few dirhams later, move on. No pin, no reservation, no Instagram. That's a city guide too.</p>
+  </div>
+  <span class="tl-heure">2:04 PM</span>
+  <div class="lieu">
+    <span class="l-nom">La Famille</span><a class="l-ig" href="https://www.instagram.com/la_famille_marrakech/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Behind the door.</span>
+    <p>For a much slower lunch, save La Famille for another day. A discreet door on Derb Jdid hides a luminous garden and a mostly vegetarian kitchen, simple and seasonal. You walk in with the noise of the medina in your head and, five minutes later, everything has slowed down. Don't plan anything right after.</p>
+    <span class="l-adr">→ 34 Derb Jdid</span>
+  </div>
+  <span class="tl-heure">3:12 PM</span>
+  <div class="lieu">
+    <span class="l-nom">1112</span><a class="l-ig" href="https://www.instagram.com/1112marrakech/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Twelve teas. One courtyard.</span>
+    <p>Near the Medersa Ben Youssef, push open the door: a riad, turquoise zellige, a patio, a house built around Moroccan tea. The menu explores regional traditions — mint, herbs, rose. Choose the one whose composition you understand the least. It's often a good method when traveling.</p>
+    <span class="l-adr">→ 12 Place de la Kissariat Ben Youssef</span>
+  </div>
+  <span class="tl-heure">3:58 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Foundouk Gargaa</span><a class="l-ig" href="https://www.instagram.com/foundouk_gargaa_marrakech/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Disappear for an hour.</span>
+    <p>A foundouk was once a place where merchants, goods and animals stopped along the way. This one keeps something of that idea of refuge: a courtyard, a big tree, art, something to drink. Not a place to “do something” — a place to do nothing for an hour. Rare enough to earn its spot here.</p>
+    <span class="l-adr">→ 9 Rue de la Koutoubia</span>
+  </div>
+  <span class="tl-heure">4:36 PM</span>
+  <div class="lieu">
+    <span class="l-nom">La Boucherie</span><a class="l-ig" href="https://www.instagram.com/la_boucherie_concept_store/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Souvenirs for people who hate souvenirs.</span>
+    <p>Don't worry, it's not a butcher shop — that's exactly the point. A concept store that reworks Moroccan codes into T-shirts, illustrations and graphic objects. The place to bring back something from Marrakech that doesn't look like a Marrakech souvenir.</p>
+    <span class="l-adr">→ 126 Rue Riad Zitoun el Kdim</span>
+  </div>
+  <span class="tl-heure">5:21 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Leave the medina</span>
+    <span class="l-kick">Head to Sidi Ghanem.</span>
+    <p>Take a taxi. The transition is deliberately abrupt: you leave the pink walls and alleys for an industrial zone full of garages and warehouses. And that's precisely where part of contemporary creative Marrakech has settled.</p>
+  </div>
+  <span class="tl-heure">5:42 PM</span>
+  <div class="lieu">
+    <span class="l-nom">LRNCE</span><a class="l-ig" href="https://www.instagram.com/lrnce/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Moroccan craft, rewritten.</span>
+    <p>Ceramics, textiles, painting, furniture, clothing — made in Marrakech with local artisans, but in a completely contemporary vocabulary. Not a nostalgic reproduction of Moroccan craft: a continuation. Look especially at the ceramics and textiles.</p>
+    <span class="l-adr">→ 59 Rue Sidi Ghanem</span>
+  </div>
+  <span class="tl-heure">6:13 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Jajjah</span><a class="l-ig" href="https://www.instagram.com/jajjah.tea/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Hassan Hajjaj's other Marrakech.</span>
+    <p>A few streets away, find Hassan Hajjaj again — Jajjah, his name almost reversed. Café, tea, restaurant, gallery and shop in an instantly recognizable Moroccan pop universe. Have a tea, look at the exhibition, and above all notice the contrast with the Marrakech of the morning. It's the same city.</p>
+    <span class="l-adr">→ 114–116 Rue Sidi Ghanem</span>
+  </div>
+
+  <p class="groupe-cg">Another afternoon</p>
+  <span class="tl-heure">—</span>
+  <div class="lieu">
+    <span class="l-nom">MACAAL</span><a class="l-ig" href="https://www.instagram.com/macaal_/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Africa, now.</span>
+    <p>In Al Maaden, the Al Maaden Museum of African Contemporary Art gathers painting, photography, sculpture and contemporary creation from Africa and its diaspora. The space is calm, far from the energy of the medina. Take your time, then stay for the café or the garden before heading back.</p>
+    <span class="l-adr">→ Al Maaden, Sidi Youssef Ben Ali</span>
+  </div>
+
+  <p class="groupe-cg">Night falls</p>
+  <span class="tl-heure">6:57 PM</span>
+  <div class="lieu">
+    <span class="l-nom">M Rooftop — Medina Heritage</span><a class="l-ig" href="https://www.instagram.com/medinaheritage/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Art first. Sunset second.</span>
+    <p>Don't go straight to the roof: the route passes through an exhibition space and a concept store before reaching the rooftop. That's what makes the address interesting. Then order something and let Marrakech do the rest — at that hour, the walls change color every ten minutes.</p>
+    <span class="l-adr">→ 58 angle Rue El Ksour &amp; Rue Fhal Zefriti</span>
+  </div>
+  <div class="cg-photo"><img src="../guide-marrakech-jemaa.jpg?v=1" alt="Jemaa el-Fna, the second seating" loading="lazy">
+    <div class="ph-cap"><span>Jemaa el-Fna, the second seating</span><span class="ph-credit">photo Andrzej Kosiński — CC BY-SA ✳︎ while we wait for our own</span></div>
+  </div>
+  <span class="tl-heure">7:26 PM</span>
+  <div class="lieu">
+    <span class="l-nom">MÖ-MÖ</span><a class="l-ig" href="https://www.instagram.com/momo_jemaa_el_fna/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Watch Jemaa el-Fna switch on.</span>
+    <p>Climb to the terrace just before dark. Below, Jemaa el-Fna begins its second seating: the stalls appear, the lights come on, the smoke rises, the crowd changes. Don't come just for dinner. Come watch the square become Jemaa el-Fna.</p>
+    <span class="l-adr">→ 1 Rue Riad Zitoun el Kdim</span>
+  </div>
+  <div class="cg-photo"><img src="../guide-marrakech-koutoubia.jpg?v=1" alt="The Koutoubia at golden hour" loading="lazy">
+    <div class="ph-cap"><span>The Koutoubia at golden hour</span><span class="ph-credit">photo mattk1979 — CC BY-SA ✳︎ while we wait for our own</span></div>
+  </div>
+  <span class="tl-heure">8:42 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Dar des Arts</span><a class="l-ig" href="https://www.instagram.com/riad.dardesarts/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">One last sunset.</span>
+    <p>There are views you photograph, and others that make you put the phone down. From the terraces, Marrakech turns almost monochrome: earth, orange, dust, then blue. The secret isn't the sunset — it's the twenty minutes just before.</p>
+    <span class="l-adr">→ 50 Derb Tbib, Riad Zitoun el Jdid</span>
+  </div>
+  <span class="tl-heure">10:37 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Baromètre</span><a class="l-ig" href="https://www.instagram.com/barometremarrakech/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Marrakech after dark.</span>
+    <p>End in Guéliz. Behind a discreet facade, a night laboratory: glassware, bottles, low light and cocktails built with far more precision than you'd expect from a last drink. Sit at the bar, watch them work, order something you would never have chosen. Then forget the time.</p>
+    <span class="l-adr">→ Rue Moulay Ali, Guéliz</span>
+  </div>
+
+  <p class="groupe-cg">Another morning</p>
+  <span class="tl-heure">—</span>
+  <div class="lieu">
+    <span class="l-nom">Thirty5ive</span><a class="l-ig" href="https://www.instagram.com/thirty5ive_marrakech/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Coffee. Vinyl. Slow down.</span>
+    <p>The next morning, Marrakech can wait. In Guéliz, a new generation of addresses: specialty coffee, minimalist lines, art, vinyl — and no desire to artificially recreate a medina indoors. Order a filter coffee, choose a record, stay.</p>
+    <span class="l-adr">→ 3 Rue El Imam Malik, Guéliz</span>
+  </div>
+
+  <p class="groupe-cg">Our favorite — beyond the walls</p>
+  <span class="tl-heure">—</span>
+  <div class="lieu">
+    <span class="l-nom">Kasbah d'If</span><span class="l-tag">Agafay Desert, 40 min away</span><a class="l-ig" href="https://www.instagram.com/kasbahdif/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Leave everything. Come back different.</span>
+    <p>When Marrakech gets too full, take the road to Amizmiz. A kasbah set between the Atlas and the Agafay desert — stone, earth, craft, silence. Go for a night or just for lunch facing the void, and come back to the medina as if washed clean. Our absolute favorite.</p>
+    <span class="l-adr">→ Route d'Amizmiz km 27, Tamesloht — Agafay Desert</span>
+  </div>
+
+  <div class="rules">
+    <p class="rules-titre">The Marrakech Rules <span class="ast">✳︎</span></p>
+    <div class="r"><span class="r-num">01</span><span class="r-tit">Get lost once a day.</span>
+      <p>Without Google Maps. Even thirty minutes is enough.</p></div>
+    <div class="r"><span class="r-num">02</span><span class="r-tit">Eat somewhere with plastic chairs.</span>
+      <p>If your whole stay unfolds in beautiful riads, you'll have missed part of Marrakech.</p></div>
+    <div class="r"><span class="r-num">03</span><span class="r-tit">Ask who made it.</span>
+      <p>Before bargaining for an object, ask who made it and where. The conversation immediately becomes more interesting.</p></div>
+    <div class="r"><span class="r-num">04</span><span class="r-tit">Look behind doors.</span>
+      <p>In Marrakech, the facade rarely tells you what lies behind.</p></div>
+    <div class="r"><span class="r-num">05</span><span class="r-tit">Follow the locals at lunch.</span>
+      <p>Especially around Derb Dabachi. The small places called “Snack” are often a better bet than the most visible restaurants.</p></div>
+    <div class="r"><span class="r-num">06</span><span class="r-tit">Go to Sidi Ghanem.</span>
+      <p>Even if the industrial zone looks nothing like the Marrakech you had in mind.</p></div>
+    <div class="r"><span class="r-num">07</span><span class="r-tit">Look up.</span>
+      <p>Doors, ceilings, terraces, electric wires, minarets, painted signs. Marrakech happens as much above your head as in front of you.</p></div>
+    <div class="r"><span class="r-num">08</span><span class="r-tit">Never optimize Marrakech.</span>
+      <p>The best memory of the day will probably be something that wasn't planned.</p></div>
+  </div>
+
+  <p class="groupe-cg">One last thing</p>
+  <div class="lieu">
+    <p>Marrakech can sometimes feel like it's been turned into a set. The perfect riads, the pools, the rooftops, the baskets, the terracotta walls. They exist, and some are magnificent. But the city becomes far more interesting when you start looking between the addresses. The juice seller. The guy fixing a scooter. The bread coming out of the communal oven. The café where no one speaks English. The door with no sign. The twelve-dirham sandwich after a contemporary art gallery. That's where the two Marrakechs begin to blend — and that's usually where the journey really begins.</p>
+  </div>
+  <div class="note-manuscrite">« Don't try to see Marrakech. Let Marrakech happen to you. » <span class="ast">✳︎</span></div>
+
+  <div class="cercle-bloc">
+    <span class="cb-et">The Circle <span class="ast">✳︎</span></span>
+    <h3>The full map, in your pocket</h3>
+    <p>Every address in the guide, ready to open in Google Maps, plus the ones we don't publish — the family notebook. And access to limited editions before everyone else.</p>
+    <form id="formCercleGuide" novalidate>
+      <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
+      <button type="submit">Get the map&nbsp;&nbsp;→</button>
+    </form>
+    <p class="cb-note">Immediate access · Six letters a year, no more</p>
+  </div>
+
+  <div class="piece-nee">
+    <div class="pn-img">✳︎</div>
+    <div>
+      <span class="pn-et">Where it all began</span>
+      <p class="pn-nom">The first pieces</p>
+      <p style="margin-bottom:10px;">The first KIBO necklaces were assembled here, one summer evening, on a rooftop in the medina. Everything else followed.</p>
+      <a class="pn-lien" href="collection.html">See the collection&nbsp;&nbsp;→</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-haut">
+    <div class="footer-liens">
+      <a href="faq.html">FAQ</a>
+      <a href="shipping-retours.html">Shipping &amp; Returns</a>
+      <a href="care-guide.html">Care Guide</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-logo">
+      <a href="index.html"><img src="../FULL-BLACK.png" alt="KIBO"></a>
+    </div>
+    <div class="footer-liens footer-droite">
+      <a href="https://www.instagram.com/atelier.kibo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#">Spotify</a>
+    </div>
+  </div>
+  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;<a href="mentions-legales.html">Legal notice</a></p>
+</footer>
+
+
+<div class="rech-fond" id="rechFond" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="rech-fermer" aria-label="Close" onclick="kiboFermerRecherche()">&#10005;</button>
+  <div class="rech-boite">
+    <input id="rechInput" type="search" placeholder="Search for a piece, a page&hellip;" autocomplete="off">
+    <div class="rech-resultats" id="rechResultats"></div>
+  </div>
+</div>
+<script>
+(function () {
+  var INDEX = [{"t": "Palermo Necklace", "u": "produit-palermo.html", "s": "La Permanente — 180 €"}, {"t": "Limone Necklace", "u": "produit-limone.html", "s": "Soleil Rouge — 140 €"}, {"t": "Murano Necklace", "u": "produit-murano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Santorini Necklace", "u": "produit-santorini.html", "s": "Grand Bleu — 140 €"}, {"t": "Rio Necklace", "u": "produit-rio.html", "s": "Grand Bleu — 90 €"}, {"t": "Ibiza Necklace", "u": "produit-ibiza.html", "s": "Grand Bleu — 140 €"}, {"t": "Tahiti Necklace", "u": "produit-tahiti.html", "s": "La Permanente — 160 €"}, {"t": "Positano Necklace", "u": "produit-positano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Capri Necklace", "u": "produit-capri.html", "s": "Soleil Rouge — 120 €"}, {"t": "Laguna Necklace", "u": "produit-laguna.html", "s": "Soleil Rouge — 120 €"}, {"t": "Casablanca Necklace", "u": "produit-casablanca.html", "s": "La Permanente — 160 €"}, {"t": "Amore Necklace", "u": "produit-amore.html", "s": "La Permanente — 190 €"}, {"t": "Bodrum Necklace", "u": "produit-bodrum.html", "s": "Grand Bleu — 90 €"}, {"t": "Stella Necklace", "u": "produit-stella.html", "s": "Soleil Rouge — 140 €"}, {"t": "Marea Necklace", "u": "produit-marea.html", "s": "Grand Bleu — 140 €"}, {"t": "Riviera Necklace", "u": "produit-riviera.html", "s": "Soleil Rouge — 140 €"}, {"t": "Perla Bracelet", "u": "produit-perla.html", "s": "Soleil Rouge — 55 €"}, {"t": "Laguna Bracelet", "u": "produit-laguna-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Menta Bracelet", "u": "produit-menta.html", "s": "Soleil Rouge — 50 €"}, {"t": "Marina Bracelet", "u": "produit-marina.html", "s": "Grand Bleu — 50 €"}, {"t": "Mimosa Necklace", "u": "produit-mimosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Oliva Necklace", "u": "produit-oliva.html", "s": "Grand Bleu — 90 €"}, {"t": "Rosa Necklace", "u": "produit-rosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Bianca Necklace", "u": "produit-bianca.html", "s": "La Permanente — 150 €"}, {"t": "Amuleto Necklace", "u": "produit-amuleto.html", "s": "Soleil Rouge — 140 €"}, {"t": "Fiesta Necklace", "u": "produit-fiesta.html", "s": "Grand Bleu — 120 €"}, {"t": "Sunset Necklace", "u": "produit-sunset.html", "s": "Grand Bleu — 120 €"}, {"t": "Neptune Necklace", "u": "produit-neptune.html", "s": "Grand Bleu — 120 €"}, {"t": "Casablanca Bracelet", "u": "produit-casablanca-bracelet.html", "s": "La Permanente — 50 €"}, {"t": "Rio Bracelet", "u": "produit-rio-bracelet.html", "s": "Grand Bleu — 40 €"}, {"t": "Positano Bracelet", "u": "produit-positano-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Ibiza Bracelet", "u": "produit-ibiza-bracelet.html", "s": "Grand Bleu — 45 €"}, {"t": "Palermo Bracelet", "u": "produit-palermo-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "Tahiti Bracelet", "u": "produit-tahiti-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "The Collection", "u": "collection.html", "s": "34 handmade pieces"}, {"t": "La Permanente", "u": "collection.html?f=permanente", "s": "The pieces that stay"}, {"t": "Soleil Rouge", "u": "collection.html?g=dolce-vita", "s": "Drop 01 — Summer 2026"}, {"t": "Grand Bleu", "u": "collection.html?g=grand-bleu", "s": "Drop 02 — Summer 2026"}, {"t": "City Guides", "u": "city-guides.html", "s": "The cities we love"}, {"t": "Palermo — City Guide", "u": "ville-palermo.html", "s": "Eat, sleep, dance in Sicily"}, {"t": "Marrakech — City Guide", "u": "ville-marrakech.html", "s": "Eat, sleep, dance in Marrakech"}, {"t": "Contact", "u": "contact.html", "s": "Write to the atelier"}, {"t": "Our World", "u": "our-world.html", "s": "The world of KIBO"}, {"t": "Private Access", "u": "private-access.html", "s": "Join the circle"}, {"t": "FAQ", "u": "faq.html", "s": "Frequently asked questions"}, {"t": "Shipping & Returns", "u": "shipping-retours.html", "s": "Shipping and returns"}, {"t": "Care Guide", "u": "care-guide.html", "s": "Caring for your pieces"}, {"t": "Legal notice", "u": "mentions-legales.html", "s": "Legal information"}];
+  function normaliser(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  var fond = document.getElementById('rechFond');
+  var champ = document.getElementById('rechInput');
+  var zone = document.getElementById('rechResultats');
+  window.kiboOuvrirRecherche = function () {
+    fond.classList.add('visible');
+    champ.value = ''; afficher('');
+    setTimeout(function () { champ.focus(); }, 50);
+  };
+  window.kiboFermerRecherche = function () { fond.classList.remove('visible'); };
+  function afficher(q) {
+    var nq = normaliser(q.trim());
+    var res = nq
+      ? INDEX.filter(function (e) { return normaliser(e.t + ' ' + e.s).indexOf(nq) !== -1; })
+      : INDEX.slice(34, 38);
+    res = res.slice(0, 8);
+    if (!res.length) {
+      zone.innerHTML = '<p class="rech-vide">Aucun r&eacute;sultat &mdash; essayez &laquo; collier &raquo;, &laquo; bracelet &raquo; ou un nom de ville.</p>';
+      return;
+    }
+    zone.innerHTML = res.map(function (e) {
+      return '<a href="' + e.u + '"><span class="rt">' + e.t + '</span><span class="rs">' + e.s + '</span></a>';
+    }).join('');
+  }
+  champ.addEventListener('input', function () { afficher(champ.value); });
+  champ.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') { var p = zone.querySelector('a'); if (p) location.href = p.getAttribute('href'); }
+  });
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') kiboFermerRecherche();
+  });
+})();
+</script>
+
+<script src="../kibo-panier.js?v=8" defer></script>
+<script>
+function kiboCercleEnvoi(email) {
+  var fd = new FormData();
+  fd.append('form_type', 'customer');
+  fd.append('utf8', '\u2713');
+  fd.append('contact[email]', email);
+  fd.append('contact[tags]', 'newsletter,cercle');
+  try { fetch('https://djcwtp-ui.myshopify.com/contact', { method: 'POST', body: fd, mode: 'no-cors' }); } catch (e) {}
+}
+</script><script>
+(function () {
+  var f = document.getElementById('formCercleGuide');
+  if (!f) return;
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var champ = f.querySelector('input[type="email"]');
+    if (!champ.value || champ.value.indexOf('@') < 0) {
+      champ.placeholder = 'Cette adresse semble incomplète'; champ.value = ''; return;
+    }
+    kiboCercleEnvoi(champ.value);
+    setTimeout(function () { window.location.href = 'cercle-marrakech.html'; }, 350);
+  });
+})();
+</script>
+</body>
+</html>
