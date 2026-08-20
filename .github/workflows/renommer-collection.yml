@@ -1,0 +1,19 @@
+name: Renommer Dolce Vita en Soleil Rouge
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  renommer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remplacement dans tous les fichiers
+        run: |
+          grep -rl --include='*.html' --include='*.js' -e 'Dolce Vita' -e 'DOLCE VITA' -e 'dolce vita' . | xargs -r sed -i -e 's/Dolce Vita/Soleil Rouge/g' -e 's/DOLCE VITA/SOLEIL ROUGE/g' -e 's/dolce vita/soleil rouge/g'
+      - name: Commit et push
+        run: |
+          git config user.name 'kibo-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet || git commit -m 'Collection renommee - Dolce Vita devient Soleil Rouge'
+          git push
