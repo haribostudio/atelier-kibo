@@ -1,0 +1,22 @@
+name: Rafraichir le cache du panier
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Incrementer la version de kibo-panier.js
+        run: |
+          ANCIEN=$(grep -oh "kibo-panier.js?v=[0-9]*" index.html | head -1 | grep -o "[0-9]*$")
+          SUIVANT=$((ANCIEN+1))
+          echo "v$ANCIEN -> v$SUIVANT"
+          grep -rl "kibo-panier.js?v=$ANCIEN" --include="*.html" . | xargs -r sed -i "s/kibo-panier.js?v=$ANCIEN/kibo-panier.js?v=$SUIVANT/g"
+      - name: Commit et push
+        run: |
+          git config user.name kibo-bot
+          git config user.email actions@users.noreply.github.com
+          git add -A
+          git diff --cached --quiet || git commit -m "Rafraichissement du cache kibo-panier.js"
+          git push
