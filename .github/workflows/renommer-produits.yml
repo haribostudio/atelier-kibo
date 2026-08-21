@@ -1,0 +1,33 @@
+name: Renommer les produits
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remplacements
+        run: |
+          for f in *.html; do
+            sed -i \
+              -e "s/Palermo Necklace/Vertigo Necklace/g" \
+              -e "s/Palermo Bracelet/Vertigo Bracelet/g" \
+              -e "s/Tahiti Necklace/Eclipse Necklace/g" \
+              -e "s/Tahiti Bracelet/Eclipse Bracelet/g" \
+              -e "s/Casablanca Necklace/Halo Necklace/g" \
+              -e "s/Casablanca Bracelet/Halo Bracelet/g" \
+              -e "s/Bianca Necklace/Mosaïque Necklace/g" \
+              -e "s/du Palermo/du Vertigo/g" \
+              -e "s/du Tahiti/de l’Eclipse/g" \
+              -e "s/du Casablanca/du Halo/g" \
+              -e "s/Amuleto \&amp; Palermo/Amuleto \&amp; Vertigo/g" \
+              "$f"
+          done
+      - name: Commit
+        run: |
+          git config user.name kibo-bot
+          git config user.email bot@atelier-kibo.com
+          git add -A
+          git diff --cached --quiet || git commit -m "Renommage produits (Vertigo, Eclipse, Halo, Mosaïque)"
+          git push
