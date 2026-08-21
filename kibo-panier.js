@@ -276,7 +276,7 @@
   }
 
   /* ---------- la parure : collier et bracelet assortis ---------- */
-  var PAIRES = ['palermo', 'casablanca', 'rio', 'positano', 'ibiza', 'laguna', 'tahiti'];
+  var PAIRES = ['vertigo', 'halo', 'rio', 'positano', 'ibiza', 'laguna', 'eclipse'];
   if (ba) {
     var hp = location.pathname.split('/').pop().replace('.html', '').replace(/^produit-/, '');
     var estBracelet = /-bracelet$/.test(hp);
