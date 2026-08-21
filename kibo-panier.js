@@ -182,6 +182,7 @@
   });
   document.getElementById('kiboPayer').addEventListener('click', function () {
     var p = lire(); if (!p.length) return;
+    if (window.fbq) fbq('track', 'InitiateCheckout', { currency: 'EUR', value: total(p), num_items: nb(p) });
     var frag = p.map(function (a) { return a.id + ':' + a.qte; }).join(',');
     window.location.href = SHOP + '/cart/' + frag;
   });
@@ -192,6 +193,7 @@
       var ex = p.find(function (a) { return a.id === art.id; });
       if (ex) ex.qte += 1; else { art.qte = 1; p.push(art); }
       ecrire(p);
+      if (window.fbq) fbq('track', 'AddToCart', { content_ids: [String(art.id)], content_type: 'product', currency: 'EUR', value: art.prix });
       toast.textContent = L.ajoute;
       toast.classList.add('visible');
       setTimeout(function () { toast.classList.remove('visible'); }, 1600);
@@ -350,6 +352,20 @@
       fetch(SHOP + '/contact', { method: 'POST', body: fd, mode: 'no-cors' });
     });
   });
+
+  /* ---------- pixel Meta ---------- */
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1680970543594063');
+  fbq('track', 'PageView');
+  if (ba && window.KIBO_VARIANTS) {
+    var prixVC = document.querySelector('.info .prix');
+    fbq('track', 'ViewContent', {
+      content_ids: KIBO_VARIANTS.map(String),
+      content_type: 'product',
+      currency: 'EUR',
+      value: prixVC ? parseFloat(prixVC.textContent.replace(/[^0-9,\.]/g, '').replace(',', '.')) || 0 : 0
+    });
+  }
 
   /* ---------- stats de visite (Cloudflare Web Analytics) ---------- */
   var cf = document.createElement('script');
