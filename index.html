@@ -351,23 +351,20 @@
   }
 
   /* ---------- Stabilité de défilement (navigateur Instagram) + hero mobile ---------- */
-  @supports (min-height: 1svh) {
-    .hero { min-height: 92svh; }
-    .panneaux { min-height: 84svh; }
-    .manifeste { min-height: 92svh; }
-    .respire-img { height: 52svh; }
-    .monde { min-height: 58svh; }
-  }
+  .hero { min-height: calc(var(--vhpx, 100vh) * 0.92); }
+  .panneaux { min-height: calc(var(--vhpx, 100vh) * 0.84); }
+  .manifeste { min-height: calc(var(--vhpx, 100vh) * 0.92); }
+  .respire-img { height: calc(var(--vhpx, 100vh) * 0.52); }
+  .monde { min-height: calc(var(--vhpx, 100vh) * 0.58); }
+  .hero-titre h1 { -webkit-text-stroke: 1.4px currentColor; paint-order: stroke fill; text-shadow: 0 0 26px rgba(230,230,230,0.65); }
   @media (max-width: 900px) {
     .hero-contenu { text-align: center; justify-items: center; padding: 48px 7vw; }
-    .hero-titre h1 { font-size: clamp(48px, 12vw, 66px); margin-left: auto; margin-right: auto; }
+    .hero-titre h1 { font-size: clamp(48px, 12vw, 66px); margin-left: auto; margin-right: auto; -webkit-text-stroke: 1.7px currentColor; }
     .hero-bas { left: 0; right: 0; text-align: center; }
-    @supports (min-height: 1svh) {
-      .panneau { min-height: 46svh; }
-      .manifeste { min-height: 70svh; }
-      .respire-img { height: 38svh; }
-      .monde { min-height: 46svh; }
-    }
+    .panneau { min-height: calc(var(--vhpx, 100vh) * 0.46); }
+    .manifeste { min-height: calc(var(--vhpx, 100vh) * 0.70); }
+    .respire-img { height: calc(var(--vhpx, 100vh) * 0.38); }
+    .monde { min-height: calc(var(--vhpx, 100vh) * 0.46); }
   }
 
   /* ---------- Menu mobile ---------- */
@@ -475,6 +472,14 @@
     cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
   }
 </style>
+<script>
+(function(){
+  function fixer(){ document.documentElement.style.setProperty('--vhpx', window.innerHeight + 'px'); }
+  fixer();
+  var larg = window.innerWidth;
+  window.addEventListener('resize', function(){ if (Math.abs(window.innerWidth - larg) > 60) { larg = window.innerWidth; fixer(); } });
+})();
+</script>
 </head>
 <body>
 
@@ -518,9 +523,6 @@
         </svg>
         Discover&nbsp;&nbsp;→
       </a>
-      <div class="hero-logo">
-        <img src="OUTLINE_WHITE.png" alt="KIBO" style="height:60px" onerror="this.outerHTML='<span class=&quot;logo-texte&quot;>KiBO</span>'">
-      </div>
       <div class="hero-soleil">✳︎</div>
     </div>
     </div>
