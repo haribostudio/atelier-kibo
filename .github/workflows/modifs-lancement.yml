@@ -1,0 +1,71 @@
+name: Modifs lancement
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  modifs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Appliquer les modifs
+        run: |
+          python3 - <<'PYEOF'
+          import re, glob, json
+
+          def lire(p): return open(p, encoding='utf-8').read()
+          def ecrire(p, c): open(p, 'w', encoding='utf-8').write(c)
+
+          n1 = n2 = n3 = 0
+          for p in glob.glob('produit-*.html'):
+              c = lire(p)
+              if "Il se raye, se patine" in c: n1 += 1
+              c = c.replace("Il se raye, se patine — et devient plus précieux", "Il se patine — et devient plus précieux")
+              if "Quand une série s'épuise" in c: n2 += 1
+              c = c.replace("Fait main à l'atelier, en édition limitée. Quand une série s'épuise, il n'y en a plus — jusqu'à un éventuel retour.", "Fait main à l'atelier, en édition illimitée. C'est une pièce de La Permanente : elle est là pour rester.")
+              avant = c
+              c = re.sub(r"font-weight: 400;(\s+)font-size: clamp\(30px, 3\.4vw, 44px\);", r"font-weight: 600;\1font-size: clamp(38px, 4.4vw, 56px);", c)
+              if c != avant: n3 += 1
+              c = c.replace("Cormorant+Garamond:ital,wght@0,400;0,500;1,400", "Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400")
+              c = c.replace("perles baroques", "perles d'eau douce")
+              c = c.replace("Perles baroques", "Perles d'eau douce")
+              ecrire(p, c)
+          print("patine:", n1, "fabrication:", n2, "css:", n3)
+
+          c = lire('sur-mesure.html')
+          c = c.replace("<title>Sur Mesure — KIBO Paris</title>", "<title>L'Atelier — KIBO Paris</title>")
+          c = c.replace('content="Sur Mesure — KIBO Paris"', "content=\"L'Atelier — KIBO Paris\"")
+          c = c.replace("<h1>Sur mesure</h1>", "<h1>L'Atelier</h1>")
+          ecrire('sur-mesure.html', c)
+
+          c = lire('collection.html')
+          c = c.replace("<p class=\"produit-cartel\">Sur mesure<span class=\"prix\">L'Atelier</span></p>", "<p class=\"produit-cartel\">L'Atelier<span class=\"prix\">Sur mesure</span></p>")
+          ecrire('collection.html', c)
+
+          c = lire('city-guides.html')
+          c = c.replace('<a class="ville v-paris a-venir" href="#villes">', '<a class="ville v-paris" href="sur-mesure.html">')
+          c = c.replace('"c": "#0F2FA6", "href": "#villes", "actif": false', '"c": "#0F2FA6", "href": "sur-mesure.html", "actif": true')
+          c = c.replace("La pièce&nbsp;: <a href=\"our-world.html\">L'atelier</a>", "La pièce&nbsp;: <a href=\"sur-mesure.html\">L'Atelier</a>")
+          c = re.sub(r'(<span class="vc-nom">Paris</span>.*?<span class="vc-statut">)<span class="bientot">Guide à venir</span>', r'\1<a href="sur-mesure.html">Découvrir la pièce&nbsp;&nbsp;→</a>', c, count=1, flags=re.S)
+          ecrire('city-guides.html', c)
+
+          t = json.load(open('tools/traductions-extra.json', encoding='utf-8'))
+          t["Il se porte dans l'eau, au soleil, en ville sous un manteau. Il se patine — et devient plus précieux à mesure qu'il vieillit."] = "Wear it in the water, in the sun, in the city under a coat. It develops a patina — and becomes more precious as it ages."
+          t["Fait main à l'atelier, en édition illimitée. C'est une pièce de La Permanente : elle est là pour rester."] = "Handmade at the atelier, in unlimited edition. It's a piece from La Permanente: it's here to stay."
+          t["Des perles d'eau douce blanches, toutes irrégulières, ponctuées d'argent. La plus sobre de la collection. Monté à la main à l'atelier, à Paris."] = "White freshwater pearls, each one irregular, punctuated with silver. The most understated piece in the collection. Assembled by hand at the atelier, in Paris."
+          t["Du verre fleuri aux reflets d'eau, des perles d'eau douce, des touches d'or. Monté à la main à l'atelier, à Paris."] = "Flowered glass with water-like reflections, freshwater pearls, touches of gold. Assembled by hand at the atelier, in Paris."
+          t["Perles d'eau douce blanches — argent"] = "White freshwater pearls — silver"
+          t["Mosaïque Necklace. Perles d'eau douce blanches — argent. Fait main à Paris. La Permanente — 150 €."] = "Mosaïque Necklace. White freshwater pearls — silver. Handmade in Paris. La Permanente — 150 €."
+          t["L'Atelier"] = "L'Atelier"
+          t["L'Atelier — KIBO Paris"] = "L'Atelier — KIBO Paris"
+          t["Découvrir la pièce&nbsp;&nbsp;→"] = "Discover the piece&nbsp;&nbsp;→"
+          json.dump(t, open('tools/traductions-extra.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+          print("traductions OK")
+          PYEOF
+      - name: Commit et push
+        run: |
+          git config user.name kibo-bot
+          git config user.email actions@users.noreply.github.com
+          git add -A
+          git diff --cached --quiet || git commit -m "Modifs lancement : L'Atelier, patine, titres produits, fabrication Permanente, perles d'eau douce"
+          git push
