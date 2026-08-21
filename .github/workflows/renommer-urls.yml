@@ -1,0 +1,39 @@
+name: Renommer les URLs produits
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Renommer et corriger
+        run: |
+          git mv produit-palermo.html produit-vertigo.html
+          git mv produit-palermo-bracelet.html produit-vertigo-bracelet.html
+          git mv produit-tahiti.html produit-eclipse.html
+          git mv produit-tahiti-bracelet.html produit-eclipse-bracelet.html
+          git mv produit-casablanca.html produit-halo.html
+          git mv produit-casablanca-bracelet.html produit-halo-bracelet.html
+          git mv produit-bianca.html produit-mosaique.html
+          git rm -f en/produit-palermo.html en/produit-palermo-bracelet.html en/produit-tahiti.html en/produit-tahiti-bracelet.html en/produit-casablanca.html en/produit-casablanca-bracelet.html en/produit-bianca.html
+          for f in *.html en/*.html sitemap.xml; do
+            sed -i \
+              -e "s/produit-palermo-bracelet\.html/produit-vertigo-bracelet.html/g" \
+              -e "s/produit-palermo\.html/produit-vertigo.html/g" \
+              -e "s/produit-tahiti-bracelet\.html/produit-eclipse-bracelet.html/g" \
+              -e "s/produit-tahiti\.html/produit-eclipse.html/g" \
+              -e "s/produit-casablanca-bracelet\.html/produit-halo-bracelet.html/g" \
+              -e "s/produit-casablanca\.html/produit-halo.html/g" \
+              -e "s/produit-bianca\.html/produit-mosaique.html/g" \
+              "$f"
+          done
+          sed -i "s/'palermo', 'casablanca', 'rio', 'positano', 'ibiza', 'laguna', 'tahiti'/'vertigo', 'halo', 'rio', 'positano', 'ibiza', 'laguna', 'eclipse'/" kibo-panier.js
+          printf "%s\n" "/produit-palermo.html /produit-vertigo.html 301" "/produit-palermo-bracelet.html /produit-vertigo-bracelet.html 301" "/produit-tahiti.html /produit-eclipse.html 301" "/produit-tahiti-bracelet.html /produit-eclipse-bracelet.html 301" "/produit-casablanca.html /produit-halo.html 301" "/produit-casablanca-bracelet.html /produit-halo-bracelet.html 301" "/produit-bianca.html /produit-mosaique.html 301" "/en/produit-palermo.html /en/produit-vertigo.html 301" "/en/produit-palermo-bracelet.html /en/produit-vertigo-bracelet.html 301" "/en/produit-tahiti.html /en/produit-eclipse.html 301" "/en/produit-tahiti-bracelet.html /en/produit-eclipse-bracelet.html 301" "/en/produit-casablanca.html /en/produit-halo.html 301" "/en/produit-casablanca-bracelet.html /en/produit-halo-bracelet.html 301" "/en/produit-bianca.html /en/produit-mosaique.html 301" > _redirects
+      - name: Commit
+        run: |
+          git config user.name kibo-bot
+          git config user.email bot@atelier-kibo.com
+          git add -A
+          git commit -m "Renommage des URLs produits + redirections 301"
+          git push
