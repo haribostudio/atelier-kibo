@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /private-access.html
+Disallow: /cercle-marrakech.html
+Disallow: /en/private-access.html
+Disallow: /en/cercle-marrakech.html
+
+Sitemap: https://atelier-kibo.com/sitemap.xml
