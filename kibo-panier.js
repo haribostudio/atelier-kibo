@@ -367,6 +367,9 @@
     });
   }
 
+  /* ---------- retirer le lien Spotify mort du footer ---------- */
+  document.querySelectorAll('a[href="#"]').forEach(function(a){ if (a.textContent.trim() === 'Spotify') a.remove(); });
+
   /* ---------- stats de visite (Cloudflare Web Analytics) ---------- */
   var cf = document.createElement('script');
   cf.defer = true;
