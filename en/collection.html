@@ -155,7 +155,10 @@
   /* Cartes avec photo édito : bascule vers la 2e image, pas de zoom */
   .ph-amore::after, .ph-menta::after, .ph-tahiti::after, .ph-rio::after,
   .ph-bianca::after, .ph-neptune::after, .ph-sunset::after,
-  .ph-palermo::after, .ph-amuleto::after {
+  .ph-palermo::after, .ph-amuleto::after,
+  .ph-limone::after, .ph-murano::after, .ph-perla::after, .ph-stella::after,
+  .ph-capri::after, .ph-casablanca::after, .ph-positano::after, .ph-santorini::after,
+  .ph-bodrum::after, .ph-positano-bracelet::after, .ph-ibiza-bracelet::after, .ph-rio-bracelet::after {
     content: ''; position: absolute; inset: 0;
     opacity: 0; transition: opacity 400ms ease;
   }
@@ -168,14 +171,38 @@
   .ph-rio::after { background: url('../produit-rio-2.jpg') center 25% / cover no-repeat; }
   .ph-palermo::after { background: url('../produit-vertigo-2.jpg') center 20% / cover no-repeat; }
   .ph-amuleto::after { background: url('../produit-amuleto-2.jpg') center 30% / cover no-repeat; }
+  .ph-limone::after { background: url('../produit-limone-2.jpg?v=1') center 42% / cover no-repeat; }
+  .ph-murano::after { background: url('../produit-murano-2.jpg?v=1') center 42% / cover no-repeat; }
+  .ph-perla::after { background: url('../produit-perla-2.jpg?v=1') center / cover no-repeat; }
+  .ph-stella::after { background: url('../produit-stella-2.jpg?v=1') center / cover no-repeat; }
+  .ph-capri::after { background: url('../produit-capri-2.jpg?v=1') center / cover no-repeat; }
+  .ph-casablanca::after { background: url('../produit-halo-2.jpg?v=1') center / cover no-repeat; }
+  .ph-positano::after { background: url('../produit-positano-2.jpg?v=1') center 42% / cover no-repeat; }
+  .ph-santorini::after { background: url('../produit-santorini-2.jpg?v=1') center 42% / cover no-repeat; }
+  .ph-bodrum::after { background: url('../produit-bodrum-2.jpg?v=1') center / cover no-repeat; }
+  .ph-positano-bracelet::after { background: url('../produit-positano-bracelet-2.jpg?v=1') center / cover no-repeat; }
+  .ph-ibiza-bracelet::after { background: url('../produit-ibiza-bracelet-2.jpg?v=1') center 42% / cover no-repeat; }
+  .ph-rio-bracelet::after { background: url('../produit-rio-bracelet-2.jpg?v=1') center / cover no-repeat; }
   .produit:hover .ph-amore::after, .produit:hover .ph-menta::after,
   .produit:hover .ph-tahiti::after, .produit:hover .ph-rio::after,
   .produit:hover .ph-bianca::after, .produit:hover .ph-neptune::after, .produit:hover .ph-sunset::after,
-  .produit:hover .ph-palermo::after, .produit:hover .ph-amuleto::after { opacity: 1; }
+  .produit:hover .ph-palermo::after, .produit:hover .ph-amuleto::after,
+  .produit:hover .ph-limone::after, .produit:hover .ph-murano::after,
+  .produit:hover .ph-perla::after, .produit:hover .ph-stella::after,
+  .produit:hover .ph-capri::after, .produit:hover .ph-casablanca::after,
+  .produit:hover .ph-positano::after, .produit:hover .ph-santorini::after,
+  .produit:hover .ph-bodrum::after, .produit:hover .ph-positano-bracelet::after,
+  .produit:hover .ph-ibiza-bracelet::after, .produit:hover .ph-rio-bracelet::after { opacity: 1; }
   .produit:hover .ph-amore::before, .produit:hover .ph-menta::before,
   .produit:hover .ph-tahiti::before, .produit:hover .ph-rio::before,
   .produit:hover .ph-bianca::before, .produit:hover .ph-neptune::before, .produit:hover .ph-sunset::before,
-  .produit:hover .ph-palermo::before, .produit:hover .ph-amuleto::before { transform: none; }
+  .produit:hover .ph-palermo::before, .produit:hover .ph-amuleto::before,
+  .produit:hover .ph-limone::before, .produit:hover .ph-murano::before,
+  .produit:hover .ph-perla::before, .produit:hover .ph-stella::before,
+  .produit:hover .ph-capri::before, .produit:hover .ph-casablanca::before,
+  .produit:hover .ph-positano::before, .produit:hover .ph-santorini::before,
+  .produit:hover .ph-bodrum::before, .produit:hover .ph-positano-bracelet::before,
+  .produit:hover .ph-ibiza-bracelet::before, .produit:hover .ph-rio-bracelet::before { transform: none; }
   /* ---------- Têtes de sections / drops ---------- */
   .drop-tete { padding: 72px 6vw 0; }
   .drop-groupe:first-of-type .drop-tete { padding-top: 44px; }
