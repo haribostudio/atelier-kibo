@@ -28,7 +28,7 @@ jobs:
                   if vr.get('success'): break
               except Exception:
                   continue
-          acc = api('https://api.cloudflare.com/client/v4/accounts')['result'][0]['id']
+          acc = 'cab77dedc6ce1ac0ac73913c4368d8cc'
           sites = api('https://api.cloudflare.com/client/v4/accounts/'+acc+'/rum/site_info/list')['result']
           site = None
           for s in sites:
