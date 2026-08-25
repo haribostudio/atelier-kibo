@@ -1,1 +1,80 @@
-
+name: Stats KIBO
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * *'
+permissions:
+  contents: write
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generer la page stats
+        env:
+          CF_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, urllib.request, datetime
+          TOK = os.environ['CF_TOKEN']
+          def api(url, data=None):
+              req = urllib.request.Request(url, data=json.dumps(data).encode() if data else None, headers={'Authorization':'Bearer '+TOK,'Content-Type':'application/json'})
+              return json.load(urllib.request.urlopen(req))
+          acc = api('https://api.cloudflare.com/client/v4/accounts')['result'][0]['id']
+          sites = api('https://api.cloudflare.com/client/v4/accounts/'+acc+'/rum/site_info/list')['result']
+          site = None
+          for s in sites:
+              blob = json.dumps(s)
+              if 'de1a2bf33b51446dbc2b18b04e5d24f6' in blob:
+                  site = s.get('site_tag'); break
+          if not site: site = sites[0].get('site_tag')
+          today = datetime.date.today()
+          start14 = (today - datetime.timedelta(days=13)).isoformat()
+          start7 = (today - datetime.timedelta(days=6)).isoformat()
+          until = (today + datetime.timedelta(days=1)).isoformat()
+          def gql(dim, since, order, limit):
+              q = 'query($acc:String!,$site:String!){viewer{accounts(filter:{accountTag:$acc}){d:rumPageloadEventsAdaptiveGroups(filter:{siteTag:$site,date_geq:"'+since+'",date_lt:"'+until+'"},limit:'+str(limit)+',orderBy:['+order+']){count sum{visits} dimensions{'+dim+'}}}}}'
+              r = api('https://api.cloudflare.com/client/v4/graphql', {'query':q,'variables':{'acc':acc,'site':site}})
+              return r['data']['viewer']['accounts'][0]['d']
+          series = gql('date', start14, 'date_ASC', 100)
+          paths = gql('requestPath', start7, 'count_DESC', 10)
+          refs = gql('refererHost', start7, 'count_DESC', 12)
+          bydate = {x['dimensions']['date']: x for x in series}
+          days = [(today - datetime.timedelta(days=i)).isoformat() for i in range(13,-1,-1)]
+          vis = [bydate.get(dd,{}).get('sum',{}).get('visits',0) for dd in days]
+          pv  = [bydate.get(dd,{}).get('count',0) for dd in days]
+          v7 = sum(vis[7:]); v7prev = sum(vis[:7]); pv7 = sum(pv[7:])
+          delta = ('+' if v7>=v7prev else '') + str(v7-v7prev)
+          mx = max(vis) if max(vis)>0 else 1
+          bars = []
+          for i,dd in enumerate(days):
+              h = int(120*vis[i]/mx)
+              x = i*46
+              col = '#0F2FA6' if i>=7 else '#B9C4E8'
+              lab = dd[8:10]+'/'+dd[5:7]
+              bars.append('<rect x="'+str(x)+'" y="'+str(140-h)+'" width="34" height="'+str(max(h,2))+'" rx="4" fill="'+col+'"/><text x="'+str(x+17)+'" y="158" font-size="9" fill="#8a877f" text-anchor="middle" font-family="monospace">'+lab+'</text><text x="'+str(x+17)+'" y="'+str(134-h)+'" font-size="10" fill="#1A1A1A" text-anchor="middle" font-family="monospace">'+str(vis[i])+'</text>')
+          svg = '<svg viewBox="0 0 644 165" style="width:100%;max-width:660px">'+''.join(bars)+'</svg>'
+          prow = []
+          for p in paths[:6]:
+              path = p['dimensions']['requestPath']
+              label = 'Accueil' if path in ('/','/index.html') else path.replace('/','').replace('.html','').replace('produit-','Produit : ').replace('-',' ')
+              prow.append('<tr><td>'+label+'</td><td class="num">'+str(p['count'])+'</td></tr>')
+          rrow = []
+          for r in refs:
+              host = r['dimensions']['refererHost'] or 'Acces direct'
+              host = host.replace('www.','').replace('l.instagram.com','Instagram').replace('instagram.com','Instagram').replace('google.com','Google').replace('google.fr','Google')
+              if 'atelier-kibo' in host: continue
+              rrow.append('<tr><td>'+host+'</td><td class="num">'+str(r['sum']['visits'])+'</td></tr>')
+          css = 'body{background:#EDEBE5;font-family:Courier New,monospace;color:#1A1A1A;max-width:720px;margin:0 auto;padding:36px 20px}h1{font-family:Georgia,serif;font-style:italic;font-weight:500;font-size:34px;margin-bottom:4px}h1 span{color:#0F2FA6}p.sub{font-size:12px;color:#8a877f;margin-bottom:28px}.cards{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}.card{background:#fff;border-radius:14px;padding:18px 22px;flex:1;min-width:150px;box-shadow:0 4px 18px rgba(16,19,26,.06)}.card b{display:block;font-size:34px;font-family:Georgia,serif}.card small{font-size:11px;color:#8a877f;letter-spacing:1px}h2{font-size:13px;letter-spacing:2px;margin:30px 0 12px}table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(16,19,26,.06)}td{padding:10px 16px;font-size:13px;border-bottom:1px solid #f0eee8}td.num{text-align:right;color:#0F2FA6;font-weight:bold}.chart{background:#fff;border-radius:14px;padding:20px;box-shadow:0 4px 18px rgba(16,19,26,.06)}footer{margin-top:30px;font-size:11px;color:#8a877f;text-align:center}'
+          maj = datetime.datetime.now().strftime('%d/%m/%Y')
+          html = '<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stats - KIBO Paris</title><style>'+css+'</style></head><body><h1>Stats <span>&#10035;</span> KIBO</h1><p class="sub">7 derniers jours - mise a jour '+maj+' (donnees Cloudflare, sans cookies)</p><div class="cards"><div class="card"><small>VISITEURS / 7 JOURS</small><b>'+str(v7)+'</b><small>'+delta+' vs semaine precedente</small></div><div class="card"><small>PAGES VUES / 7 JOURS</small><b>'+str(pv7)+'</b></div></div><h2>VISITEURS PAR JOUR (14 JOURS)</h2><div class="chart">'+svg+'</div><h2>PAGES LES PLUS VUES</h2><table>'+''.join(prow)+'</table><h2>D OU VIENNENT-ILS ?</h2><table>'+''.join(rrow[:6])+'</table><footer>KIBO Paris &#10035; page privee, non indexee</footer></body></html>'
+          open('stats-kibo.html','w',encoding='utf-8').write(html)
+          print('OK', v7, pv7)
+          PYEOF
+      - name: Commit
+        run: |
+          git config user.name kibo-bot
+          git config user.email bot@atelier-kibo.com
+          git add stats-kibo.html
+          git commit -m 'Mise a jour stats' || echo rien
+          git push
