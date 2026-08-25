@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<title>Aperçu du feed — KIBO Paris</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#EDEBE5;
+    font-family:'Courier New', monospace;
+    color:#1A1A1A;
+    min-height:100vh;
+    display:flex; flex-direction:column; align-items:center;
+    padding:40px 20px;
+  }
+  h1 { font-size:15px; letter-spacing:2px; font-weight:normal; margin-bottom:6px; }
+  h1 span { color:#0F2FA6; }
+  p.hint { font-size:12px; color:#8a877f; margin-bottom:24px; text-align:center; line-height:1.6; }
+  .phone {
+    background:#fff; border-radius:28px; padding:18px 10px 26px;
+    width:min(420px, 96vw);
+    box-shadow:0 12px 40px rgba(16,19,26,.14);
+  }
+  .header {
+    display:flex; align-items:center; gap:10px; padding:0 8px 14px;
+    border-bottom:1px solid #eee; margin-bottom:2px;
+  }
+  .avatar {
+    width:38px; height:38px; border-radius:50%;
+    background:#10131A; color:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:11px; letter-spacing:1px;
+  }
+  .handle { font-size:13px; font-weight:bold; }
+  .handle small { display:block; font-weight:normal; color:#8a877f; font-size:11px; }
+  #grid {
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:2px;
+    min-height:120px;
+  }
+  .cell {
+    aspect-ratio:3/4; background:#f4f2ee; position:relative;
+    overflow:hidden; cursor:grab;
+  }
+  .cell img { width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
+  .cell.dragging { opacity:.35; }
+  .cell.over { outline:3px solid #0F2FA6; outline-offset:-3px; }
+  .cell .x {
+    position:absolute; top:6px; right:6px; width:22px; height:22px;
+    background:rgba(16,19,26,.72); color:#fff; border:none; border-radius:50%;
+    font-size:12px; cursor:pointer; opacity:0; transition:opacity .15s;
+    line-height:1;
+  }
+  .cell:hover .x { opacity:1; }
+  #drop {
+    margin-top:22px; width:min(420px,96vw);
+    border:2px dashed #b9b6ad; border-radius:14px;
+    padding:26px; text-align:center; font-size:13px; color:#8a877f;
+    background:rgba(255,255,255,.5); cursor:pointer;
+    transition:border-color .15s, background .15s;
+  }
+  #drop.armed { border-color:#0F2FA6; background:#eef1fb; color:#0F2FA6; }
+  #file { display:none; }
+  .bar { margin-top:14px; display:flex; gap:10px; }
+  .bar button {
+    font-family:inherit; font-size:12px; letter-spacing:1px;
+    padding:10px 16px; border:1px solid #1A1A1A; background:#fff; cursor:pointer;
+    border-radius:999px;
+  }
+  .bar button:hover { background:#1A1A1A; color:#fff; }
+</style>
+</head>
+<body>
+  <h1>KIBO PARIS <span>✳</span> APERÇU DU FEED</h1>
+  <p class="hint">Glisse tes photos dans la zone ci-dessous (ou clique pour choisir).<br>Réorganise en glissant les vignettes. Survole une vignette pour la retirer.<br>Tout reste sur ton appareil — rien n'est envoyé en ligne.</p>
+
+  <div class="phone">
+    <div class="header">
+      <div class="avatar">K</div>
+      <div class="handle">atelier.kibo<small>KIBO Paris — jewelry for the moments that stay</small></div>
+    </div>
+    <div id="grid"></div>
+  </div>
+
+  <div id="drop">✳ &nbsp;Dépose tes photos ici&nbsp; ✳</div>
+  <input type="file" id="file" accept="image/*" multiple>
+
+  <div class="bar">
+    <button id="clear">Tout effacer</button>
+  </div>
+
+<script>
+  var grid = document.getElementById('grid');
+  var drop = document.getElementById('drop');
+  var file = document.getElementById('file');
+  var dragSrc = null;
+
+  function addImage(src) {
+    var cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.draggable = true;
+    cell.innerHTML = '<img src="' + src + '"><button class="x" title="Retirer">✕</button>';
+    cell.querySelector('.x').onclick = function() { cell.remove(); };
+    cell.addEventListener('dragstart', function() { dragSrc = cell; cell.classList.add('dragging'); });
+    cell.addEventListener('dragend', function() { cell.classList.remove('dragging'); document.querySelectorAll('.cell.over').forEach(function(c){c.classList.remove('over');}); });
+    cell.addEventListener('dragover', function(e) { e.preventDefault(); if (cell!==dragSrc) cell.classList.add('over'); });
+    cell.addEventListener('dragleave', function() { cell.classList.remove('over'); });
+    cell.addEventListener('drop', function(e) {
+      e.preventDefault(); cell.classList.remove('over');
+      if (!dragSrc || dragSrc === cell) return;
+      var cells = [].slice.call(grid.children);
+      var from = cells.indexOf(dragSrc), to = cells.indexOf(cell);
+      if (from < to) grid.insertBefore(dragSrc, cell.nextSibling);
+      else grid.insertBefore(dragSrc, cell);
+    });
+    grid.prepend(cell);
+  }
+
+  function handleFiles(list) {
+    [].filter.call(list, function(f){ return f.type.indexOf('image/')===0; }).forEach(function(f) {
+      var r = new FileReader();
+      r.onload = function(e) { addImage(e.target.result); };
+      r.readAsDataURL(f);
+    });
+  }
+
+  drop.onclick = function() { file.click(); };
+  file.onchange = function() { handleFiles(file.files); file.value=''; };
+  ['dragenter','dragover'].forEach(function(ev){ drop.addEventListener(ev, function(e) { e.preventDefault(); drop.classList.add('armed'); }); });
+  ['dragleave','drop'].forEach(function(ev){ drop.addEventListener(ev, function(e) { e.preventDefault(); drop.classList.remove('armed'); }); });
+  drop.addEventListener('drop', function(e) { handleFiles(e.dataTransfer.files); });
+  document.body.addEventListener('dragover', function(e) { e.preventDefault(); });
+  document.body.addEventListener('drop', function(e) { e.preventDefault(); });
+
+  document.getElementById('clear').onclick = function() { if (confirm('Vider la grille ?')) grid.innerHTML=''; };
+</script>
+</body>
+</html>
