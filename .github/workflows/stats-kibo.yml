@@ -19,7 +19,11 @@ jobs:
           TOK = ''
           def api(url, data=None):
               req = urllib.request.Request(url, data=json.dumps(data).encode() if data else None, headers={'Authorization':'Bearer '+TOK,'Content-Type':'application/json'})
-              return json.load(urllib.request.urlopen(req))
+              try:
+                  return json.load(urllib.request.urlopen(req))
+              except urllib.error.HTTPError as e:
+                  print('HTTP', e.code, url[:60], e.read()[:400])
+                  raise
           cands = [l.strip() for l in os.environ['CF_TOKEN'].splitlines() if l.strip()]
           for c in cands:
               TOK = c
@@ -28,6 +32,12 @@ jobs:
                   if vr.get('success'): break
               except Exception:
                   continue
+          print('candidats:', len(cands))
+          try:
+              vr = api('https://api.cloudflare.com/client/v4/user/tokens/verify')
+              print('verify:', vr.get('success'), vr.get('result',{}).get('status'))
+          except Exception as e:
+              print('verify KO')
           acc = 'cab77dedc6ce1ac0ac73913c4368d8cc'
           site = '9c1afbe7ffdc4b31a8032c2800d24d00'
           today = datetime.date.today()
