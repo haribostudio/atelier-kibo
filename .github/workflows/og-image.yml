@@ -7,11 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Decoder et brancher og-home-2
+      - name: Brancher og-home-2 dans les pages
         run: |
-          base64 -d tools/og-home2.b64 > og-home-2.jpg
           python3 - <<'EOF'
-          import glob, re
+          import glob
           for f in glob.glob('*.html') + glob.glob('en/*.html'):
               s = open(f, encoding='utf-8').read()
               n = s.replace('og-home.jpg', 'og-home-2.jpg')
