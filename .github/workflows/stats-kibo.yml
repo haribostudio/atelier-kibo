@@ -51,6 +51,7 @@ jobs:
           series = gql('date', start14, 'date_ASC', 100)
           paths = gql('requestPath', start7, 'count_DESC', 10)
           refs = gql('refererHost', start7, 'count_DESC', 12)
+          pays = gql('countryName', start7, 'count_DESC', 12)
           bydate = {x['dimensions']['date']: x for x in series}
           days = [(today - datetime.timedelta(days=i)).isoformat() for i in range(13,-1,-1)]
           vis = [bydate.get(dd,{}).get('sum',{}).get('visits',0) for dd in days]
@@ -77,9 +78,13 @@ jobs:
               host = host.replace('www.','').replace('l.instagram.com','Instagram').replace('instagram.com','Instagram').replace('google.com','Google').replace('google.fr','Google')
               if 'atelier-kibo' in host: continue
               rrow.append('<tr><td>'+host+'</td><td class="num">'+str(r['sum']['visits'])+'</td></tr>')
+          crow = []
+          for c2 in pays[:6]:
+              nom = c2['dimensions']['countryName'] or '?'
+              crow.append('<tr><td>'+nom+'</td><td class=\"num\">'+str(c2['sum']['visits'])+'</td></tr>')
           css = 'body{background:#EDEBE5;font-family:Courier New,monospace;color:#1A1A1A;max-width:720px;margin:0 auto;padding:36px 20px}h1{font-family:Georgia,serif;font-style:italic;font-weight:500;font-size:34px;margin-bottom:4px}h1 span{color:#0F2FA6}p.sub{font-size:12px;color:#8a877f;margin-bottom:28px}.cards{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}.card{background:#fff;border-radius:14px;padding:18px 22px;flex:1;min-width:150px;box-shadow:0 4px 18px rgba(16,19,26,.06)}.card b{display:block;font-size:34px;font-family:Georgia,serif}.card small{font-size:11px;color:#8a877f;letter-spacing:1px}h2{font-size:13px;letter-spacing:2px;margin:30px 0 12px}table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(16,19,26,.06)}td{padding:10px 16px;font-size:13px;border-bottom:1px solid #f0eee8}td.num{text-align:right;color:#0F2FA6;font-weight:bold}.chart{background:#fff;border-radius:14px;padding:20px;box-shadow:0 4px 18px rgba(16,19,26,.06)}footer{margin-top:30px;font-size:11px;color:#8a877f;text-align:center}'
           maj = datetime.datetime.now().strftime('%d/%m/%Y')
-          html = '<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stats - KIBO Paris</title><style>'+css+'</style></head><body><h1>Stats <span>&#10035;</span> KIBO</h1><p class="sub">7 derniers jours - mise a jour '+maj+' (donnees Cloudflare, sans cookies)</p><div class="cards"><div class="card"><small>VISITEURS / 7 JOURS</small><b>'+str(v7)+'</b><small>'+delta+' vs semaine precedente</small></div><div class="card"><small>PAGES VUES / 7 JOURS</small><b>'+str(pv7)+'</b></div></div><h2>VISITEURS PAR JOUR (14 JOURS)</h2><div class="chart">'+svg+'</div><h2>PAGES LES PLUS VUES</h2><table>'+''.join(prow)+'</table><h2>D OU VIENNENT-ILS ?</h2><table>'+''.join(rrow[:6])+'</table><footer>KIBO Paris &#10035; page privee, non indexee</footer></body></html>'
+          html = '<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stats - KIBO Paris</title><style>'+css+'</style></head><body><h1>Stats <span>&#10035;</span> KIBO</h1><p class="sub">7 derniers jours - mise a jour '+maj+' (donnees Cloudflare, sans cookies)</p><div class="cards"><div class="card"><small>VISITEURS / 7 JOURS</small><b>'+str(v7)+'</b><small>'+delta+' vs semaine precedente</small></div><div class="card"><small>PAGES VUES / 7 JOURS</small><b>'+str(pv7)+'</b></div></div><h2>VISITEURS PAR JOUR (14 JOURS)</h2><div class="chart">'+svg+'</div><h2>PAGES LES PLUS VUES</h2><table>'+''.join(prow)+'</table><h2>D OU VIENNENT-ILS ?</h2><table>'+''.join(rrow[:6])+'</table><h2>PAR PAYS</h2><table>'+''.join(crow)+'</table><footer>KIBO Paris &#10035; page privee, non indexee</footer></body></html>'
           open('stats-kibo.html','w',encoding='utf-8').write(html)
           print('OK', v7, pv7)
           PYEOF
