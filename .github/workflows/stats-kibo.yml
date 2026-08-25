@@ -16,10 +16,18 @@ jobs:
         run: |
           python3 - <<'PYEOF'
           import json, os, urllib.request, datetime
-          TOK = os.environ['CF_TOKEN']
+          TOK = ''
           def api(url, data=None):
               req = urllib.request.Request(url, data=json.dumps(data).encode() if data else None, headers={'Authorization':'Bearer '+TOK,'Content-Type':'application/json'})
               return json.load(urllib.request.urlopen(req))
+          cands = [l.strip() for l in os.environ['CF_TOKEN'].splitlines() if l.strip()]
+          for c in cands:
+              TOK = c
+              try:
+                  vr = api('https://api.cloudflare.com/client/v4/user/tokens/verify')
+                  if vr.get('success'): break
+              except Exception:
+                  continue
           acc = api('https://api.cloudflare.com/client/v4/accounts')['result'][0]['id']
           sites = api('https://api.cloudflare.com/client/v4/accounts/'+acc+'/rum/site_info/list')['result']
           site = None
