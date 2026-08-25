@@ -372,9 +372,17 @@
   document.querySelectorAll('a[href="#"]').forEach(function(a){ if (a.textContent.trim() === 'Spotify') a.remove(); });
 
   /* ---------- stats de visite (Cloudflare Web Analytics) ---------- */
+  try {
+    var mEq = location.search.match(/[?&]equipe=([01])/);
+    if (mEq) { if (mEq[1]==='1') { localStorage.setItem('kibo_equipe','1'); alert('Stats desactivees sur cet appareil'); } else { localStorage.removeItem('kibo_equipe'); alert('Stats reactivees'); } }
+  } catch(e) {}
+  var kiboEquipe = false;
+  try { kiboEquipe = localStorage.getItem('kibo_equipe') === '1'; } catch(e) {}
+  if (!kiboEquipe) {
   var cf = document.createElement('script');
   cf.defer = true;
   cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
   cf.setAttribute('data-cf-beacon', '{"token": "de1a2bf33b51446dbc2b18b04e5d24f6"}');
   document.head.appendChild(cf);
+  }
 })();
