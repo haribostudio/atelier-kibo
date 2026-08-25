@@ -29,13 +29,7 @@ jobs:
               except Exception:
                   continue
           acc = 'cab77dedc6ce1ac0ac73913c4368d8cc'
-          sites = api('https://api.cloudflare.com/client/v4/accounts/'+acc+'/rum/site_info/list')['result']
-          site = None
-          for s in sites:
-              blob = json.dumps(s)
-              if 'de1a2bf33b51446dbc2b18b04e5d24f6' in blob:
-                  site = s.get('site_tag'); break
-          if not site: site = sites[0].get('site_tag')
+          site = '9c1afbe7ffdc4b31a8032c2800d24d00'
           today = datetime.date.today()
           start14 = (today - datetime.timedelta(days=13)).isoformat()
           start7 = (today - datetime.timedelta(days=6)).isoformat()
