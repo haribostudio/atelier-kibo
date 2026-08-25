@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="robots" content="noindex,nofollow">
@@ -101,7 +101,7 @@
     var cell = document.createElement('div');
     cell.className = 'cell';
     cell.draggable = true;
-    cell.innerHTML = '<img src="' + src + '"><button class="x" title="Retirer">✕</button>';
+    cell.innerHTML = '<img src="../' + src + '"><button class="x" title="Retirer">✕</button>';
     cell.querySelector('.x').onclick = function() { cell.remove(); };
     cell.addEventListener('dragstart', function() { dragSrc = cell; cell.classList.add('dragging'); });
     cell.addEventListener('dragend', function() { cell.classList.remove('dragging'); document.querySelectorAll('.cell.over').forEach(function(c){c.classList.remove('over');}); });
