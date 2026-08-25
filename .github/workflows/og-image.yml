@@ -1,0 +1,28 @@
+name: Mettre a jour l image de partage
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  og:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decoder et brancher og-home-2
+        run: |
+          base64 -d tools/og-home2.b64 > og-home-2.jpg
+          python3 - <<'EOF'
+          import glob, re
+          for f in glob.glob('*.html') + glob.glob('en/*.html'):
+              s = open(f, encoding='utf-8').read()
+              n = s.replace('og-home.jpg', 'og-home-2.jpg')
+              if n != s:
+                  open(f, 'w', encoding='utf-8').write(n)
+                  print('patch', f)
+          EOF
+      - name: Commit
+        run: |
+          git config user.name kibo-bot
+          git config user.email bot@atelier-kibo.com
+          git add -A
+          git commit -m 'Nouvelle image de partage (og-home-2)' || echo rien
+          git push
