@@ -3,138 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="robots" content="noindex,nofollow">
-<title>Aperçu du feed — KIBO Paris</title>
-<link rel="alternate" hreflang="fr" href="https://atelier-kibo.com/apercu-feed.html">
-<link rel="alternate" hreflang="en" href="https://atelier-kibo.com/en/apercu-feed.html">
-<link rel="alternate" hreflang="x-default" href="https://atelier-kibo.com/apercu-feed.html">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apercu du feed - KIBO Paris</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body {
-    background:#EDEBE5;
-    font-family:'Courier New', monospace;
-    color:#1A1A1A;
-    min-height:100vh;
-    display:flex; flex-direction:column; align-items:center;
-    padding:40px 20px;
-  }
-  h1 { font-size:15px; letter-spacing:2px; font-weight:normal; margin-bottom:6px; }
-  h1 span { color:#0F2FA6; }
-  p.hint { font-size:12px; color:#8a877f; margin-bottom:24px; text-align:center; line-height:1.6; }
-  .phone {
-    background:#fff; border-radius:28px; padding:18px 10px 26px;
-    width:min(420px, 96vw);
-    box-shadow:0 12px 40px rgba(16,19,26,.14);
-  }
-  .header {
-    display:flex; align-items:center; gap:10px; padding:0 8px 14px;
-    border-bottom:1px solid #eee; margin-bottom:2px;
-  }
-  .avatar {
-    width:38px; height:38px; border-radius:50%;
-    background:#10131A; color:#fff; display:flex; align-items:center; justify-content:center;
-    font-size:11px; letter-spacing:1px;
-  }
-  .handle { font-size:13px; font-weight:bold; }
-  .handle small { display:block; font-weight:normal; color:#8a877f; font-size:11px; }
-  #grid {
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:2px;
-    min-height:120px;
-  }
-  .cell {
-    aspect-ratio:3/4; background:#f4f2ee; position:relative;
-    overflow:hidden; cursor:grab;
-  }
-  .cell img { width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
-  .cell.dragging { opacity:.35; }
-  .cell.over { outline:3px solid #0F2FA6; outline-offset:-3px; }
-  .cell .x {
-    position:absolute; top:6px; right:6px; width:22px; height:22px;
-    background:rgba(16,19,26,.72); color:#fff; border:none; border-radius:50%;
-    font-size:12px; cursor:pointer; opacity:0; transition:opacity .15s;
-    line-height:1;
-  }
-  .cell:hover .x { opacity:1; }
-  #drop {
-    margin-top:22px; width:min(420px,96vw);
-    border:2px dashed #b9b6ad; border-radius:14px;
-    padding:26px; text-align:center; font-size:13px; color:#8a877f;
-    background:rgba(255,255,255,.5); cursor:pointer;
-    transition:border-color .15s, background .15s;
-  }
-  #drop.armed { border-color:#0F2FA6; background:#eef1fb; color:#0F2FA6; }
-  #file { display:none; }
-  .bar { margin-top:14px; display:flex; gap:10px; }
-  .bar button {
-    font-family:inherit; font-size:12px; letter-spacing:1px;
-    padding:10px 16px; border:1px solid #1A1A1A; background:#fff; cursor:pointer;
-    border-radius:999px;
-  }
-  .bar button:hover { background:#1A1A1A; color:#fff; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#EDEBE5; font-family:'Courier New', monospace; color:#1A1A1A; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:40px 20px; }
+h1 { font-size:15px; letter-spacing:2px; font-weight:normal; margin-bottom:6px; }
+h1 span { color:#0F2FA6; }
+p.hint { font-size:12px; color:#8a877f; margin-bottom:24px; text-align:center; line-height:1.6; }
+.phone { background:#fff; border-radius:28px; padding:18px 10px 26px; width:min(420px,96vw); box-shadow:0 12px 40px rgba(16,19,26,.14); }
+.header { display:flex; align-items:center; gap:10px; padding:0 8px 14px; border-bottom:1px solid #eee; margin-bottom:2px; }
+.avatar { width:38px; height:38px; border-radius:50%; background:#10131A; color:#fff; display:flex; align-items:center; justify-content:center; font-size:11px; }
+.handle { font-size:13px; font-weight:bold; }
+.handle small { display:block; font-weight:normal; color:#8a877f; font-size:11px; }
+#grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; min-height:120px; }
+.cell { aspect-ratio:3/4; background:#f4f2ee; position:relative; overflow:hidden; cursor:grab; }
+.cell img { width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
+.cell.dragging { opacity:.35; }
+.cell.over { outline:3px solid #0F2FA6; outline-offset:-3px; }
+.cell .x { position:absolute; top:6px; right:6px; width:22px; height:22px; background:rgba(16,19,26,.72); color:#fff; border:none; border-radius:50%; font-size:12px; cursor:pointer; opacity:0; line-height:1; }
+.cell:hover .x { opacity:1; }
+#drop { margin-top:22px; width:min(420px,96vw); border:2px dashed #b9b6ad; border-radius:14px; padding:26px; text-align:center; font-size:13px; color:#8a877f; background:rgba(255,255,255,.5); cursor:pointer; }
+#drop.armed { border-color:#0F2FA6; background:#eef1fb; color:#0F2FA6; }
+#file { display:none; }
+.bar { margin-top:14px; display:flex; gap:10px; }
+.bar button { font-family:inherit; font-size:12px; letter-spacing:1px; padding:10px 16px; border:1px solid #1A1A1A; background:#fff; cursor:pointer; border-radius:999px; }
+.bar button:hover { background:#1A1A1A; color:#fff; }
+p.save { font-size:11px; color:#8a877f; margin-top:10px; }
 </style>
 </head>
-<body>
-  <h1>KIBO PARIS <span>✳</span> APERÇU DU FEED</h1>
-  <p class="hint">Glisse tes photos dans la zone ci-dessous (ou clique pour choisir).<br>Réorganise en glissant les vignettes. Survole une vignette pour la retirer.<br>Tout reste sur ton appareil — rien n'est envoyé en ligne.</p>
-
-  <div class="phone">
-    <div class="header">
-      <div class="avatar">K</div>
-      <div class="handle">atelier.kibo<small>KIBO Paris — jewelry for the moments that stay</small></div>
-    </div>
-    <div id="grid"></div>
-  </div>
-
-  <div id="drop">✳ &nbsp;Dépose tes photos ici&nbsp; ✳</div>
-  <input type="file" id="file" accept="image/*" multiple>
-
-  <div class="bar">
-    <button id="clear">Tout effacer</button>
-  </div>
-
+<body style="display:none">
+<h1>KIBO PARIS <span>&#10035;</span> APERCU DU FEED</h1>
+<p class="hint">Glisse tes photos dans la zone (ou clique pour choisir). Reorganise en glissant les vignettes.<br>Les photos sont enregistrees dans ce navigateur - elles seront la a ta prochaine visite.</p>
+<div class="phone">
+<div class="header"><div class="avatar">K</div><div class="handle">atelier.kibo<small>KIBO Paris - jewelry for the moments that stay</small></div></div>
+<div id="grid"></div>
+</div>
+<div id="drop">&#10035; &nbsp;Depose tes photos ici&nbsp; &#10035;</div>
+<input type="file" id="file" accept="image/*" multiple>
+<div class="bar"><button id="clear">Tout effacer</button></div>
+<p class="save" id="savestate"></p>
 <script>
-  var grid = document.getElementById('grid');
-  var drop = document.getElementById('drop');
-  var file = document.getElementById('file');
-  var dragSrc = null;
+var KEY = 'kibo_feed_v1';
+var grid = document.getElementById('grid');
+var drop = document.getElementById('drop');
+var file = document.getElementById('file');
+var stateEl = document.getElementById('savestate');
+var dragSrc = null;
 
-  function addImage(src) {
-    var cell = document.createElement('div');
-    cell.className = 'cell';
-    cell.draggable = true;
-    cell.innerHTML = '<img src="' + src + '"><button class="x" title="Retirer">✕</button>';
-    cell.querySelector('.x').onclick = function() { cell.remove(); };
-    cell.addEventListener('dragstart', function() { dragSrc = cell; cell.classList.add('dragging'); });
-    cell.addEventListener('dragend', function() { cell.classList.remove('dragging'); document.querySelectorAll('.cell.over').forEach(function(c){c.classList.remove('over');}); });
-    cell.addEventListener('dragover', function(e) { e.preventDefault(); if (cell!==dragSrc) cell.classList.add('over'); });
-    cell.addEventListener('dragleave', function() { cell.classList.remove('over'); });
-    cell.addEventListener('drop', function(e) {
-      e.preventDefault(); cell.classList.remove('over');
-      if (!dragSrc || dragSrc === cell) return;
-      var cells = [].slice.call(grid.children);
-      var from = cells.indexOf(dragSrc), to = cells.indexOf(cell);
-      if (from < to) grid.insertBefore(dragSrc, cell.nextSibling);
-      else grid.insertBefore(dragSrc, cell);
-    });
-    grid.prepend(cell);
+function save() {
+  try {
+    var urls = [].map.call(grid.querySelectorAll('.cell img'), function(i){ return i.src; });
+    localStorage.setItem(KEY, JSON.stringify(urls));
+    stateEl.textContent = urls.length ? (urls.length + ' photos enregistrees') : '';
+  } catch(e) {
+    stateEl.textContent = 'Limite de stockage atteinte - retire quelques photos.';
   }
+}
 
-  function handleFiles(list) {
-    [].filter.call(list, function(f){ return f.type.indexOf('image/')===0; }).forEach(function(f) {
-      var r = new FileReader();
-      r.onload = function(e) { addImage(e.target.result); };
-      r.readAsDataURL(f);
-    });
-  }
+function makeCell(src) {
+  var c = document.createElement('div');
+  c.className = 'cell';
+  c.draggable = true;
+  c.innerHTML = '<img src="' + src + '"><button class="x" title="Retirer">&#10005;</button>';
+  c.querySelector('.x').onclick = function(){ c.remove(); save(); };
+  c.addEventListener('dragstart', function(){ dragSrc = c; c.classList.add('dragging'); });
+  c.addEventListener('dragend', function(){ c.classList.remove('dragging'); [].forEach.call(document.querySelectorAll('.cell.over'), function(x){ x.classList.remove('over'); }); });
+  c.addEventListener('dragover', function(e){ e.preventDefault(); if (c !== dragSrc) c.classList.add('over'); });
+  c.addEventListener('dragleave', function(){ c.classList.remove('over'); });
+  c.addEventListener('drop', function(e){
+    e.preventDefault(); c.classList.remove('over');
+    if (!dragSrc || dragSrc === c) return;
+    var cells = [].slice.call(grid.children);
+    var f = cells.indexOf(dragSrc), t = cells.indexOf(c);
+    if (f < t) grid.insertBefore(dragSrc, c.nextSibling); else grid.insertBefore(dragSrc, c);
+    save();
+  });
+  return c;
+}
 
-  drop.onclick = function() { file.click(); };
-  file.onchange = function() { handleFiles(file.files); file.value=''; };
-  ['dragenter','dragover'].forEach(function(ev){ drop.addEventListener(ev, function(e) { e.preventDefault(); drop.classList.add('armed'); }); });
-  ['dragleave','drop'].forEach(function(ev){ drop.addEventListener(ev, function(e) { e.preventDefault(); drop.classList.remove('armed'); }); });
-  drop.addEventListener('drop', function(e) { handleFiles(e.dataTransfer.files); });
-  document.body.addEventListener('dragover', function(e) { e.preventDefault(); });
-  document.body.addEventListener('drop', function(e) { e.preventDefault(); });
+function addNew(src) { grid.prepend(makeCell(src)); save(); }
 
-  document.getElementById('clear').onclick = function() { if (confirm('Vider la grille ?')) grid.innerHTML=''; };
+function compress(f, cb) {
+  var r = new FileReader();
+  r.onload = function(e) {
+    var img = new Image();
+    img.onload = function() {
+      var w = Math.min(440, img.width);
+      var h = Math.round(img.height * w / img.width);
+      var cv = document.createElement('canvas');
+      cv.width = w; cv.height = h;
+      cv.getContext('2d').drawImage(img, 0, 0, w, h);
+      cb(cv.toDataURL('image/jpeg', 0.72));
+    };
+    img.src = e.target.result;
+  };
+  r.readAsDataURL(f);
+}
+
+function handleFiles(list) {
+  [].filter.call(list, function(f){ return f.type.indexOf('image/') === 0; }).forEach(function(f){ compress(f, addNew); });
+}
+
+drop.onclick = function(){ file.click(); };
+file.onchange = function(){ handleFiles(file.files); file.value = ''; };
+['dragenter','dragover'].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.add('armed'); }); });
+['dragleave','drop'].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.remove('armed'); }); });
+drop.addEventListener('drop', function(e){ handleFiles(e.dataTransfer.files); });
+document.body.addEventListener('dragover', function(e){ e.preventDefault(); });
+document.body.addEventListener('drop', function(e){ e.preventDefault(); });
+document.getElementById('clear').onclick = function(){ if (confirm('Vider la grille ?')) { grid.innerHTML = ''; save(); } };
+
+try {
+  var saved = JSON.parse(localStorage.getItem(KEY) || '[]');
+  saved.forEach(function(src){ grid.appendChild(makeCell(src)); });
+  if (saved.length) stateEl.textContent = saved.length + ' photos enregistrees';
+} catch(e) {}
+
+(async function(){
+  var H = 'e5a559c8ce04fb73d98cfc83e140713600c1134ac676d0b4debcc9838c09e2d7';
+  try {
+    if (localStorage.getItem('kibo_gate') === H) { document.body.style.display = 'flex'; return; }
+    var p = prompt('Mot de passe ?');
+    if (!p) { document.documentElement.innerHTML = ''; return; }
+    var d = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(p.toLowerCase().trim()));
+    var x = [].map.call(new Uint8Array(d), function(c){ return c.toString(16).padStart(2,'0'); }).join('');
+    if (x === H) { localStorage.setItem('kibo_gate', H); document.body.style.display = 'flex'; }
+    else { document.documentElement.innerHTML = ''; }
+  } catch(e) { document.body.style.display = 'flex'; }
+})();
 </script>
 </body>
 </html>
