@@ -485,6 +485,25 @@
 </script>
 </head>
 <body>
+<!-- KIBO intro -->
+<style>
+#kibo-intro{position:fixed;inset:0;z-index:9999;background:#10131A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;cursor:pointer;transition:opacity 1.1s ease}
+#kibo-intro.out{opacity:0;pointer-events:none}
+#kibo-intro .lw{animation:kbOrganic 3.2s ease-in-out 1.5s infinite alternate}
+#kibo-intro img{display:block;width:min(320px,60vw);filter:invert(1);-webkit-mask-image:linear-gradient(105deg,#000 42%,transparent 58%);mask-image:linear-gradient(105deg,#000 42%,transparent 58%);-webkit-mask-size:300% 100%;mask-size:300% 100%;-webkit-mask-position:100% 0;mask-position:100% 0;animation:kbWrite 1.4s cubic-bezier(.65,0,.35,1) .3s forwards;opacity:0}
+@keyframes kbWrite{0%{opacity:1;-webkit-mask-position:100% 0;mask-position:100% 0}100%{opacity:1;-webkit-mask-position:0% 0;mask-position:0% 0}}
+@keyframes kbOrganic{0%{transform:scale(1) rotate(0)}35%{transform:scale(1.03) rotate(-1.4deg)}70%{transform:scale(.985) rotate(1.1deg)}100%{transform:scale(1.02) rotate(-.6deg)}}
+#kibo-intro .ast{color:#0F2FA6;font-size:32px;line-height:1;opacity:0;animation:kbSpin 1s ease 1.5s forwards}
+@keyframes kbSpin{0%{opacity:0;transform:rotate(0) scale(.4)}30%{opacity:1}100%{opacity:1;transform:rotate(360deg) scale(1)}}
+#kibo-intro .tl{position:absolute;bottom:34px;color:#FAF8F4;opacity:0;font-family:'Courier Prime','Courier New',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;animation:kbFade .7s ease 1.9s forwards}
+@keyframes kbFade{to{opacity:.65}}
+@media (prefers-reduced-motion:reduce){#kibo-intro .lw,#kibo-intro img,#kibo-intro .ast,#kibo-intro .tl{animation:none!important;opacity:1!important}}
+</style>
+<div id="kibo-intro"><div class="lw"><img src="FULL-BLACK.png" alt="KIBO"></div><div class="ast">✳</div><div class="tl">Jewelry for the moments that stay</div></div>
+<script>
+(function(){var i=document.getElementById('kibo-intro');if(!i)return;if(sessionStorage.getItem('kibo_intro')){i.remove();return}var c=function(){i.classList.add('out');setTimeout(function(){i.remove()},1150)};setTimeout(c,3000);i.addEventListener('click',c);sessionStorage.setItem('kibo_intro','1')})();
+</script>
+
 
 <div class="annonce">Éditions limitées&nbsp;. Capturing energy, not trends.</div>
 
