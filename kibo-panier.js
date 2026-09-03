@@ -386,3 +386,29 @@
   document.head.appendChild(cf);
   }
 })();
+
+
+/* ===== Menu deroulant Collections (injecte partout) ===== */
+(function(){
+  try{
+    var lien=document.querySelector('.nav-centre a[href$="collection.html"]');
+    if(lien){
+      var css=document.createElement('style');
+      css.textContent='.kibo-deroul{position:relative;display:inline-block}.kibo-deroul>a{display:inline-block}.kibo-sous-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#E6E6E6;border:1px solid rgba(27,30,36,.12);box-shadow:0 14px 34px rgba(0,0,0,.10);padding:8px 0;min-width:170px;display:none;flex-direction:column;z-index:250;text-align:center}.kibo-deroul:hover .kibo-sous-menu{display:flex}.kibo-sous-menu a{padding:10px 20px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}.kibo-sous-menu a:hover{background:rgba(27,30,36,.06);opacity:1}';
+      document.head.appendChild(css);
+      var wrap=document.createElement('span'); wrap.className='kibo-deroul';
+      lien.parentNode.insertBefore(wrap,lien); wrap.appendChild(lien);
+      var sm=document.createElement('div'); sm.className='kibo-sous-menu';
+      sm.innerHTML='<a href="collection.html">Tout voir</a><a href="collection.html?f=collier">Colliers</a><a href="collection.html?f=bracelet">Bracelets</a><a href="collection.html?f=merch">T-Shirts</a>';
+      wrap.appendChild(sm);
+    }
+    var mm=document.getElementById('menuMobile');
+    if(mm){
+      var ref=mm.querySelector('a[href$="collection.html"]');
+      if(ref){
+        var items=[['collection.html?f=merch','T-Shirts'],['collection.html?f=bracelet','Bracelets'],['collection.html?f=collier','Colliers']];
+        items.forEach(function(p){var a=document.createElement('a');a.href=p[0];a.textContent='— '+p[1];a.style.paddingLeft='22px';a.style.fontSize='15px';ref.after(a);});
+      }
+    }
+  }catch(e){}
+})();
