@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paris — City Guide KIBO Paris</title>
+<link rel="alternate" hreflang="fr" href="https://atelier-kibo.com/ville-paris.html">
+<link rel="alternate" hreflang="en" href="https://atelier-kibo.com/en/ville-paris.html">
+<link rel="alternate" hreflang="x-default" href="https://atelier-kibo.com/ville-paris.html">
+<link rel="alternate" hreflang="fr" href="https://atelier-kibo.com/ville-paris.html">
+<link rel="alternate" hreflang="en" href="https://atelier-kibo.com/en/ville-paris.html">
+<link rel="alternate" hreflang="x-default" href="https://atelier-kibo.com/ville-paris.html">
+<meta name="description" content="Une journée à Paris — le city guide KIBO. Walk everywhere. Push every door. Cross the river twice. La ville où chaque pièce KIBO est montée à la main.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KIBO Paris">
+<meta property="og:title" content="Paris — City Guide KIBO Paris">
+<meta property="og:description" content="Une journée à Paris — le city guide KIBO. Walk everywhere. Push every door. Cross the river twice. La ville où chaque pièce KIBO est montée à la main.">
+<meta property="og:url" content="https://atelier-kibo.com/en/ville-paris.html">
+<meta property="og:image" content="https://atelier-kibo.com/FULL-BLACK.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://atelier-kibo.com/FULL-BLACK.png">
+<link rel="icon" type="image/png" href="../FULL-BLACK.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono&family=Courier+Prime&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* ==========================================================
+     KIBO PARIS — FAQ
+     ========================================================== */
+  :root {
+    --creme: #E6E6E6;
+    --papier: #DCDCDC;
+    --terracotta: #0F2FA6;
+    --encre: #1B1E24;
+    --nuit: #10131A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--creme);
+    color: var(--encre);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.65; }
+
+  .annonce {
+    font-family: 'Courier Prime', monospace;
+    background: var(--terracotta); color: var(--creme);
+    text-align: center; padding: 10px 12px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--creme);
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
+    padding: 14px 32px;
+    border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .logo-nav img { height: 34px; display: block; }
+  .nav-centre, .nav-droite {
+    display: flex; gap: 28px; justify-content: center;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  .nav-droite { gap: 22px; justify-content: flex-end; }
+
+  main { max-width: 680px; margin: 0 auto; padding: 80px 24px 110px; position: relative; }
+  .tampon { position: absolute; top: 96px; right: -18px; width: 210px;
+    transform: rotate(-9deg); mix-blend-mode: multiply; opacity: 0.9;
+    pointer-events: none; user-select: none; }
+  @media (max-width: 760px) { .tampon { width: 128px; right: 4px; top: 84px; } }
+  .etiquette { font-size: 10px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 400;
+    font-size: clamp(32px, 4vw, 48px); text-transform: uppercase; letter-spacing: 0.08em;
+    margin: 12px 0 48px; line-height: 1.1;
+  }
+  h2 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+    margin: 44px 0 14px; padding-top: 24px;
+    border-top: 1px solid rgba(27,30,36,0.15);
+  }
+  p { font-size: 12px; letter-spacing: 0.04em; line-height: 1.9; color: rgba(27,30,36,0.85); margin-bottom: 12px; }
+  p a { border-bottom: 1px solid rgba(27,30,36,0.4); padding-bottom: 1px; }
+
+  footer { padding: 48px 6vw 40px; border-top: 1px solid rgba(27,30,36,0.12); }
+  .footer-haut { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: center; }
+  .footer-liens { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .footer-droite { justify-content: flex-end; }
+  .footer-logo { text-align: center; }
+  .footer-logo img { height: 40px; }
+  .footer-bas { text-align: center; margin-top: 32px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(27,30,36,0.6); }
+
+  /* ---------- Menu mobile ---------- */
+  .burger { display: none; background: none; border: none; color: inherit; cursor: pointer; padding: 4px; }
+  .burger svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; display: block; fill: none; }
+  .menu-mobile {
+    position: fixed; inset: 0; z-index: 300;
+    background: var(--creme); color: var(--encre);
+    display: none; flex-direction: column; justify-content: center;
+    padding: 32px 36px;
+  }
+  .menu-mobile.ouvert { display: flex; }
+  .menu-mobile a {
+    font-family: 'Space Mono', monospace; font-size: 19px;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    padding: 20px 0; border-bottom: 1px solid rgba(27,30,36,0.15);
+  }
+  .menu-mobile .fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 26px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1;
+  }
+  @media (max-width: 900px) {
+    .nav-centre { display: none; }
+    .burger { display: block; }
+  }
+
+  .groupe { font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--terracotta); margin: 48px 0 6px; }
+  details { border-bottom: 1px solid rgba(27,30,36,0.15); }
+  summary {
+    list-style: none; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding: 16px 2px;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-size: 15px; color: var(--terracotta); transition: transform 300ms ease; flex-shrink: 0; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details .contenu { padding: 0 2px 18px; }
+  details .contenu p { margin-bottom: 10px; }
+  @media (max-width: 900px) {
+    .nav-droite { order: -1; }
+    .nav-droite a { display: none; }
+    .nav-droite .loupe { order: 2; margin-left: 4px; }
+    .logo-nav { justify-self: end; }
+  }
+  /* ---------- Recherche ---------- */
+  .loupe { background: none; border: none; cursor: pointer; padding: 4px; color: inherit; display: inline-flex; align-items: center; }
+  .loupe svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; display: block; }
+  .loupe:hover { opacity: 0.6; }
+  .rech-fond {
+    position: fixed; inset: 0; z-index: 400;
+    background: rgba(230,230,230,0.97);
+    display: none; justify-content: center;
+    padding: 14vh 6vw 40px; color: #1B1E24;
+  }
+  .rech-fond.visible { display: flex; }
+  .rech-boite { width: 100%; max-width: 640px; }
+  .rech-boite input {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid rgba(27,30,36,0.5);
+    font-family: 'Space Mono', monospace; font-size: 16px; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 12px 2px; outline: none; border-radius: 0; color: inherit;
+  }
+  .rech-boite input:focus { border-color: #1B1E24; }
+  .rech-resultats { margin-top: 28px; }
+  .rech-resultats a {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 18px;
+    padding: 13px 2px; border-bottom: 1px solid rgba(27,30,36,0.12);
+  }
+  .rech-resultats .rt { font-family: 'Cormorant Garamond', serif; font-size: 21px; letter-spacing: 0.04em; }
+  .rech-resultats .rs { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(27,30,36,0.55); white-space: nowrap; }
+  .rech-vide { margin-top: 28px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.55); }
+  .rech-fermer {
+    position: absolute; top: 22px; right: 26px;
+    background: none; border: none; font-size: 24px; color: inherit;
+    cursor: pointer; font-family: inherit; line-height: 1; padding: 6px;
+  }
+
+  /* ---------- City Guide ville ---------- */
+  main { max-width: 720px; }
+  .chapo { font-family: 'Cormorant Garamond', serif; font-size: 19px; letter-spacing: 0.02em;
+    line-height: 1.6; color: rgba(27,30,36,0.85); margin-bottom: 40px; }
+  .note-manuscrite {
+    background: var(--papier); padding: 18px 24px; max-width: 300px;
+    transform: rotate(-2deg); margin: 8px 0 44px;
+    clip-path: polygon(2% 0%, 98% 1%, 100% 97%, 3% 100%, 0% 60%);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    font-family: 'Caveat', cursive; font-size: 21px; letter-spacing: 0; line-height: 1.35;
+  }
+  .note-manuscrite .ast { color: var(--terracotta); }
+  .groupe-cg { font-size: 12px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--terracotta); margin: 48px 0 6px; padding-top: 26px; border-top: 1px solid rgba(27,30,36,0.15); }
+  .lieu { margin: 18px 0; }
+  .lieu .l-nom { font-size: 13px; letter-spacing: 0.08em; font-weight: 700; }
+  .lieu .l-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(27,30,36,0.5); margin-left: 8px; }
+  .lieu p { margin: 4px 0 0; }
+  .lieu.a-completer { opacity: 0.45; }
+  .piece-nee {
+    display: grid; grid-template-columns: 130px 1fr; gap: 22px; align-items: center;
+    border: 1px solid rgba(27,30,36,0.2); padding: 20px; margin: 56px 0 8px;
+  }
+  .l-ig { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--terracotta, #0F2FA6); margin-left: 10px;
+    border-bottom: 1px solid rgba(15,47,166,0.35); padding-bottom: 1px; }
+  .cg-kick { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px;
+    color: rgba(27,30,36,0.8); display: block; margin: -6px 0 22px; }
+  .tl-heure { font-family: 'Space Mono', monospace; font-size: 19px; font-weight: 700; letter-spacing: 0.12em;
+    color: var(--grand-bleu, #0F2FA6); display: block; margin: 46px 0 6px; }
+  .l-kick { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px;
+    color: rgba(27,30,36,0.72); display: block; margin: 1px 0 8px; }
+  .l-adr { font-size: 10px; letter-spacing: 0.08em; color: rgba(27,30,36,0.55);
+    display: block; margin-top: 7px; }
+    .cercle-bloc { margin: 60px auto 10px; max-width: 620px; background: var(--papier);
+    padding: 40px 44px 36px; transform: rotate(0.6deg);
+    clip-path: polygon(0.5% 1%, 99.5% 0%, 100% 98.5%, 1% 100%, 0% 50%);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.16); }
+  .cercle-bloc .cb-et { font-family: 'Caveat', cursive; font-size: 32px; display: block; margin-bottom: 10px; }
+  .cercle-bloc .cb-et .ast { color: var(--terracotta); }
+  .cercle-bloc h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 26px;
+    text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px; }
+  .cercle-bloc p { font-size: 12px; line-height: 1.7; color: rgba(27,30,36,0.8); margin-bottom: 18px; }
+  .cercle-bloc form { display: flex; gap: 10px; }
+  .cercle-bloc input[type="email"] { flex: 1; background: none; border: none;
+    border-bottom: 1px solid rgba(27,30,36,0.45); font-family: 'Space Mono', monospace;
+    font-size: 12px; padding: 10px 2px; outline: none; border-radius: 0; color: inherit; }
+  .cercle-bloc input[type="email"]:focus { border-color: var(--grand-bleu, #0F2FA6); }
+  .cercle-bloc button { background: var(--encre, #1B1E24); color: #E6E6E6; border: none;
+    font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.16em; padding: 12px 18px; cursor: pointer; }
+  .cercle-bloc button:hover { opacity: 0.85; }
+  .cercle-bloc .cb-note { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(27,30,36,0.5); margin: 12px 0 0; }
+  @media (max-width: 600px) { .cercle-bloc form { flex-direction: column; } }
+  .cg-photo { margin: 38px 0 30px; }
+  .cg-photo img { width: 100%; display: block; }
+  .cg-photo .ph-cap { display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: rgba(27,30,36,0.5); margin-top: 8px; }
+  .cg-photo .ph-credit { white-space: nowrap; color: rgba(27,30,36,0.35); }
+  .rules { margin: 54px auto 54px; max-width: 560px; background: var(--papier);
+    padding: 34px 38px 30px; transform: rotate(-0.8deg);
+    clip-path: polygon(1% 0.5%, 99% 0%, 100% 99%, 2% 100%, 0% 55%);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.16); }
+  .rules .rules-titre { font-family: 'Caveat', cursive; font-size: 30px; margin: 0 0 18px;
+    color: var(--encre, #1B1E24); }
+  .rules .rules-titre .ast { color: var(--terracotta); }
+  .rules .r { margin-bottom: 15px; transform: rotate(0.3deg); }
+  .rules .r-num { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.2em;
+    color: var(--grand-bleu, #0F2FA6); margin-right: 9px; }
+  .rules .r-tit { font-family: 'Caveat', cursive; font-size: 24px; letter-spacing: 0; }
+  .rules .r p { margin: 1px 0 0 30px; color: rgba(27,30,36,0.75); font-size: 12px; }
+  .piece-nee .pn-img { aspect-ratio: 1; background: var(--papier); display: flex; align-items: center; justify-content: center; font-family: 'Caveat', cursive; font-size: 52px; color: var(--terracotta); }
+  .piece-nee .pn-et { font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--terracotta); }
+  .piece-nee .pn-nom { font-family: 'Cormorant Garamond', serif; font-size: 24px; text-transform: uppercase; letter-spacing: 0.06em; margin: 4px 0 8px; }
+  .piece-nee a.pn-lien { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid var(--encre); padding-bottom: 2px; }
+  .retour-carte { display: inline-block; margin-bottom: 34px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; border-bottom: 1px solid rgba(27,30,36,0.4); padding-bottom: 2px; }
+  @media (max-width: 640px) { .piece-nee { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="annonce">Limited editions&nbsp;. Capturing energy, not trends.</div>
+
+<nav aria-label="Main navigation">
+  <a class="logo-nav" href="index.html"><img src="../FULL-BLACK.png" alt="KIBO"></a>
+  <div class="nav-centre">
+    <a href="collection.html">Collections</a>
+    <a href="our-world.html">Our World</a>
+    <a href="city-guides.html">City Guides</a>
+    <a href="private-access.html">Private Access</a>
+  </div>
+  <div class="nav-droite">
+    <a href="#">Paris / EN</a>
+    <button class="loupe" aria-label="Search" onclick="kiboOuvrirRecherche()"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.6 15.6 L21 21"/></svg></button>
+    <button class="burger" aria-label="Open menu" onclick="document.getElementById('menuMobile').classList.add('ouvert')">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="menu-mobile" id="menuMobile">
+  <button class="fermer" aria-label="Close menu" onclick="document.getElementById('menuMobile').classList.remove('ouvert')">&#10005;</button>
+  <a href="collection.html">Collections</a>
+  <a href="our-world.html">Our World</a>
+    <a href="city-guides.html">City Guides</a>
+  <a href="private-access.html">Private Access</a>
+</div>
+
+<main>
+  <a class="retour-carte" href="city-guides.html">← All City Guides</a>
+  <img class="tampon" src="../tampon-paris.png?v=1" alt="Tampon KIBO Paris">
+  <span class="etiquette">City Guide — 02 · France</span>
+  <h1>Paris</h1>
+  <span class="cg-kick">Walk everywhere. Push every door. Cross the river twice.</span>
+  <p class="chapo">Paris se visite mal et se vit bien. On croit connaître la ville parce qu'on connaît ses monuments — mais Paris, la vraie, se joue dans les cours cachées, les comptoirs de neuf mètres carrés, les merceries où l'on pèse les perles, et les caves où l'on écoute des disques après minuit. C'est ici, dans notre atelier, que chaque pièce KIBO est montée à la main. Voici notre journée — pas la plus connue, la nôtre. Marchez entre chaque adresse. C'est là que Paris se passe.</p>
+  <div class="note-manuscrite">« Chaque pièce KIBO est née quelque part entre deux de ces adresses. » <span class="ast">✳︎</span></div>
+
+
+  <div class="cg-photo"><img src="../guide-paris-blondie.jpg?v=1" alt="Le bleu Blondie, rue du Château d'Eau" loading="lazy">
+    <div class="ph-cap"><span>Le bleu Blondie, rue du Château d'Eau</span><span class="ph-credit">photo @blondiecoffeeshop ✳︎</span></div>
+  </div>
+  <span class="tl-heure">8:47 AM</span>
+  <div class="lieu">
+    <span class="l-nom">Blondie</span><a class="l-ig" href="https://www.instagram.com/blondiecoffeeshop/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">For the first coffee.</span>
+    <p>Rue du Château d'Eau, un coffee shop qui torréfie lui-même et le fait savoir en douceur. Prenez le café du jour, installez-vous près de la vitrine, regardez le 10e partir travailler. La journée commence quand la tasse est vide — et la suite est juste en face.</p>
+    <span class="l-adr">→ 27 rue du Château d'Eau, 10e</span>
+  </div>
+
+  <span class="tl-heure">9:24 AM</span>
+  <div class="lieu">
+    <span class="l-nom">Mamiche</span><a class="l-ig" href="https://www.instagram.com/boulangeriemamiche/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">The babka detour.</span>
+    <p>Traversez la rue : la boulangerie qui a rendu Paris fou de babka est au 32, presque en face de Blondie. Prenez-en une pour la route — elle ne survivra pas jusqu'au déjeuner, et c'est très bien comme ça.</p>
+    <span class="l-adr">→ 32 rue du Château d'Eau, 10e</span>
+  </div>
+
+  <span class="tl-heure">10:12 AM</span>
+  <div class="lieu">
+    <span class="l-nom">MiMa Concept Store</span><a class="l-ig" href="https://www.instagram.com/themimaconcept/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">The new Paris uniform.</span>
+    <p>Mode, art, parfums — la sélection qui bouscule ce que « parisien » veut dire. On y entre pour cinq minutes, on en ressort avec une idée différente de sa propre garde-robe. Le genre d'endroit qui donne raison de traverser la ville.</p>
+    <span class="l-adr">→ 92 rue du Faubourg Saint-Honoré, 8e</span>
+  </div>
+
+  <span class="tl-heure">11:30 AM</span>
+  <div class="lieu">
+    <span class="l-nom">Deyrolle</span><a class="l-ig" href="https://www.instagram.com/deyrolle.officiel/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Whisper. Nobody knows why.</span>
+    <p>Au premier étage du 46 rue du Bac, un cabinet de curiosités ouvert depuis 1831 : papillons, minéraux, animaux naturalisés, planches botaniques. Tout le monde y chuchote sans qu'aucun panneau ne le demande. Montez, chuchotez aussi.</p>
+    <span class="l-adr">→ 46 rue du Bac, 7e</span>
+  </div>
+
+
+  <div class="cg-photo"><img src="../guide-paris-deyrolle.jpg?v=1" alt="Chez Deyrolle, on chuchote" loading="lazy">
+    <div class="ph-cap"><span>Chez Deyrolle, on chuchote</span><span class="ph-credit">photo @deyrolle.officiel ✳︎</span></div>
+  </div>
+  <span class="tl-heure">1:04 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Ralph's</span>
+    <span class="l-kick">Lunch in the hidden courtyard.</span>
+    <p>Poussez le porche du 173 boulevard Saint-Germain : derrière la boutique Ralph Lauren se cache une cour pavée qui ne ressemble à rien d'autre à Paris. Le burger est célèbre, la cour l'est moins — c'est elle, le vrai luxe.</p>
+    <span class="l-adr">→ 173 boulevard Saint-Germain, 6e</span>
+  </div>
+
+  <span class="tl-heure">2:45 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Cravan</span>
+    <span class="l-kick">Coffee by day, cocktails by night.</span>
+    <p>À deux portes de Ralph's, la maison de Franck Audoux sur plusieurs étages : café de précision l'après-midi, cocktails le soir. Prenez le café au comptoir du rez-de-chaussée, montez voir les salons — et notez l'adresse, elle change de visage à la nuit tombée.</p>
+    <span class="l-adr">→ 165 boulevard Saint-Germain, 6e</span>
+  </div>
+
+  <span class="tl-heure">3:33 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Jardin du Palais-Royal</span>
+    <span class="l-kick">Lose track of time under the arcades.</span>
+    <p>Traversez la Seine et poussez jusqu'aux arcades : les colonnes de Buren, les chaises vertes au soleil, un café Kitsuné à la main. C'est la pause qui fait oublier l'heure — à Paris, c'est à ça que servent les jardins. Et la suite du guide est à cinq minutes à pied.</p>
+    <span class="l-adr">→ Place du Palais-Royal, 1er</span>
+  </div>
+
+  <span class="tl-heure">5:21 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Ultramod</span>
+    <span class="l-kick">Where necklaces begin.</span>
+    <p>Une mercerie dans son jus depuis 1832, rue de Choiseul : rubans anciens, passementerie, boutons par milliers, tiroirs en bois qui n'ont jamais changé. C'est dans des endroits comme celui-ci que des colliers commencent — on parle d'expérience. Entrez sans projet, sortez avec un trésor.</p>
+    <span class="l-adr">→ 3-4 rue de Choiseul, 2e</span>
+  </div>
+
+  <span class="tl-heure">6:15 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Thanx God I'm a V.I.P.</span><a class="l-ig" href="https://www.instagram.com/thanxgod/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Vintage, properly sorted.</span>
+    <p>Le vintage sans les heures de fouille : ici tout est trié par couleur, choisi, repassé. La meilleure friperie de Paris pour repartir avec une pièce qui a déjà vécu — et qui vivra encore.</p>
+    <span class="l-adr">→ 12 rue de Lancry, 10e</span>
+  </div>
+
+  <span class="tl-heure">7:18 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Bonnie</span><a class="l-ig" href="https://www.instagram.com/bonnie_club_paris/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Paris at your feet.</span>
+    <p>Quinzième étage du SO/ Paris. Arrivez avant le coucher du soleil, commandez, et regardez la ville passer de l'or au bleu. Le dîner peut attendre — cette lumière, non.</p>
+    <span class="l-adr">→ SO/ Paris, 10 rue Agrippa d'Aubigné, 4e</span>
+  </div>
+
+  <span class="tl-heure">9:02 PM</span>
+  <div class="lieu">
+    <span class="l-nom">Cassaro's</span><a class="l-ig" href="https://www.instagram.com/cassarosparis/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">La dolce vita, rive gauche.</span>
+    <p>Rue de Buci, une trattoria comme dans un film des années 50 : nappes, lumière chaude, Sicile dans l'assiette. Cassaro, c'est le nom du plus vieux marché de Palerme — et Palerme, chez KIBO, on connaît. Commandez comme si vous étiez en vacances.</p>
+    <span class="l-adr">→ 25 rue de Buci, 6e</span>
+  </div>
+
+
+  <div class="cg-photo"><img src="../guide-paris-cassaros.jpg?v=1" alt="La salle de Cassaro's, rue de Buci" loading="lazy">
+    <div class="ph-cap"><span>La salle de Cassaro's, rue de Buci</span><span class="ph-credit">photo @cassarosparis ✳︎</span></div>
+  </div>
+  <span class="tl-heure">11:11 PM</span>
+  <div class="lieu">
+    <span class="l-nom">WAX</span><a class="l-ig" href="https://www.instagram.com/waxbarparis/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">Order a record, not a drink.</span>
+    <p>Un bar audiophile rue d'Hauteville : enceintes fabriquées sur mesure, vinyles alignés, cocktails d'inspiration franco-japonaise. On parle moins fort, on écoute mieux. La nuit parisienne dans sa meilleure version.</p>
+    <span class="l-adr">→ 96-98 rue d'Hauteville, 10e</span>
+  </div>
+
+  <span class="tl-heure">LA NUIT — SI VOUS AVEZ DE LA CHANCE</span>
+  <div class="lieu">
+    <span class="l-nom">Imagine Family</span><a class="l-ig" href="https://www.instagram.com/imaginefamily/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">If they throw a party, cancel everything.</span>
+    <p>Pas une adresse — un collectif. House et disco, douze heures de fête, des péniches sur la Seine, des clubs entiers réquisitionnés. Regardez leur Instagram avant votre séjour : s'il y a une date, changez vos plans. Tout le reste du guide peut attendre le lendemain.</p>
+  </div>
+
+  <span class="tl-heure">COUP DE CŒUR <span class="ast">✳︎</span></span>
+  <div class="lieu">
+    <span class="l-nom">Rôtisserie Segar</span><a class="l-ig" href="https://www.instagram.com/rotisserie_segar/" target="_blank" rel="noopener">Instagram</a>
+    <span class="l-kick">The chicken worth crossing town for.</span>
+    <p>Rue Mouffetard, une rôtisserie comme il n'en reste presque plus : les poulets tournent, le jus tombe sur les pommes de terre, et le sandwich qui en sort vaut tous les bistros du quartier. Notre coup de cœur absolu — zéro chichi, que du vrai.</p>
+    <span class="l-adr">→ 111 rue Mouffetard, 5e</span>
+  </div>
+
+
+  <div class="cg-photo"><img src="../guide-paris-segar.jpg?v=1" alt="Les sandwichs de la Rôtisserie Segar" loading="lazy">
+    <div class="ph-cap"><span>Les sandwichs de la Rôtisserie Segar</span><span class="ph-credit">photo @rotisserie_segar ✳︎</span></div>
+  </div>
+  <span class="tl-heure">DIMANCHE — HORS LES MURS</span>
+  <div class="lieu">
+    <span class="l-nom">Les Puces de Saint-Ouen — Marché Vernaison</span>
+    <span class="l-kick">Sunday belongs to the flea market.</span>
+    <p>Le plus grand marché d'antiquités du monde commence là où Paris s'arrête. Allez-y tôt, sans liste, avec du liquide. C'est dans ces allées qu'on trouve les trésors — bijoux anciens, perles oubliées, objets qui ont trois vies derrière eux.</p>
+    <span class="l-adr">→ 99 rue des Rosiers, Saint-Ouen — sam. & dim.</span>
+  </div>
+
+  <div class="rules">
+    <p class="rules-titre">The Paris Rules <span class="ast">✳︎</span></p>
+    <div class="r"><span class="r-num">01</span><span class="r-tit">Don't climb the Eiffel Tower.</span>
+      <p>Regardez-la depuis un toit, un pont, une fenêtre. Elle est meilleure de loin.</p></div>
+    <div class="r"><span class="r-num">02</span><span class="r-tit">Walk everywhere.</span>
+      <p>Le métro vous vole les rues. Tout ce guide se fait à pied — c'est voulu.</p></div>
+    <div class="r"><span class="r-num">03</span><span class="r-tit">Push every door.</span>
+      <p>Les cours cachées sont la vraie architecture de Paris. Si un porche est entrouvert, c'est une invitation.</p></div>
+    <div class="r"><span class="r-num">04</span><span class="r-tit">Order the strange thing.</span>
+      <p>Le vin que vous ne savez pas prononcer, le plat que vous ne pouvez pas traduire.</p></div>
+    <div class="r"><span class="r-num">05</span><span class="r-tit">Cross the river twice a day.</span>
+      <p>Rive droite le matin, rive gauche le soir — ou l'inverse. Paris change de personnalité en traversant un pont.</p></div>
+    <div class="r"><span class="r-num">06</span><span class="r-tit">The quays after 10pm count as a monument.</span>
+      <p>Une bouteille, des amis, les pieds au-dessus de la Seine. Gratuit et inoubliable.</p></div>
+    <div class="r"><span class="r-num">07</span><span class="r-tit">Sunday belongs to the flea market.</span>
+      <p>Les Puces, tôt, sans liste. Voir plus haut.</p></div>
+    <div class="r"><span class="r-num">08</span><span class="r-tit">Leave one arrondissement unexplored.</span>
+      <p>Il faut une raison de revenir.</p></div>
+  </div>
+
+<div class="cercle-bloc">
+    <span class="cb-et">The Circle <span class="ast">✳︎</span></span>
+    <h3>The full map, in your pocket</h3>
+    <p>Every address in the guide, ready to open in Google Maps, plus the ones we don't publish — the family notebook. And access to limited editions before everyone else.</p>
+    <form id="formCercleGuide" novalidate>
+      <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
+      <button type="submit">Get the map&nbsp;&nbsp;→</button>
+    </form>
+    <p class="cb-note">Immediate access · Six letters a year, no more</p>
+  </div>
+
+  </main>
+
+<footer>
+  <div class="footer-haut">
+    <div class="footer-liens">
+      <a href="faq.html">FAQ</a>
+      <a href="shipping-retours.html">Shipping &amp; Returns</a>
+      <a href="care-guide.html">Care Guide</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-logo">
+      <a href="index.html"><img src="../FULL-BLACK.png" alt="KIBO"></a>
+    </div>
+    <div class="footer-liens footer-droite">
+      <a href="https://www.instagram.com/atelier.kibo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#">Spotify</a>
+    </div>
+  </div>
+  <p class="footer-bas">© KIBO Paris&nbsp;&nbsp;—&nbsp;&nbsp;<a href="mentions-legales.html">Legal notice</a></p>
+</footer>
+
+
+<div class="rech-fond" id="rechFond" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="rech-fermer" aria-label="Close" onclick="kiboFermerRecherche()">&#10005;</button>
+  <div class="rech-boite">
+    <input id="rechInput" type="search" placeholder="Search for a piece, a page&hellip;" autocomplete="off">
+    <div class="rech-resultats" id="rechResultats"></div>
+  </div>
+</div>
+<script>
+(function () {
+  var INDEX = [{"t": "Vertigo Necklace", "u": "produit-vertigo.html", "s": "La Permanente — 180 €"}, {"t": "Limone Necklace", "u": "produit-limone.html", "s": "Soleil Rouge — 140 €"}, {"t": "Murano Necklace", "u": "produit-murano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Santorini Necklace", "u": "produit-santorini.html", "s": "Grand Bleu — 140 €"}, {"t": "Rio Necklace", "u": "produit-rio.html", "s": "Grand Bleu — 90 €"}, {"t": "Ibiza Necklace", "u": "produit-ibiza.html", "s": "Grand Bleu — 140 €"}, {"t": "Eclipse Necklace", "u": "produit-eclipse.html", "s": "La Permanente — 160 €"}, {"t": "Positano Necklace", "u": "produit-positano.html", "s": "Soleil Rouge — 120 €"}, {"t": "Capri Necklace", "u": "produit-capri.html", "s": "Soleil Rouge — 120 €"}, {"t": "Laguna Necklace", "u": "produit-laguna.html", "s": "Soleil Rouge — 120 €"}, {"t": "Halo Necklace", "u": "produit-halo.html", "s": "La Permanente — 160 €"}, {"t": "Amore Necklace", "u": "produit-amore.html", "s": "La Permanente — 190 €"}, {"t": "Bodrum Necklace", "u": "produit-bodrum.html", "s": "Grand Bleu — 90 €"}, {"t": "Stella Necklace", "u": "produit-stella.html", "s": "Soleil Rouge — 140 €"}, {"t": "Marea Necklace", "u": "produit-marea.html", "s": "Grand Bleu — 140 €"}, {"t": "Riviera Necklace", "u": "produit-riviera.html", "s": "Soleil Rouge — 140 €"}, {"t": "Perla Bracelet", "u": "produit-perla.html", "s": "Soleil Rouge — 55 €"}, {"t": "Laguna Bracelet", "u": "produit-laguna-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Menta Bracelet", "u": "produit-menta.html", "s": "Soleil Rouge — 50 €"}, {"t": "Marina Bracelet", "u": "produit-marina.html", "s": "Grand Bleu — 50 €"}, {"t": "Mimosa Necklace", "u": "produit-mimosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Oliva Necklace", "u": "produit-oliva.html", "s": "Grand Bleu — 90 €"}, {"t": "Rosa Necklace", "u": "produit-rosa.html", "s": "Grand Bleu — 90 €"}, {"t": "Mosaïque Necklace", "u": "produit-mosaique.html", "s": "La Permanente — 150 €"}, {"t": "Amuleto Necklace", "u": "produit-amuleto.html", "s": "Soleil Rouge — 140 €"}, {"t": "Fiesta Necklace", "u": "produit-fiesta.html", "s": "Grand Bleu — 120 €"}, {"t": "Sunset Necklace", "u": "produit-sunset.html", "s": "Grand Bleu — 120 €"}, {"t": "Neptune Necklace", "u": "produit-neptune.html", "s": "Grand Bleu — 120 €"}, {"t": "Halo Bracelet", "u": "produit-halo-bracelet.html", "s": "La Permanente — 50 €"}, {"t": "Rio Bracelet", "u": "produit-rio-bracelet.html", "s": "Grand Bleu — 40 €"}, {"t": "Positano Bracelet", "u": "produit-positano-bracelet.html", "s": "Soleil Rouge — 45 €"}, {"t": "Ibiza Bracelet", "u": "produit-ibiza-bracelet.html", "s": "Grand Bleu — 45 €"}, {"t": "Vertigo Bracelet", "u": "produit-vertigo-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "Eclipse Bracelet", "u": "produit-eclipse-bracelet.html", "s": "La Permanente — 55 €"}, {"t": "The Collection", "u": "collection.html", "s": "34 handmade pieces"}, {"t": "La Permanente", "u": "collection.html?f=permanente", "s": "The pieces that stay"}, {"t": "Soleil Rouge", "u": "collection.html?g=dolce-vita", "s": "Drop 01 — Summer 2026"}, {"t": "Grand Bleu", "u": "collection.html?g=grand-bleu", "s": "Drop 02 — Summer 2026"}, {"t": "City Guides", "u": "city-guides.html", "s": "The cities we love"}, {"t": "Palermo — City Guide", "u": "ville-palermo.html", "s": "Eat, sleep, dance in Sicily"}, {"t": "Marrakech — City Guide", "u": "ville-marrakech.html", "s": "Eat, sleep, dance in Marrakech"}, {"t": "Contact", "u": "contact.html", "s": "Write to the atelier"}, {"t": "Our World", "u": "our-world.html", "s": "The world of KIBO"}, {"t": "Private Access", "u": "private-access.html", "s": "Join the circle"}, {"t": "FAQ", "u": "faq.html", "s": "Frequently asked questions"}, {"t": "Shipping & Returns", "u": "shipping-retours.html", "s": "Shipping and returns"}, {"t": "Care Guide", "u": "care-guide.html", "s": "Caring for your pieces"}, {"t": "Legal notice", "u": "mentions-legales.html", "s": "Legal information"}];
+  function normaliser(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  var fond = document.getElementById('rechFond');
+  var champ = document.getElementById('rechInput');
+  var zone = document.getElementById('rechResultats');
+  window.kiboOuvrirRecherche = function () {
+    fond.classList.add('visible');
+    champ.value = ''; afficher('');
+    setTimeout(function () { champ.focus(); }, 50);
+  };
+  window.kiboFermerRecherche = function () { fond.classList.remove('visible'); };
+  function afficher(q) {
+    var nq = normaliser(q.trim());
+    var res = nq
+      ? INDEX.filter(function (e) { return normaliser(e.t + ' ' + e.s).indexOf(nq) !== -1; })
+      : INDEX.slice(34, 38);
+    res = res.slice(0, 8);
+    if (!res.length) {
+      zone.innerHTML = '<p class="rech-vide">Aucun r&eacute;sultat &mdash; essayez &laquo; collier &raquo;, &laquo; bracelet &raquo; ou un nom de ville.</p>';
+      return;
+    }
+    zone.innerHTML = res.map(function (e) {
+      return '<a href="' + e.u + '"><span class="rt">' + e.t + '</span><span class="rs">' + e.s + '</span></a>';
+    }).join('');
+  }
+  champ.addEventListener('input', function () { afficher(champ.value); });
+  champ.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Enter') { var p = zone.querySelector('a'); if (p) location.href = p.getAttribute('href'); }
+  });
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') kiboFermerRecherche();
+  });
+})();
+</script>
+
+<script src="../kibo-panier.js?v=13" defer></script>
+<script>
+function kiboCercleEnvoi(email) {
+  var fd = new FormData();
+  fd.append('form_type', 'customer');
+  fd.append('utf8', '\u2713');
+  fd.append('contact[email]', email);
+  fd.append('contact[tags]', 'newsletter,cercle');
+  try { fetch('https://djcwtp-ui.myshopify.com/contact', { method: 'POST', body: fd, mode: 'no-cors' }); } catch (e) {}
+}
+</script><script>
+(function () {
+  var f = document.getElementById('formCercleGuide');
+  if (!f) return;
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var champ = f.querySelector('input[type="email"]');
+    if (!champ.value || champ.value.indexOf('@') < 0) {
+      champ.placeholder = 'Cette adresse semble incomplète'; champ.value = ''; return;
+    }
+    kiboCercleEnvoi(champ.value);
+    setTimeout(function () { window.location.href = 'cercle-marrakech.html'; }, 350);
+  });
+})();
+</script>
+</body>
+</html>
